@@ -68,9 +68,12 @@ entraînement adapté à ses faiblesses et des mises en situation visuelles.
 Adoptés (D-010) :
 
 1. **Entraînement libre** — par univers ou par leçon, correction immédiate.
-2. **Examen blanc** — reproduit le format de l’épreuve réelle
-   (**[À VÉRIFIER]** nombre de questions, durée, seuil de réussite et règles
-   d’affichage, à établir depuis une source officielle).
+2. **Examen blanc** — reproduit le format de l’épreuve réelle :
+   **40 questions, réussite à partir de 35 bonnes réponses** (vérifié sur
+   service-public.gouv.fr, fiche F33694, consultée le 22/10/2026 ; voir
+   docs/SOURCES.md). **[À VÉRIFIER]** durée ou temps par question (« 20
+   secondes » n’est mentionné que par des sites non officiels) : aucun
+   chronomètre tant que ce n’est pas confirmé.
 3. **Révision des erreurs** — uniquement les questions échouées ou fragiles.
 4. **Série courte** — 10 questions pour les sessions de quelques minutes.
 

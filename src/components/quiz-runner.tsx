@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, type RefObject } from "react";
 import { Icon } from "@/components/icons";
 import { Button, ButtonLink } from "@/components/ui/button";
-import { Alert, Card, DemoBadge, ProgressBar } from "@/components/ui/display";
+import { Alert, Card, ContentBadge, ProgressBar, type ContentKind } from "@/components/ui/display";
 import { cn } from "@/lib/cn";
 import {
   appendSession,
@@ -17,6 +17,8 @@ import {
   createQuiz,
   currentQuestion,
   goToNext,
+  answerHint,
+  hasPassed,
   isAnswerCorrect,
   isLastQuestion,
   isMultipleChoice,
@@ -27,13 +29,39 @@ import {
   toggleChoice,
   type QuizQuestion,
   type QuizState,
+  type SourceLink,
 } from "@/lib/quiz";
 
 interface QuizRunnerProps {
   questions: readonly QuizQuestion[];
   mode: SessionMode;
+  /** Nature des questions : fictives (démonstration) ou réelles non relues. */
+  content: ContentKind;
+  /** Seuil de réussite (examen blanc) ; absent pour l'entraînement. */
+  passMark?: number;
   onExit: () => void;
   onRestart: () => void;
+}
+
+function SourceList({ sources }: { sources: readonly SourceLink[] }) {
+  return (
+    <ul className="mt-2 space-y-1 text-xs">
+      {sources.map((source) => (
+        <li key={source.url}>
+          Source :{" "}
+          <a
+            href={source.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-brand-text underline underline-offset-2"
+          >
+            {source.label}
+            <span className="sr-only"> (nouvel onglet)</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
 }
 
 /**
@@ -41,7 +69,14 @@ interface QuizRunnerProps {
  * - entraînement : correction et explication après chaque réponse ;
  * - simulation : aucune correction avant la fin, puis bilan détaillé.
  */
-export function QuizRunner({ questions, mode, onExit, onRestart }: QuizRunnerProps) {
+export function QuizRunner({
+  questions,
+  mode,
+  content,
+  passMark,
+  onExit,
+  onRestart,
+}: QuizRunnerProps) {
   const [state, setState] = useState<QuizState>(() => createQuiz(questions));
   const headingRef = useRef<HTMLHeadingElement>(null);
   const recorded = useRef(false);
@@ -62,16 +97,18 @@ export function QuizRunner({ questions, mode, onExit, onRestart }: QuizRunnerPro
         finishedAt: new Date().toISOString(),
         correct,
         total,
-        demo: true,
+        demo: content === "fictive",
       }),
     );
-  }, [state, mode]);
+  }, [state, mode, content]);
 
   if (state.finished) {
     return (
       <QuizResult
         state={state}
         mode={mode}
+        content={content}
+        passMark={passMark}
         headingRef={headingRef}
         onRestart={onRestart}
       />
@@ -102,7 +139,7 @@ export function QuizRunner({ questions, mode, onExit, onRestart }: QuizRunnerPro
           <Icon name="close" size={18} />
           Quitter
         </Button>
-        <DemoBadge />
+        <ContentBadge kind={content} />
       </div>
 
       <p className="mb-2 text-sm font-semibold text-muted">
@@ -122,7 +159,7 @@ export function QuizRunner({ questions, mode, onExit, onRestart }: QuizRunnerPro
           {question.prompt}
         </h2>
         <p className="mt-2 text-sm text-muted">
-          {multiple ? "Plusieurs réponses possibles." : "Une seule réponse possible."}
+          {answerHint(question)}
         </p>
 
         <fieldset className="mt-5" disabled={submitted}>
@@ -189,6 +226,7 @@ export function QuizRunner({ questions, mode, onExit, onRestart }: QuizRunnerPro
             title={correct ? "Bonne réponse !" : "Ce n’est pas la bonne réponse."}
           >
             {question.explanation}
+            {question.sources && <SourceList sources={question.sources} />}
           </Alert>
         )}
       </div>
@@ -212,30 +250,37 @@ export function QuizRunner({ questions, mode, onExit, onRestart }: QuizRunnerPro
 function QuizResult({
   state,
   mode,
+  content,
+  passMark,
   headingRef,
   onRestart,
 }: {
   state: QuizState;
   mode: SessionMode;
+  content: ContentKind;
+  passMark?: number;
   headingRef: RefObject<HTMLHeadingElement | null>;
   onRestart: () => void;
 }) {
-  const { correct, total } = scoreQuiz(state);
+  const score = scoreQuiz(state);
+  const { correct, total } = score;
   const ratio = correct / total;
+  const passed = passMark === undefined ? null : hasPassed(score, passMark);
+  const good = passed ?? ratio >= 0.5;
 
   return (
     <div className="animate-enter">
       <div className="mb-5 flex justify-end">
-        <DemoBadge />
+        <ContentBadge kind={content} />
       </div>
       <Card className="text-center">
         <span
           className={cn(
             "mx-auto grid size-16 place-items-center rounded-3xl animate-pop",
-            ratio >= 0.5 ? "bg-success text-on-status" : "bg-brand-soft text-brand-text",
+            good ? "bg-success text-on-status" : "bg-brand-soft text-brand-text",
           )}
         >
-          <Icon name={ratio >= 0.5 ? "sparkles" : "target"} size={30} />
+          <Icon name={good ? "sparkles" : "target"} size={30} />
         </span>
         <h2
           ref={headingRef}
@@ -248,9 +293,22 @@ function QuizResult({
           {correct} / {total}
         </p>
         <p className="mt-1 text-muted">{formatPercent(ratio)} de bonnes réponses</p>
+        {passed !== null && passMark !== undefined && (
+          <p
+            className={cn(
+              "mx-auto mt-4 w-fit rounded-full px-4 py-1.5 text-sm font-bold",
+              passed ? "bg-success-soft text-success-text" : "bg-danger-soft text-danger-text",
+            )}
+          >
+            {passed
+              ? `Réussi : au moins ${passMark} bonnes réponses`
+              : `Échoué : il faut au moins ${passMark} bonnes réponses`}
+          </p>
+        )}
         <p className="mt-4 text-sm text-muted">
-          Résultat enregistré sur cet appareil. Il porte sur des questions
-          fictives et n’indique pas votre niveau réel.
+          {content === "fictive"
+            ? "Résultat enregistré sur cet appareil. Il porte sur des questions fictives et n’indique pas votre niveau réel."
+            : "Résultat enregistré sur cet appareil. Les questions sont originales et pas encore relues : ce résultat est une indication, pas une garantie."}
         </p>
       </Card>
 
@@ -293,6 +351,7 @@ function QuizResult({
                         Bonne réponse : {labels(question.correct)}
                       </p>
                       <p className="mt-1 text-muted">{question.explanation}</p>
+                      {question.sources && <SourceList sources={question.sources} />}
                     </div>
                   </div>
                 </li>

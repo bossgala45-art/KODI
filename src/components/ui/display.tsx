@@ -54,6 +54,21 @@ export function DemoBadge({ className }: { className?: string }) {
   );
 }
 
+/** Signale des questions réelles mais pas encore relues par une personne compétente. */
+export function ReviewBadge({ className }: { className?: string }) {
+  return (
+    <Badge tone="brand" className={className}>
+      Non relues
+    </Badge>
+  );
+}
+
+export type ContentKind = "fictive" | "non-relue";
+
+export function ContentBadge({ kind }: { kind: ContentKind }) {
+  return kind === "fictive" ? <DemoBadge /> : <ReviewBadge />;
+}
+
 export type AlertTone = "info" | "success" | "danger";
 
 const ALERT_STYLES: Record<AlertTone, { box: string; icon: IconName }> = {

@@ -26,13 +26,23 @@ const questions: QuizQuestion[] = [
     ],
     correct: ["a", "c"],
     explanation: "Explication fictive 2.",
+    sources: [{ label: "Page officielle d’exemple", url: "https://example.org/source" }],
   },
 ];
 
-function setup(mode: "entrainement" | "simulation") {
+function setup(mode: "entrainement" | "simulation", passMark?: number) {
   const onExit = vi.fn();
   const onRestart = vi.fn();
-  render(<QuizRunner questions={questions} mode={mode} onExit={onExit} onRestart={onRestart} />);
+  render(
+    <QuizRunner
+      questions={questions}
+      mode={mode}
+      content={mode === "entrainement" ? "fictive" : "non-relue"}
+      passMark={passMark}
+      onExit={onExit}
+      onRestart={onRestart}
+    />,
+  );
   return { user: userEvent.setup(), onExit, onRestart };
 }
 
@@ -57,7 +67,7 @@ describe("QuizRunner — entraînement", () => {
     expect(screen.getByRole("radio", { name: /Réponse juste/ }).matches(":disabled")).toBe(true);
 
     await user.click(screen.getByRole("button", { name: /Question suivante/ }));
-    expect(screen.getByText("Plusieurs réponses possibles.")).toBeDefined();
+    expect(screen.getByText("2 réponses attendues.")).toBeDefined();
     await user.click(screen.getByRole("checkbox", { name: /Vrai 1/ }));
     await user.click(screen.getByRole("checkbox", { name: /Vrai 2/ }));
     await user.click(screen.getByRole("button", { name: "Valider" }));
@@ -83,6 +93,8 @@ describe("QuizRunner — entraînement", () => {
 describe("QuizRunner — simulation", () => {
   it("ne corrige qu’à la fin puis affiche le corrigé", async () => {
     const { user, onRestart } = setup("simulation");
+    expect(screen.getByText("Non relues")).toBeDefined();
+    expect(screen.getByText("Une seule réponse attendue.")).toBeDefined();
 
     await user.click(screen.getByRole("radio", { name: /Réponse juste/ }));
     await user.click(screen.getByRole("button", { name: "Valider" }));
@@ -95,9 +107,38 @@ describe("QuizRunner — simulation", () => {
     expect(screen.getByRole("heading", { name: "Examen blanc terminé" })).toBeDefined();
     expect(screen.getByRole("heading", { name: "Corrigé" })).toBeDefined();
     expect(screen.getByText("Votre réponse : Vrai 1")).toBeDefined();
-    expect(historyStore.get()[0]).toMatchObject({ mode: "simulation", correct: 1, total: 2 });
+    expect(historyStore.get()[0]).toMatchObject({
+      mode: "simulation",
+      correct: 1,
+      total: 2,
+      demo: false,
+    });
+    const source = screen.getByRole("link", { name: /Page officielle d’exemple/ });
+    expect(source.getAttribute("href")).toBe("https://example.org/source");
 
     await user.click(screen.getByRole("button", { name: /Recommencer/ }));
     expect(onRestart).toHaveBeenCalledOnce();
+  });
+});
+
+describe("QuizRunner — seuil de réussite", () => {
+  async function answerAll(user: ReturnType<typeof userEvent.setup>, allRight: boolean) {
+    await user.click(screen.getByRole("radio", { name: allRight ? /Réponse juste/ : /Réponse fausse/ }));
+    await user.click(screen.getByRole("button", { name: "Valider" }));
+    await user.click(screen.getByRole("checkbox", { name: /Vrai 1/ }));
+    await user.click(screen.getByRole("checkbox", { name: /Vrai 2/ }));
+    await user.click(screen.getByRole("button", { name: "Valider et terminer" }));
+  }
+
+  it("annonce la réussite quand le seuil est atteint", async () => {
+    const { user } = setup("simulation", 2);
+    await answerAll(user, true);
+    expect(screen.getByText("Réussi : au moins 2 bonnes réponses")).toBeDefined();
+  });
+
+  it("annonce l’échec sous le seuil", async () => {
+    const { user } = setup("simulation", 2);
+    await answerAll(user, false);
+    expect(screen.getByText("Échoué : il faut au moins 2 bonnes réponses")).toBeDefined();
   });
 });

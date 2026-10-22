@@ -36,7 +36,7 @@ describe("Progression", () => {
 
     expect(screen.getByText("80 %")).toBeDefined();
     expect(screen.getByText("5 / 20 questions")).toBeDefined();
-    expect(screen.getAllByText("Données fictives").length).toBeGreaterThan(0);
+    expect(screen.getByRole("note").textContent).toMatch(/questions fictives/);
 
     await user.click(screen.getByRole("button", { name: "Effacer l’historique" }));
     await user.click(screen.getByRole("button", { name: /Oui, tout effacer/ }));

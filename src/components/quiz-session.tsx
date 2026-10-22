@@ -4,7 +4,7 @@ import { useState, type ReactNode } from "react";
 import { Icon, type IconName } from "@/components/icons";
 import { QuizRunner } from "@/components/quiz-runner";
 import { Button } from "@/components/ui/button";
-import { Card, DemoBadge } from "@/components/ui/display";
+import { Card, ContentBadge, type ContentKind } from "@/components/ui/display";
 import type { SessionMode } from "@/lib/history";
 import { shuffle, type QuizQuestion } from "@/lib/quiz";
 
@@ -17,6 +17,8 @@ interface QuizSessionProps {
   details: readonly string[];
   startLabel: string;
   notice: ReactNode;
+  content: ContentKind;
+  passMark?: number;
 }
 
 /** Écran d'introduction d'une série, puis déroulé du quiz. */
@@ -29,6 +31,8 @@ export function QuizSession({
   details,
   startLabel,
   notice,
+  content,
+  passMark,
 }: QuizSessionProps) {
   const [run, setRun] = useState<{ id: number; questions: QuizQuestion[] } | null>(null);
 
@@ -43,6 +47,8 @@ export function QuizSession({
       <QuizRunner
         key={run.id}
         mode={mode}
+        content={content}
+        passMark={passMark}
         questions={run.questions}
         onExit={() => setRun(null)}
         onRestart={start}
@@ -62,7 +68,7 @@ export function QuizSession({
             <span className="grid size-12 place-items-center rounded-2xl bg-brand-strong text-on-brand">
               <Icon name={icon} size={24} />
             </span>
-            <DemoBadge />
+            <ContentBadge kind={content} />
           </div>
           <h2 className="mt-4 text-xl font-bold">{title}</h2>
           <ul className="mt-3 space-y-2 text-sm">

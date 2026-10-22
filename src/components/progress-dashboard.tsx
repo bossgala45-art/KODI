@@ -7,7 +7,6 @@ import { Button, ButtonLink } from "@/components/ui/button";
 import {
   Alert,
   Card,
-  DemoBadge,
   EmptyState,
   LoadingBlock,
   ProgressBar,
@@ -67,9 +66,10 @@ export function ProgressDashboard() {
     <div className="space-y-8">
       <StorageNotice />
       <Alert tone="info" role="note">
-        Ces statistiques sont calculées à partir de vos vraies réponses, mais
-        sur des <strong>questions fictives</strong> : elles ne mesurent pas
-        votre niveau au code de la route.
+        Vos chiffres combinent les séries d’entraînement, sur des{" "}
+        <strong>questions fictives</strong>, et les examens blancs, sur des
+        questions originales <strong>pas encore relues</strong>. Ils donnent
+        une indication, pas une mesure fiable de votre niveau.
       </Alert>
 
       <Card className="animate-enter">
@@ -88,7 +88,7 @@ export function ProgressDashboard() {
       </Card>
 
       <section aria-labelledby="chiffres">
-        <SectionTitle id="chiffres" aside={<DemoBadge />}>
+        <SectionTitle id="chiffres">
           Vos chiffres
         </SectionTitle>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">

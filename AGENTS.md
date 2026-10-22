@@ -62,6 +62,10 @@ npm run check       # lint + typecheck + test + build
 - Réutiliser les composants de `src/components/ui/` avant d’en créer.
 - Toute donnée d’exemple vit dans `src/content/demo.ts` et s’affiche avec
   `<DemoBadge />`.
+- Toute question réelle vit dans `src/content/exam-questions.ts`, cite au
+  moins une source de `src/content/sources.ts` réellement consultée, et reste
+  au statut `non-relue` (badge « Non relues ») tant qu’une personne
+  compétente ne l’a pas validée. Ne jamais la présenter comme officielle.
 - Animations : classes `animate-enter` / `animate-pop` / transitions courtes ;
   elles sont neutralisées automatiquement quand l’utilisateur les réduit.
 - Composants client (`"use client"`) seulement quand c’est nécessaire.

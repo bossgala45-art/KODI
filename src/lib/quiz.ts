@@ -3,6 +3,11 @@ export interface QuizChoice {
   label: string;
 }
 
+export interface SourceLink {
+  label: string;
+  url: string;
+}
+
 export interface QuizQuestion {
   id: string;
   prompt: string;
@@ -10,6 +15,8 @@ export interface QuizQuestion {
   /** Identifiants des bonnes réponses (une ou plusieurs). */
   correct: readonly string[];
   explanation: string;
+  /** Sources justifiant la réponse (absentes pour les questions fictives). */
+  sources?: readonly SourceLink[];
 }
 
 export interface QuizState {
@@ -101,6 +108,16 @@ export function isAnswerCorrect(
 export interface QuizScore {
   correct: number;
   total: number;
+}
+
+export function hasPassed(score: QuizScore, passMark: number): boolean {
+  return score.correct >= passMark;
+}
+
+/** Consigne indiquant le nombre de réponses attendues. */
+export function answerHint(question: QuizQuestion): string {
+  const n = question.correct.length;
+  return n === 1 ? "Une seule réponse attendue." : `${n} réponses attendues.`;
 }
 
 export function scoreQuiz(state: QuizState): QuizScore {

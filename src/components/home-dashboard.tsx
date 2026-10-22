@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Icon, type IconName } from "@/components/icons";
 import { ButtonLink } from "@/components/ui/button";
-import { Card, DemoBadge, ProgressBar, Skeleton } from "@/components/ui/display";
+import { Card, ProgressBar, Skeleton } from "@/components/ui/display";
 import { computeStats, historyStore } from "@/lib/history";
 import { profileStore } from "@/lib/profile";
 import { useHydrated, useStore } from "@/lib/use-store";
@@ -77,8 +77,7 @@ export function DailyGoalCard() {
       </div>
       <ProgressBar value={ratio} tone="success" label="Objectif du jour" className="mt-4" />
       <div className="mt-3 flex items-center justify-between gap-3">
-        <p className="text-xs text-muted">Compté sur les séries de démonstration.</p>
-        <DemoBadge />
+        <p className="text-xs text-muted">Compté sur vos séries et examens blancs.</p>
       </div>
     </Card>
   );
@@ -91,7 +90,7 @@ const SHORTCUTS: ReadonlyArray<{
   icon: IconName;
 }> = [
   { href: "/entrainement", title: "S’entraîner", text: "Série de 5 questions", icon: "target" },
-  { href: "/simuler", title: "Simuler", text: "Examen blanc", icon: "flag" },
+  { href: "/simuler", title: "Simuler", text: "Examen blanc · 40 questions", icon: "flag" },
   { href: "/apprendre", title: "Apprendre", text: "Univers et leçons", icon: "book" },
   { href: "/progression", title: "Progression", text: "Vos statistiques", icon: "chart" },
 ];

@@ -41,17 +41,22 @@ test("une série d’entraînement complète alimente la progression", async ({ 
   await expect(page.getByText("5 / 20 questions")).toBeVisible();
 });
 
-test("l’examen blanc ne corrige qu’à la fin", async ({ page }) => {
+test("l’examen blanc : 40 questions, correction à la fin, seuil de 35", async ({ page }) => {
   await page.goto("/simuler");
+  await expect(page.getByText("Non relues").first()).toBeVisible();
   await page.getByRole("button", { name: /Lancer l’examen blanc/ }).click();
-  for (let i = 1; i <= 10; i += 1) {
-    await expect(page.getByText(`Question ${i} sur 10`)).toBeVisible();
+  for (let i = 1; i <= 40; i += 1) {
+    await expect(page.getByText(`Question ${i} sur 40`)).toBeVisible();
     await page.locator("fieldset label").first().click();
     await expect(page.getByText("Bonne réponse !")).toHaveCount(0);
-    await page.getByRole("button", { name: i === 10 ? "Valider et terminer" : "Valider" }).click();
+    await page.getByRole("button", { name: i === 40 ? "Valider et terminer" : "Valider" }).click();
   }
   await expect(page.getByRole("heading", { name: "Examen blanc terminé" })).toBeVisible();
+  await expect(page.getByText(/^(Réussi : au moins 35|Échoué : il faut au moins 35) bonnes réponses$/)).toBeVisible();
   await expect(page.getByRole("heading", { name: "Corrigé" })).toBeVisible();
+  await expect(page.getByRole("listitem").filter({ hasText: "Bonne réponse :" })).toHaveCount(40);
+  const firstSource = page.getByRole("link", { name: /consulté le 22\/10\/2026/ }).first();
+  await expect(firstSource).toHaveAttribute("href", /^https:\/\/www\.securite-routiere\.gouv\.fr\//);
 });
 
 test("l’onboarding personnalise l’accueil", async ({ page }) => {

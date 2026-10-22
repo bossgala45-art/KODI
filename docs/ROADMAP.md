@@ -50,6 +50,10 @@ Livré, en attente de validation :
   bureau, audit d’accessibilité axe (WCAG 2.2 A/AA) en clair et sombre,
   absence de défilement horizontal jusqu’à 320 px.
 
+Ajout demandé en cours de phase (22/10/2026) : examen blanc au format
+officiel (40 questions, seuil de 35) avec 62 questions originales sourcées,
+au statut « non relues » (D-015).
+
 Non réalisé dans cette phase (non demandé) : PWA installable (manifest,
 icônes, service worker, hors ligne) et prévisualisation en ligne.
 

@@ -12,8 +12,10 @@ export default function HomePage() {
       </header>
 
       <Alert tone="info" role="note" title="Version de développement">
-        Les leçons et questions réelles ne sont pas encore disponibles. Les
-        contenus d’exemple sont signalés par le badge « Données fictives ».
+        Les leçons ne sont pas encore disponibles. Les contenus d’exemple
+        portent le badge « Données fictives » ; les questions de l’examen
+        blanc, pas encore relues par un professionnel, portent le badge
+        « Non relues ».
       </Alert>
 
       <OnboardingPrompt />

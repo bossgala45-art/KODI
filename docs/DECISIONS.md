@@ -136,6 +136,30 @@ par une nouvelle entrée qui la remplace explicitement.
 - **Limite** : un audit automatique ne remplace pas un test avec lecteur
   d’écran (VoiceOver sur iPhone), à faire manuellement.
 
+## D-015 — Examen blanc au format officiel et premières questions réelles
+
+- **Contexte** : demande du porteur (22/10/2026) d’un examen blanc « comme
+  le vrai », avec le même nombre de questions. La banque officielle (environ
+  1 000 questions) n’est pas publique et ne peut pas être reproduite.
+- **Décision** :
+  - format : 40 questions, réussite à 35 (source service-public.gouv.fr) ;
+    une réponse n’est comptée juste que si toutes les bonnes propositions
+    sont cochées ; le nombre de réponses attendues est affiché ;
+  - contenu : 62 questions **originales**, rédigées par IA à partir de
+    20 pages officielles de la Sécurité routière lues intégralement le
+    22/10/2026 (`src/content/sources.ts`, `docs/SOURCES.md`). Chaque question
+    cite ses sources, affichées dans le corrigé ;
+  - statut : toutes « non relues ». L’interface affiche le badge
+    « Non relues » et précise qu’il ne s’agit pas des questions officielles ;
+  - situations décrites par écrit : l’examen réel s’appuie sur des photos et
+    des vidéos, que KODI n’a pas encore.
+- **Limites** : Légifrance refuse l’accès automatisé depuis l’environnement
+  de développement ; les articles du code de la route sont ceux cités par
+  les pages officielles, non relus sur Légifrance. Deux pages officielles se
+  contredisent sur la distance du triangle (30 m / 200 m) : aucune question
+  n’a été rédigée sur ce point. Le mode S’entraîner reste sur les questions
+  fictives (non demandé).
+
 ## Questions ouvertes
 
 - **Q-01 — Hébergement de prévisualisation** : options gratuites à comparer
@@ -152,5 +176,9 @@ par une nouvelle entrée qui la remplace explicitement.
 - **Q-04 — Périmètre gratuit / Premium et prestataire de paiement.**
 - **Q-05 — Sources officielles** : identifier les textes de référence et leur
   version avant toute rédaction de question (Phase 3).
+- **Q-07 — Relecture des questions** : qui relit et valide les questions
+  (porteur, moniteur diplômé) avant qu’elles perdent le badge « Non relues » ?
+- **Q-08 — Chronomètre** : ajouter un temps limité par question une fois la
+  durée confirmée par une source officielle ?
 - **Q-06 — Dépôt public ou privé** : un dépôt privé protège le code, mais
   GitHub Actions y est limité à un quota gratuit de minutes.

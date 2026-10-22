@@ -14,6 +14,7 @@ export default function TrainingPage() {
       />
       <QuizSession
         mode="entrainement"
+        content="fictive"
         bank={DEMO_QUESTIONS}
         length={TRAINING_LENGTH}
         title="Série d’entraînement"

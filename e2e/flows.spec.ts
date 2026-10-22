@@ -66,7 +66,7 @@ test("l’onboarding personnalise l’accueil", async ({ page }) => {
   await page.getByRole("button", { name: /Continuer/ }).click();
   await page.getByLabel("Prénom").fill("Lou");
   await page.getByRole("button", { name: /Continuer/ }).click();
-  await page.getByText("40 questions", { exact: true }).click();
+  await page.getByText("40", { exact: true }).click();
   await page.getByRole("button", { name: /Continuer/ }).click();
   await page.getByRole("button", { name: /C’est parti/ }).click();
 

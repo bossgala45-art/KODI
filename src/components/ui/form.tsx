@@ -163,7 +163,7 @@ export function SegmentedControl<T extends string>({
           <label
             key={option.value}
             className={cn(
-              "flex-1 cursor-pointer rounded-xl text-center font-semibold text-muted transition-colors has-checked:bg-surface has-checked:text-fg has-checked:shadow-card has-focus-visible:outline-2 has-focus-visible:outline-offset-1 has-focus-visible:outline-brand",
+              "min-w-0 flex-1 cursor-pointer rounded-xl text-center font-semibold leading-tight wrap-break-word text-muted transition-colors has-checked:bg-surface has-checked:text-fg has-checked:shadow-card has-focus-visible:outline-2 has-focus-visible:outline-offset-1 has-focus-visible:outline-brand",
               size === "sm" ? "px-3 py-1.5 text-sm" : "px-3 py-2.5 text-sm",
             )}
           >

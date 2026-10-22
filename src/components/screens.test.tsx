@@ -50,7 +50,7 @@ describe("Profil et paramètres", () => {
     const user = userEvent.setup();
     render(<ProfileSettings />);
     await user.type(screen.getByLabelText("Prénom (facultatif)"), "  Inès ");
-    await user.click(screen.getByRole("radio", { name: "40 questions" }));
+    await user.click(screen.getByRole("radio", { name: "40" }));
     await user.click(screen.getByRole("button", { name: "Enregistrer" }));
 
     expect(profileStore.get()).toMatchObject({ firstName: "Inès", dailyGoal: 40 });
@@ -96,7 +96,7 @@ describe("Onboarding", () => {
     await user.click(screen.getByRole("button", { name: /Continuer/ }));
     await user.type(screen.getByLabelText("Prénom"), "Noé");
     await user.click(screen.getByRole("button", { name: /Continuer/ }));
-    await user.click(screen.getByRole("radio", { name: "10 questions" }));
+    await user.click(screen.getByRole("radio", { name: "10" }));
     await user.click(screen.getByRole("button", { name: /Retour/ }));
     expect(screen.getByLabelText("Prénom")).toHaveProperty("value", "Noé");
     await user.click(screen.getByRole("button", { name: /Continuer/ }));

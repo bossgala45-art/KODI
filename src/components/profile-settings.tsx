@@ -50,7 +50,7 @@ function ProfileForm({ profile }: { profile: LocalProfile }) {
         hint="Utilisé uniquement pour vous saluer, sur cet appareil."
       />
       <SegmentedControl
-        legend="Objectif quotidien"
+        legend="Objectif quotidien (questions par jour)"
         name="dailyGoal"
         options={DAILY_GOAL_OPTIONS}
         value={String(goal) as `${DailyGoal}`}

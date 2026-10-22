@@ -5,7 +5,7 @@ export type DailyGoal = (typeof DAILY_GOALS)[number];
 
 export const DAILY_GOAL_OPTIONS = DAILY_GOALS.map((goal) => ({
   value: String(goal) as `${DailyGoal}`,
-  label: `${goal} questions`,
+  label: String(goal),
 }));
 
 export const FIRST_NAME_MAX_LENGTH = 30;

@@ -25,6 +25,12 @@ function collectErrors(page: Page): string[] {
   return errors;
 }
 
+/** Attend la fin des chargements locaux (squelettes) avant de mesurer. */
+async function waitForContent(page: Page): Promise<void> {
+  await page.waitForLoadState("networkidle");
+  await expect(page.locator('[role="status"]', { hasText: "Chargement" })).toHaveCount(0);
+}
+
 async function horizontalOverflow(page: Page): Promise<number> {
   return page.evaluate(
     () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
@@ -41,6 +47,7 @@ for (const screen of SCREENS) {
         await expect(page.getByRole("heading", { level: 1, name: screen.title })).toBeVisible();
         await expect(page.locator("html")).toHaveAttribute("data-theme", scheme);
         await expect(page.locator("html")).toHaveAttribute("lang", "fr");
+        await waitForContent(page);
 
         const results = await new AxeBuilder({ page }).withTags(WCAG_TAGS).analyze();
         expect(
@@ -55,10 +62,24 @@ for (const screen of SCREENS) {
       await page.setViewportSize({ width: 320, height: 640 });
       await page.goto(screen.path);
       await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+      await waitForContent(page);
       expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
     });
   });
 }
+
+test("aucun débordement à 320 px, même avec une police de repli plus large", async ({ page }) => {
+  // Simule un appareil où la police Geist n'est pas chargée et où la police
+  // de repli est plus large (cas des serveurs Ubuntu de la CI).
+  await page.route(/\.woff2$/, (route) => route.abort());
+  await page.setViewportSize({ width: 320, height: 640 });
+  for (const { path } of SCREENS) {
+    await page.goto(path);
+    await page.addStyleTag({ content: '*{font-family:"DejaVu Sans",Verdana,sans-serif !important}' });
+    await waitForContent(page);
+    expect(await horizontalOverflow(page), path).toBeLessThanOrEqual(0);
+  }
+});
 
 test("une adresse inconnue affiche la page introuvable", async ({ page }) => {
   const response = await page.goto("/adresse-inexistante");

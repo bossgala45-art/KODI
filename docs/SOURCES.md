@@ -14,6 +14,12 @@ interface (Chromium), puis leur texte a été relevé.
 | --- | --- |
 | [Service-Public.gouv.fr — Comment passer le code (F33694)](https://www.service-public.gouv.fr/particuliers/vosdroits/F33694) (page « Vérifié le 27 avril 2026 ») | « Vous devez répondre à 40 questions à choix multiples. » ; « Pour réussir le code, vous devez avoir 35 réponses justes ou plus. » |
 
+## Triangle et gilet
+
+| Source | Ce qui en est tiré |
+| --- | --- |
+| [Service-Public.gouv.fr — Équipements obligatoires en voiture (F19459)](https://www.service-public.gouv.fr/particuliers/vosdroits/F19459) (page « Vérifié le 11 juin 2026 » ; textes cités : code de la route R416-17 à R416-20, arrêté du 30 septembre 2008) | « Vous devez placer le triangle à 30 mètres ou plus de votre voiture pour la signaler aux autres conducteurs, et allumer vos feux de détresse. » ; usage « lorsque l’immobilisation de votre voiture est un danger pour la circulation » (intersections, virages, sommets de côtes, passages à niveau, visibilité insuffisante) ; « Vous n’êtes pas obligé de mettre en place le triangle si vous estimez que cela peut mettre votre vie en danger. » ; gilet à revêtir « si vous êtes amené à quitter votre véhicule immobilisé sur la chaussée ou ses abords », rangé « à portée de main ». |
+
 Non confirmé par une source officielle consultée : temps de réponse par
 question, durée totale, présence systématique de photos ou vidéos, liste
 officielle des thèmes.
@@ -43,16 +49,17 @@ officielle des thèmes.
 Les articles n’ont pas été relus sur Légifrance, qui refuse l’accès
 automatisé depuis l’environnement de développement.
 
-## Points écartés
+## Points tranchés ou écartés
 
-- **Distance du triangle de présignalisation** : « environ 30 mètres »
-  (page Équipements obligatoires) contre « 200 mètres en amont » (page
-  Accident de la route). Contradiction entre deux pages officielles : aucune
-  question tant que le texte de référence n’est pas vérifié.
+- **Distance du triangle** : la page Sécurité routière « Équipements
+  obligatoires » dit « environ 30 mètres », la page « Accident de la route »
+  conseille de baliser un accident « à 200 mètres en amont ». La fiche
+  Service-Public F19459, qui cite les textes (R416-17 à R416-20), tranche :
+  « à 30 mètres ou plus ». Les questions utilisent cette règle ; le chiffre de
+  200 m (conseil de balisage d’un accident) n’est pas utilisé.
 - **20 secondes par question** : uniquement sur des sites commerciaux.
 
 ## Relecture
 
-Les 62 questions sont au statut **non relue**. Une relecture par une
-personne compétente (par exemple un enseignant de la conduite diplômé) est
-nécessaire avant tout lancement public.
+Les 68 questions sont au statut **non relue**. Le porteur de projet les
+relit (décision du 22/10/2026) à partir de `docs/RELECTURE.md`.

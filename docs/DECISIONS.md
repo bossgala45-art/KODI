@@ -145,9 +145,9 @@ par une nouvelle entrée qui la remplace explicitement.
   - format : 40 questions, réussite à 35 (source service-public.gouv.fr) ;
     une réponse n’est comptée juste que si toutes les bonnes propositions
     sont cochées ; le nombre de réponses attendues est affiché ;
-  - contenu : 62 questions **originales**, rédigées par IA à partir de
-    20 pages officielles de la Sécurité routière lues intégralement le
-    22/10/2026 (`src/content/sources.ts`, `docs/SOURCES.md`). Chaque question
+  - contenu : 68 questions **originales**, rédigées par IA à partir de
+    20 pages officielles de la Sécurité routière et de la fiche
+    Service-Public F19459 (triangle et gilet), lues le 22/10/2026 (`src/content/sources.ts`, `docs/SOURCES.md`). Chaque question
     cite ses sources, affichées dans le corrigé ;
   - statut : toutes « non relues ». L’interface affiche le badge
     « Non relues » et précise qu’il ne s’agit pas des questions officielles ;
@@ -155,9 +155,9 @@ par une nouvelle entrée qui la remplace explicitement.
     des vidéos, que KODI n’a pas encore.
 - **Limites** : Légifrance refuse l’accès automatisé depuis l’environnement
   de développement ; les articles du code de la route sont ceux cités par
-  les pages officielles, non relus sur Légifrance. Deux pages officielles se
-  contredisent sur la distance du triangle (30 m / 200 m) : aucune question
-  n’a été rédigée sur ce point. Le mode S’entraîner reste sur les questions
+  les pages officielles, non relus sur Légifrance. La distance du triangle,
+  contradictoire entre deux pages de la Sécurité routière (30 m / 200 m), a
+  été tranchée par la fiche Service-Public F19459 : « à 30 mètres ou plus ». Le mode S’entraîner reste sur les questions
   fictives (non demandé).
 
 ## Questions ouvertes
@@ -176,8 +176,9 @@ par une nouvelle entrée qui la remplace explicitement.
 - **Q-04 — Périmètre gratuit / Premium et prestataire de paiement.**
 - **Q-05 — Sources officielles** : identifier les textes de référence et leur
   version avant toute rédaction de question (Phase 3).
-- **Q-07 — Relecture des questions** : qui relit et valide les questions
-  (porteur, moniteur diplômé) avant qu’elles perdent le badge « Non relues » ?
+- ~~**Q-07 — Relecture des questions**~~ : tranché le 22/10/2026, le porteur
+  relit les questions (liste dans `docs/RELECTURE.md`). Une question ne passe
+  en « relue » que sur sa validation explicite.
 - **Q-08 — Chronomètre** : ajouter un temps limité par question une fois la
   durée confirmée par une source officielle ?
 - **Q-06 — Dépôt public ou privé** : un dépôt privé protège le code, mais

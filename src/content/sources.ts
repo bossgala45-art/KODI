@@ -32,6 +32,14 @@ export const SOURCES = {
     consultedAt: CONSULTED,
     citedArticles: ["R221-3-1 à R221-3-3"],
   },
+  triangle: {
+    id: "triangle",
+    title: "Équipements obligatoires en voiture : gilet de sécurité, triangle…",
+    publisher: "Service-Public.gouv.fr (DILA)",
+    url: "https://www.service-public.gouv.fr/particuliers/vosdroits/F19459",
+    consultedAt: CONSULTED,
+    citedArticles: ["R416-17 à R416-20", "Arrêté du 30 septembre 2008 relatif à la présignalisation des véhicules"],
+  },
   priorites: sr("priorites", "Intersections et priorités", "reglementation-liee-la-route/intersections-et-priorites", [
     "R415-1",
     "R415-2",

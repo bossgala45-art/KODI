@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { EXAM_FORMAT, EXAM_QUESTIONS, EXAM_QUIZ_BANK } from "@/content/exam-questions";
 import { SOURCES } from "@/content/sources";
@@ -52,5 +53,16 @@ describe("banque de l’examen blanc", () => {
   it("expose les sources au moteur de quiz", () => {
     expect(EXAM_QUIZ_BANK.every((q) => (q.sources?.length ?? 0) > 0)).toBe(true);
     expect(EXAM_QUIZ_BANK[0]?.sources?.[0]?.label).toMatch(/consulté le 22\/10\/2026/);
+  });
+});
+
+describe("document de relecture", () => {
+  it("est à jour (sinon lancer « npm run relecture »)", () => {
+    const doc = readFileSync("docs/RELECTURE.md", "utf8");
+    expect(doc).toContain(`Total : **${EXAM_QUESTIONS.length} questions**`);
+    for (const question of EXAM_QUESTIONS) {
+      expect(doc).toContain(`### ${question.id} `);
+      expect(doc).toContain(question.prompt);
+    }
   });
 });

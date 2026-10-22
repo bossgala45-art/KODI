@@ -66,6 +66,10 @@ npm run check       # lint + typecheck + test + build
   moins une source de `src/content/sources.ts` réellement consultée, et reste
   au statut `non-relue` (badge « Non relues ») tant qu’une personne
   compétente ne l’a pas validée. Ne jamais la présenter comme officielle.
+- La relecture est faite par le porteur à partir de `docs/RELECTURE.md`.
+  Après toute modification des questions, lancer `npm run relecture`
+  (un test vérifie que le document est à jour). Ne passer une question en
+  `relue` que sur validation explicite du porteur, question par question.
 - Animations : classes `animate-enter` / `animate-pop` / transitions courtes ;
   elles sont neutralisées automatiquement quand l’utilisateur les réduit.
 - Composants client (`"use client"`) seulement quand c’est nécessaire.

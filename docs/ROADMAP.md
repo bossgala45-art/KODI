@@ -8,7 +8,7 @@ Légende : ✅ terminée · 🟡 en cours · ⬜ à venir
 La liste affichée sur la page d’accueil (`src/content/project.ts`) doit rester
 synchronisée avec ce fichier.
 
-## 🟡 Phase 0 — Fondations du projet
+## ✅ Phase 0 — Fondations du projet
 
 Livré :
 - Projet Next.js 16.4 + TypeScript strict + Tailwind CSS 4.
@@ -18,12 +18,16 @@ Livré :
 - Documentation : README, spécification, feuille de route, décisions, AGENTS.
 - CI GitHub Actions (lint, types, tests, build, E2E).
 
-Reste à faire pour clôturer :
-- [ ] Vérifier que la CI GitHub Actions passe sur la branche.
-- [ ] Relecture et validation par le porteur de projet.
-- [ ] Décider de l’hébergement de prévisualisation (DECISIONS.md, Q-01).
+Clôture (22/10/2026) :
+- [x] CI GitHub Actions verte sur la branche `phase-0-fondations`.
+- [x] Revérification après réinstallation propre : lint, types, 15 tests
+  unitaires, build, 10 tests E2E (dont navigation clavier), contrastes AA des
+  jetons de couleur dans les deux thèmes.
+- [x] Validation déléguée par le porteur (« vérifie tout et si c’est bon,
+  passe à la phase 1 »).
+- Reporté en Phase 1 : choix de l’hébergement de prévisualisation (Q-01).
 
-## ⬜ Phase 1 — Design system et PWA installable
+## 🟡 Phase 1 — Design system et PWA installable
 
 - Identité visuelle (logo, palette validée en contraste AA, typographie).
 - Composants de base (bouton, carte, champ, navigation mobile).

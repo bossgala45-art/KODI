@@ -65,7 +65,7 @@ entraînement adapté à ses faiblesses et des mises en situation visuelles.
 
 ### 4.3 Modes d’examen (4)
 
-**[À VALIDER]** Proposition :
+Adoptés (D-010) :
 
 1. **Entraînement libre** — par univers ou par leçon, correction immédiate.
 2. **Examen blanc** — reproduit le format de l’épreuve réelle
@@ -78,8 +78,8 @@ entraînement adapté à ses faiblesses et des mises en situation visuelles.
 
 - **20 scènes** de situations de conduite rendues avec Three.js /
   React Three Fiber, consultables sous **4 caméras**.
-- **[À VALIDER]** Caméras proposées : vue conducteur, vue aérienne, vue
-  arrière (poursuite), vue d’un autre usager.
+- Caméras adoptées (D-010) : vue conducteur, vue aérienne, vue arrière
+  (poursuite), vue d’un autre usager.
 - Contraintes : chargement progressif, repli 2D si WebGL indisponible ou
   appareil trop lent, aucune scène indispensable pour réussir une leçon.
 

@@ -80,6 +80,17 @@ par une nouvelle entrée qui la remplace explicitement.
 - **Conséquence** : le dépôt est public, donc le code est visible de tous.
   Ne jamais y versionner de secret (`.env*` est ignoré par Git).
 
+## D-010 — Modes d’examen, caméras et usage sans compte
+
+- **Contexte** : propositions de la spécification v0.1, soumises au porteur
+  le 22/10/2026, qui a délégué la validation.
+- **Décision** : adoption des 4 modes (entraînement libre, examen blanc,
+  révision des erreurs, série courte), des 4 caméras (conducteur, aérienne,
+  arrière, autre usager) et de l’usage sans compte avec synchronisation
+  optionnelle. Révisables par une nouvelle décision.
+- **Reste [À VÉRIFIER]** : le format exact de l’examen blanc (source
+  officielle à identifier, Q-05).
+
 ## Questions ouvertes
 
 - **Q-01 — Hébergement de prévisualisation** : options gratuites à comparer

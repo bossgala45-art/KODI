@@ -73,8 +73,8 @@ export const features: readonly Feature[] = [
 ];
 
 export const phases: readonly Phase[] = [
-  { id: 0, title: "Fondations du projet", status: "in-progress" },
-  { id: 1, title: "Design system et PWA installable", status: "todo" },
+  { id: 0, title: "Fondations du projet", status: "done" },
+  { id: 1, title: "Design system et PWA installable", status: "in-progress" },
   { id: 2, title: "Comptes et base de données", status: "todo" },
   { id: 3, title: "Modèle de contenu et vérification", status: "todo" },
   { id: 4, title: "Leçons et entraînement", status: "todo" },

@@ -37,6 +37,16 @@ test("le choix du thème est appliqué et conservé après rechargement", async 
   await expect(page.getByRole("radio", { name: "Sombre" })).toBeChecked();
 });
 
+test("le thème se change au clavier", async ({ page }) => {
+  await page.emulateMedia({ colorScheme: "light" });
+  await page.goto("/");
+  await page.getByRole("radio", { name: "Auto" }).focus();
+  await page.keyboard.press("ArrowLeft");
+  await expect(page.getByRole("radio", { name: "Sombre" })).toBeChecked();
+  await expect(page.getByRole("radio", { name: "Sombre" })).toBeFocused();
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+});
+
 test("le mode auto suit la préférence système", async ({ page }) => {
   await page.emulateMedia({ colorScheme: "dark" });
   await page.goto("/");

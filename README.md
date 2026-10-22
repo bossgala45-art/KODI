@@ -1,1 +1,73 @@
 # KODI
+
+Application web progressive (PWA) française de préparation au code de la route,
+mobile-first, destinée à être installable sur iPhone, Android et ordinateur.
+
+> **Statut : Phase 0 — Fondations.** Aucune leçon ni question n’est disponible.
+> La seule page existante est une page d’accueil qui présente le projet et son
+> avancement réel. Le lancement public n’aura lieu qu’après validation de la
+> version complète.
+
+## Documentation
+
+| Document | Contenu |
+| --- | --- |
+| [docs/SPECIFICATION.md](docs/SPECIFICATION.md) | Ce que KODI doit faire, contraintes de contenu et de qualité |
+| [docs/ROADMAP.md](docs/ROADMAP.md) | Phases, livrables et critères de validation |
+| [docs/DECISIONS.md](docs/DECISIONS.md) | Journal des décisions techniques et questions ouvertes |
+| [AGENTS.md](AGENTS.md) | Règles pour les agents IA qui travaillent sur le dépôt |
+
+## Pile technique (Phase 0)
+
+- [Next.js](https://nextjs.org) 16.4 (App Router, Cache Components) · React 19
+- TypeScript 5 en mode strict renforcé
+- Tailwind CSS 4
+- ESLint 9 (`eslint-config-next`)
+- Vitest + Testing Library (tests unitaires et composants)
+- Playwright (tests de bout en bout, Chromium)
+
+Supabase, PostgreSQL, Three.js / React Three Fiber et la couche PWA sont
+**prévus mais pas encore installés** (voir la feuille de route).
+
+## Commandes
+
+Prérequis : Node.js 22 ou plus récent.
+
+```bash
+npm ci                 # installe les dépendances (versions verrouillées)
+npm run dev            # serveur de développement sur http://localhost:3000
+npm run lint           # ESLint, zéro avertissement toléré
+npm run typecheck      # génère les types de routes puis tsc --noEmit
+npm test               # tests unitaires et composants (Vitest)
+npm run build          # build de production
+npm run test:e2e       # tests navigateur (nécessite un build préalable)
+npm run check          # lint + typecheck + tests + build
+```
+
+Pour les tests de bout en bout hors environnement cloud Claude Code, installer
+d’abord le navigateur : `npx playwright install chromium`. Dans l’environnement
+cloud, Chromium est déjà présent :
+
+```bash
+PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium npm run test:e2e
+```
+
+## Intégration continue
+
+Le workflow [`.github/workflows/ci.yml`](.github/workflows/ci.yml) exécute
+lint, typecheck, tests, build et tests de bout en bout à chaque push et pull
+request. Le dépôt étant public, GitHub Actions est gratuit sur les runners
+standards. Les résultats sont consultables depuis l’onglet **Actions** du dépôt,
+y compris depuis un iPhone.
+
+## Structure
+
+```
+src/
+  app/           routes Next.js (layout, page d’accueil)
+  components/    composants React réutilisables
+  content/       données éditoriales affichées (statut réel du projet)
+  lib/           logique pure et testable
+e2e/             tests Playwright
+docs/            spécification, feuille de route, décisions
+```

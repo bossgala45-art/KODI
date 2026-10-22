@@ -36,7 +36,11 @@ export function buttonClasses({
   return cn(BASE, VARIANTS[variant], SIZES[size], block && "w-full");
 }
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & StyleProps;
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
+  StyleProps & {
+    /** Affiche un indicateur et bloque le bouton pendant une opération réseau. */
+    loading?: boolean;
+  };
 
 export function Button({
   variant,
@@ -44,14 +48,27 @@ export function Button({
   block,
   className,
   type = "button",
+  loading = false,
+  disabled,
+  children,
   ...props
 }: ButtonProps) {
   return (
     <button
       type={type}
       className={cn(buttonClasses({ variant, size, block }), className)}
+      disabled={disabled || loading}
+      aria-busy={loading || undefined}
       {...props}
-    />
+    >
+      {loading && (
+        <span
+          aria-hidden="true"
+          className="size-4 animate-spin rounded-full border-2 border-current border-t-transparent"
+        />
+      )}
+      {children}
+    </button>
   );
 }
 

@@ -112,6 +112,8 @@ Adoptés (D-010) :
   entre appareils (Supabase Auth + PostgreSQL avec Row Level Security).
 - **Premium** : périmètre gratuit / payant **[À VALIDER]**. Le paiement
   n’est mis en place qu’à la phase dédiée.
+- **Phase 2** : comptes, base et synchronisation implémentés (DECISIONS.md
+  D-016 à D-019) ; mise en service manuelle décrite dans docs/SUPABASE.md.
 - Conformité RGPD : consentement, export et suppression des données, mentions
   légales, politique de confidentialité, CGU / CGV avant lancement.
 

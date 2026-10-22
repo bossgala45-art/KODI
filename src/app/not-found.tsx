@@ -11,6 +11,7 @@ export default function NotFound() {
       <div className="pt-10">
         <EmptyState
           icon="flag"
+          headingLevel={1}
           title="Page introuvable"
           action={<ButtonLink href="/">Retour à l’accueil</ButtonLink>}
         >

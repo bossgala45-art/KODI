@@ -12,6 +12,9 @@ const SCREENS = [
   { path: "/bienvenue", title: "Bienvenue sur KODI" },
   { path: "/profil", title: "Profil et paramètres" },
   { path: "/premium", title: "KODI Premium" },
+  { path: "/mot-de-passe-oublie", title: "Mot de passe oublié" },
+  { path: "/reinitialiser-mot-de-passe", title: "Nouveau mot de passe" },
+  { path: "/auth/lien-invalide", title: "Ce lien n’est plus valide" },
 ] as const;
 
 const WCAG_TAGS = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"];

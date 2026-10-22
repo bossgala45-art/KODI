@@ -160,6 +160,67 @@ par une nouvelle entrée qui la remplace explicitement.
   été tranchée par la fiche Service-Public F19459 : « à 30 mètres ou plus ». Le mode S’entraîner reste sur les questions
   fictives (non demandé).
 
+## D-016 — Supabase : architecture de sécurité
+
+- **Clés** : l’application n’utilise que l’URL et la clé *publishable*
+  (publiques). Aucune clé secrète dans le code ; une clé secrète placée par
+  erreur dans la variable publique est refusée (mode local).
+- **RLS** sur toutes les tables ; privilèges par défaut de Supabase retirés
+  puis accordés au minimum, parfois colonne par colonne (profil, préférences,
+  abonnement sans identifiants du prestataire).
+- **Écritures sensibles par fonctions** `SECURITY DEFINER` (search_path vide) :
+  réponses de pratique, examens, révisions, relecture. Un client ne peut ni
+  écrire une tentative, ni modifier un score, ni s’attribuer Premium.
+- **Bonnes réponses** dans `question_answers`, illisible par les clients ;
+  renvoyées après réponse (pratique) ou après remise (examen). Une question
+  d’un examen en cours ne peut pas être « testée » en pratique.
+- **Contenus** : seuls les contenus `published` sont visibles ; une question
+  publiée exige une relecture datée et au moins une source.
+- **Audit** : journal en ajout seul (même le serveur ne peut ni modifier ni
+  effacer), anonymisé à la suppression d’un compte.
+- **Liens e-mail** : modèles avec `token_hash` vers `/auth/confirm`,
+  destination limitée à une liste de chemins internes, redirection relative.
+
+## D-017 — Synchronisation entre sessions
+
+- Profil (prénom, objectif, onboarding) et réglages (thème, animations) :
+  stockage local + compte, « dernière modification gagnante » (horodatage
+  serveur vs horodatage local), file d’attente hors ligne, envoi au retour
+  du réseau, mise à jour en temps réel (Supabase Realtime) et au retour sur
+  l’application.
+- Premier rattachement d’un appareil : un compte neuf adopte les données de
+  l’appareil ; un compte déjà utilisé fait foi. Les données locales d’un autre
+  compte ne sont jamais envoyées. La déconnexion retire le profil du compte
+  de l’appareil.
+- Examens : stockés côté serveur, donc communs à toutes les sessions. Les
+  séries d’entraînement (questions fictives) restent locales.
+- **Limite** : l’horloge de l’appareil intervient dans l’arbitrage d’un
+  conflit hors ligne ; un écart d’horloge important peut faire gagner la
+  mauvaise version.
+
+## D-018 — Interprétations du prompt « Comptes et persistance »
+
+- **Simulations** : scènes de simulation 3D (catalogue publié) et parcours
+  de l’utilisateur (scène, caméra) ; l’examen blanc est la table `exams`.
+- **Questions de l’examen blanc** chargées en base au statut `in_review`
+  (non publiques). Connecté, l’examen serveur n’utilise que des questions
+  publiées ; tant qu’il y en a moins de 40, l’application propose l’examen
+  local (questions non relues, badge « Non relues »).
+
+## D-019 — Tests de sécurité de la base
+
+- **Contexte** : Docker n’est pas disponible dans l’environnement de
+  développement, donc pas de pile Supabase locale.
+- **Décision** : PostgreSQL 16 temporaire + reproduction minimale de
+  Supabase (`supabase/tests/supabase-shim.sql` : rôles, `auth.uid()`,
+  privilèges par défaut), migrations réelles, tests Vitest avec `pg`.
+- **Vérification des tests** : deux failles volontairement injectées
+  (brouillons publics, fuite des réponses pendant l’examen) ont bien fait
+  échouer les tests correspondants.
+- **Limite** : Auth, PostgREST et Realtime ne sont pas exécutés ; leur
+  intégration est couverte par des tests unitaires avec client simulé et
+  devra être vérifiée sur le vrai projet.
+
 ## Questions ouvertes
 
 - **Q-01 — Hébergement de prévisualisation** : options gratuites à comparer
@@ -181,5 +242,11 @@ par une nouvelle entrée qui la remplace explicitement.
   en « relue » que sur sa validation explicite.
 - **Q-08 — Chronomètre** : ajouter un temps limité par question une fois la
   durée confirmée par une source officielle ?
+- **Q-09 — Envoi des e-mails** : le service intégré de Supabase suffit aux
+  essais ; un SMTP sera nécessaire pour de vrais utilisateurs (coût à
+  vérifier).
+- **Q-01 devient bloquante pour les comptes** : sans hébergement, les liens
+  de confirmation et la connexion ne peuvent pas être utilisés depuis un
+  iPhone.
 - **Q-06 — Dépôt public ou privé** : un dépôt privé protège le code, mais
   GitHub Actions y est limité à un quota gratuit de minutes.

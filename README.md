@@ -3,7 +3,9 @@
 Application web progressive (PWA) française de préparation au code de la route,
 mobile-first, destinée à être installable sur iPhone, Android et ordinateur.
 
-> **Statut : Phase 1 — Design system et écrans principaux.** Les dix écrans et
+> **Statut : Phase 2 — Comptes et base de données (code prêt, Supabase pas
+> encore configuré : voir [docs/SUPABASE.md](docs/SUPABASE.md)).**
+> Phase 1 — Design system et écrans principaux : terminée. Les dix écrans et
 > la navigation fonctionnent, mais aucune leçon ni question réelle n’est encore
 > disponible : les contenus d’exemple sont signalés « Données fictives ». Pas de
 > compte en ligne : les données restent dans le navigateur. Le lancement public
@@ -27,8 +29,10 @@ mobile-first, destinée à être installable sur iPhone, Android et ordinateur.
 - Vitest + Testing Library (tests unitaires et composants)
 - Playwright (tests de bout en bout, Chromium) + axe-core (audit WCAG)
 
-Supabase, PostgreSQL, Three.js / React Three Fiber et la couche PWA sont
-**prévus mais pas encore installés** (voir la feuille de route).
+- Supabase (Auth, PostgreSQL, RLS, Realtime) — migrations dans `supabase/`
+
+Three.js / React Three Fiber et la couche PWA sont **prévus mais pas encore
+installés** (voir la feuille de route).
 
 ## Commandes
 
@@ -42,6 +46,9 @@ npm run typecheck      # génère les types de routes puis tsc --noEmit
 npm test               # tests unitaires et composants (Vitest)
 npm run build          # build de production
 npm run test:e2e       # tests navigateur (nécessite un build préalable)
+npm run test:db        # tests de sécurité de la base (PostgreSQL requis)
+npm run seed:questions # régénère supabase/seed/questions.sql
+npm run relecture      # régénère docs/RELECTURE.md
 npm run check          # lint + typecheck + tests + build
 ```
 

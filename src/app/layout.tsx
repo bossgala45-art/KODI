@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist } from "next/font/google";
 import { AppearanceWatcher } from "@/components/preferences";
+import { SyncProvider } from "@/components/sync-provider";
 import { themeInitScript } from "@/lib/theme";
 import "./globals.css";
 
@@ -48,6 +49,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Aller au contenu
         </a>
         <AppearanceWatcher />
+        <SyncProvider />
         {children}
       </body>
     </html>

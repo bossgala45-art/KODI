@@ -174,18 +174,22 @@ export function EmptyState({
   title,
   children,
   action,
+  headingLevel = 2,
 }: {
   icon: IconName;
   title: string;
   children?: ReactNode;
   action?: ReactNode;
+  /** h1 lorsque l'écran vide constitue toute la page. */
+  headingLevel?: 1 | 2;
 }) {
+  const Heading = headingLevel === 1 ? "h1" : "h2";
   return (
     <div className="flex flex-col items-center rounded-3xl border border-dashed border-line-strong px-6 py-10 text-center animate-enter">
       <span className="grid size-14 place-items-center rounded-2xl bg-brand-soft text-brand-text">
         <Icon name={icon} size={26} />
       </span>
-      <h2 className="mt-4 text-lg font-bold">{title}</h2>
+      <Heading className="mt-4 text-lg font-bold">{title}</Heading>
       {children && <div className="mt-2 max-w-sm text-sm text-muted">{children}</div>}
       {action && <div className="mt-5">{action}</div>}
     </div>

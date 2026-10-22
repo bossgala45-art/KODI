@@ -117,7 +117,22 @@ test("connexion : erreurs de saisie puis message honnête", async ({ page }) => 
   await page.getByLabel("Adresse e-mail").fill("prenom@domaine.fr");
   await page.getByLabel("Mot de passe", { exact: true }).fill("secret123");
   await page.getByRole("button", { name: "Se connecter" }).click();
-  await expect(page.getByText("Les comptes ne sont pas encore disponibles")).toBeVisible();
+  await expect(page.getByText("Comptes non configurés")).toBeVisible();
+});
+
+test("mode local : un lien de confirmation mène à une explication, sans erreur", async ({ page }) => {
+  await page.goto("/auth/confirm?token_hash=abc&type=email&next=https://pirate.example");
+  await expect(page).toHaveURL("/auth/lien-invalide");
+  await expect(page.getByRole("heading", { name: "Ce lien n’est plus valide" })).toBeVisible();
+});
+
+test("mode local : le profil l’indique et l’oubli de mot de passe ne contacte aucun serveur", async ({ page }) => {
+  await page.goto("/profil");
+  await expect(page.getByText(/Mode local : les comptes en ligne/)).toBeVisible();
+  await page.goto("/mot-de-passe-oublie");
+  await page.getByLabel("Adresse e-mail").fill("prenom@domaine.fr");
+  await page.getByRole("button", { name: "Recevoir un lien" }).click();
+  await expect(page.getByText("Comptes non configurés")).toBeVisible();
 });
 
 test("Premium : le bouton explique que l’offre n’est pas disponible", async ({ page }) => {

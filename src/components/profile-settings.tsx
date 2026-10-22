@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 import { useState, type FormEvent } from "react";
+import { AccountSection } from "@/components/account-section";
 import { Icon } from "@/components/icons";
 import { MotionControl, ThemeControl } from "@/components/preferences";
 import { StorageNotice } from "@/components/storage-notice";
-import { Button, ButtonLink } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { Alert, Card, LoadingBlock, SectionTitle } from "@/components/ui/display";
 import { SegmentedControl, TextField } from "@/components/ui/form";
 import { phases } from "@/content/project";
@@ -153,18 +154,7 @@ export function ProfileSettings() {
 
       <section aria-labelledby="compte">
         <SectionTitle id="compte">Compte</SectionTitle>
-        <Card>
-          <p className="text-sm text-muted">
-            Les comptes en ligne ne sont pas encore disponibles. Ils
-            permettront de synchroniser votre progression entre vos appareils.
-          </p>
-          <div className="mt-4 grid grid-cols-2 gap-3">
-            <ButtonLink href="/connexion" variant="secondary">
-              Connexion
-            </ButtonLink>
-            <ButtonLink href="/inscription">Inscription</ButtonLink>
-          </div>
-        </Card>
+        <AccountSection />
       </section>
 
       <section aria-labelledby="profil-local">

@@ -39,6 +39,7 @@ npm test
 npm run build
 PLAYWRIGHT_CHROMIUM_PATH=/opt/pw-browsers/chromium npm run test:e2e  # cloud Claude Code
 npm run check       # lint + typecheck + test + build
+npm run test:db     # sécurité de la base (PostgreSQL réel + migrations)
 ```
 
 ## Définition de « terminé »
@@ -73,6 +74,14 @@ npm run check       # lint + typecheck + test + build
 - Animations : classes `animate-enter` / `animate-pop` / transitions courtes ;
   elles sont neutralisées automatiquement quand l’utilisateur les réduit.
 - Composants client (`"use client"`) seulement quand c’est nécessaire.
+- Base de données : toute évolution passe par une **nouvelle** migration
+  dans `supabase/migrations/` (jamais de modification d’une migration
+  déployée), avec RLS, privilèges minimaux et tests dans `supabase/tests/`
+  (`npm run test:db` doit passer). Écritures sensibles uniquement par
+  fonctions `SECURITY DEFINER` avec `set search_path = ''`.
+- Supabase : seules `NEXT_PUBLIC_SUPABASE_URL` et
+  `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` sont lues par l’application. Jamais
+  de clé secrète côté client (un test le vérifie).
 - Aucun secret dans le dépôt (il est public). Variables dans `.env.local`
   (ignoré par Git) et dans les réglages des services.
 - Commits en français ou en anglais, messages explicites ; branches par phase.

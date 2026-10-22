@@ -27,7 +27,7 @@ Clôture (22/10/2026) :
   passe à la phase 1 »).
 - Reporté : choix de l’hébergement de prévisualisation (Q-01).
 
-## 🟡 Phase 1 — Design system et écrans principaux
+## ✅ Phase 1 — Design system et écrans principaux
 
 Périmètre défini par le porteur (prompt du 22/10/2026).
 
@@ -57,11 +57,30 @@ au statut « non relues » (D-015).
 Non réalisé dans cette phase (non demandé) : PWA installable (manifest,
 icônes, service worker, hors ligne) et prévisualisation en ligne.
 
-## ⬜ Phase 2 — Comptes et base de données
+## 🟡 Phase 2 — Comptes et base de données
 
-- Projet Supabase (plan gratuit), schéma PostgreSQL versionné en migrations.
-- Authentification, Row Level Security testée, progression locale puis
-  synchronisée.
+Périmètre défini par le porteur (prompt du 22/10/2026).
+
+Livré (code, migrations, tests) :
+- Supabase Auth e-mail + mot de passe : inscription avec confirmation,
+  connexion, renvoi de confirmation, mot de passe oublié et
+  réinitialisation, route `/auth/confirm`, déconnexion.
+- 6 migrations versionnées : profils, préférences, cours, compétences,
+  questions (propositions, réponses cachées), tentatives, examens, révisions,
+  scènes et parcours de simulation, abonnements, journal d’audit, fonctions
+  serveur, temps réel.
+- RLS sur toutes les tables, privilèges minimaux, fonctions SECURITY DEFINER.
+- Examen blanc côté serveur pour les comptes connectés (corrigé après remise).
+- Synchronisation profil et réglages entre sessions (temps réel, file hors
+  ligne, dernière modification gagnante).
+- Gestion des erreurs réseau, mode local si Supabase n’est pas configuré.
+- Tests de sécurité sur PostgreSQL réel (`npm run test:db`), en CI.
+
+Reste à faire (étapes manuelles, voir docs/SUPABASE.md) :
+- [ ] Créer le projet Supabase et régler l’authentification.
+- [ ] Ajouter les secrets GitHub et lancer le déploiement de la base.
+- [ ] Héberger l’application (Q-01) et y définir les variables publiques.
+- [ ] Vérifier manuellement le parcours complet sur iPhone.
 
 ## ⬜ Phase 3 — Modèle de contenu et vérification
 

@@ -56,7 +56,14 @@ npm run check       # lint + typecheck + test + build
 - Logique pure dans `src/lib/` (testée), composants dans `src/components/`,
   données éditoriales dans `src/content/`.
 - Couleurs uniquement via les jetons définis dans `src/app/globals.css`
-  (`bg`, `surface`, `fg`, `muted`, `line`, `brand`, `accent`…).
+  (`bg`, `surface`, `surface-2`, `fg`, `muted`, `line`, `brand`,
+  `brand-strong`, `brand-text`, `success`, `danger`…). Texte coloré :
+  toujours les variantes `-text` (voir DECISIONS.md D-011).
+- Réutiliser les composants de `src/components/ui/` avant d’en créer.
+- Toute donnée d’exemple vit dans `src/content/demo.ts` et s’affiche avec
+  `<DemoBadge />`.
+- Animations : classes `animate-enter` / `animate-pop` / transitions courtes ;
+  elles sont neutralisées automatiquement quand l’utilisateur les réduit.
 - Composants client (`"use client"`) seulement quand c’est nécessaire.
 - Aucun secret dans le dépôt (il est public). Variables dans `.env.local`
   (ignoré par Git) et dans les réglages des services.

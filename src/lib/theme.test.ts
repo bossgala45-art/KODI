@@ -1,16 +1,21 @@
 import { describe, expect, it, vi } from "vitest";
 import {
+  MOTION_STORAGE_KEY,
   THEME_STORAGE_KEY,
+  isMotionPreference,
   isThemePreference,
+  resolveMotion,
   resolveTheme,
   themeInitScript,
 } from "@/lib/theme";
 
-function mockSystemDark(prefersDark: boolean) {
+function mockSystem({ dark = false, reducedMotion = false } = {}) {
   vi.spyOn(window, "matchMedia").mockImplementation(
     (query: string) =>
       ({
-        matches: query === "(prefers-color-scheme: dark)" && prefersDark,
+        matches:
+          (query === "(prefers-color-scheme: dark)" && dark) ||
+          (query === "(prefers-reduced-motion: reduce)" && reducedMotion),
         media: query,
       }) as MediaQueryList,
   );
@@ -43,9 +48,25 @@ describe("resolveTheme", () => {
   });
 });
 
+describe("préférence d’animation", () => {
+  it("accepte uniquement les trois valeurs prévues", () => {
+    expect(isMotionPreference("full")).toBe(true);
+    expect(isMotionPreference("reduce")).toBe(true);
+    expect(isMotionPreference("system")).toBe(true);
+    expect(isMotionPreference("off")).toBe(false);
+  });
+
+  it("respecte un choix explicite et suit le système en mode auto", () => {
+    expect(resolveMotion("full", true)).toBe("full");
+    expect(resolveMotion("reduce", false)).toBe("reduce");
+    expect(resolveMotion("system", true)).toBe("reduce");
+    expect(resolveMotion("system", false)).toBe("full");
+  });
+});
+
 describe("themeInitScript", () => {
   it("applique le thème enregistré", () => {
-    mockSystemDark(true);
+    mockSystem({ dark: true });
     window.localStorage.setItem(THEME_STORAGE_KEY, "light");
     runInitScript();
     expect(document.documentElement.dataset.theme).toBe("light");
@@ -53,16 +74,29 @@ describe("themeInitScript", () => {
   });
 
   it("suit le système sans choix enregistré", () => {
-    mockSystemDark(true);
+    mockSystem({ dark: true });
     runInitScript();
     expect(document.documentElement.dataset.theme).toBe("dark");
   });
 
   it("ignore une valeur enregistrée invalide", () => {
-    mockSystemDark(false);
+    mockSystem();
     window.localStorage.setItem(THEME_STORAGE_KEY, "rose");
     runInitScript();
     expect(document.documentElement.dataset.theme).toBe("light");
+  });
+
+  it("applique la réduction des animations du système en mode auto", () => {
+    mockSystem({ reducedMotion: true });
+    runInitScript();
+    expect(document.documentElement.dataset.motion).toBe("reduce");
+  });
+
+  it("applique le choix d’animation enregistré", () => {
+    mockSystem({ reducedMotion: true });
+    window.localStorage.setItem(MOTION_STORAGE_KEY, "full");
+    runInitScript();
+    expect(document.documentElement.dataset.motion).toBe("full");
   });
 
   it("ne lève pas d’erreur si le stockage est inaccessible", () => {

@@ -25,16 +25,33 @@ Clôture (22/10/2026) :
   jetons de couleur dans les deux thèmes.
 - [x] Validation déléguée par le porteur (« vérifie tout et si c’est bon,
   passe à la phase 1 »).
-- Reporté en Phase 1 : choix de l’hébergement de prévisualisation (Q-01).
+- Reporté : choix de l’hébergement de prévisualisation (Q-01).
 
-## 🟡 Phase 1 — Design system et PWA installable
+## 🟡 Phase 1 — Design system et écrans principaux
 
-- Identité visuelle (logo, palette validée en contraste AA, typographie).
-- Composants de base (bouton, carte, champ, navigation mobile).
-- Manifest, icônes, écran de démarrage iOS, service worker, page hors ligne.
-- Prévisualisation en ligne accessible depuis l’iPhone.
-- Critères : installation vérifiée manuellement sur iPhone (Safari) et Android
-  (Chrome) ; audit Lighthouse PWA/accessibilité sans erreur bloquante.
+Périmètre défini par le porteur (prompt du 22/10/2026).
+
+Livré, en attente de validation :
+- Palette demandée (bleu nuit, bleu principal, vert, rouge, fond clair) en
+  jetons CSS, modes clair / sombre / auto, nuances AA (D-011).
+- Animations fluides et discrètes, désactivables (Activées / Réduites / Auto).
+- Composants réutilisables : bouton, lien-bouton, carte, badge, badge
+  « Données fictives », alerte, barre de progression, squelette de
+  chargement, écran vide, tuile statistique, en-tête de page, champs texte et
+  mot de passe, case à cocher, sélecteur segmenté, icônes.
+- Navigation mobile à cinq onglets (barre latérale sur grand écran).
+- Dix écrans : Accueil, Apprendre, Simuler, S’entraîner, Progression,
+  Connexion, Inscription, Onboarding, Profil et paramètres, Premium.
+- États de chargement, écrans vides, messages d’erreur (formulaires, erreur
+  de page avec « Réessayer », page introuvable, stockage bloqué).
+- Interactions réelles : séries et examen blanc jouables, historique local,
+  statistiques, profil local, onboarding, réglages, réinitialisation.
+- Tests : unitaires et composants (Vitest), bout en bout sur mobile et
+  bureau, audit d’accessibilité axe (WCAG 2.2 A/AA) en clair et sombre,
+  absence de défilement horizontal jusqu’à 320 px.
+
+Non réalisé dans cette phase (non demandé) : PWA installable (manifest,
+icônes, service worker, hors ligne) et prévisualisation en ligne.
 
 ## ⬜ Phase 2 — Comptes et base de données
 

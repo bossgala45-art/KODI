@@ -118,6 +118,18 @@ Adoptés (D-010) :
   ligne du contenu déjà téléchargé.
 - Thèmes clair, sombre et automatique (suit le système). **Disponible depuis
   la Phase 0.**
+- Animations discrètes, désactivables (Activées / Réduites / Auto, qui suit
+  le réglage « réduire les animations » de l’appareil). **Disponible depuis
+  la Phase 1.**
+
+### 4.10 Direction artistique (Phase 1)
+
+- Bleu nuit #101B30, bleu principal #287CFF, vert succès #32C89A, rouge
+  erreur #FF746D, fond clair #F4F7FB ; modes clair et sombre.
+- Interface premium, moderne et légèrement ludique ; animations fluides,
+  discrètes et désactivables.
+- Navigation mobile à cinq onglets : Accueil, Apprendre, Simuler,
+  S’entraîner, Progression. Profil et Premium accessibles depuis l’en-tête.
 
 ## 5. Exigences de qualité
 

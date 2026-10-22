@@ -91,6 +91,51 @@ par une nouvelle entrée qui la remplace explicitement.
 - **Reste [À VÉRIFIER]** : le format exact de l’examen blanc (source
   officielle à identifier, Q-05).
 
+## D-011 — Palette et accessibilité des contrastes
+
+- **Contexte** : couleurs imposées par la direction artistique. Mesures
+  WCAG : texte blanc sur #287CFF = 3,88:1 ; #32C89A et #FF746D comme texte sur
+  fond clair = 1,98:1 et 2,45:1. Le seuil AA pour du texte courant est 4,5:1.
+- **Décision** : les couleurs d’origine restent les couleurs d’identité
+  (icônes, barres, contours, fonds de pastilles, éléments non textuels). Des
+  nuances dérivées ne servent que là où du texte doit rester lisible :
+  `brand-strong` #1F69E0 (fond des boutons principaux, texte blanc 5,0:1),
+  `brand-text` #1C62D6 / #7FB0FF (texte bleu en clair / sombre),
+  `success-text` #1B7A5C / #4FD8AE, `danger-text` #B3443F / #FF8F89. Sur les
+  fonds vert et rouge, le texte est en bleu nuit (8,1:1 et 6,5:1).
+- **Conséquence** : toute nouvelle couleur passe par un jeton de
+  `globals.css` et doit être vérifiée en clair et en sombre.
+
+## D-012 — Données locales et données de démonstration
+
+- **Contexte** : aucun compte ni base de données avant la phase 2, mais les
+  interactions visibles doivent fonctionner.
+- **Décision** : profil, réglages et historique sont enregistrés dans le
+  `localStorage` du navigateur (magasins validés à la lecture, repli en
+  mémoire si le stockage est bloqué). Les contenus d’exemple vivent dans
+  `src/content/demo.ts` ; les questions fictives portent sur l’application
+  elle-même, jamais sur le code de la route, et tout écran qui les affiche
+  porte le badge « Données fictives ». Connexion, inscription et Premium
+  valident la saisie puis indiquent clairement que le service n’existe pas
+  encore ; rien n’est envoyé.
+- **Conséquence** : à la phase 2, ces magasins locaux deviendront la source
+  hors ligne synchronisée avec le compte.
+
+## D-013 — Routes en français et groupes de routes
+
+- **Décision** : URL en français (`/apprendre`, `/simuler`, `/entrainement`,
+  `/progression`, `/profil`, `/premium`, `/connexion`, `/inscription`,
+  `/bienvenue`). Groupe `(tabs)` avec la navigation à onglets, groupe
+  `(focus)` sans onglets pour les parcours ciblés.
+
+## D-014 — Audit d’accessibilité automatisé
+
+- **Décision** : `@axe-core/playwright` (gratuit) dans les tests de bout en
+  bout, règles WCAG 2.0/2.1/2.2 A et AA, sur chaque écran en clair et en
+  sombre. Tout écart fait échouer la CI.
+- **Limite** : un audit automatique ne remplace pas un test avec lecteur
+  d’écran (VoiceOver sur iPhone), à faire manuellement.
+
 ## Questions ouvertes
 
 - **Q-01 — Hébergement de prévisualisation** : options gratuites à comparer

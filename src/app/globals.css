@@ -3,67 +3,172 @@
 /* Le thème sombre suit l'attribut data-theme posé sur <html>. */
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
+/*
+ * Palette KODI (direction artistique) :
+ *   bleu nuit #101B30 · bleu principal #287CFF · vert succès #32C89A
+ *   rouge erreur #FF746D · fond clair #F4F7FB
+ * Les nuances « -strong » et « -text » sont des variantes plus foncées (ou
+ * plus claires en sombre) utilisées uniquement là où la couleur d'origine ne
+ * garantit pas un contraste AA de 4,5:1 pour du texte. Voir DECISIONS.md D-011.
+ */
 :root {
-  --bg: #f6f7fb;
+  --bg: #f4f7fb;
   --surface: #ffffff;
-  --fg: #0f172a;
-  --muted: #475569;
-  --line: #dbe1ea;
-  --brand: #1d4ed8;
-  --brand-soft: #e0e8ff;
+  --surface-2: #eaf0f8;
+  --fg: #101b30;
+  --muted: #4b5a74;
+  --line: #d8e0ec;
+  --line-strong: #76849c;
+  --brand: #287cff;
+  --brand-strong: #1f69e0;
+  --brand-text: #1c62d6;
+  --brand-soft: #e3edff;
   --on-brand: #ffffff;
-  --accent: #b45309;
-  --accent-soft: #fef3c7;
+  --success: #32c89a;
+  --success-text: #1b7a5c;
+  --success-soft: #ddf6ee;
+  --danger: #ff746d;
+  --danger-text: #b3443f;
+  --danger-soft: #ffe7e5;
+  --on-status: #101b30;
+  --night: #101b30;
+  --shadow: 0 1px 2px rgb(16 27 48 / 0.06), 0 8px 24px rgb(16 27 48 / 0.06);
 }
 
-/* Sans JavaScript, on suit la préférence système. */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #0b1120;
-    --surface: #131c31;
-    --fg: #e5eaf3;
-    --muted: #9aa8bd;
-    --line: #26324a;
-    --brand: #7aa2ff;
-    --brand-soft: #1b2a52;
-    --on-brand: #0b1120;
-    --accent: #fbbf24;
-    --accent-soft: #3a2c0b;
+    --bg: #101b30;
+    --surface: #17243d;
+    --surface-2: #1e2e4c;
+    --fg: #f4f7fb;
+    --muted: #a9b6cc;
+    --line: #2a3b5c;
+    --line-strong: #6a7ca0;
+    --brand-text: #7fb0ff;
+    --brand-soft: #1b3360;
+    --success-text: #4fd8ae;
+    --success-soft: #123d37;
+    --danger-text: #ff8f89;
+    --danger-soft: #43212b;
+    --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px rgb(0 0 0 / 0.25);
   }
 }
 
 :root[data-theme="dark"] {
-  --bg: #0b1120;
-  --surface: #131c31;
-  --fg: #e5eaf3;
-  --muted: #9aa8bd;
-  --line: #26324a;
-  --brand: #7aa2ff;
-  --brand-soft: #1b2a52;
-  --on-brand: #0b1120;
-  --accent: #fbbf24;
-  --accent-soft: #3a2c0b;
+  --bg: #101b30;
+  --surface: #17243d;
+  --surface-2: #1e2e4c;
+  --fg: #f4f7fb;
+  --muted: #a9b6cc;
+  --line: #2a3b5c;
+  --line-strong: #6a7ca0;
+  --brand-text: #7fb0ff;
+  --brand-soft: #1b3360;
+  --success-text: #4fd8ae;
+  --success-soft: #123d37;
+  --danger-text: #ff8f89;
+  --danger-soft: #43212b;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px rgb(0 0 0 / 0.25);
 }
 
 @theme inline {
   --color-bg: var(--bg);
   --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
   --color-fg: var(--fg);
   --color-muted: var(--muted);
   --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
   --color-brand: var(--brand);
+  --color-brand-strong: var(--brand-strong);
+  --color-brand-text: var(--brand-text);
   --color-brand-soft: var(--brand-soft);
   --color-on-brand: var(--on-brand);
-  --color-accent: var(--accent);
-  --color-accent-soft: var(--accent-soft);
+  --color-success: var(--success);
+  --color-success-text: var(--success-text);
+  --color-success-soft: var(--success-soft);
+  --color-danger: var(--danger);
+  --color-danger-text: var(--danger-text);
+  --color-danger-soft: var(--danger-soft);
+  --color-on-status: var(--on-status);
+  --color-night: var(--night);
+  --shadow-card: var(--shadow);
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+
+  --animate-enter: kodi-enter 280ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  --animate-pop: kodi-pop 320ms cubic-bezier(0.3, 1.4, 0.5, 1) both;
+  --animate-shimmer: kodi-shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes kodi-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes kodi-pop {
+  0% {
+    transform: scale(0.96);
+  }
+  60% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes kodi-shimmer {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/*
+ * Animations désactivables : data-motion="reduce" (choix utilisateur) ou,
+ * sans choix explicite, la préférence système « réduire les animations ».
+ */
+:root[data-motion="reduce"] *,
+:root[data-motion="reduce"] *::before,
+:root[data-motion="reduce"] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root:not([data-motion="full"]) *,
+  :root:not([data-motion="full"]) *::before,
+  :root:not([data-motion="full"]) *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 html {
   -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
   background: var(--bg);
   color: var(--fg);
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
 }

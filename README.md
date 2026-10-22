@@ -3,10 +3,11 @@
 Application web progressive (PWA) française de préparation au code de la route,
 mobile-first, destinée à être installable sur iPhone, Android et ordinateur.
 
-> **Statut : Phase 0 — Fondations.** Aucune leçon ni question n’est disponible.
-> La seule page existante est une page d’accueil qui présente le projet et son
-> avancement réel. Le lancement public n’aura lieu qu’après validation de la
-> version complète.
+> **Statut : Phase 1 — Design system et écrans principaux.** Les dix écrans et
+> la navigation fonctionnent, mais aucune leçon ni question réelle n’est encore
+> disponible : les contenus d’exemple sont signalés « Données fictives ». Pas de
+> compte en ligne : les données restent dans le navigateur. Le lancement public
+> n’aura lieu qu’après validation de la version complète.
 
 ## Documentation
 
@@ -17,14 +18,14 @@ mobile-first, destinée à être installable sur iPhone, Android et ordinateur.
 | [docs/DECISIONS.md](docs/DECISIONS.md) | Journal des décisions techniques et questions ouvertes |
 | [AGENTS.md](AGENTS.md) | Règles pour les agents IA qui travaillent sur le dépôt |
 
-## Pile technique (Phase 0)
+## Pile technique
 
 - [Next.js](https://nextjs.org) 16.4 (App Router, Cache Components) · React 19
 - TypeScript 5 en mode strict renforcé
 - Tailwind CSS 4
 - ESLint 9 (`eslint-config-next`)
 - Vitest + Testing Library (tests unitaires et composants)
-- Playwright (tests de bout en bout, Chromium)
+- Playwright (tests de bout en bout, Chromium) + axe-core (audit WCAG)
 
 Supabase, PostgreSQL, Three.js / React Three Fiber et la couche PWA sont
 **prévus mais pas encore installés** (voir la feuille de route).
@@ -64,10 +65,15 @@ y compris depuis un iPhone.
 
 ```
 src/
-  app/           routes Next.js (layout, page d’accueil)
-  components/    composants React réutilisables
-  content/       données éditoriales affichées (statut réel du projet)
-  lib/           logique pure et testable
-e2e/             tests Playwright
+  app/
+    (tabs)/      écrans avec navigation à onglets : / (Accueil), apprendre,
+                 simuler, entrainement, progression, profil, premium
+    (focus)/     parcours sans onglets : connexion, inscription, bienvenue
+  components/
+    ui/          design system (boutons, cartes, champs, alertes…)
+  content/       phases du projet et données de démonstration (fictives)
+  lib/           logique pure et testée (quiz, statistiques, validation,
+                 stockage local, thème)
+e2e/             tests Playwright (écrans, parcours, accessibilité)
 docs/            spécification, feuille de route, décisions
 ```

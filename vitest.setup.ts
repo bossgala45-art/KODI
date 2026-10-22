@@ -25,5 +25,6 @@ afterEach(() => {
   cleanup();
   window.localStorage.clear();
   document.documentElement.removeAttribute("data-theme");
+  document.documentElement.removeAttribute("data-motion");
   document.documentElement.style.colorScheme = "";
 });

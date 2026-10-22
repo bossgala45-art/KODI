@@ -1,67 +1,77 @@
+import { createLocalStore } from "@/lib/local-store";
 import {
+  MOTION_STORAGE_KEY,
   THEME_STORAGE_KEY,
+  isMotionPreference,
   isThemePreference,
+  resolveMotion,
   resolveTheme,
+  type MotionPreference,
   type ThemePreference,
 } from "@/lib/theme";
 
 const DARK_QUERY = "(prefers-color-scheme: dark)";
-const listeners = new Set<() => void>();
+const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: reduce)";
 
-function systemPrefersDark(): boolean {
-  return window.matchMedia(DARK_QUERY).matches;
-}
+export const themeStore = createLocalStore<ThemePreference>({
+  key: THEME_STORAGE_KEY,
+  fallback: "system",
+  parse: (raw) => (isThemePreference(raw) ? raw : null),
+  serialize: (value) => value,
+});
 
-export function readThemePreference(): ThemePreference {
-  try {
-    const stored = window.localStorage.getItem(THEME_STORAGE_KEY);
-    return isThemePreference(stored) ? stored : "system";
-  } catch {
-    // Stockage indisponible (navigation privée stricte, etc.).
-    return "system";
-  }
-}
+export const motionStore = createLocalStore<MotionPreference>({
+  key: MOTION_STORAGE_KEY,
+  fallback: "system",
+  parse: (raw) => (isMotionPreference(raw) ? raw : null),
+  serialize: (value) => value,
+});
 
 export function applyTheme(preference: ThemePreference): void {
-  const theme = resolveTheme(preference, systemPrefersDark());
+  const theme = resolveTheme(preference, window.matchMedia(DARK_QUERY).matches);
   const root = document.documentElement;
   root.dataset.theme = theme;
   root.style.colorScheme = theme;
 }
 
-export function setThemePreference(preference: ThemePreference): void {
-  try {
-    if (preference === "system") {
-      window.localStorage.removeItem(THEME_STORAGE_KEY);
-    } else {
-      window.localStorage.setItem(THEME_STORAGE_KEY, preference);
-    }
-  } catch {
-    // Le choix s'applique quand même à la session en cours.
-  }
-  applyTheme(preference);
-  listeners.forEach((listener) => listener());
+export function applyMotion(preference: MotionPreference): void {
+  document.documentElement.dataset.motion = resolveMotion(
+    preference,
+    window.matchMedia(REDUCED_MOTION_QUERY).matches,
+  );
 }
 
-export function subscribeThemePreference(listener: () => void): () => void {
-  listeners.add(listener);
+export function setThemePreference(preference: ThemePreference): void {
+  if (preference === "system") themeStore.reset();
+  else themeStore.set(preference);
+  applyTheme(preference);
+}
 
-  const media = window.matchMedia(DARK_QUERY);
-  const onSystemChange = () => {
-    if (readThemePreference() === "system") applyTheme("system");
-  };
-  const onStorage = (event: StorageEvent) => {
-    if (event.key !== THEME_STORAGE_KEY) return;
-    applyTheme(readThemePreference());
-    listener();
-  };
+export function setMotionPreference(preference: MotionPreference): void {
+  if (preference === "system") motionStore.reset();
+  else motionStore.set(preference);
+  applyMotion(preference);
+}
 
-  media.addEventListener("change", onSystemChange);
-  window.addEventListener("storage", onStorage);
+/**
+ * Garde <html> synchronisé avec les préférences : changement côté système
+ * (mode « Auto ») ou modification dans un autre onglet.
+ */
+export function watchAppearance(): () => void {
+  const dark = window.matchMedia(DARK_QUERY);
+  const motion = window.matchMedia(REDUCED_MOTION_QUERY);
+  const syncTheme = () => applyTheme(themeStore.get());
+  const syncMotion = () => applyMotion(motionStore.get());
+
+  dark.addEventListener("change", syncTheme);
+  motion.addEventListener("change", syncMotion);
+  const offTheme = themeStore.subscribe(syncTheme);
+  const offMotion = motionStore.subscribe(syncMotion);
 
   return () => {
-    listeners.delete(listener);
-    media.removeEventListener("change", onSystemChange);
-    window.removeEventListener("storage", onStorage);
+    dark.removeEventListener("change", syncTheme);
+    motion.removeEventListener("change", syncMotion);
+    offTheme();
+    offMotion();
   };
 }

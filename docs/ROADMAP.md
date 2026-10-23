@@ -82,16 +82,43 @@ Reste à faire (étapes manuelles, voir docs/SUPABASE.md) :
 - [ ] Héberger l’application (Q-01) et y définir les variables publiques.
 - [ ] Vérifier manuellement le parcours complet sur iPhone.
 
-## ⬜ Phase 3 — Modèle de contenu et vérification
+## 🟡 Phase 3 — Moteur pédagogique et contenus
 
-- Identification et citation des sources officielles.
-- Validation du découpage en 10 univers / 72 leçons.
-- Schéma des questions, cycle de vie, outil de relecture, contrôles
-  automatiques (source présente, relecteur différent de l’auteur, etc.).
+Périmètre défini par le porteur (prompt « moteur pédagogique »). Il reprend
+le modèle de contenu prévu ici et une partie des phases 4 et 6.
+
+Livré, en attente de validation :
+- 10 univers issus des thèmes officiels de l’examen (D-020), 72 leçons
+  prévues (répartition provisoire, Q-11), 20 compétences.
+- Leçons en blocs : texte, image, vidéo (ou « à produire » avec
+  transcription), simulation (scène à venir en phase 7).
+- Questions à réponse unique ou multiple, explications, sources
+  réglementaires consultées, compétences associées.
+- Moteur sans IA (D-021) : correction tout ou rien avec détail, historique
+  des réponses, maîtrise estimée par compétence, révisions espacées
+  adaptatives, carnet d’erreurs, programme quotidien personnalisé.
+- Système d’import (D-022, docs/CONTENU.md) : statuts brouillon, à vérifier,
+  validé, retiré ; transitions contrôlées ; catalogue et import SQL générés.
+- Migration `pedagogy` : leçons, compétences des leçons et des questions,
+  révisions adaptatives identiques au TypeScript, examen limité aux
+  questions prévues pour lui et jamais aux démonstrations.
+- Écrans : univers, leçon, révisions (programme du jour, carnet d’erreurs),
+  maîtrise dans Progression, programme du jour sur l’accueil.
+- Exemples de démonstration clairement marqués non validés (D-023) ; aucune
+  question ajoutée pour remplir la base.
+- Tests unitaires du calcul de maîtrise, des révisions et de la correction
+  des réponses multiples ; tests de l’import ; parité SQL/TypeScript ;
+  parcours de bout en bout.
+
+Reste à faire :
+- [ ] Validation de la phase par le porteur.
+- [ ] Relecture des contenus (aucun n’est validé à ce jour).
+- [ ] Rédaction progressive des leçons (2 sur 72, de démonstration).
 
 ## ⬜ Phase 4 — Leçons et entraînement
 
-- Lecteur de leçons, entraînement libre, premières questions publiées.
+- Lecteur de leçons et entraînement par leçon : livrés en phase 3.
+- Reste : entraînement libre par univers, premières questions publiées.
 
 ## ⬜ Phase 5 — Modes d’examen
 
@@ -99,7 +126,9 @@ Reste à faire (étapes manuelles, voir docs/SUPABASE.md) :
 
 ## ⬜ Phase 6 — Moteur adaptatif
 
-- Répétition espacée, maîtrise par leçon, tests unitaires exhaustifs.
+- Répétition espacée et maîtrise par compétence : livrées en phase 3.
+- Reste : synchronisation de l’historique des réponses avec le compte,
+  ajustement des paramètres sur des données réelles.
 
 ## ⬜ Phase 7 — Scènes 3D
 

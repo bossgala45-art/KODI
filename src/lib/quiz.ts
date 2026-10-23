@@ -17,6 +17,8 @@ export interface QuizQuestion {
   explanation: string;
   /** Sources justifiant la réponse (absentes pour les questions fictives). */
   sources?: readonly SourceLink[];
+  /** Compétences évaluées : la réponse alimente alors le moteur pédagogique. */
+  competenceIds?: readonly string[];
 }
 
 export interface QuizState {

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { DailyGoalCard, Greeting, OnboardingPrompt, Shortcuts } from "@/components/home-dashboard";
+import { DailyProgramCard } from "@/components/learning";
 import { Icon } from "@/components/icons";
 import { Alert, SectionTitle } from "@/components/ui/display";
 
@@ -12,13 +13,14 @@ export default function HomePage() {
       </header>
 
       <Alert tone="info" role="note" title="Version de développement">
-        Les leçons ne sont pas encore disponibles. Les contenus d’exemple
-        portent le badge « Données fictives » ; les questions de l’examen
-        blanc, pas encore relues par un professionnel, portent le badge
-        « Non relues ».
+        Les leçons sont en cours de rédaction : celles qui existent sont des
+        démonstrations, marquées « Démonstration · non validé ». Les
+        questions, pas encore relues par une personne compétente, portent le
+        badge « À vérifier » ou « Non relues ».
       </Alert>
 
       <OnboardingPrompt />
+      <DailyProgramCard />
       <DailyGoalCard />
 
       <section aria-labelledby="raccourcis">

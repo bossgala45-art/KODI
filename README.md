@@ -18,6 +18,7 @@ mobile-first, destinée à être installable sur iPhone, Android et ordinateur.
 | [docs/SPECIFICATION.md](docs/SPECIFICATION.md) | Ce que KODI doit faire, contraintes de contenu et de qualité |
 | [docs/ROADMAP.md](docs/ROADMAP.md) | Phases, livrables et critères de validation |
 | [docs/DECISIONS.md](docs/DECISIONS.md) | Journal des décisions techniques et questions ouvertes |
+| [docs/CONTENU.md](docs/CONTENU.md) | Écrire, importer et valider les contenus pédagogiques |
 | [AGENTS.md](AGENTS.md) | Règles pour les agents IA qui travaillent sur le dépôt |
 
 ## Pile technique
@@ -78,9 +79,10 @@ src/
     (focus)/     parcours sans onglets : connexion, inscription, bienvenue
   components/
     ui/          design system (boutons, cartes, champs, alertes…)
-  content/       phases du projet et données de démonstration (fictives)
-  lib/           logique pure et testée (quiz, statistiques, validation,
-                 stockage local, thème)
+  content/       catalogue généré, sources, phases du projet, démonstration
+  lib/           logique pure et testée (moteur pédagogique, contenus, quiz,
+                 statistiques, validation, stockage local, thème)
+content/         univers, compétences, leçons et questions (JSON, statuts)
 e2e/             tests Playwright (écrans, parcours, accessibilité)
 docs/            spécification, feuille de route, décisions
 ```

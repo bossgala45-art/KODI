@@ -17,6 +17,7 @@ export const TABS: readonly NavItem[] = [
 
 /** Entrées secondaires (barre latérale sur grand écran). */
 export const SECONDARY_NAV: readonly NavItem[] = [
+  { href: "/revisions", label: "Révisions", icon: "calendar" },
   { href: "/premium", label: "Premium", icon: "crown" },
   { href: "/profil", label: "Profil et paramètres", icon: "user" },
 ];

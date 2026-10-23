@@ -5,6 +5,7 @@ import { Icon, type IconName } from "@/components/icons";
 import { ButtonLink } from "@/components/ui/button";
 import { Card, ProgressBar, Skeleton } from "@/components/ui/display";
 import { computeStats, historyStore } from "@/lib/history";
+import { answeredOn, answerHistoryStore } from "@/lib/pedagogy/history";
 import { profileStore } from "@/lib/profile";
 import { useHydrated, useStore } from "@/lib/use-store";
 
@@ -46,6 +47,7 @@ export function OnboardingPrompt() {
 export function DailyGoalCard() {
   const hydrated = useHydrated();
   const history = useStore(historyStore);
+  const answers = useStore(answerHistoryStore);
   const profile = useStore(profileStore);
 
   if (!hydrated) {
@@ -57,8 +59,15 @@ export function DailyGoalCard() {
     );
   }
 
-  const stats = computeStats(history, new Date());
-  const ratio = Math.min(1, stats.questionsToday / profile.dailyGoal);
+  const now = new Date();
+  const stats = computeStats(history, now);
+  // Séries et examens sont comptés par session ; leçons et révisions, réponse par réponse.
+  const outsideSessions = answeredOn(
+    answers.filter((a) => a.context === "lesson" || a.context === "review"),
+    now,
+  );
+  const questionsToday = stats.questionsToday + outsideSessions;
+  const ratio = Math.min(1, questionsToday / profile.dailyGoal);
 
   return (
     <Card className="animate-enter">
@@ -66,7 +75,7 @@ export function DailyGoalCard() {
         <div>
           <h2 className="font-bold">Objectif du jour</h2>
           <p className="mt-1 text-sm text-muted">
-            {stats.questionsToday} / {profile.dailyGoal} questions
+            {questionsToday} / {profile.dailyGoal} questions
           </p>
         </div>
         <span className="flex items-center gap-1 rounded-full bg-surface-2 px-3 py-1 text-sm font-semibold">
@@ -77,7 +86,7 @@ export function DailyGoalCard() {
       </div>
       <ProgressBar value={ratio} tone="success" label="Objectif du jour" className="mt-4" />
       <div className="mt-3 flex items-center justify-between gap-3">
-        <p className="text-xs text-muted">Compté sur vos séries et examens blancs.</p>
+        <p className="text-xs text-muted">Compté sur vos séries, examens blancs, leçons et révisions.</p>
       </div>
     </Card>
   );

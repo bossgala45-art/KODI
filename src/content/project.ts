@@ -15,7 +15,7 @@ export const phases: readonly Phase[] = [
   { id: 0, title: "Fondations du projet", status: "done" },
   { id: 1, title: "Design system et écrans principaux", status: "done" },
   { id: 2, title: "Comptes et base de données", status: "in-progress" },
-  { id: 3, title: "Modèle de contenu et vérification", status: "todo" },
+  { id: 3, title: "Moteur pédagogique et contenus", status: "in-progress" },
   { id: 4, title: "Leçons et entraînement", status: "todo" },
   { id: 5, title: "Modes d’examen", status: "todo" },
   { id: 6, title: "Moteur adaptatif", status: "todo" },

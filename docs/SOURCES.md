@@ -14,6 +14,12 @@ interface (Chromium), puis leur texte a été relevé.
 | --- | --- |
 | [Service-Public.gouv.fr — Comment passer le code (F33694)](https://www.service-public.gouv.fr/particuliers/vosdroits/F33694) (page « Vérifié le 27 avril 2026 ») | « Vous devez répondre à 40 questions à choix multiples. » ; « Pour réussir le code, vous devez avoir 35 réponses justes ou plus. » |
 
+## Thèmes de l’examen
+
+| Source | Ce qui en est tiré |
+| --- | --- |
+| [Sécurité routière — Objectifs et réglementation de l’examen du code](https://www.securite-routiere.gouv.fr/passer-son-permis-de-conduire/preparation-de-lexamen-du-code-de-la-route/objectifs-et) (consultée le 22/10/2026, relue le 23/10/2026) | « Les onze thèmes référencés sont : » suivi de dix thèmes : Arrêt et stationnement ; Croisement et dépassement ; Économie et écoconduite ; Règles de priorités ; Règles de circulation ; Signalisation ; Tunnels et passages à niveau ; Visibilité et éclairage ; Usagers, partage de l’espace public ; Prise de conscience des risques. Base des 10 univers (D-020). |
+
 ## Triangle et gilet
 
 | Source | Ce qui en est tiré |
@@ -21,8 +27,8 @@ interface (Chromium), puis leur texte a été relevé.
 | [Service-Public.gouv.fr — Équipements obligatoires en voiture (F19459)](https://www.service-public.gouv.fr/particuliers/vosdroits/F19459) (page « Vérifié le 11 juin 2026 » ; textes cités : code de la route R416-17 à R416-20, arrêté du 30 septembre 2008) | « Vous devez placer le triangle à 30 mètres ou plus de votre voiture pour la signaler aux autres conducteurs, et allumer vos feux de détresse. » ; usage « lorsque l’immobilisation de votre voiture est un danger pour la circulation » (intersections, virages, sommets de côtes, passages à niveau, visibilité insuffisante) ; « Vous n’êtes pas obligé de mettre en place le triangle si vous estimez que cela peut mettre votre vie en danger. » ; gilet à revêtir « si vous êtes amené à quitter votre véhicule immobilisé sur la chaussée ou ses abords », rangé « à portée de main ». |
 
 Non confirmé par une source officielle consultée : temps de réponse par
-question, durée totale, présence systématique de photos ou vidéos, liste
-officielle des thèmes.
+question, durée totale, présence systématique de photos ou vidéos, onzième
+thème annoncé par la page des thèmes.
 
 ## Règles utilisées pour les questions (securite-routiere.gouv.fr)
 

@@ -221,6 +221,76 @@ par une nouvelle entrée qui la remplace explicitement.
   intégration est couverte par des tests unitaires avec client simulé et
   devra être vérifiée sur le vrai projet.
 
+## D-020 — Dix univers tirés des thèmes officiels de l’examen
+
+- **Source** : page de la Sécurité routière « Objectifs et réglementation de
+  l’examen du code » (consultée le 22/10/2026, relue le 23/10/2026).
+- **Constat** : la page annonce « Onze thèmes à connaître » mais n’en liste
+  que dix : arrêt et stationnement ; croisement et dépassement ; économie et
+  écoconduite ; règles de priorités ; règles de circulation ; signalisation ;
+  tunnels et passages à niveau ; visibilité et éclairage ; usagers, partage
+  de l’espace public ; prise de conscience des risques.
+- **Décision** : ces dix thèmes deviennent les dix univers (`content/univers.json`),
+  au statut « à vérifier ». Le onzième thème annoncé n’est pas identifié
+  (Q-10) ; il n’est rien inventé pour le combler.
+- **Répartition des 72 leçons** : provisoire (6, 7, 4, 8, 10, 9, 5, 6, 8, 9),
+  proportionnée à l’étendue estimée de chaque thème. À valider par le
+  porteur ; l’import vérifie le total de 72.
+
+## D-021 — Moteur pédagogique sans IA générative
+
+- **Correction** : tout ou rien, comme l’examen blanc ; le détail (oublis,
+  cochées à tort) sert à l’explication (`src/lib/pedagogy/grading.ts`).
+- **Historique des réponses** : source unique de vérité (stockage local
+  `kodi-answers`, 5 000 réponses au plus). Maîtrise, révisions et carnet
+  d’erreurs en sont recalculés, donc toujours cohérents.
+- **Maîtrise par compétence** : moyenne bayésienne, a priori 50 %, chaque
+  réponse perdant la moitié de son poids en 30 jours ; confiance
+  Σpoids / (Σpoids + 5) ; « non évaluée » sous 3 réponses, « maîtrisée » à
+  80 % et confiance ≥ 0,5, « fragile » sous 50 %.
+- **Révisions espacées** : variante de SM-2 en entiers (facilité ×100,
+  intervalle en dixièmes de jour) : 1 jour, 3 jours, puis intervalle ×
+  facilité ; erreur → retour dans 10 minutes. Intervalle réduit à 60 % si la
+  compétence la plus faible de la question est fragile, 85 % si elle est en
+  cours. Seules les réponses antérieures comptent pour la maîtrise utilisée.
+- **Carnet d’erreurs** : une question manquée y reste jusqu’à deux bonnes
+  réponses consécutives.
+- **Programme du jour** : objectif quotidien moins les réponses du jour ;
+  carnet d’erreurs (30 % au plus), puis révisions dues, puis questions
+  nouvelles des compétences les plus faibles ; prochaine leçon non terminée.
+- **Base de données** : le même calcul existe en SQL
+  (`private.record_revision`, `private.competence_mastery`) ; un test
+  compare réponse par réponse les résultats SQL et TypeScript, et a détecté
+  les modifications volontairement injectées.
+
+## D-022 — Contenus versionnés et importés
+
+- **Décision** : contenus en JSON dans `content/`, validés par schéma (zod)
+  et règles d’intégrité, importés par `npm run content:build` vers un
+  catalogue lu par l’application et un import SQL rejouable à identifiants
+  stables (UUID v5). Statuts brouillon, à vérifier, validé, retiré, avec
+  transitions contrôlées par `content/statuts.lock.json` (voir
+  `docs/CONTENU.md`).
+- **Pourquoi** : relecture et historique dans Git, aucun outil
+  d’administration ni service payant à ce stade, contrôles automatiques
+  avant chaque import.
+- **Conséquence** : les fichiers font foi pour les statuts ; la fonction
+  `review_question` de la base reste utilisable en urgence (retrait), mais
+  le prochain import réaligne la base sur les fichiers.
+- **Migration** : la banque de l’examen blanc (68 questions) a été déplacée
+  de `src/content/exam-questions.ts` vers `content/questions/examen-blanc.json`,
+  à l’identique (vérifié champ par champ), et rattachée à des compétences.
+
+## D-023 — Exemples de démonstration
+
+- Deux leçons (priorité à droite, passage à niveau) et trois questions
+  marquées `"demo": true`, au statut brouillon, affichées avec le badge
+  « Démonstration · non validé ». Elles servent à montrer les blocs (texte,
+  image originale, vidéo à produire, simulation à venir) et le moteur. Elles
+  s’appuient sur les pages officielles déjà consultées, mais n’ont pas été
+  relues : elles ne doivent pas servir de référence.
+- Aucune question n’a été créée pour remplir la base.
+
 ## Questions ouvertes
 
 - **Q-01 — Hébergement de prévisualisation** : options gratuites à comparer
@@ -248,5 +318,10 @@ par une nouvelle entrée qui la remplace explicitement.
 - **Q-01 devient bloquante pour les comptes** : sans hébergement, les liens
   de confirmation et la connexion ne peuvent pas être utilisés depuis un
   iPhone.
+- **Q-10 — Onzième thème de l’examen** : la page officielle annonce onze
+  thèmes et en liste dix. Faut-il un onzième univers (et lequel) si une
+  source le précise ? En attendant : 10 univers.
+- **Q-11 — Répartition des 72 leçons** : la répartition provisoire (D-020)
+  est à valider par le porteur.
 - **Q-06 — Dépôt public ou privé** : un dépôt privé protège le code, mais
   GitHub Actions y est limité à un quota gratuit de minutes.

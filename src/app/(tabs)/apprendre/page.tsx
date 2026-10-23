@@ -1,78 +1,53 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { StatusBadge } from "@/components/content-status";
 import { Icon } from "@/components/icons";
-import { ButtonLink } from "@/components/ui/button";
-import { DemoBadge, EmptyState, PageHeader, ProgressBar, SectionTitle } from "@/components/ui/display";
-import { DEMO_UNIVERSES } from "@/content/demo";
-import { formatPercent } from "@/lib/history";
+import { Alert, PageHeader } from "@/components/ui/display";
+import { PLANNED_LESSON_TOTAL, UNIVERSES, lessonsOf } from "@/content/catalog";
 
 export const metadata: Metadata = { title: "Apprendre" };
 
 export default function LearnPage() {
-  const totalLessons = DEMO_UNIVERSES.reduce((sum, u) => sum + u.lessons, 0);
+  const written = UNIVERSES.reduce((sum, u) => sum + lessonsOf(u.id).length, 0);
 
   return (
     <>
       <PageHeader
         title="Apprendre"
-        description="Le programme sera organisé en 10 univers et 72 leçons."
+        description={`10 univers, construits sur les thèmes de l’examen du code, et ${PLANNED_LESSON_TOTAL} leçons prévues.`}
       />
 
-      <EmptyState
-        icon="book"
-        title="Aucune leçon disponible pour le moment"
-        action={
-          <ButtonLink href="/entrainement" variant="secondary">
-            Essayer une série de démonstration
-          </ButtonLink>
-        }
-      >
-        Les leçons sont en cours de préparation. Chacune sera relue et
-        rattachée à une source réglementaire avant d’être publiée.
-      </EmptyState>
+      <Alert tone="info" role="note" title="Programme en cours de rédaction" className="mb-6">
+        {written} leçon{written > 1 ? "s" : ""} sur {PLANNED_LESSON_TOTAL} rédigée{written > 1 ? "s" : ""}, à
+        titre de démonstration et non validée{written > 1 ? "s" : ""}. Chaque leçon sera relue et rattachée à
+        une source réglementaire avant d’être publiée.
+      </Alert>
 
-      <section aria-labelledby="apercu" className="mt-10">
-        <SectionTitle id="apercu" aside={<DemoBadge />}>
-          Aperçu de l’organisation
-        </SectionTitle>
-        <p className="mb-4 text-sm text-muted">
-          Noms, nombres de leçons ({totalLessons} au total) et progression
-          ci-dessous sont des exemples inventés pour illustrer l’interface.
-        </p>
-        <ul className="grid gap-3 sm:grid-cols-2">
-          {DEMO_UNIVERSES.map((universe, i) => (
+      <ul className="grid gap-3 sm:grid-cols-2">
+        {UNIVERSES.map((universe) => {
+          const count = lessonsOf(universe.id).length;
+          return (
             <li key={universe.id}>
-              <details className="group rounded-3xl border border-line bg-surface shadow-card">
-                <summary className="flex cursor-pointer list-none items-center gap-4 rounded-3xl p-4 [&::-webkit-details-marker]:hidden">
-                  <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-brand-soft text-lg font-bold text-brand-text">
-                    {i + 1}
+              <Link
+                href={`/apprendre/${universe.slug}`}
+                className="flex h-full items-center gap-4 rounded-3xl border border-line bg-surface p-4 shadow-card transition-colors hover:border-line-strong"
+              >
+                <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-brand-soft text-lg font-bold text-brand-text">
+                  {universe.position}
+                </span>
+                <span className="min-w-0 flex-1">
+                  <span className="block font-semibold">{universe.title}</span>
+                  <span className="mt-0.5 block text-sm text-muted">
+                    {count} / {universe.plannedLessons} leçons rédigées
                   </span>
-                  <span className="min-w-0 flex-1">
-                    <span className="block font-semibold">{universe.title}</span>
-                    <span className="mt-0.5 block text-sm text-muted">
-                      {universe.lessons} leçons · {formatPercent(universe.progress)}
-                    </span>
-                    <ProgressBar
-                      value={universe.progress}
-                      label={`Progression fictive, ${universe.title}`}
-                      className="mt-2 h-1.5"
-                    />
-                  </span>
-                  <Icon
-                    name="chevron-right"
-                    className="shrink-0 text-muted transition-transform duration-200 group-open:rotate-90"
-                  />
-                </summary>
-                <div className="border-t border-line px-4 pb-4 pt-3 text-sm text-muted">
-                  <p className="flex items-center gap-2">
-                    <Icon name="lock" size={16} />
-                    Contenu non disponible : univers d’exemple.
-                  </p>
-                </div>
-              </details>
+                  <StatusBadge status={universe.status} className="mt-1.5" />
+                </span>
+                <Icon name="chevron-right" className="shrink-0 text-muted" />
+              </Link>
             </li>
-          ))}
-        </ul>
-      </section>
+          );
+        })}
+      </ul>
     </>
   );
 }

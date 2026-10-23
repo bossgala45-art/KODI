@@ -63,14 +63,20 @@ npm run test:db     # sécurité de la base (PostgreSQL réel + migrations)
 - Réutiliser les composants de `src/components/ui/` avant d’en créer.
 - Toute donnée d’exemple vit dans `src/content/demo.ts` et s’affiche avec
   `<DemoBadge />`.
-- Toute question réelle vit dans `src/content/exam-questions.ts`, cite au
-  moins une source de `src/content/sources.ts` réellement consultée, et reste
-  au statut `non-relue` (badge « Non relues ») tant qu’une personne
-  compétente ne l’a pas validée. Ne jamais la présenter comme officielle.
+- Tout contenu pédagogique (univers, compétences, leçons, questions) vit
+  dans `content/` (voir `docs/CONTENU.md`), cite des sources de
+  `src/content/sources.ts` réellement consultées et n’est jamais présenté
+  comme officiel. Après modification : `npm run content:build` puis
+  `npm run relecture` (des tests vérifient que les fichiers générés sont à
+  jour).
+- Statuts : `brouillon`, `a-verifier`, `valide`, `retire`. Ne passer un
+  contenu en `valide` que sur validation explicite du porteur, élément par
+  élément, avec `review.by` et `review.at`. Un contenu de démonstration
+  (`demo: true`) n’est jamais validé.
 - La relecture est faite par le porteur à partir de `docs/RELECTURE.md`.
-  Après toute modification des questions, lancer `npm run relecture`
-  (un test vérifie que le document est à jour). Ne passer une question en
-  `relue` que sur validation explicite du porteur, question par question.
+- Moteur pédagogique : logique pure dans `src/lib/pedagogy/`, sans IA
+  générative ; tout changement d’algorithme doit être reporté dans la
+  migration SQL correspondante (test de parité dans `supabase/tests/`).
 - Animations : classes `animate-enter` / `animate-pop` / transitions courtes ;
   elles sont neutralisées automatiquement quand l’utilisateur les réduit.
 - Composants client (`"use client"`) seulement quand c’est nécessaire.

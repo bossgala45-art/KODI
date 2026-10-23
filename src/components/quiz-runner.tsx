@@ -12,6 +12,9 @@ import {
   historyStore,
   type SessionMode,
 } from "@/lib/history";
+import { validateSelection } from "@/lib/pedagogy/grading";
+import { ANSWER_HISTORY_LIMIT, answerHistoryStore } from "@/lib/pedagogy/history";
+import { createAnswerRecord, type EngineQuestion } from "@/lib/pedagogy/progress";
 import {
   canSubmit,
   createQuiz,
@@ -43,7 +46,7 @@ interface QuizRunnerProps {
   onRestart: () => void;
 }
 
-function SourceList({ sources }: { sources: readonly SourceLink[] }) {
+export function SourceList({ sources }: { sources: readonly SourceLink[] }) {
   return (
     <ul className="mt-2 space-y-1 text-xs">
       {sources.map((source) => (
@@ -100,6 +103,22 @@ export function QuizRunner({
         demo: content === "fictive",
       }),
     );
+    // Les questions rattachées à des compétences alimentent le moteur pédagogique.
+    const now = new Date();
+    const records = state.questions.flatMap((question) => {
+      if (!question.competenceIds?.length || !isSubmitted(state, question.id)) return [];
+      const engineQuestion: EngineQuestion = {
+        id: question.id,
+        kind: question.correct.length > 1 ? "multiple" : "single",
+        choices: question.choices,
+        correct: question.correct,
+        competenceIds: question.competenceIds,
+      };
+      const selected = selectionOf(state, question.id);
+      if (validateSelection(engineQuestion, selected)) return [];
+      return [createAnswerRecord(engineQuestion, selected, mode === "simulation" ? "exam" : "practice", now).record];
+    });
+    if (records.length) answerHistoryStore.set((history) => [...history, ...records].slice(-ANSWER_HISTORY_LIMIT));
   }, [state, mode, content]);
 
   if (state.finished) {

@@ -43,20 +43,26 @@ entraînement adapté à ses faiblesses et des mises en situation visuelles.
 ### 4.1 Univers et leçons
 
 - **10 univers** thématiques, **72 leçons** prévues au total.
-- Le découpage doit correspondre aux thèmes de l’épreuve théorique.
-  **[À VÉRIFIER]** Hypothèse de travail, non vérifiée, à confirmer sur une
-  source officielle avant tout usage : circulation routière ; conducteur ;
-  route ; autres usagers ; notions diverses ; premiers secours ; prendre et
-  quitter son véhicule ; mécanique et équipements ; sécurité du passager et du
-  véhicule ; environnement.
-- La répartition des 72 leçons par univers sera fixée en Phase 3.
+- Le découpage reprend les thèmes listés par la Sécurité routière (page
+  « Objectifs et réglementation de l’examen du code ») : arrêt et
+  stationnement ; croisement et dépassement ; économie et écoconduite ;
+  règles de priorités ; règles de circulation ; signalisation ; tunnels et
+  passages à niveau ; visibilité et éclairage ; usagers, partage de l’espace
+  public ; prise de conscience des risques (D-020). La page annonce onze
+  thèmes mais n’en liste que dix (Q-10).
+- Répartition provisoire des 72 leçons : 6, 7, 4, 8, 10, 9, 5, 6, 8, 9
+  (Q-11). Une leçon est faite de blocs : texte, image, vidéo, simulation.
+- Chaque univers regroupe des compétences ; questions et leçons y sont
+  rattachées.
 
 ### 4.2 Questions
 
 - Objectif : **2 000 questions vérifiées**. Le nombre affiché aux utilisateurs
   ne compte que les questions au statut « publiée ».
-- Cycle de vie d’une question : `brouillon → relue → sourcée → publiée`, avec
-  possibilité de `retirée` (par exemple après une évolution réglementaire).
+- Cycle de vie de tout contenu : `brouillon → à vérifier → validé`, avec
+  possibilité de `retiré` (par exemple après une évolution réglementaire).
+  Seul « validé » est publié (voir docs/CONTENU.md).
+- Questions à réponse unique ou multiple, corrigées en tout ou rien.
 - Chaque question publiée porte : énoncé, propositions, bonne(s) réponse(s),
   explication, source(s) avec date de consultation, auteur, relecteur, date de
   relecture, univers, leçon, difficulté.

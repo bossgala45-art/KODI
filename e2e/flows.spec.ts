@@ -61,7 +61,7 @@ test("l’examen blanc : 40 questions, correction à la fin, seuil de 35", async
 
 test("l’onboarding personnalise l’accueil", async ({ page }) => {
   await page.goto("/");
-  await page.getByRole("link", { name: /Commencer/ }).click();
+  await page.getByRole("link", { name: "Commencer", exact: true }).click();
   await expect(page).toHaveURL("/bienvenue");
   await page.getByRole("button", { name: /Continuer/ }).click();
   await page.getByLabel("Prénom").fill("Lou");
@@ -73,7 +73,7 @@ test("l’onboarding personnalise l’accueil", async ({ page }) => {
   await expect(page).toHaveURL("/");
   await expect(page.getByRole("heading", { level: 1, name: "Bonjour, Lou" })).toBeVisible();
   await expect(page.getByText("0 / 40 questions")).toBeVisible();
-  await expect(page.getByRole("link", { name: /Commencer/ })).toHaveCount(0);
+  await expect(page.getByRole("link", { name: "Commencer", exact: true })).toHaveCount(0);
 });
 
 test("thème et animations se règlent dans le profil et persistent", async ({ page }) => {
@@ -140,4 +140,42 @@ test("Premium : le bouton explique que l’offre n’est pas disponible", async 
   await expect(page.getByText("Données fictives")).toBeVisible();
   await page.getByRole("button", { name: /Passer à Premium/ }).click();
   await expect(page.getByText("Premium n’est pas encore disponible")).toBeVisible();
+});
+
+test("leçon : correction des réponses, carnet d’erreurs, maîtrise et programme du jour", async ({ page }) => {
+  await page.goto("/apprendre");
+  await expect(page.getByRole("link", { name: /Règles de priorités/ })).toBeVisible();
+  await expect(page.locator("main li a[href^='/apprendre/']")).toHaveCount(10);
+  await page.getByRole("link", { name: /Règles de priorités/ }).click();
+  await page.getByRole("link", { name: /Priorité à droite et intersections/ }).click();
+  await expect(page.getByText("Démonstration · non validé").first()).toBeVisible();
+  await expect(page.getByRole("img", { name: /Schéma vu de dessus/ })).toBeVisible();
+
+  await page.getByRole("button", { name: "Commencer les questions" }).click();
+  // Répond toujours la dernière proposition : certaines réponses seront fausses.
+  for (let i = 0; i < 20; i += 1) {
+    await page.locator("main fieldset label").last().click();
+    await page.getByRole("button", { name: "Valider" }).click();
+    await expect(page.getByText(/Bonne réponse !|Ce n’est pas la bonne réponse/)).toBeVisible();
+    const next = page.getByRole("button", { name: /Question suivante|Voir le bilan/ });
+    const last = (await next.textContent())?.includes("bilan");
+    await next.click();
+    if (last) break;
+  }
+  await expect(page.getByRole("heading", { name: "Série terminée" })).toBeVisible();
+
+  await page.goto("/apprendre/regles-priorites");
+  await expect(page.getByText("Terminée")).toBeVisible();
+  await expect(page.getByText(/Maîtrise estimée \d+ %|En cours|Fragile|Maîtrisée/).first()).toBeVisible();
+
+  await page.goto("/revisions");
+  await expect(page.getByRole("heading", { name: "Carnet d’erreurs" })).toBeVisible();
+  const reviews = page.getByRole("button", { name: "Revoir cette question" });
+  expect(await reviews.count()).toBeGreaterThan(0);
+  await page.getByRole("button", { name: "Commencer le programme" }).click();
+  await expect(page.getByText(/Question 1 sur \d+/)).toBeVisible();
+
+  await page.goto("/");
+  await expect(page.getByRole("heading", { name: "Programme du jour" })).toBeVisible();
+  await expect(page.getByText(/du carnet d’erreurs/)).toBeVisible();
 });

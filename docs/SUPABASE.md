@@ -87,8 +87,10 @@ insert into public.staff (user_id, role)
 select id, 'editor' from auth.users where email = 'votre@adresse.fr';
 ```
 
-Les questions que vous validez dans `docs/RELECTURE.md` seront publiées par
-l’agent (fonction `review_question`), avec la trace de la relecture.
+Les contenus que vous validez (par exemple dans `docs/RELECTURE.md`) sont
+passés au statut « validé » dans `content/` par l’agent, avec la trace de la
+relecture, puis publiés en base par l’import `supabase/seed/content.sql`
+(workflow de déploiement). Voir `docs/CONTENU.md`.
 
 ## Ce qui est vérifié automatiquement
 

@@ -4,6 +4,10 @@ import { expect, test, type Page } from "@playwright/test";
 const SCREENS = [
   { path: "/", title: "Bonjour" },
   { path: "/apprendre", title: "Apprendre" },
+  { path: "/apprendre/regles-priorites", title: "Règles de priorités" },
+  { path: "/apprendre/regles-priorites/priorite-a-droite", title: "Priorité à droite et intersections" },
+  { path: "/apprendre/tunnels-passages-niveau/passage-a-niveau", title: "Franchir un passage à niveau" },
+  { path: "/revisions", title: "Révisions" },
   { path: "/simuler", title: "Simuler" },
   { path: "/entrainement", title: "S’entraîner" },
   { path: "/progression", title: "Progression" },

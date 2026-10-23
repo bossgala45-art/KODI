@@ -71,5 +71,47 @@ export function toQuizQuestion(question: ContentQuestion): QuizQuestion {
     correct: question.correct,
     explanation: question.explanation,
     sources: question.sources.map(sourceLink),
+    competenceIds: question.competenceIds,
   };
+}
+
+/** Question prête pour le moteur d'entraînement (sources résolues). */
+export interface PracticeQuestion {
+  id: string;
+  kind: ContentQuestion["kind"];
+  prompt: string;
+  choices: ContentQuestion["choices"];
+  correct: readonly string[];
+  explanation: string;
+  sources: readonly SourceLink[];
+  competenceIds: readonly string[];
+  status: ContentQuestion["status"];
+  demo: boolean;
+}
+
+export function toPracticeQuestion(question: ContentQuestion): PracticeQuestion {
+  return {
+    id: question.id,
+    kind: question.kind,
+    prompt: question.prompt,
+    choices: question.choices,
+    correct: question.correct,
+    explanation: question.explanation,
+    sources: question.sources.map(sourceLink),
+    competenceIds: question.competenceIds,
+    status: question.status,
+    demo: question.demo,
+  };
+}
+
+export const PRACTICE_QUESTIONS: readonly PracticeQuestion[] = QUESTIONS.map(toPracticeQuestion);
+
+export function lessonHref(lesson: Lesson): string {
+  const universe = universeById(lesson.universeId);
+  return `/apprendre/${universe?.slug ?? ""}/${lesson.slug}`;
+}
+
+/** Ordre global du programme : univers, puis position dans l'univers. */
+export function lessonOrder(lesson: Lesson): number {
+  return (universeById(lesson.universeId)?.position ?? 99) * 100 + lesson.position;
 }

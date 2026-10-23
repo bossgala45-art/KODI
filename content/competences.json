@@ -1,0 +1,24 @@
+{
+  "competences": [
+    { "id": "c-stationner", "universeId": "u01", "title": "Arrêter et stationner sans danger", "status": "a-verifier" },
+    { "id": "c-croiser", "universeId": "u02", "title": "Croiser les autres usagers en sécurité", "status": "a-verifier" },
+    { "id": "c-depasser", "universeId": "u02", "title": "Dépasser en sécurité", "status": "a-verifier" },
+    { "id": "c-ecoconduite", "universeId": "u03", "title": "Conduire de façon économe", "status": "a-verifier" },
+    { "id": "c-priorite-intersection", "universeId": "u04", "title": "Appliquer les règles de priorité aux intersections", "status": "a-verifier" },
+    { "id": "c-vehicules-prioritaires", "universeId": "u04", "title": "Faciliter le passage des véhicules prioritaires", "status": "a-verifier" },
+    { "id": "c-vitesses", "universeId": "u05", "title": "Respecter les vitesses maximales", "status": "a-verifier" },
+    { "id": "c-autoroute", "universeId": "u05", "title": "Circuler sur autoroute", "status": "a-verifier" },
+    { "id": "c-marquages", "universeId": "u06", "title": "Lire le marquage au sol", "status": "a-verifier" },
+    { "id": "c-passages-niveau", "universeId": "u07", "title": "Franchir un passage à niveau", "status": "a-verifier" },
+    { "id": "c-tunnels", "universeId": "u07", "title": "Circuler dans un tunnel", "status": "a-verifier" },
+    { "id": "c-feux", "universeId": "u08", "title": "Utiliser les feux du véhicule", "status": "a-verifier" },
+    { "id": "c-meteo", "universeId": "u08", "title": "Adapter sa conduite à la météo", "status": "a-verifier" },
+    { "id": "c-usagers-vulnerables", "universeId": "u09", "title": "Protéger piétons et cyclistes", "status": "a-verifier" },
+    { "id": "c-zones-apaisees", "universeId": "u09", "title": "Circuler en zone de rencontre et aire piétonne", "status": "a-verifier" },
+    { "id": "c-alcool-stupefiants", "universeId": "u10", "title": "Alcool, stupéfiants et conduite", "status": "a-verifier" },
+    { "id": "c-distractions", "universeId": "u10", "title": "Éviter les distractions au volant", "status": "a-verifier" },
+    { "id": "c-equipements-securite", "universeId": "u10", "title": "Utiliser les équipements de sécurité", "status": "a-verifier" },
+    { "id": "c-panne", "universeId": "u10", "title": "Réagir à une panne", "status": "a-verifier" },
+    { "id": "c-accident-secours", "universeId": "u10", "title": "Réagir à un accident : protéger, alerter, secourir", "status": "a-verifier" }
+  ]
+}

@@ -28,8 +28,8 @@ async function seed(connectionString: string): Promise<void> {
       const reviewed = status === "published";
       const [q] = (
         await client.query(
-          `insert into public.questions (external_ref, prompt, explanation, sources, status, reviewed_at)
-           values ($1, $2, 'Explication de test', $3, $4, $5) returning id`,
+          `insert into public.questions (external_ref, prompt, explanation, sources, status, reviewed_at, exam_eligible)
+           values ($1, $2, 'Explication de test', $3, $4, $5, true) returning id`,
           [
             ref,
             `Question de test ${ref} ?`,

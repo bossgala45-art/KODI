@@ -2,7 +2,7 @@ name: Base Supabase — déployer
 
 # Lancement manuel uniquement : GitHub > Actions > « Base Supabase — déployer »
 # > Run workflow. Applique les migrations (supabase/migrations) puis charge les
-# questions en relecture (supabase/seed/questions.sql) sur le projet Supabase.
+# contenus pédagogiques (supabase/seed/content.sql) sur le projet Supabase.
 #
 # Secrets à créer (Settings > Secrets and variables > Actions) :
 #   SUPABASE_ACCESS_TOKEN  jeton personnel Supabase (Account > Access Tokens)

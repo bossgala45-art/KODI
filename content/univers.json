@@ -1,0 +1,14 @@
+{
+  "universes": [
+    { "id": "u01", "slug": "arret-stationnement", "title": "Arrêt et stationnement", "position": 1, "plannedLessons": 6, "status": "a-verifier", "sources": ["themesExamen"] },
+    { "id": "u02", "slug": "croisement-depassement", "title": "Croisement et dépassement", "position": 2, "plannedLessons": 7, "status": "a-verifier", "sources": ["themesExamen"] },
+    { "id": "u03", "slug": "economie-ecoconduite", "title": "Économie et écoconduite", "position": 3, "plannedLessons": 4, "status": "a-verifier", "sources": ["themesExamen"] },
+    { "id": "u04", "slug": "regles-priorites", "title": "Règles de priorités", "position": 4, "plannedLessons": 8, "status": "a-verifier", "sources": ["themesExamen"] },
+    { "id": "u05", "slug": "regles-circulation", "title": "Règles de circulation", "position": 5, "plannedLessons": 10, "status": "a-verifier", "sources": ["themesExamen"] },
+    { "id": "u06", "slug": "signalisation", "title": "Signalisation", "position": 6, "plannedLessons": 9, "status": "a-verifier", "sources": ["themesExamen"] },
+    { "id": "u07", "slug": "tunnels-passages-niveau", "title": "Tunnels et passages à niveau", "position": 7, "plannedLessons": 5, "status": "a-verifier", "sources": ["themesExamen"] },
+    { "id": "u08", "slug": "visibilite-eclairage", "title": "Visibilité et éclairage", "position": 8, "plannedLessons": 6, "status": "a-verifier", "sources": ["themesExamen"] },
+    { "id": "u09", "slug": "usagers-espace-public", "title": "Usagers, partage de l’espace public", "position": 9, "plannedLessons": 8, "status": "a-verifier", "sources": ["themesExamen"] },
+    { "id": "u10", "slug": "prise-conscience-risques", "title": "Prise de conscience des risques", "position": 10, "plannedLessons": 9, "status": "a-verifier", "sources": ["themesExamen"] }
+  ]
+}

@@ -1,15 +1,18 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { afterAll, beforeAll, describe, expect, inject, it } from "vitest";
-import { EXAM_QUESTIONS } from "../../src/content/exam-questions";
+import { CATALOG } from "../../src/content/catalog";
 import { TestDb } from "./helpers/session";
 
 let db: TestDb;
 let reader: string;
-const seedSql = readFileSync(join(__dirname, "..", "seed", "questions.sql"), "utf8")
+const seedSql = readFileSync(join(__dirname, "..", "seed", "content.sql"), "utf8")
   // La transaction est gérée par le test (annulée à la fin).
   .replace(/^begin;$/m, "")
   .replace(/^commit;$/m, "");
+
+const demoQuestions = CATALOG.questions.filter((q) => q.demo);
+const examQuestions = CATALOG.questions.filter((q) => q.examEligible);
 
 beforeAll(async () => {
   db = new TestDb(inject("databaseUrl"));
@@ -17,50 +20,100 @@ beforeAll(async () => {
 });
 afterAll(() => db.close());
 
-describe("chargement des questions de l’examen blanc", () => {
-  it("le fichier généré contient toutes les questions (sinon « npm run seed:questions »)", () => {
-    for (const question of EXAM_QUESTIONS) {
-      expect(seedSql).toContain(`'${question.id}'`);
+describe("import du catalogue pédagogique (supabase/seed/content.sql)", () => {
+  it("contient tout le catalogue (sinon « npm run content:build »)", () => {
+    for (const item of [...CATALOG.universes, ...CATALOG.competences, ...CATALOG.lessons, ...CATALOG.questions]) {
+      expect(seedSql, item.id).toContain(`'${item.id}'`);
     }
   });
 
-  it("charge les questions en relecture, invisibles pour les utilisateurs, et se rejoue sans doublon", async () => {
+  it("charge 10 univers, les compétences, leçons et questions, et se rejoue sans doublon", async () => {
     await db.adminRollback(async (q) => {
       await q(seedSql);
       await q(seedSql);
-      const [row] = await q<{ total: number; in_review: number; with_answers: number }>(`
-        select count(*)::int as total,
-               count(*) filter (where status = 'in_review')::int as in_review,
-               count(*) filter (where answer_count > 0)::int as with_answers
-        from public.questions where external_ref like 'ex-%'`);
+      const [row] = await q<Record<string, number>>(`
+        select (select count(*)::int from public.courses where external_ref is not null) as universes,
+               (select sum(planned_lessons)::int from public.courses where external_ref is not null) as planned,
+               (select count(*)::int from public.competences where external_ref is not null) as competences,
+               (select count(*)::int from public.lessons) as lessons,
+               (select count(*)::int from public.questions where external_ref like 'ex-%' or external_ref like 'q-demo-%') as questions,
+               (select count(*)::int from public.questions where is_demo) as demo,
+               (select count(*)::int from public.questions where exam_eligible and (external_ref like 'ex-%' or external_ref like 'q-demo-%')) as exam,
+               (select count(*)::int from public.questions where answer_count > 0 and external_ref like 'ex-%') as with_answers`);
       expect(row).toEqual({
-        total: EXAM_QUESTIONS.length,
-        in_review: EXAM_QUESTIONS.length,
-        with_answers: EXAM_QUESTIONS.length,
+        universes: 10,
+        planned: 72,
+        competences: CATALOG.competences.length,
+        lessons: CATALOG.lessons.length,
+        questions: CATALOG.questions.length,
+        demo: demoQuestions.length,
+        exam: examQuestions.length,
+        with_answers: examQuestions.length,
       });
-
-      await TestDb.impersonate(q, reader);
-      const visible = await q("select id from public.questions where external_ref like 'ex-%'");
-      expect(visible).toEqual([]);
     });
   });
 
-  it("enregistre les mêmes bonnes réponses que l’application", async () => {
+  it("ne rend visible aucun contenu non validé", async () => {
     await db.adminRollback(async (q) => {
       await q(seedSql);
-      const rows = await q<{ ref: string; positions: number[] }>(`
+      const [statuses] = await q<{ published: number }>(`
+        select (select count(*) from public.questions where status = 'published' and external_ref not like 'pub-%')::int
+             + (select count(*) from public.lessons where status = 'published')::int
+             + (select count(*) from public.courses where status = 'published' and external_ref is not null)::int as published`);
+      expect(statuses?.published).toBe(0);
+
+      await TestDb.impersonate(q, reader);
+      expect(await q("select id from public.questions where external_ref like 'ex-%' or external_ref like 'q-demo-%'")).toEqual([]);
+      expect(await q("select id from public.lessons")).toEqual([]);
+      expect(await q("select id from public.courses where external_ref is not null")).toEqual([]);
+    });
+  });
+
+  it("enregistre les mêmes bonnes réponses et compétences que le catalogue", async () => {
+    await db.adminRollback(async (q) => {
+      await q(seedSql);
+      const answers = await q<{ ref: string; positions: number[] }>(`
         select q.external_ref as ref, array_agg(c.position order by c.position) as positions
         from public.questions q
         join public.question_answers a on a.question_id = q.id
         join public.question_choices c on c.id = a.choice_id
-        where q.external_ref like 'ex-%' group by 1`);
-      const byRef = new Map(rows.map((r) => [r.ref, r.positions]));
-      for (const question of EXAM_QUESTIONS) {
+        where q.external_ref is not null group by 1`);
+      const competences = await q<{ ref: string; ids: string[] }>(`
+        select q.external_ref as ref, array_agg(c.external_ref order by c.external_ref) as ids
+        from public.questions q
+        join public.question_competences qc on qc.question_id = q.id
+        join public.competences c on c.id = qc.competence_id
+        group by 1`);
+      const answersByRef = new Map(answers.map((r) => [r.ref, r.positions]));
+      const competencesByRef = new Map(competences.map((r) => [r.ref, r.ids]));
+      for (const question of CATALOG.questions) {
         const expected = question.choices
           .map((c, i) => (question.correct.includes(c.id) ? i : -1))
           .filter((i) => i >= 0);
-        expect(byRef.get(question.id), question.id).toEqual(expected);
+        expect(answersByRef.get(question.id), question.id).toEqual(expected);
+        expect(competencesByRef.get(question.id), question.id).toEqual([...question.competenceIds].sort());
       }
+    });
+  });
+
+  it("refuse de publier une démonstration ou de la mettre à l’examen", async () => {
+    await db.adminRollback(async (q) => {
+      await q(seedSql);
+      await expect(
+        q("update public.questions set status = 'published', reviewed_at = now() where is_demo"),
+      ).rejects.toThrow(/questions_demo_never_published/);
+    });
+    await db.adminRollback(async (q) => {
+      await q(seedSql);
+      await expect(q("update public.questions set exam_eligible = true where is_demo")).rejects.toThrow(
+        /questions_demo_never_published/,
+      );
+    });
+    await db.adminRollback(async (q) => {
+      await q(seedSql);
+      await expect(
+        q("update public.lessons set status = 'published', reviewed_at = now() where is_demo"),
+      ).rejects.toThrow(/lessons_published_reviewed/);
     });
   });
 });

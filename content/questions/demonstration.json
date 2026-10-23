@@ -1,0 +1,58 @@
+{
+  "questions": [
+    {
+      "id": "q-demo-001",
+      "status": "brouillon",
+      "demo": true,
+      "kind": "multiple",
+      "topic": "Priorités",
+      "prompt": "J’arrive à une intersection où je suis prioritaire. Avant de la franchir, je dois :",
+      "choices": [
+        { "id": "a", "label": "Ralentir en contrôlant mes rétroviseurs" },
+        { "id": "b", "label": "M’assurer que les autres usagers me laissent passer" },
+        { "id": "c", "label": "Accélérer pour dégager plus vite l’intersection" }
+      ],
+      "correct": ["a", "b"],
+      "explanation": "Avoir la priorité n’est pas un droit absolu : il faut ralentir, contrôler ses rétroviseurs et vérifier que les autres laissent passer.",
+      "sources": ["priorites"],
+      "competenceIds": ["c-priorite-intersection"],
+      "lessonId": "l-u04-priorite-a-droite"
+    },
+    {
+      "id": "q-demo-002",
+      "status": "brouillon",
+      "demo": true,
+      "kind": "single",
+      "topic": "Passages à niveau",
+      "prompt": "La distance d’arrêt d’un train peut atteindre environ :",
+      "choices": [
+        { "id": "a", "label": "80 mètres" },
+        { "id": "b", "label": "800 mètres" },
+        { "id": "c", "label": "8 kilomètres" }
+      ],
+      "correct": ["b"],
+      "explanation": "Selon la Sécurité routière, la distance d’arrêt d’un train peut atteindre 800 mètres : il ne peut pas s’arrêter à temps.",
+      "sources": ["passageNiveau"],
+      "competenceIds": ["c-passages-niveau"],
+      "lessonId": "l-u07-passage-a-niveau"
+    },
+    {
+      "id": "q-demo-003",
+      "status": "brouillon",
+      "demo": true,
+      "kind": "multiple",
+      "topic": "Passages à niveau",
+      "prompt": "Un train vient de passer, mais les barrières restent baissées. Je :",
+      "choices": [
+        { "id": "a", "label": "Attends : un autre train arrive probablement" },
+        { "id": "b", "label": "Contourne les barrières si la voie paraît libre" },
+        { "id": "c", "label": "Contacte la gare au numéro indiqué si l’attente se prolonge" }
+      ],
+      "correct": ["a", "c"],
+      "explanation": "Si les barrières restent fermées, un autre train est probablement à l’approche ; sinon, on contacte la gare SNCF au numéro inscrit sur la pancarte ou avec le téléphone du passage à niveau.",
+      "sources": ["passageNiveau"],
+      "competenceIds": ["c-passages-niveau"],
+      "lessonId": "l-u07-passage-a-niveau"
+    }
+  ]
+}

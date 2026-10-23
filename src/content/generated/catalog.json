@@ -1,0 +1,2661 @@
+{
+  "universes": [
+    {
+      "id": "u01",
+      "status": "a-verifier",
+      "slug": "arret-stationnement",
+      "title": "Arrêt et stationnement",
+      "description": "",
+      "position": 1,
+      "plannedLessons": 6,
+      "sources": [
+        "themesExamen"
+      ]
+    },
+    {
+      "id": "u02",
+      "status": "a-verifier",
+      "slug": "croisement-depassement",
+      "title": "Croisement et dépassement",
+      "description": "",
+      "position": 2,
+      "plannedLessons": 7,
+      "sources": [
+        "themesExamen"
+      ]
+    },
+    {
+      "id": "u03",
+      "status": "a-verifier",
+      "slug": "economie-ecoconduite",
+      "title": "Économie et écoconduite",
+      "description": "",
+      "position": 3,
+      "plannedLessons": 4,
+      "sources": [
+        "themesExamen"
+      ]
+    },
+    {
+      "id": "u04",
+      "status": "a-verifier",
+      "slug": "regles-priorites",
+      "title": "Règles de priorités",
+      "description": "",
+      "position": 4,
+      "plannedLessons": 8,
+      "sources": [
+        "themesExamen"
+      ]
+    },
+    {
+      "id": "u05",
+      "status": "a-verifier",
+      "slug": "regles-circulation",
+      "title": "Règles de circulation",
+      "description": "",
+      "position": 5,
+      "plannedLessons": 10,
+      "sources": [
+        "themesExamen"
+      ]
+    },
+    {
+      "id": "u06",
+      "status": "a-verifier",
+      "slug": "signalisation",
+      "title": "Signalisation",
+      "description": "",
+      "position": 6,
+      "plannedLessons": 9,
+      "sources": [
+        "themesExamen"
+      ]
+    },
+    {
+      "id": "u07",
+      "status": "a-verifier",
+      "slug": "tunnels-passages-niveau",
+      "title": "Tunnels et passages à niveau",
+      "description": "",
+      "position": 7,
+      "plannedLessons": 5,
+      "sources": [
+        "themesExamen"
+      ]
+    },
+    {
+      "id": "u08",
+      "status": "a-verifier",
+      "slug": "visibilite-eclairage",
+      "title": "Visibilité et éclairage",
+      "description": "",
+      "position": 8,
+      "plannedLessons": 6,
+      "sources": [
+        "themesExamen"
+      ]
+    },
+    {
+      "id": "u09",
+      "status": "a-verifier",
+      "slug": "usagers-espace-public",
+      "title": "Usagers, partage de l’espace public",
+      "description": "",
+      "position": 9,
+      "plannedLessons": 8,
+      "sources": [
+        "themesExamen"
+      ]
+    },
+    {
+      "id": "u10",
+      "status": "a-verifier",
+      "slug": "prise-conscience-risques",
+      "title": "Prise de conscience des risques",
+      "description": "",
+      "position": 10,
+      "plannedLessons": 9,
+      "sources": [
+        "themesExamen"
+      ]
+    }
+  ],
+  "competences": [
+    {
+      "id": "c-accident-secours",
+      "status": "a-verifier",
+      "universeId": "u10",
+      "title": "Réagir à un accident : protéger, alerter, secourir",
+      "description": ""
+    },
+    {
+      "id": "c-alcool-stupefiants",
+      "status": "a-verifier",
+      "universeId": "u10",
+      "title": "Alcool, stupéfiants et conduite",
+      "description": ""
+    },
+    {
+      "id": "c-autoroute",
+      "status": "a-verifier",
+      "universeId": "u05",
+      "title": "Circuler sur autoroute",
+      "description": ""
+    },
+    {
+      "id": "c-croiser",
+      "status": "a-verifier",
+      "universeId": "u02",
+      "title": "Croiser les autres usagers en sécurité",
+      "description": ""
+    },
+    {
+      "id": "c-depasser",
+      "status": "a-verifier",
+      "universeId": "u02",
+      "title": "Dépasser en sécurité",
+      "description": ""
+    },
+    {
+      "id": "c-distractions",
+      "status": "a-verifier",
+      "universeId": "u10",
+      "title": "Éviter les distractions au volant",
+      "description": ""
+    },
+    {
+      "id": "c-ecoconduite",
+      "status": "a-verifier",
+      "universeId": "u03",
+      "title": "Conduire de façon économe",
+      "description": ""
+    },
+    {
+      "id": "c-equipements-securite",
+      "status": "a-verifier",
+      "universeId": "u10",
+      "title": "Utiliser les équipements de sécurité",
+      "description": ""
+    },
+    {
+      "id": "c-feux",
+      "status": "a-verifier",
+      "universeId": "u08",
+      "title": "Utiliser les feux du véhicule",
+      "description": ""
+    },
+    {
+      "id": "c-marquages",
+      "status": "a-verifier",
+      "universeId": "u06",
+      "title": "Lire le marquage au sol",
+      "description": ""
+    },
+    {
+      "id": "c-meteo",
+      "status": "a-verifier",
+      "universeId": "u08",
+      "title": "Adapter sa conduite à la météo",
+      "description": ""
+    },
+    {
+      "id": "c-panne",
+      "status": "a-verifier",
+      "universeId": "u10",
+      "title": "Réagir à une panne",
+      "description": ""
+    },
+    {
+      "id": "c-passages-niveau",
+      "status": "a-verifier",
+      "universeId": "u07",
+      "title": "Franchir un passage à niveau",
+      "description": ""
+    },
+    {
+      "id": "c-priorite-intersection",
+      "status": "a-verifier",
+      "universeId": "u04",
+      "title": "Appliquer les règles de priorité aux intersections",
+      "description": ""
+    },
+    {
+      "id": "c-stationner",
+      "status": "a-verifier",
+      "universeId": "u01",
+      "title": "Arrêter et stationner sans danger",
+      "description": ""
+    },
+    {
+      "id": "c-tunnels",
+      "status": "a-verifier",
+      "universeId": "u07",
+      "title": "Circuler dans un tunnel",
+      "description": ""
+    },
+    {
+      "id": "c-usagers-vulnerables",
+      "status": "a-verifier",
+      "universeId": "u09",
+      "title": "Protéger piétons et cyclistes",
+      "description": ""
+    },
+    {
+      "id": "c-vehicules-prioritaires",
+      "status": "a-verifier",
+      "universeId": "u04",
+      "title": "Faciliter le passage des véhicules prioritaires",
+      "description": ""
+    },
+    {
+      "id": "c-vitesses",
+      "status": "a-verifier",
+      "universeId": "u05",
+      "title": "Respecter les vitesses maximales",
+      "description": ""
+    },
+    {
+      "id": "c-zones-apaisees",
+      "status": "a-verifier",
+      "universeId": "u09",
+      "title": "Circuler en zone de rencontre et aire piétonne",
+      "description": ""
+    }
+  ],
+  "lessons": [
+    {
+      "id": "l-u04-priorite-a-droite",
+      "status": "brouillon",
+      "universeId": "u04",
+      "slug": "priorite-a-droite",
+      "title": "Priorité à droite et intersections",
+      "summary": "Qui passe en premier quand rien n’est indiqué, et qui l’emporte entre agent, feux et panneaux.",
+      "position": 1,
+      "competenceIds": [
+        "c-priorite-intersection"
+      ],
+      "sources": [
+        "priorites"
+      ],
+      "demo": true,
+      "blocks": [
+        {
+          "type": "text",
+          "title": "La règle de base",
+          "paragraphs": [
+            "Lorsque deux conducteurs abordent une intersection par des routes différentes, celui qui vient par la gauche doit céder le passage à l’autre (article R415-5 du code de la route, cité par la Sécurité routière).",
+            "Sans panneau, sans feu et sans agent, on cède donc le passage aux véhicules qui arrivent par la droite.",
+            "Avoir la priorité n’est pas un droit absolu : on ralentit, on contrôle ses rétroviseurs et on vérifie que les autres usagers nous laissent bien passer."
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/contenus/demo/intersection-priorite-droite.svg",
+          "alt": "Schéma vu de dessus d’une intersection sans signalisation : votre voiture bleue arrive par le bas et s’arrête ; la voiture verte, qui arrive par votre droite, passe en premier.",
+          "caption": "Sans signalisation, le véhicule venant de droite est prioritaire.",
+          "credit": "Schéma original KODI (démonstration)",
+          "width": 400,
+          "height": 300
+        },
+        {
+          "type": "text",
+          "title": "Qui l’emporte ?",
+          "paragraphs": [
+            "Les indications d’un agent de la circulation priment sur les feux et sur les panneaux.",
+            "Les feux priment sur les panneaux. Si le feu ne fonctionne pas, on applique la règle indiquée par le panneau."
+          ]
+        },
+        {
+          "type": "simulation",
+          "sceneSlug": "intersection-sans-signalisation",
+          "camera": "conducteur",
+          "instructions": "Observez l’arrivée des véhicules et repérez celui qui doit céder le passage."
+        }
+      ]
+    },
+    {
+      "id": "l-u07-passage-a-niveau",
+      "status": "brouillon",
+      "universeId": "u07",
+      "slug": "passage-a-niveau",
+      "title": "Franchir un passage à niveau",
+      "summary": "Les bons réflexes à l’approche d’une voie ferrée, et que faire si l’on est bloqué.",
+      "position": 1,
+      "competenceIds": [
+        "c-passages-niveau"
+      ],
+      "sources": [
+        "passageNiveau"
+      ],
+      "demo": true,
+      "blocks": [
+        {
+          "type": "text",
+          "title": "À l’approche",
+          "paragraphs": [
+            "Un passage à niveau est toujours annoncé par un panneau : ralentissez.",
+            "Ne vous engagez que si vous êtes certain de pouvoir dégager rapidement la voie ferrée, et ne vous y arrêtez jamais."
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Feux et barrières",
+          "paragraphs": [
+            "Dès que le feu rouge clignote, arrêtez-vous : le code de la route accorde la priorité absolue aux trains.",
+            "Après le passage d’un train, attendez l’ouverture complète des barrières : un autre train peut arriver.",
+            "La distance d’arrêt d’un train peut atteindre 800 mètres."
+          ]
+        },
+        {
+          "type": "video",
+          "title": "Bien franchir un passage à niveau",
+          "transcript": "Vidéo à produire. Contenu prévu : approche d’un passage à niveau, arrêt dès que le feu rouge clignote, attente de l’ouverture complète des barrières, puis franchissement.",
+          "toProduce": true
+        },
+        {
+          "type": "simulation",
+          "sceneSlug": "passage-a-niveau",
+          "camera": "aerienne",
+          "instructions": "Identifiez le moment exact où vous devez vous arrêter."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "ex-001",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Priorités",
+      "prompt": "J’arrive à une intersection sans panneau, sans feu et sans agent. Un véhicule arrive par la route située à ma droite. Je dois :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Lui céder le passage"
+        },
+        {
+          "id": "b",
+          "label": "Passer en premier"
+        },
+        {
+          "id": "c",
+          "label": "Passer en premier si ma route est plus large"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Sans signalisation, le conducteur venant par la gauche doit céder le passage : c’est la priorité à droite.",
+      "sources": [
+        "priorites"
+      ],
+      "competenceIds": [
+        "c-priorite-intersection"
+      ],
+      "lessonId": "l-u04-priorite-a-droite",
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-002",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Priorités",
+      "prompt": "À une intersection, le feu est vert pour moi, mais un agent de la circulation m’ordonne de m’arrêter. J’obéis :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Au feu"
+        },
+        {
+          "id": "b",
+          "label": "À l’agent"
+        },
+        {
+          "id": "c",
+          "label": "Au panneau placé à l’intersection"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Les indications d’un agent de la circulation priment sur les feux et sur les panneaux.",
+      "sources": [
+        "priorites"
+      ],
+      "competenceIds": [
+        "c-priorite-intersection"
+      ],
+      "lessonId": "l-u04-priorite-a-droite",
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-003",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Priorités",
+      "prompt": "Le feu d’une intersection ne fonctionne pas. Un panneau « Cédez le passage » est placé de mon côté. Je dois :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Appliquer la règle indiquée par le panneau"
+        },
+        {
+          "id": "b",
+          "label": "Passer : le feu étant éteint, je suis prioritaire"
+        },
+        {
+          "id": "c",
+          "label": "Appliquer obligatoirement la priorité à droite"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Les feux priment sur les panneaux ; si le feu ne fonctionne pas, on applique la règle de priorité indiquée par le panneau.",
+      "sources": [
+        "priorites"
+      ],
+      "competenceIds": [
+        "c-priorite-intersection"
+      ],
+      "lessonId": "l-u04-priorite-a-droite",
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-004",
+      "status": "a-verifier",
+      "kind": "multiple",
+      "topic": "Priorités",
+      "prompt": "J’arrive à une intersection marquée d’un panneau « Stop ». Je dois :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Marquer l’arrêt"
+        },
+        {
+          "id": "b",
+          "label": "Laisser passer les véhicules venant de droite et de gauche"
+        },
+        {
+          "id": "c",
+          "label": "Seulement ralentir si la voie paraît libre"
+        }
+      ],
+      "correct": [
+        "a",
+        "b"
+      ],
+      "explanation": "Au « Stop », il faut s’arrêter et laisser passer les conducteurs venant de droite et de gauche avant de s’engager.",
+      "sources": [
+        "priorites"
+      ],
+      "competenceIds": [
+        "c-priorite-intersection"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-005",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Priorités",
+      "prompt": "Je sors d’un parking privé pour m’engager sur la route. Suis-je prioritaire sur les véhicules qui y circulent ?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Oui"
+        },
+        {
+          "id": "b",
+          "label": "Non"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Le conducteur qui débouche d’un accès non ouvert à la circulation publique (parking, chemin de terre, sortie privée) n’est pas prioritaire : il s’engage seulement s’il peut le faire sans danger.",
+      "sources": [
+        "priorites"
+      ],
+      "competenceIds": [
+        "c-priorite-intersection"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-006",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Priorités",
+      "prompt": "Un véhicule de pompiers arrive derrière moi, gyrophare et sirène en marche. Je dois :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Lui faciliter le passage"
+        },
+        {
+          "id": "b",
+          "label": "Continuer normalement, sauf s’il me fait un signe"
+        },
+        {
+          "id": "c",
+          "label": "Accélérer pour rester devant lui"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Les véhicules d’intérêt général prioritaires qui annoncent leur approche par leurs avertisseurs doivent pouvoir passer : il faut leur céder le passage et leur faciliter croisement et dépassement.",
+      "sources": [
+        "priorites"
+      ],
+      "competenceIds": [
+        "c-vehicules-prioritaires"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-007",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Priorités",
+      "prompt": "Un engin de service hivernal circule avec son gyrophare allumé. Il bénéficie de la facilité de passage. Aux intersections, il est :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Prioritaire sur tous les usagers"
+        },
+        {
+          "id": "b",
+          "label": "Soumis aux règles de priorité habituelles"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Il faut faciliter son croisement et son dépassement, mais un véhicule bénéficiant de la facilité de passage n’est pas prioritaire aux intersections.",
+      "sources": [
+        "priorites"
+      ],
+      "competenceIds": [
+        "c-vehicules-prioritaires"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-008",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Priorités",
+      "prompt": "Je veux tourner à gauche à une intersection. Une voiture arrive en face de moi. Je dois :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "La laisser passer"
+        },
+        {
+          "id": "b",
+          "label": "Passer avant elle"
+        },
+        {
+          "id": "c",
+          "label": "Passer avant elle si j’ai mis mon clignotant"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Le conducteur qui tourne à gauche doit céder le passage aux véhicules qui arrivent en face de lui.",
+      "sources": [
+        "priorites"
+      ],
+      "competenceIds": [
+        "c-priorite-intersection"
+      ],
+      "lessonId": "l-u04-priorite-a-droite",
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-009",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Priorités",
+      "prompt": "Le feu est vert, mais l’intersection est encombrée : si je m’engage, je risque d’y rester bloqué. Je m’engage :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Oui, le feu est vert"
+        },
+        {
+          "id": "b",
+          "label": "Non"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "On ne doit s’engager dans une intersection que si son véhicule ne risque pas d’y être immobilisé et d’empêcher le passage des autres.",
+      "sources": [
+        "priorites"
+      ],
+      "competenceIds": [
+        "c-priorite-intersection"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-010",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Priorités",
+      "prompt": "Un piéton attend au bord d’un passage piéton et montre son intention de traverser. Je dois :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Lui céder le passage"
+        },
+        {
+          "id": "b",
+          "label": "Passer : il n’est pas encore engagé"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Il faut céder le passage aux piétons engagés sur un passage piéton ou souhaitant le faire.",
+      "sources": [
+        "priorites"
+      ],
+      "competenceIds": [
+        "c-priorite-intersection",
+        "c-usagers-vulnerables"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-011",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Priorités",
+      "prompt": "Ne pas respecter une règle de priorité (par exemple la priorité à droite) entraîne de plein droit un retrait de :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "2 points"
+        },
+        {
+          "id": "b",
+          "label": "4 points"
+        },
+        {
+          "id": "c",
+          "label": "6 points"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Cette contravention de 4ᵉ classe entraîne de plein droit la réduction de quatre points du permis de conduire.",
+      "sources": [
+        "priorites"
+      ],
+      "competenceIds": [
+        "c-priorite-intersection"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-012",
+      "status": "a-verifier",
+      "kind": "multiple",
+      "topic": "Autoroute",
+      "prompt": "Je rejoins une autoroute par une bretelle puis une voie d’accélération. Je dois :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Accélérer suffisamment pour m’insérer sans gêner"
+        },
+        {
+          "id": "b",
+          "label": "Céder le passage aux véhicules circulant sur l’autoroute"
+        },
+        {
+          "id": "c",
+          "label": "M’arrêter systématiquement au bout de la voie"
+        }
+      ],
+      "correct": [
+        "a",
+        "b"
+      ],
+      "explanation": "Le conducteur qui rejoint l’autoroute doit céder le passage aux véhicules qui y circulent, en accélérant suffisamment pour s’insérer sans gêner.",
+      "sources": [
+        "autoroute",
+        "priorites"
+      ],
+      "competenceIds": [
+        "c-autoroute"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-013",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Croisement et dépassement",
+      "prompt": "Hors agglomération, je croise un cycliste. Je dois laisser une distance latérale d’au moins :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "50 cm"
+        },
+        {
+          "id": "b",
+          "label": "1 m"
+        },
+        {
+          "id": "c",
+          "label": "1,50 m"
+        }
+      ],
+      "correct": [
+        "c"
+      ],
+      "explanation": "Hors agglomération, il faut laisser au moins 1,50 m latéralement avec les deux-roues et les piétons.",
+      "sources": [
+        "depassement"
+      ],
+      "competenceIds": [
+        "c-croiser",
+        "c-usagers-vulnerables"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-014",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Croisement et dépassement",
+      "prompt": "En agglomération, je croise un piéton qui marche au bord de la chaussée. Je dois laisser une distance latérale d’au moins :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "50 cm"
+        },
+        {
+          "id": "b",
+          "label": "1 m"
+        },
+        {
+          "id": "c",
+          "label": "1,50 m"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "En agglomération, la distance minimale est de 1 m avec les deux-roues et les piétons.",
+      "sources": [
+        "depassement"
+      ],
+      "competenceIds": [
+        "c-croiser",
+        "c-usagers-vulnerables"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-015",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Croisement et dépassement",
+      "prompt": "Au milieu de la chaussée, une ligne mixte est continue du côté de la voie d’en face et discontinue de mon côté. La voie est libre et dégagée. Ai-je le droit de dépasser ?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Oui"
+        },
+        {
+          "id": "b",
+          "label": "Non"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Une ligne mixte discontinue de son côté autorise le dépassement, à condition qu’il se fasse sans danger.",
+      "sources": [
+        "depassement"
+      ],
+      "competenceIds": [
+        "c-depasser",
+        "c-marquages"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-016",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Croisement et dépassement",
+      "prompt": "Je m’apprête à dépasser quand j’aperçois une première flèche de rabattement au sol. Je :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Renonce à dépasser"
+        },
+        {
+          "id": "b",
+          "label": "Dépasse rapidement avant la ligne continue"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Les flèches de rabattement annoncent une ligne continue ou la fin d’un créneau de dépassement : il faut renoncer à dépasser dès la première flèche.",
+      "sources": [
+        "depassement"
+      ],
+      "competenceIds": [
+        "c-depasser",
+        "c-marquages"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-017",
+      "status": "a-verifier",
+      "kind": "multiple",
+      "topic": "Croisement et dépassement",
+      "prompt": "Je peux entreprendre un dépassement si :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "J’ai une bonne visibilité vers l’avant"
+        },
+        {
+          "id": "b",
+          "label": "Je suis moi-même sur le point d’être dépassé"
+        },
+        {
+          "id": "c",
+          "label": "Je peux reprendre ma place sans gêner la circulation"
+        }
+      ],
+      "correct": [
+        "a",
+        "c"
+      ],
+      "explanation": "Il faut notamment une bonne visibilité vers l’avant et la possibilité de reprendre sa place sans gêner ; il est interdit de dépasser quand on est soi-même sur le point d’être dépassé.",
+      "sources": [
+        "depassement"
+      ],
+      "competenceIds": [
+        "c-depasser"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-018",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Croisement et dépassement",
+      "prompt": "Je suis sur le point d’être dépassé. Je dois :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Serrer à droite sans accélérer"
+        },
+        {
+          "id": "b",
+          "label": "Accélérer pour ne pas gêner"
+        },
+        {
+          "id": "c",
+          "label": "Freiner fortement"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Le conducteur sur le point d’être dépassé doit serrer immédiatement sur sa droite sans accélérer l’allure.",
+      "sources": [
+        "depassement"
+      ],
+      "competenceIds": [
+        "c-depasser"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-019",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Croisement et dépassement",
+      "prompt": "La voiture devant moi signale qu’elle va tourner à gauche et l’espace à sa droite est suffisant. Je la dépasse :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Par la droite"
+        },
+        {
+          "id": "b",
+          "label": "Par la gauche"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Les dépassements se font par la gauche, sauf exceptions : on dépasse par la droite le conducteur qui signale qu’il change de direction vers la gauche, si l’espace est suffisant.",
+      "sources": [
+        "depassement"
+      ],
+      "competenceIds": [
+        "c-depasser"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-020",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Croisement et dépassement",
+      "prompt": "Sur une route à double sens, j’approche du sommet d’une côte et je ne vois pas assez loin devant moi. Je dépasse la voiture qui me précède :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Oui, si je klaxonne"
+        },
+        {
+          "id": "b",
+          "label": "Non"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Tout dépassement est interdit sur une route à double sens lorsque la visibilité vers l’avant est insuffisante, notamment au sommet d’une côte.",
+      "sources": [
+        "depassement"
+      ],
+      "competenceIds": [
+        "c-depasser"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-021",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Croisement et dépassement",
+      "prompt": "À une intersection, je peux dépasser :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Une voiture"
+        },
+        {
+          "id": "b",
+          "label": "Un véhicule à deux roues"
+        },
+        {
+          "id": "c",
+          "label": "Un camion"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Aux intersections, tout dépassement autre que celui des véhicules à deux roues est interdit.",
+      "sources": [
+        "depassement"
+      ],
+      "competenceIds": [
+        "c-depasser"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-022",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Croisement et dépassement",
+      "prompt": "Un tramway est arrêté et des voyageurs descendent du côté où je voudrais le dépasser. Je peux le dépasser de ce côté :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Oui, au pas"
+        },
+        {
+          "id": "b",
+          "label": "Non"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Il est interdit de dépasser un tramway à l’arrêt du côté où s’effectuent la montée ou la descente des voyageurs.",
+      "sources": [
+        "depassement"
+      ],
+      "competenceIds": [
+        "c-depasser"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-023",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Éclairage et météo",
+      "prompt": "La nuit, hors agglomération, je roule en feux de route et une voiture arrive en face. Je dois :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Passer en feux de croisement"
+        },
+        {
+          "id": "b",
+          "label": "Garder mes feux de route"
+        },
+        {
+          "id": "c",
+          "label": "Allumer mes feux de brouillard"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Au moment de croiser un autre véhicule, il faut utiliser les feux de croisement, suffisamment tôt pour ne pas éblouir.",
+      "sources": [
+        "depassement"
+      ],
+      "competenceIds": [
+        "c-feux"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-024",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Éclairage et météo",
+      "prompt": "La nuit, hors agglomération, je suis une voiture à faible distance sans vouloir la dépasser. J’utilise :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Mes feux de croisement"
+        },
+        {
+          "id": "b",
+          "label": "Mes feux de route"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Quand on suit un autre véhicule à faible distance (hors manœuvre de dépassement), on circule en feux de croisement pour ne pas éblouir.",
+      "sources": [
+        "depassement"
+      ],
+      "competenceIds": [
+        "c-feux"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-025",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Éclairage et météo",
+      "prompt": "Il pleut fortement, sans brouillard ni neige. J’allume mes feux de brouillard arrière :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Oui"
+        },
+        {
+          "id": "b",
+          "label": "Non"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Les feux de brouillard arrière sont très éblouissants : seulement en cas de brouillard ou de chute de neige, jamais sous la pluie.",
+      "sources": [
+        "brouillard"
+      ],
+      "competenceIds": [
+        "c-feux",
+        "c-meteo"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-026",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Éclairage et météo",
+      "prompt": "En entrant dans un tunnel bien éclairé, j’allume :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Mes feux de croisement"
+        },
+        {
+          "id": "b",
+          "label": "Aucun feu : le tunnel est éclairé"
+        },
+        {
+          "id": "c",
+          "label": "Mes feux de brouillard arrière"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "En entrant dans un tunnel, il faut allumer les feux de croisement, même si le tunnel est éclairé.",
+      "sources": [
+        "tunnel"
+      ],
+      "competenceIds": [
+        "c-feux",
+        "c-tunnels"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-027",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Autoroute",
+      "prompt": "Sur autoroute, j’ai manqué ma sortie. J’ai le droit de faire marche arrière sur la bande d’arrêt d’urgence :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Oui, si personne n’arrive"
+        },
+        {
+          "id": "b",
+          "label": "Non"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Sur autoroute, la marche arrière et le demi-tour sont interdits, même par une interruption du terre-plein central.",
+      "sources": [
+        "autoroute"
+      ],
+      "competenceIds": [
+        "c-autoroute"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-028",
+      "status": "a-verifier",
+      "kind": "multiple",
+      "topic": "Autoroute",
+      "prompt": "Parmi ces usagers, lesquels sont interdits sur autoroute ?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Les piétons"
+        },
+        {
+          "id": "b",
+          "label": "Les cyclomoteurs"
+        },
+        {
+          "id": "c",
+          "label": "Les motocyclettes"
+        }
+      ],
+      "correct": [
+        "a",
+        "b"
+      ],
+      "explanation": "L’autoroute est notamment interdite aux piétons, aux animaux, aux véhicules sans moteur et aux cyclomoteurs. Les motocyclettes ne figurent pas dans cette liste.",
+      "sources": [
+        "autoroute"
+      ],
+      "competenceIds": [
+        "c-autoroute"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-029",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Autoroute",
+      "prompt": "Sur autoroute, je peux m’arrêter sur la bande d’arrêt d’urgence :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Pour téléphoner"
+        },
+        {
+          "id": "b",
+          "label": "Uniquement en cas de nécessité absolue"
+        },
+        {
+          "id": "c",
+          "label": "Pour me reposer quelques minutes"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Sauf nécessité absolue, il est interdit de s’arrêter ou de stationner sur la bande d’arrêt d’urgence.",
+      "sources": [
+        "autoroute"
+      ],
+      "competenceIds": [
+        "c-autoroute"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-030",
+      "status": "a-verifier",
+      "kind": "multiple",
+      "topic": "Autoroute",
+      "prompt": "Ma voiture tombe en panne sur autoroute ; je l’arrête sur la bande d’arrêt d’urgence. Je :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Allume mes feux de détresse"
+        },
+        {
+          "id": "b",
+          "label": "Enfile mon gilet avant de sortir"
+        },
+        {
+          "id": "c",
+          "label": "Mets mes passagers à l’abri derrière la barrière de sécurité"
+        },
+        {
+          "id": "d",
+          "label": "Reste dans la voiture avec mes passagers"
+        }
+      ],
+      "correct": [
+        "a",
+        "b",
+        "c"
+      ],
+      "explanation": "Feux de détresse, gilet porté avant de sortir, puis tout le monde à l’abri derrière la barrière de sécurité en attendant les secours.",
+      "sources": [
+        "panne",
+        "equipements"
+      ],
+      "competenceIds": [
+        "c-panne",
+        "c-autoroute"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-031",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Autoroute",
+      "prompt": "Après un arrêt d’urgence sur la bande d’arrêt d’urgence d’une autoroute, je sors de mon véhicule :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Côté conducteur"
+        },
+        {
+          "id": "b",
+          "label": "Côté passager"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Sur autoroute, revêtu de son gilet, le conducteur sort côté passager et se place au plus vite derrière les glissières.",
+      "sources": [
+        "equipements"
+      ],
+      "competenceIds": [
+        "c-panne"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-032",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Vitesse",
+      "prompt": "Sur autoroute, par temps de pluie, la vitesse maximale autorisée pour une voiture (hors permis probatoire) est de :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "130 km/h"
+        },
+        {
+          "id": "b",
+          "label": "110 km/h"
+        },
+        {
+          "id": "c",
+          "label": "90 km/h"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Sur autoroute : 130 km/h en conditions normales, 110 km/h par temps de pluie ou autres précipitations.",
+      "sources": [
+        "vitesse"
+      ],
+      "competenceIds": [
+        "c-vitesses",
+        "c-meteo"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-033",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Vitesse",
+      "prompt": "Le brouillard réduit la visibilité à moins de 50 mètres. Sur autoroute, la vitesse maximale autorisée est de :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "50 km/h"
+        },
+        {
+          "id": "b",
+          "label": "70 km/h"
+        },
+        {
+          "id": "c",
+          "label": "90 km/h"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Par visibilité inférieure à 50 m, la vitesse maximale est abaissée à 50 km/h sur l’ensemble du réseau.",
+      "sources": [
+        "vitesse",
+        "brouillard"
+      ],
+      "competenceIds": [
+        "c-vitesses",
+        "c-meteo"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-034",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Vitesse",
+      "prompt": "J’ai mon permis depuis un an (permis probatoire, sans apprentissage anticipé). Sur une autoroute limitée à 130 km/h, par beau temps, je ne dois pas dépasser :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "130 km/h"
+        },
+        {
+          "id": "b",
+          "label": "110 km/h"
+        },
+        {
+          "id": "c",
+          "label": "90 km/h"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Pendant la période probatoire, la vitesse est limitée à 110 km/h sur autoroute.",
+      "sources": [
+        "vitesse"
+      ],
+      "competenceIds": [
+        "c-vitesses"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-035",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Vitesse",
+      "prompt": "En agglomération, sauf signalisation contraire, la vitesse maximale autorisée est de :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "30 km/h"
+        },
+        {
+          "id": "b",
+          "label": "50 km/h"
+        },
+        {
+          "id": "c",
+          "label": "70 km/h"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "En agglomération, la vitesse est limitée à 50 km/h.",
+      "sources": [
+        "vitesse"
+      ],
+      "competenceIds": [
+        "c-vitesses"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-036",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Vitesse",
+      "prompt": "Hors agglomération, sur une route à double sens sans séparateur central, la vitesse maximale est en principe de :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "80 km/h"
+        },
+        {
+          "id": "b",
+          "label": "100 km/h"
+        },
+        {
+          "id": "c",
+          "label": "110 km/h"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "80 km/h en principe ; le président du conseil départemental peut la relever à 90 km/h, après avis du préfet et de la commission départementale de sécurité routière.",
+      "sources": [
+        "vitesse"
+      ],
+      "competenceIds": [
+        "c-vitesses"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-037",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Vitesse",
+      "prompt": "Sur une route limitée à 50 km/h, l’excès de vitesse retenu contre moi est de 14 km/h. Je perds :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "1 point"
+        },
+        {
+          "id": "b",
+          "label": "2 points"
+        },
+        {
+          "id": "c",
+          "label": "3 points"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Un excès de moins de 20 km/h, là où la vitesse maximale est inférieure ou égale à 50 km/h, entraîne le retrait d’un point (et une amende forfaitaire de 135 €).",
+      "sources": [
+        "vitesse"
+      ],
+      "competenceIds": [
+        "c-vitesses"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-038",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Alcool et stupéfiants",
+      "prompt": "Je suis titulaire d’un permis probatoire. Le taux d’alcool à ne pas atteindre est de :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "0,2 g par litre de sang"
+        },
+        {
+          "id": "b",
+          "label": "0,5 g par litre de sang"
+        },
+        {
+          "id": "c",
+          "label": "0,8 g par litre de sang"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Pour les permis probatoires et les conducteurs en apprentissage, la limite est de 0,2 g/l de sang (0,10 mg/l d’air expiré).",
+      "sources": [
+        "alcool"
+      ],
+      "competenceIds": [
+        "c-alcool-stupefiants"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-039",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Alcool et stupéfiants",
+      "prompt": "La limite de 0,5 g d’alcool par litre de sang correspond, dans l’air expiré, à :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "0,10 mg par litre"
+        },
+        {
+          "id": "b",
+          "label": "0,25 mg par litre"
+        },
+        {
+          "id": "c",
+          "label": "0,40 mg par litre"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "0,5 g/l de sang équivaut à 0,25 mg/l d’air expiré.",
+      "sources": [
+        "alcool"
+      ],
+      "competenceIds": [
+        "c-alcool-stupefiants"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-040",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Alcool et stupéfiants",
+      "prompt": "Pour faire baisser plus vite mon taux d’alcool, je peux :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Boire un café salé"
+        },
+        {
+          "id": "b",
+          "label": "Avaler une cuillerée d’huile"
+        },
+        {
+          "id": "c",
+          "label": "Rien : seul le temps fait baisser le taux"
+        }
+      ],
+      "correct": [
+        "c"
+      ],
+      "explanation": "L’alcoolémie baisse en moyenne de 0,10 à 0,15 g/l par heure ; aucun « truc » ne permet d’éliminer l’alcool plus vite.",
+      "sources": [
+        "alcool"
+      ],
+      "competenceIds": [
+        "c-alcool-stupefiants"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-041",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Alcool et stupéfiants",
+      "prompt": "Conduire avec un taux d’alcool égal ou supérieur à 0,8 g par litre de sang constitue :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Une contravention"
+        },
+        {
+          "id": "b",
+          "label": "Un délit"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Entre 0,5 et 0,8 g/l, c’est une contravention de 4ᵉ classe ; à partir de 0,8 g/l, c’est un délit.",
+      "sources": [
+        "alcool"
+      ],
+      "competenceIds": [
+        "c-alcool-stupefiants"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-042",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Alcool et stupéfiants",
+      "prompt": "La conduite après usage de stupéfiants est interdite :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Au-delà d’une certaine quantité consommée"
+        },
+        {
+          "id": "b",
+          "label": "Quelle que soit la quantité consommée"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Conduire après avoir fait usage de stupéfiants est interdit, quelle que soit la quantité absorbée.",
+      "sources": [
+        "drogue"
+      ],
+      "competenceIds": [
+        "c-alcool-stupefiants"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-043",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Téléphone",
+      "prompt": "En conduisant, j’ai le droit de téléphoner avec :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Un dispositif intégré au véhicule"
+        },
+        {
+          "id": "b",
+          "label": "Une oreillette Bluetooth"
+        },
+        {
+          "id": "c",
+          "label": "Mon téléphone tenu en main, arrêté à un feu rouge"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Le téléphone tenu en main et tout dispositif porté à l’oreille sont interdits. Un véhicule momentanément arrêté sur la voie (à un feu, par exemple) est toujours considéré en circulation.",
+      "sources": [
+        "telephone"
+      ],
+      "competenceIds": [
+        "c-distractions"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-044",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Téléphone",
+      "prompt": "Tenir son téléphone en main en conduisant est sanctionné par une amende et un retrait de :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "1 point"
+        },
+        {
+          "id": "b",
+          "label": "3 points"
+        },
+        {
+          "id": "c",
+          "label": "6 points"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Amende forfaitaire de 135 € et retrait de 3 points ; le préfet peut en outre suspendre le permis jusqu’à 6 mois.",
+      "sources": [
+        "telephone"
+      ],
+      "competenceIds": [
+        "c-distractions"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-045",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Ceinture et équipements",
+      "prompt": "Dans ma voiture, mon passager de 16 ans n’a pas attaché sa ceinture. Qui est responsable ?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Le passager seul"
+        },
+        {
+          "id": "b",
+          "label": "Moi, le conducteur"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Le conducteur d’un véhicule de 9 places au plus est responsable du port de la ceinture (ou d’un système de retenue adapté) par ses passagers de moins de 18 ans.",
+      "sources": [
+        "ceinture"
+      ],
+      "competenceIds": [
+        "c-equipements-securite"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-046",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Ceinture et équipements",
+      "prompt": "La ceinture de sécurité est-elle obligatoire aux places arrière d’une voiture ?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Oui, dès lors que le siège en est équipé"
+        },
+        {
+          "id": "b",
+          "label": "Non, seulement à l’avant"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Dès que les sièges en sont équipés, la ceinture est obligatoire à l’avant comme à l’arrière, à tout âge.",
+      "sources": [
+        "ceinture"
+      ],
+      "competenceIds": [
+        "c-equipements-securite"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-047",
+      "status": "a-verifier",
+      "kind": "multiple",
+      "topic": "Ceinture et équipements",
+      "prompt": "Dans ma voiture, je dois obligatoirement avoir :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Un gilet de sécurité"
+        },
+        {
+          "id": "b",
+          "label": "Un triangle de signalisation"
+        },
+        {
+          "id": "c",
+          "label": "Une boîte d’ampoules de rechange"
+        }
+      ],
+      "correct": [
+        "a",
+        "b"
+      ],
+      "explanation": "Gilet de sécurité et triangle de signalisation sont obligatoires. La boîte d’ampoules n’est pas obligatoire, mais utile.",
+      "sources": [
+        "equipements"
+      ],
+      "competenceIds": [
+        "c-equipements-securite"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-048",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Ceinture et équipements",
+      "prompt": "Le pare-brise et les vitres latérales avant doivent transmettre au moins :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "50 % de la lumière"
+        },
+        {
+          "id": "b",
+          "label": "70 % de la lumière"
+        },
+        {
+          "id": "c",
+          "label": "90 % de la lumière"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Le pare-brise et les vitres latérales avant doivent transmettre au moins 70 % de la lumière.",
+      "sources": [
+        "equipements"
+      ],
+      "competenceIds": [
+        "c-equipements-securite"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-049",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Accident et secours",
+      "prompt": "En cas d’accident, les trois actions à mener, dans l’ordre, sont :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Alerter, protéger, secourir"
+        },
+        {
+          "id": "b",
+          "label": "Protéger, alerter, secourir"
+        },
+        {
+          "id": "c",
+          "label": "Secourir, alerter, protéger"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Protéger, alerter, secourir.",
+      "sources": [
+        "accident"
+      ],
+      "competenceIds": [
+        "c-accident-secours"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-050",
+      "status": "a-verifier",
+      "kind": "multiple",
+      "topic": "Accident et secours",
+      "prompt": "Témoin d’un accident, je m’approche d’un motard blessé. Je :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Ne retire pas son casque"
+        },
+        {
+          "id": "b",
+          "label": "Lui donne à boire"
+        },
+        {
+          "id": "c",
+          "label": "Le couvre et le rassure en lui parlant"
+        }
+      ],
+      "correct": [
+        "a",
+        "c"
+      ],
+      "explanation": "Il ne faut pas retirer le casque d’un motard ni donner à boire ou à manger à un blessé ; on le couvre et on le réconforte.",
+      "sources": [
+        "accident"
+      ],
+      "competenceIds": [
+        "c-accident-secours"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-051",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Accident et secours",
+      "prompt": "Je peux déplacer un blessé :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "En cas de danger imminent, un incendie par exemple"
+        },
+        {
+          "id": "b",
+          "label": "Pour l’installer plus confortablement"
+        },
+        {
+          "id": "c",
+          "label": "Jamais, même en cas d’incendie"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "On ne déplace pas un blessé, sauf en cas de danger imminent comme un incendie.",
+      "sources": [
+        "accident"
+      ],
+      "competenceIds": [
+        "c-accident-secours"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-052",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Accident et secours",
+      "prompt": "Après un accident, je dois remettre le constat amiable à mon assureur dans un délai de :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "48 heures"
+        },
+        {
+          "id": "b",
+          "label": "5 jours ouvrés"
+        },
+        {
+          "id": "c",
+          "label": "1 mois"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Le constat complété doit être remis à l’assureur dans les 5 jours ouvrés suivant l’accident.",
+      "sources": [
+        "accident"
+      ],
+      "competenceIds": [
+        "c-accident-secours"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-053",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Passages à niveau et tunnels",
+      "prompt": "À un passage à niveau, le feu rouge se met à clignoter mais je ne vois aucun train. Je :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "M’arrête"
+        },
+        {
+          "id": "b",
+          "label": "Passe rapidement"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Il faut s’arrêter dès que le feu rouge clignote : les trains ont la priorité absolue.",
+      "sources": [
+        "passageNiveau"
+      ],
+      "competenceIds": [
+        "c-passages-niveau"
+      ],
+      "lessonId": "l-u07-passage-a-niveau",
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-054",
+      "status": "a-verifier",
+      "kind": "multiple",
+      "topic": "Passages à niveau et tunnels",
+      "prompt": "Mon véhicule est immobilisé sur la voie ferrée et les barrières se ferment. Je :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Dégage mon véhicule en enfonçant la barrière"
+        },
+        {
+          "id": "b",
+          "label": "Fais évacuer tous les passagers"
+        },
+        {
+          "id": "c",
+          "label": "Attends dans le véhicule que le train passe"
+        }
+      ],
+      "correct": [
+        "a",
+        "b"
+      ],
+      "explanation": "La barrière est conçue pour céder : on dégage le véhicule en l’enfonçant, on évacue les passagers et on alerte un agent SNCF.",
+      "sources": [
+        "passageNiveau"
+      ],
+      "competenceIds": [
+        "c-passages-niveau"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-055",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Passages à niveau et tunnels",
+      "prompt": "Après le passage d’un train, les barrières commencent à se relever. Je redémarre :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Dès qu’elles commencent à se lever"
+        },
+        {
+          "id": "b",
+          "label": "Quand elles sont complètement ouvertes"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Il faut attendre l’ouverture complète des barrières : un autre train peut arriver.",
+      "sources": [
+        "passageNiveau"
+      ],
+      "competenceIds": [
+        "c-passages-niveau"
+      ],
+      "lessonId": "l-u07-passage-a-niveau",
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-056",
+      "status": "a-verifier",
+      "kind": "multiple",
+      "topic": "Passages à niveau et tunnels",
+      "prompt": "Dans un tunnel, de la fumée apparaît. Je :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Coupe le moteur en laissant la clé sur le contact"
+        },
+        {
+          "id": "b",
+          "label": "Quitte le véhicule avec mes passagers par une issue de secours"
+        },
+        {
+          "id": "c",
+          "label": "Fais demi-tour pour ressortir"
+        }
+      ],
+      "correct": [
+        "a",
+        "b"
+      ],
+      "explanation": "On coupe le moteur en laissant la clé sur le contact et on quitte le véhicule par les issues de secours. Le demi-tour est interdit dans un tunnel.",
+      "sources": [
+        "tunnel"
+      ],
+      "competenceIds": [
+        "c-tunnels"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-057",
+      "status": "a-verifier",
+      "kind": "multiple",
+      "topic": "Éco-conduite",
+      "prompt": "Pour réduire ma consommation de carburant :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Je vérifie la pression des pneus"
+        },
+        {
+          "id": "b",
+          "label": "Je démonte le coffre de toit après utilisation"
+        },
+        {
+          "id": "c",
+          "label": "Je laisse tourner le moteur lors d’un arrêt prolongé"
+        }
+      ],
+      "correct": [
+        "a",
+        "b"
+      ],
+      "explanation": "Des pneus sous-gonflés et un coffre de toit inutile augmentent la consommation ; lors d’un arrêt prolongé, mieux vaut couper le moteur.",
+      "sources": [
+        "eco"
+      ],
+      "competenceIds": [
+        "c-ecoconduite"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-058",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Éco-conduite",
+      "prompt": "Pour ralentir en consommant moins, je privilégie :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Le frein moteur"
+        },
+        {
+          "id": "b",
+          "label": "La pédale de frein"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Anticiper les ralentissements et utiliser le frein moteur plutôt que la pédale de frein réduit la consommation.",
+      "sources": [
+        "eco"
+      ],
+      "competenceIds": [
+        "c-ecoconduite"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-059",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Ville et stationnement",
+      "prompt": "Dans une zone de rencontre, la vitesse est limitée à :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "20 km/h"
+        },
+        {
+          "id": "b",
+          "label": "30 km/h"
+        },
+        {
+          "id": "c",
+          "label": "50 km/h"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Zone de rencontre : vitesse limitée à 20 km/h, piétons prioritaires sur tous les véhicules sauf les tramways.",
+      "sources": [
+        "codeRue"
+      ],
+      "competenceIds": [
+        "c-zones-apaisees"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-060",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Ville et stationnement",
+      "prompt": "Dans une aire piétonne, les véhicules autorisés à y circuler doivent rouler :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Au pas"
+        },
+        {
+          "id": "b",
+          "label": "À 20 km/h au plus"
+        },
+        {
+          "id": "c",
+          "label": "À 30 km/h au plus"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Dans une aire piétonne, les piétons sont prioritaires sur tous les véhicules sauf les tramways, et les véhicules autorisés roulent au pas.",
+      "sources": [
+        "codeRue"
+      ],
+      "competenceIds": [
+        "c-zones-apaisees"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-061",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Ville et stationnement",
+      "prompt": "Sur une route à double sens, je stationne :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Sur le côté droit"
+        },
+        {
+          "id": "b",
+          "label": "Du côté de mon choix"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Sur une route à double sens, on stationne du côté droit ; sur une route à sens unique, à droite ou à gauche.",
+      "sources": [
+        "stationnement"
+      ],
+      "competenceIds": [
+        "c-stationner"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-062",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Ville et stationnement",
+      "prompt": "Je suis garé le long du trottoir et un cycliste arrive derrière moi. J’ouvre ma portière :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Après son passage"
+        },
+        {
+          "id": "b",
+          "label": "Tout de suite : c’est à lui de m’éviter"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Il est interdit d’ouvrir une portière lorsque cela peut être dangereux pour soi ou pour les autres usagers.",
+      "sources": [
+        "stationnement"
+      ],
+      "competenceIds": [
+        "c-stationner",
+        "c-usagers-vulnerables"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-063",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Ceinture et équipements",
+      "prompt": "Ma voiture est immobilisée sur la chaussée et constitue un danger pour la circulation. Je place le triangle de présignalisation :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "À 5 mètres de ma voiture"
+        },
+        {
+          "id": "b",
+          "label": "À 30 mètres ou plus de ma voiture"
+        },
+        {
+          "id": "c",
+          "label": "Juste derrière mon pare-chocs"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Le triangle se place à 30 mètres ou plus de la voiture pour la signaler aux autres conducteurs.",
+      "sources": [
+        "triangle"
+      ],
+      "competenceIds": [
+        "c-equipements-securite",
+        "c-panne"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-064",
+      "status": "a-verifier",
+      "kind": "multiple",
+      "topic": "Ceinture et équipements",
+      "prompt": "Dans quelles situations dois-je utiliser mon triangle de présignalisation ?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Ma voiture en panne est immobilisée juste après un virage"
+        },
+        {
+          "id": "b",
+          "label": "Ma voiture est garée sur une place de stationnement"
+        },
+        {
+          "id": "c",
+          "label": "Ma voiture est immobilisée près du sommet d’une côte"
+        }
+      ],
+      "correct": [
+        "a",
+        "c"
+      ],
+      "explanation": "Le triangle s’utilise quand l’immobilisation de la voiture est un danger pour la circulation : près d’une intersection, d’un virage, d’un sommet de côte, d’un passage à niveau ou par visibilité insuffisante.",
+      "sources": [
+        "triangle"
+      ],
+      "competenceIds": [
+        "c-equipements-securite",
+        "c-panne"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-065",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Ceinture et équipements",
+      "prompt": "Je signale ma voiture immobilisée avec le triangle. Je dois aussi :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Allumer mes feux de détresse"
+        },
+        {
+          "id": "b",
+          "label": "Allumer mes feux de brouillard arrière"
+        },
+        {
+          "id": "c",
+          "label": "Éteindre tous mes feux"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Avec le triangle placé à 30 mètres ou plus, il faut allumer ses feux de détresse.",
+      "sources": [
+        "triangle"
+      ],
+      "competenceIds": [
+        "c-equipements-securite",
+        "c-panne"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-066",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Ceinture et équipements",
+      "prompt": "Aller poser le triangle mettrait ma vie en danger (circulation dense, aucun espace pour marcher). Suis-je obligé de le placer ?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Oui, dans tous les cas"
+        },
+        {
+          "id": "b",
+          "label": "Non"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "On n’est pas obligé de mettre en place le triangle si l’on estime que cela peut mettre sa vie en danger.",
+      "sources": [
+        "triangle",
+        "equipements"
+      ],
+      "competenceIds": [
+        "c-equipements-securite",
+        "c-panne"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-067",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Ceinture et équipements",
+      "prompt": "Après un arrêt d’urgence, je dois revêtir mon gilet de haute visibilité :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Seulement la nuit"
+        },
+        {
+          "id": "b",
+          "label": "Avant de quitter mon véhicule immobilisé sur la chaussée ou ses abords, de jour comme de nuit"
+        },
+        {
+          "id": "c",
+          "label": "Seulement sur autoroute"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Le gilet se porte dès que l’on quitte un véhicule immobilisé sur la chaussée ou ses abords, de nuit comme de jour, quelles que soient les conditions de visibilité.",
+      "sources": [
+        "triangle",
+        "equipements"
+      ],
+      "competenceIds": [
+        "c-equipements-securite"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "ex-068",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Ceinture et équipements",
+      "prompt": "Mon gilet de haute visibilité doit être rangé :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "À portée de main"
+        },
+        {
+          "id": "b",
+          "label": "Dans le coffre, sous les bagages"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Le gilet doit être rangé à portée de main, pour pouvoir l’enfiler avant de sortir du véhicule.",
+      "sources": [
+        "triangle"
+      ],
+      "competenceIds": [
+        "c-equipements-securite"
+      ],
+      "examEligible": true,
+      "demo": false
+    },
+    {
+      "id": "q-demo-001",
+      "status": "brouillon",
+      "kind": "multiple",
+      "topic": "Priorités",
+      "prompt": "J’arrive à une intersection où je suis prioritaire. Avant de la franchir, je dois :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Ralentir en contrôlant mes rétroviseurs"
+        },
+        {
+          "id": "b",
+          "label": "M’assurer que les autres usagers me laissent passer"
+        },
+        {
+          "id": "c",
+          "label": "Accélérer pour dégager plus vite l’intersection"
+        }
+      ],
+      "correct": [
+        "a",
+        "b"
+      ],
+      "explanation": "Avoir la priorité n’est pas un droit absolu : il faut ralentir, contrôler ses rétroviseurs et vérifier que les autres laissent passer.",
+      "sources": [
+        "priorites"
+      ],
+      "competenceIds": [
+        "c-priorite-intersection"
+      ],
+      "lessonId": "l-u04-priorite-a-droite",
+      "examEligible": false,
+      "demo": true
+    },
+    {
+      "id": "q-demo-002",
+      "status": "brouillon",
+      "kind": "single",
+      "topic": "Passages à niveau",
+      "prompt": "La distance d’arrêt d’un train peut atteindre environ :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "80 mètres"
+        },
+        {
+          "id": "b",
+          "label": "800 mètres"
+        },
+        {
+          "id": "c",
+          "label": "8 kilomètres"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Selon la Sécurité routière, la distance d’arrêt d’un train peut atteindre 800 mètres : il ne peut pas s’arrêter à temps.",
+      "sources": [
+        "passageNiveau"
+      ],
+      "competenceIds": [
+        "c-passages-niveau"
+      ],
+      "lessonId": "l-u07-passage-a-niveau",
+      "examEligible": false,
+      "demo": true
+    },
+    {
+      "id": "q-demo-003",
+      "status": "brouillon",
+      "kind": "multiple",
+      "topic": "Passages à niveau",
+      "prompt": "Un train vient de passer, mais les barrières restent baissées. Je :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Attends : un autre train arrive probablement"
+        },
+        {
+          "id": "b",
+          "label": "Contourne les barrières si la voie paraît libre"
+        },
+        {
+          "id": "c",
+          "label": "Contacte la gare au numéro indiqué si l’attente se prolonge"
+        }
+      ],
+      "correct": [
+        "a",
+        "c"
+      ],
+      "explanation": "Si les barrières restent fermées, un autre train est probablement à l’approche ; sinon, on contacte la gare SNCF au numéro inscrit sur la pancarte ou avec le téléphone du passage à niveau.",
+      "sources": [
+        "passageNiveau"
+      ],
+      "competenceIds": [
+        "c-passages-niveau"
+      ],
+      "lessonId": "l-u07-passage-a-niveau",
+      "examEligible": false,
+      "demo": true
+    }
+  ]
+}

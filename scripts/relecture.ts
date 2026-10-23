@@ -10,11 +10,11 @@ import { SOURCES, formatConsultedAt } from "../src/content/sources";
 const lines: string[] = [
   "# Relecture des questions de l’examen blanc",
   "",
-  "Fichier généré à partir de `src/content/exam-questions.ts` : ne pas le modifier à la main.",
+  "Fichier généré à partir de `content/questions/` (npm run relecture) : ne pas le modifier à la main.",
   "",
-  "**Comment relire** : pour chaque question, vérifiez l’énoncé, les bonnes réponses (✅) et l’explication en ouvrant la source. Puis indiquez à l’agent, par exemple : « ex-001 à ex-020 validées, ex-037 : la bonne réponse est B ». Seules les questions validées par vous passeront au statut « relue ».",
+  "**Comment relire** : pour chaque question, vérifiez l’énoncé, les bonnes réponses (✅) et l’explication en ouvrant la source. Puis indiquez à l’agent, par exemple : « ex-001 à ex-020 validées, ex-037 : la bonne réponse est B ». Seules les questions validées par vous passeront au statut « validé » (voir docs/CONTENU.md).",
   "",
-  `Total : **${EXAM_QUESTIONS.length} questions**, toutes au statut « non relue ».`,
+  `Total : **${EXAM_QUESTIONS.length} questions** (${EXAM_QUESTIONS.filter((q) => q.review === "relue").length} relue(s)).`,
   "",
 ];
 const byTopic = new Map<string, ExamQuestion[]>();

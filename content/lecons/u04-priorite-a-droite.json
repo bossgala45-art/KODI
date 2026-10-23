@@ -1,0 +1,46 @@
+{
+  "id": "l-u04-priorite-a-droite",
+  "universeId": "u04",
+  "slug": "priorite-a-droite",
+  "title": "Priorité à droite et intersections",
+  "summary": "Qui passe en premier quand rien n’est indiqué, et qui l’emporte entre agent, feux et panneaux.",
+  "position": 1,
+  "status": "brouillon",
+  "demo": true,
+  "competenceIds": ["c-priorite-intersection"],
+  "sources": ["priorites"],
+  "blocks": [
+    {
+      "type": "text",
+      "title": "La règle de base",
+      "paragraphs": [
+        "Lorsque deux conducteurs abordent une intersection par des routes différentes, celui qui vient par la gauche doit céder le passage à l’autre (article R415-5 du code de la route, cité par la Sécurité routière).",
+        "Sans panneau, sans feu et sans agent, on cède donc le passage aux véhicules qui arrivent par la droite.",
+        "Avoir la priorité n’est pas un droit absolu : on ralentit, on contrôle ses rétroviseurs et on vérifie que les autres usagers nous laissent bien passer."
+      ]
+    },
+    {
+      "type": "image",
+      "src": "/contenus/demo/intersection-priorite-droite.svg",
+      "alt": "Schéma vu de dessus d’une intersection sans signalisation : votre voiture bleue arrive par le bas et s’arrête ; la voiture verte, qui arrive par votre droite, passe en premier.",
+      "caption": "Sans signalisation, le véhicule venant de droite est prioritaire.",
+      "credit": "Schéma original KODI (démonstration)",
+      "width": 400,
+      "height": 300
+    },
+    {
+      "type": "text",
+      "title": "Qui l’emporte ?",
+      "paragraphs": [
+        "Les indications d’un agent de la circulation priment sur les feux et sur les panneaux.",
+        "Les feux priment sur les panneaux. Si le feu ne fonctionne pas, on applique la règle indiquée par le panneau."
+      ]
+    },
+    {
+      "type": "simulation",
+      "sceneSlug": "intersection-sans-signalisation",
+      "camera": "conducteur",
+      "instructions": "Observez l’arrivée des véhicules et repérez celui qui doit céder le passage."
+    }
+  ]
+}

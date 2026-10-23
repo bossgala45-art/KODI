@@ -47,7 +47,7 @@ npm test               # tests unitaires et composants (Vitest)
 npm run build          # build de production
 npm run test:e2e       # tests navigateur (nécessite un build préalable)
 npm run test:db        # tests de sécurité de la base (PostgreSQL requis)
-npm run seed:questions # régénère supabase/seed/questions.sql
+npm run content:build  # valide content/ et régénère catalogue + supabase/seed/content.sql
 npm run relecture      # régénère docs/RELECTURE.md
 npm run check          # lint + typecheck + tests + build
 ```

@@ -1,0 +1,414 @@
+{
+  "universe:u01": {
+    "status": "a-verifier",
+    "hash": "f0c6ef31edd173e1"
+  },
+  "universe:u02": {
+    "status": "a-verifier",
+    "hash": "3e5be76b2c5f39dd"
+  },
+  "universe:u03": {
+    "status": "a-verifier",
+    "hash": "4f5acdb371173103"
+  },
+  "universe:u04": {
+    "status": "a-verifier",
+    "hash": "210a036ca2787e82"
+  },
+  "universe:u05": {
+    "status": "a-verifier",
+    "hash": "a96832ba4b3edfad"
+  },
+  "universe:u06": {
+    "status": "a-verifier",
+    "hash": "1c6f052dcb3257d0"
+  },
+  "universe:u07": {
+    "status": "a-verifier",
+    "hash": "941970af0f5f5a03"
+  },
+  "universe:u08": {
+    "status": "a-verifier",
+    "hash": "00ae75b23009ba23"
+  },
+  "universe:u09": {
+    "status": "a-verifier",
+    "hash": "862da0df87a3934d"
+  },
+  "universe:u10": {
+    "status": "a-verifier",
+    "hash": "4fc3b99b432dafed"
+  },
+  "competence:c-accident-secours": {
+    "status": "a-verifier",
+    "hash": "3310718073542a4a"
+  },
+  "competence:c-alcool-stupefiants": {
+    "status": "a-verifier",
+    "hash": "4d9b23084966ef38"
+  },
+  "competence:c-autoroute": {
+    "status": "a-verifier",
+    "hash": "8e6278d376e05fac"
+  },
+  "competence:c-croiser": {
+    "status": "a-verifier",
+    "hash": "3929c71e6cc82bf5"
+  },
+  "competence:c-depasser": {
+    "status": "a-verifier",
+    "hash": "5618383a7355c5b2"
+  },
+  "competence:c-distractions": {
+    "status": "a-verifier",
+    "hash": "68f33c5019de3d2f"
+  },
+  "competence:c-ecoconduite": {
+    "status": "a-verifier",
+    "hash": "ad646d02a221205c"
+  },
+  "competence:c-equipements-securite": {
+    "status": "a-verifier",
+    "hash": "366d942c9b5bb779"
+  },
+  "competence:c-feux": {
+    "status": "a-verifier",
+    "hash": "216485aa4718f641"
+  },
+  "competence:c-marquages": {
+    "status": "a-verifier",
+    "hash": "aca9229721298e45"
+  },
+  "competence:c-meteo": {
+    "status": "a-verifier",
+    "hash": "09ff1fa25f95d89d"
+  },
+  "competence:c-panne": {
+    "status": "a-verifier",
+    "hash": "f7e7f4c3652ef247"
+  },
+  "competence:c-passages-niveau": {
+    "status": "a-verifier",
+    "hash": "c118130f17a1273b"
+  },
+  "competence:c-priorite-intersection": {
+    "status": "a-verifier",
+    "hash": "309279d6a68269da"
+  },
+  "competence:c-stationner": {
+    "status": "a-verifier",
+    "hash": "0aef3b90179e32fd"
+  },
+  "competence:c-tunnels": {
+    "status": "a-verifier",
+    "hash": "4ca20e7539295a07"
+  },
+  "competence:c-usagers-vulnerables": {
+    "status": "a-verifier",
+    "hash": "ef1b3e6377339cc0"
+  },
+  "competence:c-vehicules-prioritaires": {
+    "status": "a-verifier",
+    "hash": "9afd86bc3401e652"
+  },
+  "competence:c-vitesses": {
+    "status": "a-verifier",
+    "hash": "4d6ac8994694ed15"
+  },
+  "competence:c-zones-apaisees": {
+    "status": "a-verifier",
+    "hash": "eeeaea3d380f4faf"
+  },
+  "lesson:l-u04-priorite-a-droite": {
+    "status": "brouillon",
+    "hash": "a68f9969a7a306a0"
+  },
+  "lesson:l-u07-passage-a-niveau": {
+    "status": "brouillon",
+    "hash": "cdbf1b9c47c374a3"
+  },
+  "question:ex-001": {
+    "status": "a-verifier",
+    "hash": "01b70ab3fd76ca50"
+  },
+  "question:ex-002": {
+    "status": "a-verifier",
+    "hash": "30f5b1b9d92309f0"
+  },
+  "question:ex-003": {
+    "status": "a-verifier",
+    "hash": "2cdc37271254f8a7"
+  },
+  "question:ex-004": {
+    "status": "a-verifier",
+    "hash": "403fd9e3e8096bb8"
+  },
+  "question:ex-005": {
+    "status": "a-verifier",
+    "hash": "1cb7e9ea28f214a1"
+  },
+  "question:ex-006": {
+    "status": "a-verifier",
+    "hash": "8acb8adf27888691"
+  },
+  "question:ex-007": {
+    "status": "a-verifier",
+    "hash": "4cf95f4509caeb32"
+  },
+  "question:ex-008": {
+    "status": "a-verifier",
+    "hash": "a072af224a5f3e6a"
+  },
+  "question:ex-009": {
+    "status": "a-verifier",
+    "hash": "e3bd4cde470b6dcf"
+  },
+  "question:ex-010": {
+    "status": "a-verifier",
+    "hash": "e269792e55fd4cbc"
+  },
+  "question:ex-011": {
+    "status": "a-verifier",
+    "hash": "9b14530dfb30f7be"
+  },
+  "question:ex-012": {
+    "status": "a-verifier",
+    "hash": "84d3327001920b68"
+  },
+  "question:ex-013": {
+    "status": "a-verifier",
+    "hash": "541b39f75bca2b5b"
+  },
+  "question:ex-014": {
+    "status": "a-verifier",
+    "hash": "169b6f32a62e8993"
+  },
+  "question:ex-015": {
+    "status": "a-verifier",
+    "hash": "17a7f4bcea9b975d"
+  },
+  "question:ex-016": {
+    "status": "a-verifier",
+    "hash": "60a68c899db34dce"
+  },
+  "question:ex-017": {
+    "status": "a-verifier",
+    "hash": "f7f3413b26ba84a6"
+  },
+  "question:ex-018": {
+    "status": "a-verifier",
+    "hash": "39f4fa18c7af42f0"
+  },
+  "question:ex-019": {
+    "status": "a-verifier",
+    "hash": "1e9ff7df507d81a4"
+  },
+  "question:ex-020": {
+    "status": "a-verifier",
+    "hash": "e0ccd7b89994e4e6"
+  },
+  "question:ex-021": {
+    "status": "a-verifier",
+    "hash": "472bd144396c4c9f"
+  },
+  "question:ex-022": {
+    "status": "a-verifier",
+    "hash": "c3eae0a3e18722f4"
+  },
+  "question:ex-023": {
+    "status": "a-verifier",
+    "hash": "e5c17428d5769390"
+  },
+  "question:ex-024": {
+    "status": "a-verifier",
+    "hash": "81635ed171726e10"
+  },
+  "question:ex-025": {
+    "status": "a-verifier",
+    "hash": "856cf0e63e8aee95"
+  },
+  "question:ex-026": {
+    "status": "a-verifier",
+    "hash": "e36d7d06721ee96d"
+  },
+  "question:ex-027": {
+    "status": "a-verifier",
+    "hash": "7a6565b8edf54dc5"
+  },
+  "question:ex-028": {
+    "status": "a-verifier",
+    "hash": "25004feba27290cc"
+  },
+  "question:ex-029": {
+    "status": "a-verifier",
+    "hash": "050d61af5ee245ea"
+  },
+  "question:ex-030": {
+    "status": "a-verifier",
+    "hash": "f49c5e8ed4acdd5e"
+  },
+  "question:ex-031": {
+    "status": "a-verifier",
+    "hash": "055a34976309762d"
+  },
+  "question:ex-032": {
+    "status": "a-verifier",
+    "hash": "f0f03079d6adcf7b"
+  },
+  "question:ex-033": {
+    "status": "a-verifier",
+    "hash": "2ff195d4ce29f86c"
+  },
+  "question:ex-034": {
+    "status": "a-verifier",
+    "hash": "6e7728a0ca2a51c2"
+  },
+  "question:ex-035": {
+    "status": "a-verifier",
+    "hash": "4e9f2082876c364d"
+  },
+  "question:ex-036": {
+    "status": "a-verifier",
+    "hash": "2f09957f2b29e633"
+  },
+  "question:ex-037": {
+    "status": "a-verifier",
+    "hash": "14001976def5f8c7"
+  },
+  "question:ex-038": {
+    "status": "a-verifier",
+    "hash": "75e9f44b72fd77ee"
+  },
+  "question:ex-039": {
+    "status": "a-verifier",
+    "hash": "ef0b0aad4706fb0b"
+  },
+  "question:ex-040": {
+    "status": "a-verifier",
+    "hash": "6b983782f137e317"
+  },
+  "question:ex-041": {
+    "status": "a-verifier",
+    "hash": "3732db0ddd60f603"
+  },
+  "question:ex-042": {
+    "status": "a-verifier",
+    "hash": "2fab199ed1c7d28f"
+  },
+  "question:ex-043": {
+    "status": "a-verifier",
+    "hash": "3b69358a7d178412"
+  },
+  "question:ex-044": {
+    "status": "a-verifier",
+    "hash": "eaa0508e1ec40d29"
+  },
+  "question:ex-045": {
+    "status": "a-verifier",
+    "hash": "c6bd4cc418f5c6de"
+  },
+  "question:ex-046": {
+    "status": "a-verifier",
+    "hash": "927f1155504a7739"
+  },
+  "question:ex-047": {
+    "status": "a-verifier",
+    "hash": "bb4a162d87b6f161"
+  },
+  "question:ex-048": {
+    "status": "a-verifier",
+    "hash": "0512bd3a734bdd97"
+  },
+  "question:ex-049": {
+    "status": "a-verifier",
+    "hash": "09300bf3c18ca679"
+  },
+  "question:ex-050": {
+    "status": "a-verifier",
+    "hash": "44c107145e6576f2"
+  },
+  "question:ex-051": {
+    "status": "a-verifier",
+    "hash": "50f8722e189dcb23"
+  },
+  "question:ex-052": {
+    "status": "a-verifier",
+    "hash": "109564a7af5fe24b"
+  },
+  "question:ex-053": {
+    "status": "a-verifier",
+    "hash": "96c1b91a2f39cd8f"
+  },
+  "question:ex-054": {
+    "status": "a-verifier",
+    "hash": "707f722667d00a58"
+  },
+  "question:ex-055": {
+    "status": "a-verifier",
+    "hash": "21d19d3b5c3b900c"
+  },
+  "question:ex-056": {
+    "status": "a-verifier",
+    "hash": "e2331219c516f7dc"
+  },
+  "question:ex-057": {
+    "status": "a-verifier",
+    "hash": "66bb76b4d0e9cc0e"
+  },
+  "question:ex-058": {
+    "status": "a-verifier",
+    "hash": "3c25652b61c454c6"
+  },
+  "question:ex-059": {
+    "status": "a-verifier",
+    "hash": "45c746b282063ba2"
+  },
+  "question:ex-060": {
+    "status": "a-verifier",
+    "hash": "4283faf6b454fcc4"
+  },
+  "question:ex-061": {
+    "status": "a-verifier",
+    "hash": "2bad3d4f506f3dd8"
+  },
+  "question:ex-062": {
+    "status": "a-verifier",
+    "hash": "1d75f1659e779c82"
+  },
+  "question:ex-063": {
+    "status": "a-verifier",
+    "hash": "450ea2cf49986b32"
+  },
+  "question:ex-064": {
+    "status": "a-verifier",
+    "hash": "c2a5536404a4ac9b"
+  },
+  "question:ex-065": {
+    "status": "a-verifier",
+    "hash": "b11a834036e1f2a4"
+  },
+  "question:ex-066": {
+    "status": "a-verifier",
+    "hash": "a655ac2a7b0f61aa"
+  },
+  "question:ex-067": {
+    "status": "a-verifier",
+    "hash": "72d6f7b510fff8f6"
+  },
+  "question:ex-068": {
+    "status": "a-verifier",
+    "hash": "e35dd97b2f1bb60e"
+  },
+  "question:q-demo-001": {
+    "status": "brouillon",
+    "hash": "ec0286925a218074"
+  },
+  "question:q-demo-002": {
+    "status": "brouillon",
+    "hash": "4e2b129c9be16054"
+  },
+  "question:q-demo-003": {
+    "status": "brouillon",
+    "hash": "d6fd90ee346a8518"
+  }
+}

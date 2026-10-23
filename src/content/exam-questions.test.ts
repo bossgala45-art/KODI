@@ -40,8 +40,15 @@ describe("banque de l’examen blanc", () => {
     }
   });
 
-  it("garde le statut « non relue » tant qu’aucune relecture humaine n’a eu lieu", () => {
-    expect(EXAM_QUESTIONS.every((q) => q.review === "non-relue")).toBe(true);
+  it("n’est « relue » que si la question est validée dans le catalogue", () => {
+    for (const question of EXAM_QUESTIONS) {
+      expect(question.review === "relue").toBe(question.status === "valide");
+    }
+  });
+
+  it("n’inclut ni démonstration ni contenu retiré", () => {
+    expect(EXAM_QUESTIONS.some((q) => q.id.startsWith("q-demo"))).toBe(false);
+    expect(EXAM_QUESTIONS.some((q) => q.status === "retire")).toBe(false);
   });
 
   it("ne se présente jamais comme une question officielle", () => {

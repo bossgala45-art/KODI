@@ -1,0 +1,43 @@
+{
+  "id": "l-u07-passage-a-niveau",
+  "universeId": "u07",
+  "slug": "passage-a-niveau",
+  "title": "Franchir un passage à niveau",
+  "summary": "Les bons réflexes à l’approche d’une voie ferrée, et que faire si l’on est bloqué.",
+  "position": 1,
+  "status": "brouillon",
+  "demo": true,
+  "competenceIds": ["c-passages-niveau"],
+  "sources": ["passageNiveau"],
+  "blocks": [
+    {
+      "type": "text",
+      "title": "À l’approche",
+      "paragraphs": [
+        "Un passage à niveau est toujours annoncé par un panneau : ralentissez.",
+        "Ne vous engagez que si vous êtes certain de pouvoir dégager rapidement la voie ferrée, et ne vous y arrêtez jamais."
+      ]
+    },
+    {
+      "type": "text",
+      "title": "Feux et barrières",
+      "paragraphs": [
+        "Dès que le feu rouge clignote, arrêtez-vous : le code de la route accorde la priorité absolue aux trains.",
+        "Après le passage d’un train, attendez l’ouverture complète des barrières : un autre train peut arriver.",
+        "La distance d’arrêt d’un train peut atteindre 800 mètres."
+      ]
+    },
+    {
+      "type": "video",
+      "title": "Bien franchir un passage à niveau",
+      "toProduce": true,
+      "transcript": "Vidéo à produire. Contenu prévu : approche d’un passage à niveau, arrêt dès que le feu rouge clignote, attente de l’ouverture complète des barrières, puis franchissement."
+    },
+    {
+      "type": "simulation",
+      "sceneSlug": "passage-a-niveau",
+      "camera": "aerienne",
+      "instructions": "Identifiez le moment exact où vous devez vous arrêter."
+    }
+  ]
+}

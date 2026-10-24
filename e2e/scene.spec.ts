@@ -59,7 +59,7 @@ test("3D : lecture, caméras, sélection, sous-titres et retour en 2D", async ({
   await page.getByRole("button", { name: /Sous-titres : activés/ }).click();
   await expect(page.getByTestId("sous-titre")).toHaveCount(0);
 
-  await page.getByRole("button", { name: "Version 2D" }).click();
+  await page.getByRole("button", { name: "Version 2D", exact: true }).click();
   await expect(view).toHaveAttribute("data-view", "2d");
   await expect(page.getByText("Version 2D affichée à votre demande.")).toBeVisible();
   await page.getByRole("button", { name: "Revenir à la 3D" }).click();

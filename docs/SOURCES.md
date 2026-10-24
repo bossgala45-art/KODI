@@ -10,8 +10,12 @@ interface (Chromium), puis leur texte a été relevé.
 
 ## Format de l’épreuve
 
+Relu le 24/10/2026 pour les modes d’examen (D-024).
+
 | Source | Ce qui en est tiré |
 | --- | --- |
+| [Sécurité routière — Se préparer à l’examen du code](https://www.securite-routiere.gouv.fr/passer-son-permis-de-conduire/preparation-de-lexamen-du-code-de-la-route/se-preparer-lexamen-du) (consultée le 24/10/2026) | Banque renouvelée en 2023 : « Chacune des 1 037 questions a fait l’objet d’une réécriture » ; visuels réels (prises de vue par drone), véhicules désignés « entourés en jaune » ; « pour les questions à choix multiples, le nombre de réponses attendues sera désormais indiqué » ; questions d’exemple sous forme de vidéos. |
+| [Sécurité routière — Objectifs et réglementation de l’examen du code](https://www.securite-routiere.gouv.fr/passer-son-permis-de-conduire/preparation-de-lexamen-du-code-de-la-route/objectifs-et) (relue le 24/10/2026) | « Les candidats sont reçus à l’examen à partir de 35 bonnes réponses sur 40 questions » ; « le test de 40 questions est soumis aux candidats sur la tablette ». |
 | [Service-Public.gouv.fr — Comment passer le code (F33694)](https://www.service-public.gouv.fr/particuliers/vosdroits/F33694) (page « Vérifié le 27 avril 2026 ») | « Vous devez répondre à 40 questions à choix multiples. » ; « Pour réussir le code, vous devez avoir 35 réponses justes ou plus. » |
 
 ## Thèmes de l’examen
@@ -26,8 +30,10 @@ interface (Chromium), puis leur texte a été relevé.
 | --- | --- |
 | [Service-Public.gouv.fr — Équipements obligatoires en voiture (F19459)](https://www.service-public.gouv.fr/particuliers/vosdroits/F19459) (page « Vérifié le 11 juin 2026 » ; textes cités : code de la route R416-17 à R416-20, arrêté du 30 septembre 2008) | « Vous devez placer le triangle à 30 mètres ou plus de votre voiture pour la signaler aux autres conducteurs, et allumer vos feux de détresse. » ; usage « lorsque l’immobilisation de votre voiture est un danger pour la circulation » (intersections, virages, sommets de côtes, passages à niveau, visibilité insuffisante) ; « Vous n’êtes pas obligé de mettre en place le triangle si vous estimez que cela peut mettre votre vie en danger. » ; gilet à revêtir « si vous êtes amené à quitter votre véhicule immobilisé sur la chaussée ou ses abords », rangé « à portée de main ». |
 
-Non confirmé par une source officielle consultée : temps de réponse par
-question, durée totale, présence systématique de photos ou vidéos, onzième
+Non confirmé par une source officielle consultée (Légifrance et
+interieur.gouv.fr refusent l’accès depuis l’environnement de développement) :
+temps de réponse par question, durée totale, barème d’une question à
+plusieurs réponses (tout ou rien supposé), possibilité de revenir en arrière, présence systématique de photos ou vidéos, onzième
 thème annoncé par la page des thèmes.
 
 ## Règles utilisées pour les questions (securite-routiere.gouv.fr)

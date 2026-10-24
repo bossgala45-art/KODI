@@ -2,7 +2,7 @@
  * Destination après confirmation : uniquement un chemin interne connu, pour
  * empêcher toute redirection ouverte vers un site tiers (hameçonnage).
  */
-const ALLOWED_NEXT = new Set(["/", "/profil", "/reinitialiser-mot-de-passe", "/bienvenue"]);
+const ALLOWED_NEXT = new Set(["/", "/profil", "/reinitialiser-mot-de-passe", "/bienvenue", "/simuler"]);
 
 export function safeNextPath(next: string | null | undefined, fallback = "/profil"): string {
   if (!next) return fallback;

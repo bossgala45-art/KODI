@@ -82,7 +82,7 @@ Reste à faire (étapes manuelles, voir docs/SUPABASE.md) :
 - [ ] Héberger l’application (Q-01) et y définir les variables publiques.
 - [ ] Vérifier manuellement le parcours complet sur iPhone.
 
-## 🟡 Phase 3 — Moteur pédagogique et contenus
+## ✅ Phase 3 — Moteur pédagogique et contenus
 
 Périmètre défini par le porteur (prompt « moteur pédagogique »). Il reprend
 le modèle de contenu prévu ici et une partie des phases 4 et 6.
@@ -110,8 +110,11 @@ Livré, en attente de validation :
   des réponses multiples ; tests de l’import ; parité SQL/TypeScript ;
   parcours de bout en bout.
 
-Reste à faire :
-- [ ] Validation de la phase par le porteur.
+Clôture (24/10/2026) : CI verte ; validation du porteur (« oui » aux
+questions sur les 10 univers et la répartition des 72 leçons, puis passage
+au prompt suivant).
+
+Reste, au fil des phases :
 - [ ] Relecture des contenus (aucun n’est validé à ce jour).
 - [ ] Rédaction progressive des leçons (2 sur 72, de démonstration).
 
@@ -120,9 +123,31 @@ Reste à faire :
 - Lecteur de leçons et entraînement par leçon : livrés en phase 3.
 - Reste : entraînement libre par univers, premières questions publiées.
 
-## ⬜ Phase 5 — Modes d’examen
+## 🟡 Phase 5 — Modes d’examen
 
-- Les 4 modes, statistiques de résultats.
+Périmètre défini par le porteur (prompt « examens », 24/10/2026), traité
+avant la phase 4 dans l’ordre des prompts.
+
+Livré, en attente de validation :
+- 4 modes : officiel simulé (40 questions, 35 pour réussir), express (10),
+  ciblé (20, univers choisis), revanche (10, compétences ratées).
+- Tirage parmi les questions validées, inédites d’abord ; réponses
+  multiples en tout ou rien ; sessions sauvegardées et reprises ;
+  correction côté serveur ; historique, statistiques par mode, bilan par
+  compétence, recommandations de révision (D-024).
+- Examen complet refusé, avec message explicite, si les questions validées
+  manquent (c’est le cas aujourd’hui : 0 validée).
+- Modalités réglementaires vérifiées et différences affichées à l’écran
+  (« Fidélité à l’examen réel »).
+- Tests : barèmes (35/40 réussi, 34/40 échoué, multiples, sans réponse),
+  persistance et reprise, tirage, tentatives de manipulation (écritures
+  directes, examens d’autrui, double remise, fonctions internes, fuite des
+  réponses), avec vérification par injection de défauts.
+
+Reste à faire :
+- [ ] Validation de la phase par le porteur.
+- [ ] Valider des questions (relecture) et mettre le serveur en service
+  (docs/SUPABASE.md) pour que les examens deviennent utilisables.
 
 ## ⬜ Phase 6 — Moteur adaptatif
 

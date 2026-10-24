@@ -233,9 +233,8 @@ par une nouvelle entrée qui la remplace explicitement.
 - **Décision** : ces dix thèmes deviennent les dix univers (`content/univers.json`),
   au statut « à vérifier ». Le onzième thème annoncé n’est pas identifié
   (Q-10) ; il n’est rien inventé pour le combler.
-- **Répartition des 72 leçons** : provisoire (6, 7, 4, 8, 10, 9, 5, 6, 8, 9),
-  proportionnée à l’étendue estimée de chaque thème. À valider par le
-  porteur ; l’import vérifie le total de 72.
+- **Répartition des 72 leçons** : 6, 7, 4, 8, 10, 9, 5, 6, 8, 9, validée
+  par le porteur le 24/10/2026 ; l’import vérifie le total de 72.
 
 ## D-021 — Moteur pédagogique sans IA générative
 
@@ -291,6 +290,51 @@ par une nouvelle entrée qui la remplace explicitement.
   relues : elles ne doivent pas servir de référence.
 - Aucune question n’a été créée pour remplir la base.
 
+## D-024 — Modes d’examen côté serveur
+
+- **Contexte** : prompt du porteur « Implémente les examens de KODI »
+  (24/10/2026) : 4 modes, questions validées, correction côté serveur,
+  sessions sauvegardées, examen complet refusé si les questions manquent.
+- **Décision** :
+  - tirage, enregistrement et correction dans la base (migration
+    `exam_modes`, fonctions `exam_availability`, `start_exam_mode`,
+    `submit_exam`, `get_exam_correction`, `get_exam_competence_stats`) ;
+    aucune bonne réponse n’est envoyée avant la remise ;
+  - questions tirables : statut validé (`published`), prévues pour
+    l’examen, jamais de démonstration ; d’abord celles que la personne n’a
+    jamais vues (ni en pratique, ni en examen), puis les moins récemment
+    vues ; ordre mélangé ;
+  - officiel : 40 questions, 35 pour réussir (contraint en base). Express
+    (10) et ciblé (20) : nombres demandés par le porteur. Revanche : 10
+    questions, choix de l’agent faute de précision dans le prompt ;
+    compétences « ratées » = au moins une erreur et pas encore maîtrisées
+    (règle de D-021) ;
+  - seul le mode officiel donne « réussi / échoué » ; les autres donnent un
+    score, avec le repère 35/40 (87,5 %) ;
+  - barème de KODI : tout ou rien par question ; question sans réponse =
+    fausse (non vérifié sur un texte officiel, indiqué à l’écran) ;
+  - recommandations : compétences sous 87,5 % de bonnes réponses, les plus
+    faibles d’abord, avec un lien vers la leçon ou l’univers à réviser ;
+  - un seul examen en cours à la fois ; il se reprend après rechargement.
+- **Conséquence pour l’usage sans compte** (révise D-010 pour les
+  examens) : sans compte ni serveur, aucun examen n’est proposé ; l’écran
+  l’explique. L’ancien examen blanc local sur des questions « non relues »
+  est retiré, car le prompt exige des questions validées et une correction
+  serveur. Les 68 questions restent jouables dans Révisions.
+- **État au 24/10/2026** : aucune question n’est encore validée et le
+  serveur n’est pas en service : les examens sont donc bloqués, avec le
+  message « Examen impossible pour le moment : 0 question validée… ».
+- **Fidélité** : voir docs/SOURCES.md. Vérifié : 40 questions, 35 pour
+  réussir, nombre de réponses attendues indiqué. Différences : questions
+  originales (banque officielle de 1 037 questions non publique), pas de
+  photos ni de vidéos, pas de chronomètre (durée non vérifiée : Légifrance
+  et interieur.gouv.fr refusent l’accès automatisé). L’écran le dit et ne
+  présente pas la simulation comme fidèle.
+- **Limite connue** : pour l’entraînement, les bonnes réponses du catalogue
+  sont présentes dans l’application ; une personne déterminée pourrait les
+  consulter avant un examen. Les résultats, eux, ne peuvent pas être
+  falsifiés (tests `supabase/tests/exam-modes.test.ts`).
+
 ## Questions ouvertes
 
 - **Q-01 — Hébergement de prévisualisation** : options gratuites à comparer
@@ -318,10 +362,10 @@ par une nouvelle entrée qui la remplace explicitement.
 - **Q-01 devient bloquante pour les comptes** : sans hébergement, les liens
   de confirmation et la connexion ne peuvent pas être utilisés depuis un
   iPhone.
-- **Q-10 — Onzième thème de l’examen** : la page officielle annonce onze
-  thèmes et en liste dix. Faut-il un onzième univers (et lequel) si une
-  source le précise ? En attendant : 10 univers.
-- **Q-11 — Répartition des 72 leçons** : la répartition provisoire (D-020)
-  est à valider par le porteur.
+- ~~**Q-10 — Onzième thème de l’examen**~~ : tranché le 24/10/2026 par le
+  porteur : 10 univers tant qu’aucune source officielle ne précise le
+  onzième thème.
+- ~~**Q-11 — Répartition des 72 leçons**~~ : validée par le porteur le
+  24/10/2026 (6, 7, 4, 8, 10, 9, 5, 6, 8, 9).
 - **Q-06 — Dépôt public ou privé** : un dépôt privé protège le code, mais
   GitHub Actions y est limité à un quota gratuit de minutes.

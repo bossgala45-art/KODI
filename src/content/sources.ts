@@ -40,6 +40,13 @@ export const SOURCES = {
     consultedAt: CONSULTED,
     citedArticles: ["R416-17 à R416-20", "Arrêté du 30 septembre 2008 relatif à la présignalisation des véhicules"],
   },
+  preparationCode: {
+    id: "preparationCode",
+    title: "Se préparer à l’examen du code",
+    publisher: SR,
+    url: SR_URL + "passer-son-permis-de-conduire/preparation-de-lexamen-du-code-de-la-route/se-preparer-lexamen-du",
+    consultedAt: "2026-10-24",
+  },
   themesExamen: sr(
     "themesExamen",
     "Objectifs et réglementation de l’examen du code",

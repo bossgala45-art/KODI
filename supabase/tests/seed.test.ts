@@ -34,7 +34,7 @@ describe("import du catalogue pédagogique (supabase/seed/content.sql)", () => {
       const [row] = await q<Record<string, number>>(`
         select (select count(*)::int from public.courses where external_ref is not null) as universes,
                (select sum(planned_lessons)::int from public.courses where external_ref is not null) as planned,
-               (select count(*)::int from public.competences where external_ref is not null) as competences,
+               (select count(*)::int from public.competences where external_ref is not null and external_ref not like 'c-test-%') as competences,
                (select count(*)::int from public.lessons) as lessons,
                (select count(*)::int from public.questions where external_ref like 'ex-%' or external_ref like 'q-demo-%') as questions,
                (select count(*)::int from public.questions where is_demo) as demo,

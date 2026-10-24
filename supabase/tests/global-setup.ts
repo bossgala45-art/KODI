@@ -62,6 +62,18 @@ async function seed(connectionString: string): Promise<void> {
     }
     await insertQuestion("brouillon-1", "draft", [1]);
     await insertQuestion("relecture-1", "in_review", [2]);
+
+    // Deux compétences publiées : pub-1 à pub-22 → c-test-a, pub-23 à pub-45 → c-test-b.
+    await client.query(`
+      insert into public.competences (course_id, slug, title, status, external_ref)
+      select id, s.slug, s.title, 'published', s.slug
+      from public.courses, (values ('c-test-a', 'Compétence A'), ('c-test-b', 'Compétence B')) as s(slug, title)
+      where courses.slug = 'cours-publie';
+      insert into public.question_competences (question_id, competence_id)
+      select q.id, c.id from public.questions q join public.competences c
+        on c.external_ref = case when substring(q.external_ref from 5)::int <= 22 then 'c-test-a' else 'c-test-b' end
+      where q.external_ref like 'pub-%';
+    `);
   } finally {
     await client.end();
   }

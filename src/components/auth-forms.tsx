@@ -14,6 +14,7 @@ import {
   signUp,
   updatePassword,
 } from "@/lib/auth/actions";
+import { safeNextPath } from "@/lib/auth/redirect";
 import { useAuth } from "@/lib/auth/session-store";
 import { FIRST_NAME_MAX_LENGTH } from "@/lib/profile";
 import { isSupabaseConfigured } from "@/lib/supabase/config";
@@ -97,7 +98,8 @@ export function LoginForm() {
     setServerError(null);
     const result = await signIn(values.email, values.password);
     setPending(false);
-    if (result.ok) router.push("/profil");
+    // Retour à la page d'origine si elle est autorisée (ex. : /simuler).
+    if (result.ok) router.push(safeNextPath(new URLSearchParams(window.location.search).get("next")));
     else setServerError(result.error);
   }
 

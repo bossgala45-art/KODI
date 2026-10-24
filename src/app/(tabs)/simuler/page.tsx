@@ -1,68 +1,71 @@
 import type { Metadata } from "next";
-import { ExamModeSwitch } from "@/components/exam-mode-switch";
-import { QuizSession } from "@/components/quiz-session";
-import { PageHeader } from "@/components/ui/display";
-import { EXAM_FORMAT, EXAM_QUIZ_BANK } from "@/content/exam-questions";
-import { formatConsultedAt } from "@/content/sources";
+import { ExamCenter } from "@/components/exam-center";
+import { Card, PageHeader } from "@/components/ui/display";
+import { QUESTIONS } from "@/content/catalog";
+import { SOURCES, formatConsultedAt } from "@/content/sources";
+import { validatedExamQuestionCount } from "@/lib/exam/modes";
 
 export const metadata: Metadata = { title: "Simuler" };
 
-export default function SimulationPage() {
-  const { questionCount, passMark, source } = EXAM_FORMAT;
+function SourceLinkInline({ id }: { id: "examen" | "preparationCode" }) {
+  const source = SOURCES[id];
+  return (
+    <a
+      href={source.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="font-medium text-brand-text underline underline-offset-2"
+    >
+      {source.publisher.split(" (")[0]} — « {source.title} »<span className="sr-only"> (nouvel onglet)</span>
+    </a>
+  );
+}
 
+export default function SimulationPage() {
   return (
     <>
       <PageHeader
         title="Simuler"
-        description="Un examen blanc au format de l’épreuve : la correction s’affiche seulement à la fin."
+        description="Quatre modes d’examen, tirés parmi les questions validées et corrigés par le serveur."
       />
-      <ExamModeSwitch>
-        <QuizSession
-          mode="simulation"
-          content="non-relue"
-          passMark={passMark}
-          bank={EXAM_QUIZ_BANK}
-          length={questionCount}
-          title="Examen blanc"
-          icon="flag"
-          startLabel="Lancer l’examen blanc"
-          details={[
-            `${questionCount} questions tirées au hasard, comme à l’examen`,
-            `Réussi à partir de ${passMark} bonnes réponses sur ${questionCount}`,
-            "Une réponse n’est juste que si toutes les bonnes propositions sont cochées",
-            "Corrigé détaillé et sources à la fin",
-          ]}
-          notice={
-            <div className="space-y-2">
-              <p>
-                <strong>Format vérifié :</strong> {questionCount} questions et
-                seuil de {passMark} bonnes réponses, d’après{" "}
-                <a
-                  href={source.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-medium text-brand-text underline underline-offset-2"
-                >
-                  Service-Public.gouv.fr
-                  <span className="sr-only"> (nouvel onglet)</span>
-                </a>{" "}
-                (consulté le {formatConsultedAt(source.consultedAt)}).
-              </p>
-              <p>
-                <strong>Questions :</strong> rédigées pour KODI à partir des
-                pages officielles de la Sécurité routière. Ce ne sont pas les
-                questions de l’examen officiel, qui ne sont pas publiques. Elles
-                n’ont pas encore été relues par un professionnel : le badge
-                « Non relues » le rappelle.
-              </p>
-              <p>
-                À l’examen, les questions s’appuient sur des photos et des
-                vidéos ; ici, les situations sont décrites par écrit.
-              </p>
-            </div>
-          }
-        />
-      </ExamModeSwitch>
+      <ExamCenter validated={validatedExamQuestionCount(QUESTIONS)} />
+
+      <section aria-labelledby="fidelite" className="mt-10">
+        <Card>
+          <h2 id="fidelite" className="font-bold">
+            Fidélité à l’examen réel
+          </h2>
+          <p className="mt-2 text-sm">
+            <strong>Conforme, d’après les sources officielles consultées :</strong> 40 questions à choix
+            multiples, réussite à partir de 35 bonnes réponses (mode officiel simulé) ; pour une question à
+            plusieurs réponses, le nombre de réponses attendues est indiqué.
+          </p>
+          <p className="mt-2 text-sm">
+            <strong>Différent de l’examen réel :</strong> les questions sont originales, rédigées pour KODI ;
+            elles ne viennent pas de la banque officielle (1 037 questions, non publique). Les situations sont
+            décrites par écrit, alors que l’examen s’appuie sur des photos et des vidéos. Aucune limite de temps
+            n’est appliquée : la durée par question n’a pas pu être vérifiée sur un texte officiel.
+          </p>
+          <p className="mt-2 text-sm">
+            <strong>Règle de KODI, non vérifiée sur un texte officiel :</strong> une réponse n’est comptée juste
+            que si toutes les bonnes propositions, et elles seules, sont cochées ; une question sans réponse est
+            comptée fausse.
+          </p>
+          <p className="mt-2 text-sm">
+            Cette simulation n’est donc pas une reproduction fidèle de l’épreuve : c’est un entraînement à son
+            format.
+          </p>
+          <ul className="mt-3 space-y-1 text-xs">
+            <li>
+              Source : <SourceLinkInline id="examen" />, consulté le {formatConsultedAt(SOURCES.examen.consultedAt)}
+            </li>
+            <li>
+              Source : <SourceLinkInline id="preparationCode" />, consulté le{" "}
+              {formatConsultedAt(SOURCES.preparationCode.consultedAt)}
+            </li>
+          </ul>
+        </Card>
+      </section>
     </>
   );
 }

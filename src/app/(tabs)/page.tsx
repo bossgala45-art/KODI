@@ -16,7 +16,8 @@ export default function HomePage() {
         Les leçons sont en cours de rédaction : celles qui existent sont des
         démonstrations, marquées « Démonstration · non validé ». Les
         questions, pas encore relues par une personne compétente, portent le
-        badge « À vérifier » ou « Non relues ».
+        badge « À vérifier » ; les examens n’utiliseront que des questions
+        validées.
       </Alert>
 
       <OnboardingPrompt />

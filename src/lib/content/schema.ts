@@ -27,6 +27,9 @@ export const DB_STATUS: Record<ContentStatus, "draft" | "in_review" | "published
   retire: "retired",
 };
 
+export const LESSON_ACCESS = ["gratuit", "premium"] as const;
+export type LessonAccess = (typeof LESSON_ACCESS)[number];
+
 export const CAMERAS = ["conducteur", "aerienne", "arriere", "usager"] as const;
 
 const id = z.string().regex(/^[a-z0-9][a-z0-9-]*$/, "identifiant : minuscules, chiffres et tirets");
@@ -118,6 +121,8 @@ export const lessonSchema = z.object({
   sources: z.array(sourceId).default([]),
   /** Contenu de démonstration : ne peut jamais être validé. */
   demo: z.boolean().default(false),
+  /** Offre : « gratuit » (cours essentiels) ou « premium » (D-030). */
+  access: z.enum(LESSON_ACCESS).default("gratuit"),
   blocks: z.array(blockSchema).min(1),
 });
 

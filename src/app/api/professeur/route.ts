@@ -1,6 +1,15 @@
 import type { NextRequest } from "next/server";
 import { MAX_BODY_BYTES, parseTutorRequest } from "@/lib/tutor/request";
+import { getServerSupabase } from "@/lib/supabase/server";
 import { askTutor, clientFingerprint } from "@/lib/tutor/server";
+
+/** Droit Premium lu dans la base (private.has_premium), jamais déclaré par le navigateur. */
+async function isPremium(): Promise<boolean> {
+  const supabase = await getServerSupabase();
+  if (!supabase) return false;
+  const { data, error } = await supabase.rpc("my_entitlements");
+  return !error && (data as { premium?: unknown } | null)?.premium === true;
+}
 
 const NO_STORE = { "Cache-Control": "no-store" };
 
@@ -35,7 +44,7 @@ export async function POST(request: NextRequest) {
   const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || request.headers.get("x-real-ip") || "inconnue";
   const client = clientFingerprint(ip, request.headers.get("user-agent") ?? "");
 
-  const outcome = await askTutor(tutorRequest, client);
+  const outcome = await askTutor(tutorRequest, client, await isPremium());
   if (!outcome.ok) return error(429, outcome.error, { "Retry-After": "60" });
   return Response.json(outcome.response, { headers: NO_STORE });
 }

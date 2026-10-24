@@ -8,6 +8,8 @@ import { ScenePlayer } from "@/components/simulation/scene-player";
 import { PageHeader } from "@/components/ui/display";
 import { LESSONS, lessonHref, sourceLink } from "@/content/catalog";
 import { SCENES, sceneBySlug } from "@/content/scenes";
+import { sceneAccess } from "@/content/scenes/plan";
+import { PremiumGate } from "@/components/billing/premium-gate";
 
 export function generateStaticParams() {
   return SCENES.map((s) => ({ scene: s.slug }));
@@ -36,7 +38,13 @@ export default async function ScenePage({ params }: PageProps<"/simulations/[sce
       <div className="-mt-3 mb-5">
         <StatusBadge status={scene.status} />
       </div>
-      <ScenePlayer scene={scene} />
+      {sceneAccess(scene.slug) === "decouverte" ? (
+        <ScenePlayer scene={scene} />
+      ) : (
+        <PremiumGate title="Scène réservée à Premium" description="Les scènes de découverte sont gratuites ; toutes les autres scènes font partie de l’offre Premium.">
+          <ScenePlayer scene={scene} />
+        </PremiumGate>
+      )}
       <section aria-labelledby="sources-scene" className="mt-8 text-sm">
         <h2 id="sources-scene" className="font-bold">
           Sources

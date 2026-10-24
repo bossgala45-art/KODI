@@ -279,6 +279,7 @@
         "priorites"
       ],
       "demo": true,
+      "access": "gratuit",
       "blocks": [
         {
           "type": "text",
@@ -329,6 +330,7 @@
         "passageNiveau"
       ],
       "demo": true,
+      "access": "gratuit",
       "blocks": [
         {
           "type": "text",

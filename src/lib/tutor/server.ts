@@ -83,6 +83,6 @@ export function tutorStatus(): TutorStatus {
   };
 }
 
-export function askTutor(request: TutorRequest, client: string): Promise<TutorOutcome> {
-  return answerTutorRequest(request, client, new Date(), getDeps());
+export function askTutor(request: TutorRequest, client: string, premium: boolean): Promise<TutorOutcome> {
+  return answerTutorRequest(request, client, new Date(), getDeps(), premium);
 }

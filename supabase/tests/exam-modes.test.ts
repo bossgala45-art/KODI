@@ -36,6 +36,13 @@ beforeAll(() => {
 });
 afterAll(() => db.close());
 
+/** Plusieurs examens le même jour : réservé à Premium (offre gratuite : un par jour). */
+async function premiumUser(label: string): Promise<string> {
+  const user = await db.createUser(label);
+  await db.admin("update public.subscriptions set plan = 'premium', status = 'active' where user_id = $1", [user]);
+  return user;
+}
+
 const start = (user: string, mode: string, refs: string[] | null = null) =>
   db.asUser(user, async (q) => (await q<{ id: string }>("select public.start_exam_mode($1, $2) as id", [mode, refs]))[0]!.id);
 
@@ -181,7 +188,7 @@ describe("modes d’examen : tirage", () => {
   });
 
   it("propose d’abord des questions inédites", async () => {
-    const user = await db.createUser("inedites");
+    const user = await premiumUser("inedites");
     const seen = new Set<string>();
     for (let round = 1; round <= 5; round += 1) {
       const exam = await getExam(user, await start(user, "express"));
@@ -270,7 +277,7 @@ describe("modes d’examen : sessions et résultats", () => {
   });
 
   it("cumule les statistiques des seuls examens remis", async () => {
-    const user = await db.createUser("statistiques");
+    const user = await premiumUser("statistiques");
     const first = await getExam(user, await start(user, "express"));
     await answerWith(user, first, 10);
     await submit(user, first.id);

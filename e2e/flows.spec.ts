@@ -34,8 +34,9 @@ test("une série d’entraînement complète alimente la progression", async ({ 
   await expect(page.getByRole("heading", { name: "Série terminée" })).toBeVisible();
   await page.getByRole("link", { name: "Voir ma progression" }).click();
   await expect(page).toHaveURL("/progression");
-  await expect(page.getByText("Sessions récentes")).toBeVisible();
-  await expect(page.getByText(/\/ 5$/).first()).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Sessions récentes" })).toBeVisible();
+  // Détail réservé à Premium : verrouillé dans l'offre gratuite (sans compte).
+  await expect(page.getByRole("heading", { name: "Statistiques avancées" }).first()).toBeVisible();
 
   await page.goto("/");
   await expect(page.getByText("5 / 20 questions")).toBeVisible();
@@ -134,11 +135,33 @@ test("mode local : le profil l’indique et l’oubli de mot de passe ne contact
   await expect(page.getByText("Comptes non configurés")).toBeVisible();
 });
 
-test("Premium : le bouton explique que l’offre n’est pas disponible", async ({ page }) => {
+test("Premium : sans Stripe configuré, l’offre est décrite mais aucun paiement n’est possible", async ({ page, request }) => {
   await page.goto("/premium");
-  await expect(page.getByText("Données fictives")).toBeVisible();
-  await page.getByRole("button", { name: /Passer à Premium/ }).click();
-  await expect(page.getByText("Premium n’est pas encore disponible")).toBeVisible();
+  await expect(page.getByText("Paiement non disponible")).toBeVisible();
+  await expect(page.getByRole("table", { name: /offre gratuite et de l’offre Premium/ })).toBeVisible();
+  await expect(page.getByRole("row", { name: /Examens blancs 1 par jour Illimités/ })).toBeVisible();
+  await expect(page.getByText("4,99 €")).toBeVisible();
+  await expect(page.getByText("Prix envisagé, à confirmer")).toBeVisible();
+  await expect(page.getByRole("button", { name: /Commander avec obligation de paiement/ })).toHaveCount(0);
+
+  await page.getByRole("link", { name: "Conditions générales de vente" }).click();
+  await expect(page.getByText("Document pas encore publié")).toBeVisible();
+
+  await page.goto("/abonnement/resilier");
+  await expect(page.getByText(/il n’y a donc rien à gérer/)).toBeVisible();
+
+  for (const path of ["/api/paiement/session", "/api/paiement/resiliation", "/api/stripe/webhook"]) {
+    const response = await request.post(path, { data: {} });
+    expect(response.status(), path).toBe(503);
+    expect(await response.json()).toEqual({ error: "paiement-non-configure" });
+  }
+});
+
+test("offre gratuite : la scène de découverte est ouverte et signalée comme gratuite", async ({ page }) => {
+  await page.goto("/simulations");
+  await expect(page.getByText("Découverte · gratuite")).toBeVisible();
+  await page.goto("/simulations/intersection-sans-signalisation");
+  await expect(page.getByRole("heading", { name: "Scène réservée à Premium" })).toHaveCount(0);
 });
 
 test("leçon : correction des réponses, carnet d’erreurs, maîtrise et programme du jour", async ({ page }) => {
@@ -206,6 +229,8 @@ test("coach : les réponses d’une leçon alimentent conseils, XP et défis", a
   expect(Number(xp?.replace(" XP", ""))).toBeGreaterThanOrEqual(30);
   await page.getByText("Comment gagner des XP ?").click();
   await expect(page.getByText(/répondre au hasard ne paie pas/)).toBeVisible();
+  // Coach étendu (planning sur 7 jours, examens) : réservé à Premium.
+  await expect(page.getByRole("heading", { name: "Coach étendu" })).toHaveCount(2);
 });
 
 test("professeur : depuis une correction, mode sans IA clairement indiqué et explications prédéfinies", async ({ page }) => {

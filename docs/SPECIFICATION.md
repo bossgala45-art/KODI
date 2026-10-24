@@ -138,8 +138,12 @@ prédéfinies, quotas et budget quotidien. Aucune règle n’est inventée.
 
 - Usage possible sans compte (progression locale) ; compte pour synchroniser
   entre appareils (Supabase Auth + PostgreSQL avec Row Level Security).
-- **Premium** : périmètre gratuit / payant **[À VALIDER]**. Le paiement
-  n’est mis en place qu’à la phase dédiée.
+- **Freemium** (D-030, docs/PAIEMENTS.md) : gratuit = cours essentiels,
+  quiz, corrections, un examen par jour, scènes de découverte, coach
+  basique ; Premium = tous les cours, examens illimités, toutes les scènes,
+  statistiques avancées, coach étendu, IA selon les quotas. Prix envisagé
+  4,99 € TTC par mois, à confirmer. Paiement par Stripe Checkout et Stripe
+  Billing, prêt mais **non activé** (Stripe non configuré).
 - **Phase 2** : comptes, base et synchronisation implémentés (DECISIONS.md
   D-016 à D-019) ; mise en service manuelle décrite dans docs/SUPABASE.md.
 - Conformité RGPD : consentement, export et suppression des données, mentions

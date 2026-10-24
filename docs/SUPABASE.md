@@ -73,9 +73,10 @@ NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_…
 ```
 
 > **Ne jamais** placer la clé secrète (`sb_secret_…`) ou `service_role` dans
-> l’application, le dépôt ou une variable `NEXT_PUBLIC_…`. Si cela arrivait,
-> KODI la refuse et reste en mode local. L’application n’utilise aucune clé
-> secrète : toute la sécurité repose sur RLS.
+> le dépôt ou une variable `NEXT_PUBLIC_…`. Si cela arrivait, KODI la refuse
+> et reste en mode local. Seule exception : les paiements (docs/PAIEMENTS.md)
+> lisent `SUPABASE_SECRET_KEY` côté serveur uniquement, pour deux fonctions
+> réservées à `service_role` ; tout le reste repose sur RLS.
 
 ## 5. Devenir relecteur des questions
 

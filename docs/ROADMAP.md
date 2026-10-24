@@ -204,7 +204,7 @@ Livré, en attente de validation (D-027, D-028) :
 Clôture (24/10/2026) : CI verte ; phase validée par le porteur
 (« je valide »).
 
-## 🟡 Phase 9 — Professeur IA
+## ✅ Phase 9 — Professeur IA (mode sans IA)
 
 Périmètre défini par le porteur (prompt « professeur IA », 24/10/2026), à
 implémenter si une API et un budget sont disponibles : ce n’est pas le cas
@@ -225,13 +225,35 @@ Livré, en attente de validation :
 - Tests des erreurs du fournisseur, des quotas, des refus et des réponses
   sans source fiable (client simulé : aucun appel réel).
 
+Clôture (24/10/2026) : CI verte ; phase validée par le porteur
+(« je valide »), en mode sans IA générative.
+
 Reste, hors de portée de l’agent :
 - [ ] Décision d’activation et budget (Q-15), hébergement (Q-01), contenus
   validés par le porteur.
 
-## ⬜ Phase 10 — Premium
+## 🟡 Phase 10 — Premium (freemium et paiements)
 
-- Périmètre, paiement, gestion des abonnements, documents légaux.
+Périmètre défini par le porteur (prompt « freemium », 24/10/2026).
+
+Livré, en attente de validation (D-030, docs/PAIEMENTS.md) :
+- Offres gratuite et Premium, prix envisagé 4,99 € TTC par mois « à
+  confirmer », comparatif sur la page Premium.
+- Droits côté serveur : 1 examen par jour en gratuit, leçons Premium (RLS),
+  IA réservée à Premium ; verrous d’affichage pour le coach étendu, les
+  statistiques avancées et les scènes Premium.
+- Stripe Checkout et Billing préparés : webhook vérifié et idempotent,
+  statuts et échecs de paiement, portail client, résiliation en 3 clics,
+  rétractation en ligne avec remboursement, mode test d’abord, production
+  bloquée tant que prix, vendeur et documents légaux manquent.
+- Obligations commerciales et conditions d’hébergement vérifiées sur les
+  sources officielles ; actions manuelles documentées.
+
+**Aucun vrai paiement n’est activé** : Stripe n’est pas configuré.
+
+Reste, hors de portée de l’agent :
+- [ ] Compte Stripe en mode test, hébergement commercial (Q-01, Q-02).
+- [ ] Vendeur, CGV, mentions légales, médiateur (Q-16, Q-17), e-mails (Q-19).
 
 ## ⬜ Phase 11 — Validation et lancement
 

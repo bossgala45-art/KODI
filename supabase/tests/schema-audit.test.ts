@@ -105,8 +105,9 @@ describe("audit global du schéma public", () => {
         and has_function_privilege('authenticated', p.oid, 'execute')
       order by 1
     `);
-    // Seule la vérification du rôle éditorial est utilisée par les politiques.
-    expect(rows.map((r) => r.name)).toEqual(["is_editor"]);
+    // Seules les vérifications utilisées par les politiques (rôle éditorial,
+    // abonnement de la personne connectée, sans argument) sont exposées.
+    expect(rows.map((r) => r.name)).toEqual(["current_user_has_premium", "is_editor"]);
   });
 
   it("publie en temps réel uniquement les tables prévues", async () => {

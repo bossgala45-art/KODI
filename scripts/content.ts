@@ -150,12 +150,12 @@ on conflict (id) do update set external_ref = excluded.external_ref, course_id =
 
   for (const l of catalog.lessons) {
     out.push(
-      `insert into public.lessons (id, external_ref, course_id, slug, title, summary, position, status, is_demo, blocks, sources, reviewer_name, reviewed_at)
-values (${sql(stableUuid(`lesson:${l.id}`))}, ${sql(l.id)}, ${sql(stableUuid(`universe:${l.universeId}`))}, ${sql(l.slug)}, ${sql(l.title)}, ${sql(l.summary)}, ${l.position}, ${status(l.status)}, ${l.demo}, ${sqlJson(l.blocks)}, ${sqlJson(sourcesJson(l.sources))}, ${sql(l.review?.by)}, ${reviewedAt(l.review)})
+      `insert into public.lessons (id, external_ref, course_id, slug, title, summary, position, status, is_demo, blocks, sources, reviewer_name, reviewed_at, access)
+values (${sql(stableUuid(`lesson:${l.id}`))}, ${sql(l.id)}, ${sql(stableUuid(`universe:${l.universeId}`))}, ${sql(l.slug)}, ${sql(l.title)}, ${sql(l.summary)}, ${l.position}, ${status(l.status)}, ${l.demo}, ${sqlJson(l.blocks)}, ${sqlJson(sourcesJson(l.sources))}, ${sql(l.review?.by)}, ${reviewedAt(l.review)}, ${sql(l.access)})
 on conflict (id) do update set external_ref = excluded.external_ref, course_id = excluded.course_id, slug = excluded.slug,
   title = excluded.title, summary = excluded.summary, position = excluded.position, status = excluded.status,
   is_demo = excluded.is_demo, blocks = excluded.blocks, sources = excluded.sources,
-  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at;`,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, access = excluded.access;`,
     );
     out.push(`delete from public.lesson_competences where lesson_id = ${sql(stableUuid(`lesson:${l.id}`))};`);
     for (const c of l.competenceIds) {

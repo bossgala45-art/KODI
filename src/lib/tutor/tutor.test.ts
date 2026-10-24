@@ -25,6 +25,7 @@ const lesson = (overrides: Partial<Lesson> = {}): Lesson => ({
   competenceIds: ["c-prio"],
   sources: ["priorites"],
   demo: false,
+  access: "gratuit",
   blocks: [
     {
       type: "text",
@@ -114,7 +115,7 @@ function depsWith(overrides: Partial<TutorDeps> = {}) {
 describe("mode sans IA générative", () => {
   it("sans fournisseur, répond avec les explications prédéfinies, clairement signalées", async () => {
     const { deps } = depsWith({ catalog: UNVALIDATED });
-    const outcome = await answerTutorRequest(ask(), "client", NOW, deps);
+    const outcome = await answerTutorRequest(ask(), "client", NOW, deps, true);
     expect(outcome.ok).toBe(true);
     if (!outcome.ok) return;
     expect(outcome.response.mode).toBe("sans-ia");
@@ -207,7 +208,7 @@ describe("appel du fournisseur", () => {
   it("répond avec l’IA quand tout est vérifié, et cite les sources utilisées", async () => {
     const { provider, calls } = fakeProvider({ ok: true, text: "On cède le passage à droite [S1].", usage: OK_USAGE });
     const { deps, logs } = depsWith({ provider });
-    const outcome = await answerTutorRequest(ask(), "client", NOW, deps);
+    const outcome = await answerTutorRequest(ask(), "client", NOW, deps, true);
     expect(outcome).toMatchObject({
       ok: true,
       response: { mode: "ia", provider: "IA de test", text: "On cède le passage à droite [S1].", citations: [{ ref: "S1" }] },
@@ -219,10 +220,18 @@ describe("appel du fournisseur", () => {
     ]);
   });
 
+  it("réserve l’IA à Premium (droit vérifié côté serveur) : sans abonnement, aucun appel", async () => {
+    const { provider, calls } = fakeProvider({ ok: true, text: "x [S1]", usage: OK_USAGE });
+    const { deps } = depsWith({ provider });
+    const outcome = await answerTutorRequest(ask(), "client", NOW, deps, false);
+    expect(outcome).toMatchObject({ ok: true, response: { mode: "sans-ia", reason: "reserve-premium" } });
+    expect(calls).toHaveLength(0);
+  });
+
   it("n’appelle pas l’IA sans source fiable", async () => {
     const { provider, calls } = fakeProvider({ ok: true, text: "x [S1]", usage: OK_USAGE });
     const { deps } = depsWith({ provider, catalog: UNVALIDATED });
-    const outcome = await answerTutorRequest(ask(), "client", NOW, deps);
+    const outcome = await answerTutorRequest(ask(), "client", NOW, deps, true);
     expect(outcome).toMatchObject({ ok: true, response: { mode: "sans-ia", reason: "aucune-source-fiable" } });
     expect(calls).toHaveLength(0);
   });
@@ -240,7 +249,7 @@ describe("appel du fournisseur", () => {
   ] as const)("erreur « %s » → repli vers les corrections prédéfinies (%s)", async (error, reason) => {
     const { provider } = fakeProvider({ ok: false, error });
     const { deps, logs } = depsWith({ provider });
-    const outcome = await answerTutorRequest(ask(), "client", NOW, deps);
+    const outcome = await answerTutorRequest(ask(), "client", NOW, deps, true);
     expect(outcome).toMatchObject({ ok: true, response: { mode: "sans-ia", reason } });
     if (outcome.ok) expect(outcome.response.predefined.length).toBeGreaterThan(0);
     expect(logs[0]).toMatchObject({ outcome: reason, providerError: error });
@@ -253,7 +262,7 @@ describe("appel du fournisseur", () => {
     ] as const) {
       const { provider } = fakeProvider({ ok: true, text, usage: OK_USAGE });
       const { deps, logs } = depsWith({ provider });
-      const outcome = await answerTutorRequest(ask(), "client", NOW, deps);
+      const outcome = await answerTutorRequest(ask(), "client", NOW, deps, true);
       expect(outcome).toMatchObject({ ok: true, response: { mode: "sans-ia", reason } });
       expect(JSON.stringify(outcome)).not.toContain("90 km/h");
       expect(JSON.stringify(logs)).not.toContain("90 km/h");
@@ -265,12 +274,12 @@ describe("quotas, fréquence et budget", () => {
   it("limite le nombre de demandes par minute, sans appeler l’IA", async () => {
     const { provider, calls } = fakeProvider({ ok: true, text: "Réponse [S1].", usage: OK_USAGE });
     const { deps } = depsWith({ provider, limiter: new RateLimiter({ perMinute: 2, aiPerDay: 10 }) });
-    expect((await answerTutorRequest(ask(), "a", NOW, deps)).ok).toBe(true);
-    expect((await answerTutorRequest(ask(), "a", NOW, deps)).ok).toBe(true);
-    expect(await answerTutorRequest(ask(), "a", NOW, deps)).toEqual({ ok: false, error: "trop-de-demandes" });
+    expect((await answerTutorRequest(ask(), "a", NOW, deps, true)).ok).toBe(true);
+    expect((await answerTutorRequest(ask(), "a", NOW, deps, true)).ok).toBe(true);
+    expect(await answerTutorRequest(ask(), "a", NOW, deps, true)).toEqual({ ok: false, error: "trop-de-demandes" });
     // Un autre client n'est pas concerné ; une minute plus tard, c'est reparti.
-    expect((await answerTutorRequest(ask(), "b", NOW, deps)).ok).toBe(true);
-    expect((await answerTutorRequest(ask(), "a", new Date(NOW.getTime() + 61_000), deps)).ok).toBe(true);
+    expect((await answerTutorRequest(ask(), "b", NOW, deps, true)).ok).toBe(true);
+    expect((await answerTutorRequest(ask(), "a", new Date(NOW.getTime() + 61_000), deps, true)).ok).toBe(true);
     expect(calls).toHaveLength(4);
   });
 
@@ -279,12 +288,12 @@ describe("quotas, fréquence et budget", () => {
     const { deps } = depsWith({ provider, limiter: new RateLimiter({ perMinute: 60, aiPerDay: 2 }) });
     const modes = [];
     for (let i = 0; i < 3; i += 1) {
-      const outcome = await answerTutorRequest(ask(), "a", NOW, deps);
+      const outcome = await answerTutorRequest(ask(), "a", NOW, deps, true);
       if (outcome.ok) modes.push(outcome.response.mode === "ia" ? "ia" : outcome.response.reason);
     }
     expect(modes).toEqual(["ia", "ia", "quota-quotidien"]);
     const tomorrow = new Date("2026-10-25T10:00:00Z");
-    expect(await answerTutorRequest(ask(), "a", tomorrow, deps)).toMatchObject({ response: { mode: "ia" } });
+    expect(await answerTutorRequest(ask(), "a", tomorrow, deps, true)).toMatchObject({ response: { mode: "ia" } });
     expect(calls).toHaveLength(3);
   });
 
@@ -292,19 +301,19 @@ describe("quotas, fréquence et budget", () => {
     const { provider, calls } = fakeProvider({ ok: true, text: "Réponse [S1].", usage: OK_USAGE });
     // Pire cas ≈ 1 000 jetons de sortie × 20 $/Mjeton = 0,02 $ : budget de 0,01 $ insuffisant.
     const { deps } = depsWith({ provider, budget: new DailyBudget(0.01) });
-    expect(await answerTutorRequest(ask(), "a", NOW, deps)).toMatchObject({ response: { mode: "sans-ia", reason: "budget-atteint" } });
+    expect(await answerTutorRequest(ask(), "a", NOW, deps, true)).toMatchObject({ response: { mode: "sans-ia", reason: "budget-atteint" } });
     expect(calls).toHaveLength(0);
   });
 
   it("compte le coût réel, ou le pire cas si le modèle de repli du fournisseur a servi", async () => {
     const budget = new DailyBudget(1);
     const { provider } = fakeProvider({ ok: true, text: "Réponse [S1].", usage: OK_USAGE });
-    await answerTutorRequest(ask(), "a", NOW, depsWith({ provider, budget }).deps);
+    await answerTutorRequest(ask(), "a", NOW, depsWith({ provider, budget }).deps, true);
     expect(budget.spent(NOW)).toBeCloseTo(0.006);
 
     const retried = new DailyBudget(1);
     const fallback = fakeProvider({ ok: true, text: "Réponse [S1].", usage: { ...OK_USAGE, fallbackModelUsed: true } });
-    await answerTutorRequest(ask(), "a", NOW, depsWith({ provider: fallback.provider, budget: retried, providerMayRetry: true }).deps);
+    await answerTutorRequest(ask(), "a", NOW, depsWith({ provider: fallback.provider, budget: retried, providerMayRetry: true }).deps, true);
     expect(retried.spent(NOW)).toBeGreaterThan(0.04);
   });
 
@@ -313,8 +322,8 @@ describe("quotas, fréquence et budget", () => {
     const slow = fakeProvider(() => new Promise<ProviderResult>((resolveCall) => (release = resolveCall)));
     // Budget pour un seul pire cas (~0,0247 $).
     const { deps } = depsWith({ provider: slow.provider, budget: new DailyBudget(0.03) });
-    const first = answerTutorRequest(ask(), "a", NOW, deps);
-    const second = await answerTutorRequest(ask(), "b", NOW, deps);
+    const first = answerTutorRequest(ask(), "a", NOW, deps, true);
+    const second = await answerTutorRequest(ask(), "b", NOW, deps, true);
     expect(second).toMatchObject({ response: { reason: "budget-atteint" } });
     release({ ok: true, text: "Réponse [S1].", usage: OK_USAGE });
     expect(await first).toMatchObject({ response: { mode: "ia" } });
@@ -349,7 +358,7 @@ describe("données personnelles et journal", () => {
   it("n’envoie que le texte masqué au fournisseur et ne journalise aucun texte", async () => {
     const { provider, calls } = fakeProvider({ ok: true, text: "Réponse [S1].", usage: OK_USAGE });
     const { deps, logs } = depsWith({ provider });
-    await answerTutorRequest(ask({ message: "Écrivez-moi à marie@exemple.fr, merci" }), "empreinte-client", NOW, deps);
+    await answerTutorRequest(ask({ message: "Écrivez-moi à marie@exemple.fr, merci" }), "empreinte-client", NOW, deps, true);
     expect(calls[0]!.user).not.toContain("marie@exemple.fr");
     expect(calls[0]!.user).toContain("[e-mail retiré]");
     const logged = JSON.stringify(logs);

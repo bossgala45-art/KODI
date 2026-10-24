@@ -24,6 +24,17 @@ export interface PlannedScene {
   missing?: readonly string[];
 }
 
+/**
+ * Scènes « de découverte », incluses dans l'offre gratuite (D-030) ; les
+ * autres sont réservées à Premium. Proposition de l'agent, à confirmer par
+ * le porteur.
+ */
+export const DISCOVERY_SCENES: ReadonlySet<string> = new Set(["intersection-sans-signalisation"]);
+
+export function sceneAccess(slug: string): "decouverte" | "premium" {
+  return DISCOVERY_SCENES.has(slug) ? "decouverte" : "premium";
+}
+
 export const SCENE_PLAN: readonly PlannedScene[] = [
   { slug: "intersection-sans-signalisation", title: "Intersection sans signalisation", universeId: "u04", available: true, layout: "carrefour", actors: ["voiture"] },
   { slug: "intersection-stop", title: "Intersection avec panneau stop", universeId: "u04", available: false, layout: "carrefour", actors: ["voiture"], missing: ["panneau stop et ligne d’arrêt, à vérifier sur une source officielle"] },

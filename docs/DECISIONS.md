@@ -488,6 +488,47 @@ par une nouvelle entrée qui la remplace explicitement.
   vérifiés, 500 caractères de texte au plus) ; page `/professeur`, ouverte
   aussi depuis chaque correction (« Demander au professeur »).
 
+## D-030 — Freemium et paiements Stripe (prêts, non activés)
+
+- **Contexte** : prompt du porteur « freemium » (24/10/2026). Stripe n’est
+  pas configuré et aucun compte n’existe : l’intégration est prête, **aucun
+  vrai paiement n’est activé** et les pages l’indiquent. Détail, sources et
+  actions manuelles : `docs/PAIEMENTS.md`.
+- **Offres** (`src/lib/billing/plans.ts`) : gratuit = cours essentiels, quiz,
+  corrections, 1 examen par jour, scènes de découverte, coach basique ;
+  Premium = tous les cours, examens illimités, toutes les scènes,
+  statistiques avancées, coach étendu, IA selon les quotas. Prix envisagé
+  4,99 € TTC par mois, affiché comme « à confirmer ».
+- **Interprétations de l’agent** (à confirmer par le porteur) : « un examen
+  blanc par jour » compte tous les modes, jour civil de Paris, examen
+  abandonné compris ; coach basique = compétences faibles, leçons, objectif,
+  erreurs répétées, indicateur de préparation ; coach étendu = planning des
+  révisions sur 7 jours et suivi des examens ; statistiques avancées =
+  réussite par mode et détail des sessions ; scène de découverte = la scène
+  1 ; toutes les leçons actuelles sont « gratuit ».
+- **Droits côté serveur** : `private.has_premium` (statuts `active`,
+  `trialing`, `past_due`, fin de période + 2 jours) décide pour les examens
+  (`KODI_DAILY_EXAM_LIMIT`), les leçons Premium (RLS) et l’IA du professeur.
+  Les statistiques, le coach et les scènes sont calculés sur l’appareil : leur
+  verrou est un choix d’offre, pas une protection de données.
+- **Stripe** : SDK officiel `stripe` 23.0.1 (MIT), Checkout en mode
+  `subscription`, portail client pour le moyen de paiement et les factures.
+  Webhook à signature vérifiée sur le corps brut ; l’abonnement est relu
+  chez Stripe à chaque événement (ordre non garanti) ; idempotence par
+  l’identifiant d’événement, enregistré dans la même transaction que le
+  changement ; erreur temporaire → 500 et nouvel envoi par Stripe.
+- **Exception aux clés** : la clé serveur Supabase (`SUPABASE_SECRET_KEY`)
+  est lue par `src/lib/billing/server.ts` (`server-only`) pour deux
+  fonctions SQL réservées à `service_role` ; l’application ne l’utilise pour
+  rien d’autre.
+- **Test d’abord** : clé `sk_live_…` refusée sauf autorisation explicite,
+  prix confirmé et informations du vendeur complètes ; mode test annoncé.
+- **Résiliation et rétractation** : parcours en 3 clics (« Résilier votre
+  contrat », récapitulatif, « Notifier la résiliation »), fin à l’échéance ;
+  rétractation en ligne pendant le délai (« Renoncer au contrat ici »,
+  « Confirmer la rétractation ») avec remboursement intégral, choix plus
+  favorable que le minimum légal.
+
 ## Questions ouvertes
 
 - **Q-01 — Hébergement de prévisualisation** : options gratuites à comparer
@@ -503,7 +544,8 @@ par une nouvelle entrée qui la remplace explicitement.
   l’usage ; l’abonnement Claude Pro ne couvre pas l’API. À arbitrer avant la
   Phase 9 (budget, ou coach non génératif fondé sur les explications
   vérifiées).
-- **Q-04 — Périmètre gratuit / Premium et prestataire de paiement.**
+- ~~**Q-04 — Périmètre gratuit / Premium et prestataire de paiement**~~ :
+  tranché par le prompt « freemium » (24/10/2026) : offres de D-030, Stripe.
 - **Q-05 — Sources officielles** : identifier les textes de référence et leur
   version avant toute rédaction de question (Phase 3).
 - ~~**Q-07 — Relecture des questions**~~ : tranché le 22/10/2026, le porteur
@@ -540,5 +582,22 @@ par une nouvelle entrée qui la remplace explicitement.
   fournisseur sert), environ 0,001 $ avec Haiku. Un budget de 0,50 $ par
   jour couvrirait donc au moins une douzaine de réponses avec le modèle par
   défaut.
+- **Q-16 — Vendeur** : structure juridique (entreprise individuelle,
+  société…), immatriculation, TVA (franchise ou non), adresse, directeur de
+  la publication : nécessaires aux CGV et mentions légales avant toute
+  vente. Aucune n’est inventée (`src/content/legal.ts` est vide).
+- **Q-17 — Médiateur de la consommation** : obligatoire pour vendre aux
+  particuliers ; à choisir (coût éventuel à vérifier).
+- **Q-18 — Leçons Premium et dépôt public** : un texte Premium écrit dans
+  `content/` est lisible sur GitHub. Options : dépôt de contenu privé,
+  contenu Premium uniquement en base, ou garder tous les cours visibles et
+  ne réserver que les services.
+- **Q-19 — Accusés de réception par e-mail** (résiliation, rétractation) et
+  résiliation sans connexion : nécessitent un envoi d’e-mails (Q-09) ; à
+  mettre en place avant la production.
+- **Q-20 — Coûts Stripe** : environ 0,36 € par mois et par abonné à 4,99 €
+  (calcul à partir des tarifs publics, D-030) ; à confirmer avec le prix.
+- **Q-21 — Interprétations du freemium** (D-030) : examens comptés, contenu
+  du coach basique et étendu, statistiques avancées, scènes de découverte.
 - **Q-06 — Dépôt public ou privé** : un dépôt privé protège le code, mais
   GitHub Actions y est limité à un quota gratuit de minutes.

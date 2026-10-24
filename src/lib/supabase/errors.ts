@@ -45,6 +45,8 @@ const KODI_MESSAGES: Record<string, string> = {
   KODI_QUESTION_IN_ACTIVE_EXAM:
     "Cette question fait partie de votre examen en cours : terminez-le d’abord.",
   KODI_FORBIDDEN: "Action réservée à l’équipe éditoriale.",
+  KODI_DAILY_EXAM_LIMIT:
+    "L’offre gratuite comprend un examen par jour : revenez demain, ou passez à Premium pour des examens illimités.",
   KODI_EXAM_IN_PROGRESS: "Un examen est déjà en cours : reprenez-le ou abandonnez-le d’abord.",
   KODI_INVALID_MODE: "Mode d’examen inconnu.",
   KODI_NO_TARGET: "Choisissez au moins une compétence validée pour l’examen ciblé.",

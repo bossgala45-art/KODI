@@ -232,7 +232,7 @@ Reste, hors de portée de l’agent :
 - [ ] Décision d’activation et budget (Q-15), hébergement (Q-01), contenus
   validés par le porteur.
 
-## 🟡 Phase 10 — Premium (freemium et paiements)
+## ✅ Phase 10 — Premium (freemium prêt, paiements non activés)
 
 Périmètre défini par le porteur (prompt « freemium », 24/10/2026).
 
@@ -250,6 +250,9 @@ Livré, en attente de validation (D-030, docs/PAIEMENTS.md) :
   sources officielles ; actions manuelles documentées.
 
 **Aucun vrai paiement n’est activé** : Stripe n’est pas configuré.
+
+Clôture (24/10/2026) : CI verte ; phase validée par le porteur
+(« je valide »), interprétations de D-030 comprises (Q-21).
 
 Reste, hors de portée de l’agent :
 - [ ] Compte Stripe en mode test, hébergement commercial (Q-01, Q-02).

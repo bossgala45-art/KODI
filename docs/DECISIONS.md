@@ -597,7 +597,7 @@ par une nouvelle entrée qui la remplace explicitement.
   mettre en place avant la production.
 - **Q-20 — Coûts Stripe** : environ 0,36 € par mois et par abonné à 4,99 €
   (calcul à partir des tarifs publics, D-030) ; à confirmer avec le prix.
-- **Q-21 — Interprétations du freemium** (D-030) : examens comptés, contenu
-  du coach basique et étendu, statistiques avancées, scènes de découverte.
+- ~~**Q-21 — Interprétations du freemium**~~ (D-030) : validées par le
+  porteur le 24/10/2026 (« je valide »).
 - **Q-06 — Dépôt public ou privé** : un dépôt privé protège le code, mais
   GitHub Actions y est limité à un quota gratuit de minutes.

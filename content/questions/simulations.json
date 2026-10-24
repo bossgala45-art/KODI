@@ -1,0 +1,23 @@
+{
+  "questions": [
+    {
+      "id": "q-sim-001",
+      "status": "a-verifier",
+      "kind": "multiple",
+      "topic": "Priorités",
+      "prompt": "À une intersection sans panneau, sans feu et sans agent, vous allez tout droit. Une voiture arrive sur votre droite et une autre sur votre gauche. Que devez-vous faire ?",
+      "choices": [
+        { "id": "a", "label": "Céder le passage à la voiture qui vient de ma droite" },
+        { "id": "b", "label": "Passer avant la voiture qui vient de ma gauche, en restant attentif" },
+        { "id": "c", "label": "Passer en premier, car je vais tout droit" },
+        { "id": "d", "label": "M’arrêter obligatoirement, comme à un stop" }
+      ],
+      "correct": ["a", "b"],
+      "explanation": "Sans panneau, sans feu et sans agent, le conducteur venant par la gauche doit céder le passage à l’autre (article R415-5, cité par la Sécurité routière) : vous cédez le passage à la voiture de droite, et la voiture de gauche doit vous céder le passage. Avoir la priorité n’est pas un droit absolu : ralentissez et vérifiez qu’elle vous laisse bien passer.",
+      "sources": ["priorites"],
+      "competenceIds": ["c-priorite-intersection"],
+      "lessonId": "l-u04-priorite-a-droite",
+      "examEligible": false
+    }
+  ]
+}

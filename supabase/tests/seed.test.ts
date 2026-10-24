@@ -36,9 +36,9 @@ describe("import du catalogue pédagogique (supabase/seed/content.sql)", () => {
                (select sum(planned_lessons)::int from public.courses where external_ref is not null) as planned,
                (select count(*)::int from public.competences where external_ref is not null and external_ref not like 'c-test-%') as competences,
                (select count(*)::int from public.lessons) as lessons,
-               (select count(*)::int from public.questions where external_ref like 'ex-%' or external_ref like 'q-demo-%') as questions,
+               (select count(*)::int from public.questions where external_ref ~ '^(ex|q-demo|q-sim)-') as questions,
                (select count(*)::int from public.questions where is_demo) as demo,
-               (select count(*)::int from public.questions where exam_eligible and (external_ref like 'ex-%' or external_ref like 'q-demo-%')) as exam,
+               (select count(*)::int from public.questions where exam_eligible and (external_ref ~ '^(ex|q-demo|q-sim)-')) as exam,
                (select count(*)::int from public.questions where answer_count > 0 and external_ref like 'ex-%') as with_answers`);
       expect(row).toEqual({
         universes: 10,
@@ -63,7 +63,7 @@ describe("import du catalogue pédagogique (supabase/seed/content.sql)", () => {
       expect(statuses?.published).toBe(0);
 
       await TestDb.impersonate(q, reader);
-      expect(await q("select id from public.questions where external_ref like 'ex-%' or external_ref like 'q-demo-%'")).toEqual([]);
+      expect(await q("select id from public.questions where external_ref ~ '^(ex|q-demo|q-sim)-'")).toEqual([]);
       expect(await q("select id from public.lessons")).toEqual([]);
       expect(await q("select id from public.courses where external_ref is not null")).toEqual([]);
     });

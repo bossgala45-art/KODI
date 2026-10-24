@@ -157,9 +157,23 @@ Reste, pour que les examens deviennent utilisables :
 - Reste : synchronisation de l’historique des réponses avec le compte,
   ajustement des paramètres sur des données réelles.
 
-## ⬜ Phase 7 — Scènes 3D
+## 🟡 Phase 7 — Scènes 3D
 
-- Three.js / React Three Fiber, 4 caméras, repli 2D, budget de performance.
+Périmètre défini par le porteur (prompt « moteur de simulation 3D »,
+24/10/2026), traité dans l’ordre des prompts.
+
+Livré, en attente de validation (détails : docs/SCENES.md, D-025) :
+- Première scène : intersection sans signalisation, priorité à droite.
+- Vue conducteur, vue aérienne, caméra libre (rotation et zoom tactiles),
+  caméra explicative animée ; sélection des véhicules et de la plaque de
+  rue ; animations déterministes ; question associée et correction ;
+  sons synthétisés désactivables ; sous-titres ; version 2D de secours.
+- Optimisations pour Safari sur iPhone et contrôles de performance
+  automatiques (mesures faites seulement dans un navigateur sans GPU).
+
+Reste à faire :
+- [ ] Validation de la scène par le porteur, idéalement sur iPhone.
+- [ ] Puis : architecture réutilisable pour les 19 autres situations.
 
 ## ⬜ Phase 8 — Gamification
 

@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { Icon } from "@/components/icons";
+import { ButtonLink } from "@/components/ui/button";
 import { Card } from "@/components/ui/display";
+import { sceneBySlug } from "@/content/scenes";
 import type { LessonBlock } from "@/lib/content/schema";
 
 const CAMERA_LABELS = {
@@ -72,11 +74,17 @@ function Block({ block }: { block: LessonBlock }) {
             {block.camera && <span className="font-normal text-muted">({CAMERA_LABELS[block.camera]})</span>}
           </h2>
           <p className="mt-2 text-sm">{block.instructions}</p>
-          <p className="mt-2 flex items-start gap-2 text-sm text-muted">
-            <Icon name="lock" size={16} className="mt-0.5 shrink-0" />
-            Scène prévue (« {block.sceneSlug} »), pas encore disponible : les scènes 3D arriveront dans une phase
-            ultérieure.
-          </p>
+          {sceneBySlug(block.sceneSlug) ? (
+            <ButtonLink href={`/simulations/${block.sceneSlug}`} className="mt-3">
+              <Icon name="play" size={18} />
+              Ouvrir la simulation
+            </ButtonLink>
+          ) : (
+            <p className="mt-2 flex items-start gap-2 text-sm text-muted">
+              <Icon name="lock" size={16} className="mt-0.5 shrink-0" />
+              Scène prévue (« {block.sceneSlug} »), pas encore disponible.
+            </p>
+          )}
         </Card>
       );
   }

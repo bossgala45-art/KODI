@@ -410,5 +410,9 @@
   "question:q-demo-003": {
     "status": "brouillon",
     "hash": "d6fd90ee346a8518"
+  },
+  "question:q-sim-001": {
+    "status": "a-verifier",
+    "hash": "d2a13e7df9502572"
   }
 }

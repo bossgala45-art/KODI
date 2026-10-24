@@ -146,6 +146,7 @@ export function SegmentedControl<T extends string>({
   name,
   hideLegend = false,
   size = "md",
+  layout = "row",
 }: {
   legend: string;
   options: readonly SegmentOption<T>[];
@@ -154,11 +155,18 @@ export function SegmentedControl<T extends string>({
   name: string;
   hideLegend?: boolean;
   size?: "sm" | "md";
+  /** « grid » : 2 colonnes sur petit écran, une ligne au-delà (nombreuses options). */
+  layout?: "row" | "grid";
 }) {
   return (
-    <fieldset>
+    <fieldset className="min-w-0">
       <legend className={hideLegend ? "sr-only" : "mb-2 text-sm font-semibold"}>{legend}</legend>
-      <div className="flex rounded-2xl border border-line bg-surface-2 p-1">
+      <div
+        className={cn(
+          "rounded-2xl border border-line bg-surface-2 p-1",
+          layout === "grid" ? "grid grid-cols-2 gap-1 sm:flex sm:gap-0" : "flex",
+        )}
+      >
         {options.map((option) => (
           <label
             key={option.value}

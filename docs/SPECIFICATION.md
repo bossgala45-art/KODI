@@ -91,8 +91,11 @@ Révisions (phase 3).
 
 - **20 scènes** de situations de conduite rendues avec Three.js /
   React Three Fiber, consultables sous **4 caméras**.
-- Caméras adoptées (D-010) : vue conducteur, vue aérienne, vue arrière
-  (poursuite), vue d’un autre usager.
+- Caméras de la première scène (D-025) : vue conducteur, vue aérienne,
+  caméra libre (tactile), caméra explicative animée. Vue arrière et vue d’un
+  autre usager (D-010) : à ajouter selon les scènes.
+- Chaque scène : sélection des éléments, animations déterministes, question
+  associée, sons désactivables, sous-titres, version 2D de secours.
 - Contraintes : chargement progressif, repli 2D si WebGL indisponible ou
   appareil trop lent, aucune scène indispensable pour réussir une leçon.
 

@@ -335,6 +335,31 @@ par une nouvelle entrée qui la remplace explicitement.
   consulter avant un examen. Les résultats, eux, ne peuvent pas être
   falsifiés (tests `supabase/tests/exam-modes.test.ts`).
 
+## D-025 — Moteur de simulation 3D (première scène)
+
+- **Contexte** : prompt du porteur « moteur de simulation 3D » (24/10/2026),
+  première scène : intersection avec priorité à droite.
+- **Décision** :
+  - Three.js 0.186.1 et React Three Fiber 9.8.2 (MIT), sans bibliothèque
+    d’aide supplémentaire : les contrôles de caméra libre viennent de
+    Three.js (`OrbitControls`) ;
+  - données de scène pures (`src/content/scenes/`), positions fonction du
+    temps uniquement : 3D, 2D et tests voient exactement la même chose ;
+  - formes géométriques simples et sons synthétisés, affichés comme
+    provisoires ; aucun fichier 3D ou sonore tiers ;
+  - aucun panneau de priorité représenté tant que sa forme et son code n’ont
+    pas été vérifiés sur une source officielle ;
+  - caméras du prompt (conducteur, aérienne, libre, explicative) ; elles
+    remplacent, pour les scènes, les caméras proposées en D-010 (arrière,
+    autre usager), qui pourront être ajoutées par scène ;
+  - version 2D de secours en SVG, automatique ou au choix ;
+  - adaptation automatique de la résolution, budget de rendu vérifié par
+    les tests ; mesures publiées seulement quand elles ont été faites, avec
+    leurs conditions (docs/SCENES.md).
+- **Après validation de la scène** : préparer l’architecture réutilisable
+  pour les 19 autres situations (registre, gabarits de décor, types
+  d’usagers, signalisation vérifiée).
+
 ## Questions ouvertes
 
 - **Q-01 — Hébergement de prévisualisation** : options gratuites à comparer
@@ -367,5 +392,9 @@ par une nouvelle entrée qui la remplace explicitement.
   onzième thème.
 - ~~**Q-11 — Répartition des 72 leçons**~~ : validée par le porteur le
   24/10/2026 (6, 7, 4, 8, 10, 9, 5, 6, 8, 9).
+- **Q-12 — Modèles 3D réalistes** : véhicules et décors définitifs à
+  créer ou à acquérir sous licence compatible (coût éventuel à arbitrer).
+- **Q-13 — Mesures sur iPhone** : à faire sur un appareil réel (Safari),
+  depuis le panneau « Afficher les mesures de performance ».
 - **Q-06 — Dépôt public ou privé** : un dépôt privé protège le code, mais
   GitHub Actions y est limité à un quota gratuit de minutes.

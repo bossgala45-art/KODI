@@ -19,6 +19,7 @@ mobile-first, destinée à être installable sur iPhone, Android et ordinateur.
 | [docs/ROADMAP.md](docs/ROADMAP.md) | Phases, livrables et critères de validation |
 | [docs/DECISIONS.md](docs/DECISIONS.md) | Journal des décisions techniques et questions ouvertes |
 | [docs/CONTENU.md](docs/CONTENU.md) | Écrire, importer et valider les contenus pédagogiques |
+| [docs/SCENES.md](docs/SCENES.md) | Scènes de simulation 3D : fonctionnement, éléments provisoires, performances |
 | [AGENTS.md](AGENTS.md) | Règles pour les agents IA qui travaillent sur le dépôt |
 
 ## Pile technique

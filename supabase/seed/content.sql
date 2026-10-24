@@ -1329,5 +1329,25 @@ insert into public.question_answers (question_id, choice_id) values ('4016550a-0
 insert into public.question_answers (question_id, choice_id) values ('4016550a-00ce-5ea0-b55c-5a6250e558da', '6f8c1da7-945a-5017-b67b-a6dded973a23');
 delete from public.question_competences where question_id = '4016550a-00ce-5ea0-b55c-5a6250e558da';
 insert into public.question_competences (question_id, competence_id) values ('4016550a-00ce-5ea0-b55c-5a6250e558da', 'a8754ce0-1402-5b0e-b697-869bd4098e21');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('9b868b47-c375-53c4-86aa-46b5e66a0ae1', 'q-sim-001', 'Priorités', 'À une intersection sans panneau, sans feu et sans agent, vous allez tout droit. Une voiture arrive sur votre droite et une autre sur votre gauche. Que devez-vous faire ?', 'Sans panneau, sans feu et sans agent, le conducteur venant par la gauche doit céder le passage à l’autre (article R415-5, cité par la Sécurité routière) : vous cédez le passage à la voiture de droite, et la voiture de gauche doit vous céder le passage. Avoir la priorité n’est pas un droit absolu : ralentissez et vérifiez qu’elle vous laisse bien passer.', '[{"title":"Intersections et priorités","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/intersections-et-priorites","consulted_at":"2026-10-22","cited_articles":["R415-1","R415-2","R415-5","R415-12","R311-1","R433-17"]}]'::jsonb, 'in_review'::public.content_status, null, null, '8e12b044-e311-5cff-9739-7f70d56540de', false, false)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '9b868b47-c375-53c4-86aa-46b5e66a0ae1';
+delete from public.question_choices where question_id = '9b868b47-c375-53c4-86aa-46b5e66a0ae1' and id not in ('c87ed8c9-ac97-59d3-9fa1-02cdfd1267be', '3c575c41-ff75-5674-b297-0852e70bfb6d', 'a2a9118e-f8f6-5d69-a148-0cc427a2afc0', '5a52e0ce-3f95-5822-b73f-b3fb372a9762');
+insert into public.question_choices (id, question_id, position, label) values ('c87ed8c9-ac97-59d3-9fa1-02cdfd1267be', '9b868b47-c375-53c4-86aa-46b5e66a0ae1', 0, 'Céder le passage à la voiture qui vient de ma droite')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('3c575c41-ff75-5674-b297-0852e70bfb6d', '9b868b47-c375-53c4-86aa-46b5e66a0ae1', 1, 'Passer avant la voiture qui vient de ma gauche, en restant attentif')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('a2a9118e-f8f6-5d69-a148-0cc427a2afc0', '9b868b47-c375-53c4-86aa-46b5e66a0ae1', 2, 'Passer en premier, car je vais tout droit')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('5a52e0ce-3f95-5822-b73f-b3fb372a9762', '9b868b47-c375-53c4-86aa-46b5e66a0ae1', 3, 'M’arrêter obligatoirement, comme à un stop')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('9b868b47-c375-53c4-86aa-46b5e66a0ae1', 'c87ed8c9-ac97-59d3-9fa1-02cdfd1267be');
+insert into public.question_answers (question_id, choice_id) values ('9b868b47-c375-53c4-86aa-46b5e66a0ae1', '3c575c41-ff75-5674-b297-0852e70bfb6d');
+delete from public.question_competences where question_id = '9b868b47-c375-53c4-86aa-46b5e66a0ae1';
+insert into public.question_competences (question_id, competence_id) values ('9b868b47-c375-53c4-86aa-46b5e66a0ae1', '7fe7f3e9-aecc-5413-942d-e5c19bff2e3c');
 
 commit;

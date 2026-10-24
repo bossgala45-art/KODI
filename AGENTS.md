@@ -77,6 +77,10 @@ npm run test:db     # sécurité de la base (PostgreSQL réel + migrations)
 - Moteur pédagogique : logique pure dans `src/lib/pedagogy/`, sans IA
   générative ; tout changement d’algorithme doit être reporté dans la
   migration SQL correspondante (test de parité dans `supabase/tests/`).
+- Scènes 3D (`docs/SCENES.md`) : positions fonction pure du temps, tout
+  élément provisoire signalé à l’écran, aucun modèle ou son tiers sans
+  licence vérifiée, aucune mesure de performance annoncée sans avoir été
+  faite (avec ses conditions). Budget dans `src/lib/simulation/performance.ts`.
 - Animations : classes `animate-enter` / `animate-pop` / transitions courtes ;
   elles sont neutralisées automatiquement quand l’utilisateur les réduit.
 - Composants client (`"use client"`) seulement quand c’est nécessaire.

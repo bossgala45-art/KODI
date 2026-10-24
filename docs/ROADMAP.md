@@ -188,13 +188,26 @@ Reste, hors de portée de l’agent :
 - [ ] Mesures sur iPhone (Q-13), après mise en ligne (Q-01).
 - [ ] Production des 19 autres scènes, au fil des prompts.
 
-## ⬜ Phase 8 — Gamification
+## 🟡 Phase 8 — Coach pédagogique et gamification
 
-- Séries, objectifs, badges liés à la maîtrise.
+Périmètre défini par le porteur (prompt « coach », 24/10/2026).
+
+Livré, en attente de validation (D-027, D-028) :
+- Coach sans IA : compétences faibles, prochaines leçons, révisions
+  planifiées sur 7 jours, examens récents, objectif quotidien proposé,
+  erreurs répétées, indicateur de préparation prudent (page « Coach » et
+  carte sur l’accueil).
+- XP, niveaux, badges, défis quotidiens, séries de révisions, avec garde-fous
+  contre les réponses au hasard.
+- Tests des recommandations, des révisions et du calcul des récompenses.
+
+Reste à faire :
+- [ ] Validation de la phase par le porteur.
 
 ## ⬜ Phase 9 — Coach IA
 
-- Dépend d’une décision budgétaire (Q-03).
+- Facultatif : le coach à règles de la phase 8 fonctionne sans IA. Un coach
+  génératif dépendrait d’une décision budgétaire (Q-03).
 
 ## ⬜ Phase 10 — Premium
 

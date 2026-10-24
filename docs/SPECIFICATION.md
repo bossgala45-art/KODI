@@ -105,17 +105,22 @@ Révisions (phase 3).
   leçon, répétition espacée).
 - Algorithme déterministe, explicable et testé unitairement.
 
-### 4.6 Coach IA
+### 4.6 Coach pédagogique (sans IA)
 
-- Explique une erreur, propose la suite de révision.
-- Ne produit jamais de règle non sourcée : ses réponses s’appuient sur les
-  explications et sources déjà vérifiées de KODI.
-- **[À VALIDER]** Toute API d’IA est payante à l’usage ; l’abonnement Claude
-  Pro n’inclut pas d’accès API. Voir DECISIONS.md, question ouverte Q-03.
+Décidé par le porteur (prompt « coach », D-027) : règles déterministes, sans
+API d’IA payante. Le coach analyse les compétences faibles, recommande les
+prochaines leçons, planifie les révisions espacées, suit les examens
+récents, propose un objectif quotidien, repère les erreurs répétées et
+affiche un indicateur de préparation prudent. Chaque conseil donne sa
+raison ; aucune règle de conduite n’est produite par le coach.
 
 ### 4.7 Gamification équilibrée
 
-- Séries de jours, objectifs, badges de progression liés à la maîtrise réelle.
+- XP, niveaux, badges, défis quotidiens, séries de révisions (D-028).
+- Les récompenses n’encouragent pas les réponses au hasard (mauvaise
+  réponse sans XP, une fois par question et par jour, plafond quotidien,
+  suspension en cas de réponses au hasard) et ne remplacent pas les critères
+  de maîtrise : niveaux et badges mesurent l’activité.
 - Pas de mécanique punitive, pas de pression à l’achat, pas de classement
   public par défaut.
 

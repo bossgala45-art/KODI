@@ -178,3 +178,32 @@ test("leçon : correction des réponses, carnet d’erreurs, maîtrise et progra
   await expect(page.getByRole("heading", { name: "Programme du jour" })).toBeVisible();
   await expect(page.getByText(/du carnet d’erreurs/)).toBeVisible();
 });
+
+test("coach : les réponses d’une leçon alimentent conseils, XP et défis", async ({ page }) => {
+  await page.goto("/coach");
+  await expect(page.getByText("Pas assez de réponses pour estimer")).toBeVisible();
+  await expect(page.getByText("Votre coach attend vos premières réponses")).toBeVisible();
+
+  await page.goto("/apprendre/regles-priorites/priorite-a-droite");
+  await page.getByRole("button", { name: "Commencer les questions" }).click();
+  for (let i = 0; i < 20; i += 1) {
+    await page.locator("main fieldset label").first().click();
+    await page.getByRole("button", { name: "Valider" }).click();
+    const next = page.getByRole("button", { name: /Question suivante|Voir le bilan/ });
+    const last = (await next.textContent())?.includes("bilan");
+    await next.click();
+    if (last) break;
+  }
+  await expect(page.getByRole("heading", { name: "Série terminée" })).toBeVisible();
+
+  await page.goto("/");
+  await expect(page.getByRole("link", { name: /Votre coach/ })).toContainText(/Niveau \d+ · \d+ XP/);
+  await page.getByRole("link", { name: /Votre coach/ }).click();
+  await expect(page).toHaveURL("/coach");
+  await expect(page.getByRole("heading", { name: "Défis du jour" })).toBeVisible();
+  await expect(page.getByText(/^Première leçon \(obtenu\)$/)).toBeVisible();
+  const xp = await page.getByText(/^\d+ XP$/).first().textContent();
+  expect(Number(xp?.replace(" XP", ""))).toBeGreaterThanOrEqual(30);
+  await page.getByText("Comment gagner des XP ?").click();
+  await expect(page.getByText(/répondre au hasard ne paie pas/)).toBeVisible();
+});

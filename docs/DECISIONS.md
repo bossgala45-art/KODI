@@ -375,6 +375,54 @@ par une nouvelle entrée qui la remplace explicitement.
 - **Hors périmètre** : les 19 scènes elles-mêmes, et les briques
   spécifiques listées dans le programme (non demandées à ce stade).
 
+## D-027 — Coach pédagogique déterministe
+
+- **Contexte** : prompt du porteur « coach pédagogique » (24/10/2026) :
+  tout doit fonctionner sans API d’IA payante, avec des règles testables.
+  Tranche Q-03 pour cette phase : pas de modèle de langage.
+- **Règles** (`src/lib/coach/coach.ts`) :
+  - compétences faibles : évaluées et non maîtrisées, fragiles d’abord, puis
+    par score ;
+  - leçons : non terminées, celles des compétences les plus faibles d’abord
+    puis l’ordre du programme ; une leçon terminée n’est reproposée que si
+    sa compétence reste fragile ;
+  - révisions : échéances du moteur (D-021), dues aujourd’hui et 7 jours ;
+  - examens : 5 derniers, examens officiels simulés réussis sur 30 jours,
+    tendance (dernier contre moyenne des trois précédents, seuil 5 points) ;
+  - objectif quotidien : plus bas si moins de la moitié est réalisée en
+    moyenne sur les 7 jours précédents ; plus haut si les révisions et
+    erreurs en attente dépassent l’objectif ; sinon inchangé ;
+  - erreurs répétées : questions du carnet manquées au moins deux fois ;
+  - préparation : aucune estimation sous 50 réponses en 30 jours ; borne
+    basse de Wilson (95 %) du taux de bonnes réponses ; « prêt » seulement
+    si cette borne atteint 87,5 %, avec 90 % des compétences évaluées et 3
+    examens officiels simulés réussis sur 30 jours (tous réussis) ; plafonné
+    à « en progrès » tant que moins de 90 % des réponses portent sur des
+    questions validées. Toujours présenté comme une estimation.
+
+## D-028 — Gamification équilibrée
+
+- **XP** (`src/lib/coach/rewards.ts`) : bonne réponse 5, révision réussie à
+  échéance 10, erreur corrigée 20, compétence maîtrisée 100 (une fois),
+  leçon terminée 30, examen officiel simulé réussi 50, défi relevé 25.
+- **Garde-fous** : mauvaise réponse = 0 XP (aucune pénalité) ; une fois par
+  question et par jour ; 150 XP de réponse au plus par jour ; XP de réponse
+  suspendus si moins de 40 % des 10 dernières réponses sont justes. Un test
+  vérifie que répondre au hasard rapporte moins du tiers des XP d’une série
+  sérieuse.
+- **Niveaux** : 0, 100, 300, 600, 1 000 XP… (50 × n × (n − 1)).
+- **Badges** : critères pédagogiques (leçon terminée, erreur corrigée,
+  compétence maîtrisée, univers maîtrisé, 7 jours de révisions, révisions à
+  jour, examen réussi, réponse juste dans chaque univers).
+- **Défis quotidiens** : trois, tirés de l’état en début de journée
+  (révisions dues, erreurs du carnet ou leçon, compétence la plus faible).
+- **Série de révisions** : jours consécutifs avec au moins une révision
+  arrivée à échéance.
+- Tout est recalculé depuis l’historique (rien n’est stocké à part) ; les
+  niveaux et badges ne débloquent rien et n’entrent pas dans la maîtrise ni
+  dans l’indicateur de préparation. Données locales à l’appareil : aucun
+  classement.
+
 ## Questions ouvertes
 
 - **Q-01 — Hébergement de prévisualisation** : options gratuites à comparer
@@ -384,7 +432,8 @@ par une nouvelle entrée qui la remplace explicitement.
   dépôt GitHub.
 - **Q-02 — Hébergement de production** : un projet avec offre Premium est un
   usage commercial ; l’offre retenue devra l’autoriser.
-- **Q-03 — Coach IA** : toute API de modèle de langage est facturée à
+- **Q-03 — Coach IA** (tranché pour le coach actuel : règles sans IA,
+  D-027 ; reste ouvert pour un éventuel coach génératif) : toute API de modèle de langage est facturée à
   l’usage ; l’abonnement Claude Pro ne couvre pas l’API. À arbitrer avant la
   Phase 9 (budget, ou coach non génératif fondé sur les explications
   vérifiées).

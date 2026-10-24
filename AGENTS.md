@@ -77,6 +77,9 @@ npm run test:db     # sécurité de la base (PostgreSQL réel + migrations)
 - Moteur pédagogique : logique pure dans `src/lib/pedagogy/`, sans IA
   générative ; tout changement d’algorithme doit être reporté dans la
   migration SQL correspondante (test de parité dans `supabase/tests/`).
+- Coach et gamification (`src/lib/coach/`) : règles déterministes sans IA,
+  chaque conseil avec sa raison ; aucune récompense pour une mauvaise
+  réponse ou une répétition ; niveaux et badges distincts de la maîtrise.
 - Scènes 3D (`docs/SCENES.md`) : positions fonction pure du temps, tout
   élément provisoire signalé à l’écran, aucun modèle ou son tiers sans
   licence vérifiée, aucune mesure de performance annoncée sans avoir été

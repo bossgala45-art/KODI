@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { DailyGoalCard, Greeting, OnboardingPrompt, Shortcuts } from "@/components/home-dashboard";
+import { CoachSummaryCard } from "@/components/coach";
 import { DailyProgramCard } from "@/components/learning";
 import { Icon } from "@/components/icons";
 import { Alert, SectionTitle } from "@/components/ui/display";
@@ -22,6 +23,7 @@ export default function HomePage() {
 
       <OnboardingPrompt />
       <DailyProgramCard />
+      <CoachSummaryCard />
       <DailyGoalCard />
 
       <section aria-labelledby="raccourcis">

@@ -8,6 +8,7 @@ const SCREENS = [
   { path: "/apprendre/regles-priorites/priorite-a-droite", title: "Priorité à droite et intersections" },
   { path: "/apprendre/tunnels-passages-niveau/passage-a-niveau", title: "Franchir un passage à niveau" },
   { path: "/revisions", title: "Révisions" },
+  { path: "/coach", title: "Coach" },
   { path: "/simulations", title: "Simulations" },
   { path: "/simulations/intersection-sans-signalisation", title: "Intersection sans signalisation" },
   { path: "/simuler", title: "Simuler" },

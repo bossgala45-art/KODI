@@ -16,6 +16,16 @@ async function time(page: Page): Promise<number> {
   return Number(await page.getByRole("slider", { name: "Position dans la scène" }).inputValue());
 }
 
+test("le catalogue des simulations distingue scènes disponibles et prévues", async ({ page }) => {
+  await page.goto("/apprendre");
+  await page.getByRole("link", { name: /Simulations 3D/ }).click();
+  await expect(page).toHaveURL("/simulations");
+  await expect(page.locator("main ol > li")).toHaveCount(20);
+  await expect(page.getByText("Prévue · pas encore produite")).toHaveCount(19);
+  await page.getByRole("link", { name: /Intersection sans signalisation/ }).click();
+  await expect(page).toHaveURL(SCENE);
+});
+
 test("la leçon mène à la simulation", async ({ page }) => {
   await page.goto("/apprendre/regles-priorites/priorite-a-droite");
   await page.getByRole("link", { name: /Ouvrir la simulation/ }).click();

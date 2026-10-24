@@ -25,8 +25,9 @@ import {
   Vector3,
 } from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import { layoutGeometry, type LayoutGeometry, type Rect } from "@/lib/simulation/layout";
 import type { Actor, SceneDefinition, SceneProp } from "@/lib/simulation/scene";
-import { learnerOf } from "@/lib/simulation/scene";
+import { actorSize, learnerOf } from "@/lib/simulation/scene";
 import {
   createFrameStats,
   decideQuality,
@@ -78,24 +79,12 @@ const COLORS = {
 // ---------------------------------------------------------------------------
 // Décor
 // ---------------------------------------------------------------------------
-function Ground({ scene }: { scene: SceneDefinition }) {
-  const L = scene.roadLength;
-  const W = scene.roadWidth;
+function Ground({ extent }: { extent: number }) {
   return (
-    <group>
-      <mesh rotation-x={-Math.PI / 2} position-y={-0.02}>
-        <planeGeometry args={[L + 40, L + 40]} />
-        <meshLambertMaterial color={COLORS.grass} />
-      </mesh>
-      <mesh rotation-x={-Math.PI / 2}>
-        <planeGeometry args={[W, L]} />
-        <meshLambertMaterial color={COLORS.road} />
-      </mesh>
-      <mesh rotation-x={-Math.PI / 2} position-y={0.001}>
-        <planeGeometry args={[L, W]} />
-        <meshLambertMaterial color={COLORS.road} />
-      </mesh>
-    </group>
+    <mesh rotation-x={-Math.PI / 2} position-y={-0.02}>
+      <planeGeometry args={[extent * 2, extent * 2]} />
+      <meshLambertMaterial color={COLORS.grass} />
+    </mesh>
   );
 }
 
@@ -122,55 +111,29 @@ function Boxes({ items, color }: { items: ReadonlyArray<{ p: [number, number, nu
   );
 }
 
-function Decor({ scene }: { scene: SceneDefinition }) {
-  const W = scene.roadWidth;
-  const half = scene.roadLength / 2;
-  const { sidewalks, buildings, markings, trunks, crowns } = useMemo(() => {
-    const sidewalks: Array<{ p: [number, number, number]; s: [number, number, number] }> = [];
-    const buildings: typeof sidewalks = [];
-    const markings: typeof sidewalks = [];
-    const trunks: typeof sidewalks = [];
-    const crowns: typeof sidewalks = [];
-    const sw = 2.5; // largeur du trottoir
-    const edge = W / 2;
-    for (const sx of [-1, 1]) {
-      for (const sz of [-1, 1]) {
-        const len = half - edge;
-        // Trottoirs le long des deux routes, de chaque côté du carrefour.
-        sidewalks.push({ p: [sx * (edge + sw / 2), 0.07, sz * (edge + len / 2)], s: [sw, 0.15, len] });
-        sidewalks.push({ p: [sx * (edge + sw + (len - sw) / 2), 0.07, sz * (edge + sw / 2)], s: [len - sw, 0.15, sw] });
-        // Immeubles bas (déterministes, hauteurs variées).
-        for (let i = 0; i < 4; i += 1) {
-          const h = 6 + ((i * 7 + (sx + 2) * 3 + (sz + 2) * 5) % 4) * 2.5;
-          const d = edge + sw + 4 + i * 11;
-          buildings.push({ p: [sx * (edge + sw + 5), h / 2, sz * d], s: [8, h, 9] });
-          if (i > 0) buildings.push({ p: [sx * d, h / 2 + 1, sz * (edge + sw + 5)], s: [9, h + 2, 8] });
-        }
-        // Arbres d'alignement.
-        for (let i = 0; i < 3; i += 1) {
-          const d = edge + 8 + i * 12;
-          trunks.push({ p: [sx * (edge + 1.2), 1.2, sz * d], s: [0.3, 2.4, 0.3] });
-          crowns.push({ p: [sx * (edge + 1.2), 3.2, sz * d], s: [2.2, 2.2, 2.2] });
-        }
-      }
-    }
-    // Lignes axiales discontinues (schématiques), hors du carrefour.
-    for (let d = edge + 2; d < half; d += 6) {
-      for (const s of [-1, 1]) {
-        markings.push({ p: [0, 0.02, s * (d + 1.5)], s: [0.15, 0.01, 3] });
-        markings.push({ p: [s * (d + 1.5), 0.02, 0], s: [3, 0.01, 0.15] });
-      }
-    }
-    return { sidewalks, buildings, markings, trunks, crowns };
-  }, [W, half]);
+type BoxItem = { p: [number, number, number]; s: [number, number, number] };
 
+/** Décor issu de la géométrie pure du type de voirie (identique en 2D). */
+function Decor({ geometry }: { geometry: LayoutGeometry }) {
+  const items = useMemo(() => {
+    const flat = (r: Rect, y: number, h: number): BoxItem => ({ p: [r.x, y + h / 2, r.z], s: [r.w, h, r.d] });
+    return {
+      roads: geometry.roads.map((r) => flat(r, 0, 0.02)),
+      sidewalks: geometry.sidewalks.map((r) => flat(r, 0, 0.15)),
+      markings: geometry.markings.map((r) => flat(r, 0.02, 0.01)),
+      buildings: geometry.buildings.map((b) => flat(b, 0, b.h)),
+      trunks: geometry.trees.map((t): BoxItem => ({ p: [t.x, 1.2, t.z], s: [0.3, 2.4, 0.3] })),
+      crowns: geometry.trees.map((t): BoxItem => ({ p: [t.x, 3.2, t.z], s: [2.2, 2.2, 2.2] })),
+    };
+  }, [geometry]);
   return (
     <group>
-      <Boxes items={sidewalks} color={COLORS.sidewalk} />
-      <Boxes items={buildings} color={COLORS.building} />
-      <Boxes items={markings} color={COLORS.marking} />
-      <Boxes items={trunks} color={COLORS.trunk} />
-      <Boxes items={crowns} color={COLORS.foliage} />
+      <Boxes items={items.roads} color={COLORS.road} />
+      <Boxes items={items.sidewalks} color={COLORS.sidewalk} />
+      <Boxes items={items.markings} color={COLORS.marking} />
+      <Boxes items={items.buildings} color={COLORS.building} />
+      <Boxes items={items.trunks} color={COLORS.trunk} />
+      <Boxes items={items.crowns} color={COLORS.foliage} />
     </group>
   );
 }
@@ -187,7 +150,78 @@ function SelectionRing({ radius }: { radius: number }) {
   );
 }
 
-const Car = memo(function Car({
+/** Formes provisoires par type d'usager. */
+function ActorShape({ actor, color }: { actor: Actor; color: Color }) {
+  const [length, width, height] = actorSize(actor);
+  switch (actor.kind) {
+    case "voiture":
+    case "utilitaire": {
+      const van = actor.kind === "utilitaire";
+      const wheels = [
+        [-width / 2, -length * 0.32],
+        [width / 2, -length * 0.32],
+        [-width / 2, length * 0.32],
+        [width / 2, length * 0.32],
+      ] as const;
+      return (
+        <>
+          <mesh position-y={0.35 + height * (van ? 0.4 : 0.25)}>
+            <boxGeometry args={[width, height * (van ? 0.8 : 0.5), length]} />
+            <meshLambertMaterial color={color} />
+          </mesh>
+          <mesh position={[0, 0.35 + height * (van ? 0.62 : 0.68), van ? -length * 0.38 : 0.25]}>
+            <boxGeometry args={[width * 0.9, height * (van ? 0.3 : 0.4), van ? length * 0.22 : length * 0.5]} />
+            <meshLambertMaterial color={COLORS.glass} />
+          </mesh>
+          {wheels.map(([x, z]) => (
+            <mesh key={`${x}${z}`} position={[x, 0.33, z]} rotation-z={Math.PI / 2}>
+              <cylinderGeometry args={[0.33, 0.33, 0.25, 10]} />
+              <meshLambertMaterial color={COLORS.wheel} />
+            </mesh>
+          ))}
+        </>
+      );
+    }
+    case "velo":
+      return (
+        <>
+          {[-length * 0.32, length * 0.32].map((z) => (
+            <mesh key={z} position={[0, 0.34, z]} rotation-z={Math.PI / 2}>
+              <cylinderGeometry args={[0.34, 0.34, 0.06, 12]} />
+              <meshLambertMaterial color={COLORS.wheel} />
+            </mesh>
+          ))}
+          <mesh position-y={0.6}>
+            <boxGeometry args={[0.08, 0.08, length * 0.7]} />
+            <meshLambertMaterial color={color} />
+          </mesh>
+          <mesh position={[0, 1.15, 0.1]}>
+            <boxGeometry args={[0.4, 0.7, 0.3]} />
+            <meshLambertMaterial color={color} />
+          </mesh>
+          <mesh position={[0, 1.62, 0]}>
+            <sphereGeometry args={[0.15, 10, 8]} />
+            <meshLambertMaterial color="#e0b48c" />
+          </mesh>
+        </>
+      );
+    case "pieton":
+      return (
+        <>
+          <mesh position-y={height * 0.42}>
+            <cylinderGeometry args={[width * 0.35, width * 0.4, height * 0.84, 10]} />
+            <meshLambertMaterial color={color} />
+          </mesh>
+          <mesh position-y={height * 0.92}>
+            <sphereGeometry args={[0.13, 10, 8]} />
+            <meshLambertMaterial color="#e0b48c" />
+          </mesh>
+        </>
+      );
+  }
+}
+
+const Actor3D = memo(function Actor3D({
   actor,
   timeRef,
   selected,
@@ -199,8 +233,8 @@ const Car = memo(function Car({
   onSelect: (id: string) => void;
 }) {
   const ref = useRef<Group>(null);
-  const [length, width, height] = actor.size;
   const color = useMemo(() => new Color(actor.color), [actor.color]);
+  const length = actorSize(actor)[0];
 
   useFrame(() => {
     const group = ref.current;
@@ -210,13 +244,6 @@ const Car = memo(function Car({
     group.rotation.y = -s.heading;
   });
 
-  const wheels = [
-    [-width / 2, -length * 0.32],
-    [width / 2, -length * 0.32],
-    [-width / 2, length * 0.32],
-    [width / 2, length * 0.32],
-  ] as const;
-
   return (
     <group
       ref={ref}
@@ -225,21 +252,8 @@ const Car = memo(function Car({
         onSelect(actor.id);
       }}
     >
-      <mesh position-y={0.35 + height * 0.25}>
-        <boxGeometry args={[width, height * 0.5, length]} />
-        <meshLambertMaterial color={color} />
-      </mesh>
-      <mesh position={[0, 0.35 + height * 0.68, 0.25]}>
-        <boxGeometry args={[width * 0.86, height * 0.4, length * 0.5]} />
-        <meshLambertMaterial color={COLORS.glass} />
-      </mesh>
-      {wheels.map(([x, z]) => (
-        <mesh key={`${x}${z}`} position={[x, 0.33, z]} rotation-z={Math.PI / 2}>
-          <cylinderGeometry args={[0.33, 0.33, 0.25, 10]} />
-          <meshLambertMaterial color={COLORS.wheel} />
-        </mesh>
-      ))}
-      {selected && <SelectionRing radius={length * 0.62} />}
+      <ActorShape actor={actor} color={color} />
+      {selected && <SelectionRing radius={Math.max(length * 0.62, 0.7)} />}
     </group>
   );
 });
@@ -294,11 +308,8 @@ function StreetPlate({ prop, selected, onSelect }: { prop: SceneProp; selected: 
 // ---------------------------------------------------------------------------
 // Caméras
 // ---------------------------------------------------------------------------
-const AERIAL: { position: [number, number, number]; target: [number, number, number] } = {
-  position: [0, 46, 16],
-  target: [0, 0, 0],
-};
-const FREE_START: [number, number, number] = [0, 30, 34];
+/** Hauteur des yeux selon l'usager incarné (m). */
+const EYE_HEIGHT: Record<Actor["kind"], number> = { voiture: 1.3, utilitaire: 1.9, velo: 1.6, pieton: 1.65 };
 
 function CameraRig({ scene, timeRef, mode }: { scene: SceneDefinition; timeRef: RefObject<number>; mode: CameraMode }) {
   const camera = useThree((s) => s.camera) as PerspectiveCamera;
@@ -310,7 +321,7 @@ function CameraRig({ scene, timeRef, mode }: { scene: SceneDefinition; timeRef: 
 
   useEffect(() => {
     if (mode !== "libre") return;
-    camera.position.set(...FREE_START);
+    camera.position.set(...scene.cameras.free);
     const orbit = new OrbitControls(camera, gl.domElement);
     orbit.target.set(0, 0, 0);
     orbit.enableDamping = true;
@@ -327,7 +338,7 @@ function CameraRig({ scene, timeRef, mode }: { scene: SceneDefinition; timeRef: 
       orbit.dispose();
       controls.current = null;
     };
-  }, [mode, camera, gl, invalidate]);
+  }, [mode, camera, gl, invalidate, scene.cameras.free]);
 
   useFrame(() => {
     const t = timeRef.current;
@@ -339,14 +350,16 @@ function CameraRig({ scene, timeRef, mode }: { scene: SceneDefinition; timeRef: 
       const s = sampleTrajectory(learner.trajectory, t);
       const fx = Math.sin(s.heading);
       const fz = -Math.cos(s.heading);
-      // Place du conducteur : à gauche (conduite à droite), à hauteur des yeux.
-      const side = -0.4;
-      camera.position.set(s.x + fz * -side + fx * 0.4, 1.3, s.z - fx * -side + fz * 0.4);
+      // Véhicule : place du conducteur à gauche (conduite à droite) ; vélo, piéton : au centre.
+      const vehicle = learner.kind === "voiture" || learner.kind === "utilitaire";
+      const left = vehicle ? 0.4 : 0;
+      const ahead = vehicle ? 0.4 : 0.1;
+      camera.position.set(s.x + fz * left + fx * ahead, EYE_HEIGHT[learner.kind], s.z - fx * left + fz * ahead);
       look.set(s.x + fx * 20, 0.9, s.z + fz * 20);
       camera.lookAt(look);
       return;
     }
-    const pose = mode === "aerienne" ? AERIAL : cameraAt(scene.explainCamera, t);
+    const pose = mode === "aerienne" ? scene.cameras.aerial : cameraAt(scene.cameras.explain, t);
     camera.position.set(...pose.position);
     look.set(...pose.target);
     camera.lookAt(look);
@@ -410,12 +423,13 @@ export const Scene3D = memo(function Scene3D({
   onContextLost,
 }: Scene3DProps) {
   const dpr = useMemo(() => targetDpr(typeof window === "undefined" ? 1 : window.devicePixelRatio), []);
+  const geometry = useMemo(() => layoutGeometry(scene.layout), [scene.layout]);
   return (
     <Canvas
       dpr={dpr}
       frameloop={playing || mode === "libre" ? "always" : "demand"}
       gl={{ antialias: true, alpha: false, stencil: false, powerPreference: "default" }}
-      camera={{ fov: 55, near: 0.1, far: 400, position: AERIAL.position }}
+      camera={{ fov: 55, near: 0.1, far: 400, position: [...scene.cameras.aerial.position] }}
       onPointerMissed={() => onSelect(null)}
       onCreated={({ gl, scene: three }) => {
         three.background = new Color("#cfe3f5");
@@ -429,10 +443,10 @@ export const Scene3D = memo(function Scene3D({
     >
       <hemisphereLight args={["#ffffff", "#7a8a6a", 1.6]} />
       <directionalLight position={[30, 50, 20]} intensity={1.4} />
-      <Ground scene={scene} />
-      <Decor scene={scene} />
+      <Ground extent={geometry.extent} />
+      <Decor geometry={geometry} />
       {scene.actors.map((actor) => (
-        <Car key={actor.id} actor={actor} timeRef={timeRef} selected={selected === actor.id} onSelect={onSelect} />
+        <Actor3D key={actor.id} actor={actor} timeRef={timeRef} selected={selected === actor.id} onSelect={onSelect} />
       ))}
       {scene.props.map((prop) => (
         <StreetPlate key={prop.id} prop={prop} selected={selected === prop.id} onSelect={onSelect} />

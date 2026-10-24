@@ -360,6 +360,21 @@ par une nouvelle entrée qui la remplace explicitement.
   pour les 19 autres situations (registre, gabarits de décor, types
   d’usagers, signalisation vérifiée).
 
+## D-026 — Architecture réutilisable des scènes
+
+- **Contexte** : première scène validée par le porteur le 24/10/2026 ; le
+  prompt demandait ensuite une architecture pour les 19 autres situations.
+- **Décision** : une scène = des données (voirie, usagers, éléments fixes,
+  caméras, sous-titres, règle de passage, liens pédagogiques). La voirie est
+  convertie en géométrie pure partagée par la 3D et la 2D. L’ordre de
+  passage attendu est vérifié par les tests à partir des trajectoires.
+- **Programme des 20 scènes** : aucune liste n’existait ; l’agent en
+  propose une (`src/content/scenes/plan.ts`), affichée comme proposition à
+  valider. Elle ne contient aucune règle : chaque scène devra être sourcée
+  et relue avant d’être produite.
+- **Hors périmètre** : les 19 scènes elles-mêmes, et les briques
+  spécifiques listées dans le programme (non demandées à ce stade).
+
 ## Questions ouvertes
 
 - **Q-01 — Hébergement de prévisualisation** : options gratuites à comparer
@@ -396,5 +411,7 @@ par une nouvelle entrée qui la remplace explicitement.
   créer ou à acquérir sous licence compatible (coût éventuel à arbitrer).
 - **Q-13 — Mesures sur iPhone** : à faire sur un appareil réel (Safari),
   depuis le panneau « Afficher les mesures de performance ».
+- **Q-14 — Programme des 20 scènes** : valider ou modifier la liste
+  proposée (`src/content/scenes/plan.ts`, page « Simulations »).
 - **Q-06 — Dépôt public ou privé** : un dépôt privé protège le code, mais
   GitHub Actions y est limité à un quota gratuit de minutes.

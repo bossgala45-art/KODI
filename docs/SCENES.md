@@ -1,9 +1,10 @@
 # Scènes de simulation
 
 État au 24/10/2026 : **une scène** (intersection sans signalisation,
-priorité à droite), au statut « à vérifier ». L’architecture réutilisable
-pour les 19 autres situations sera préparée **après validation de cette
-première scène** par le porteur.
+priorité à droite), au statut « à vérifier », validée par le porteur comme
+première scène. L’architecture réutilisable pour les 19 autres situations
+est en place (voir « Architecture » ci-dessous) ; ces 19 scènes ne sont pas
+encore produites.
 
 ## Ce qui existe
 
@@ -91,25 +92,74 @@ représentatives d’un iPhone** :
 
 | Mesure | Valeur |
 | --- | --- |
-| Appels de dessin (vue d’ouverture, caméra conducteur) | 10 |
-| Triangles | 1 134 |
+| Appels de dessin (vue d’ouverture, caméra conducteur) | 10 (9 après le passage au décor générique) |
+| Triangles | 1 134 (1 478 après le passage au décor générique) |
 | Appels de dessin observés pendant la lecture (capture manuelle) | 29 |
-| Images par seconde (rendu logiciel), sur 8 relevés | de 19,6 à 57,9 selon la taille d’écran et la densité |
-| JavaScript de la page (décodé / transféré) | 1 885 Kio / 526 Kio |
-| dont moteur 3D (décodé) | 921 Kio |
+| Images par seconde (rendu logiciel), sur 10 relevés | de 19,6 à 60,1 selon la taille d’écran et la densité |
+| JavaScript de la page (décodé / transféré) | 1 888 Kio / 527 Kio |
+| dont moteur 3D (décodé) | 922 Kio |
 
 **Aucune mesure n’a été faite sur iPhone ni dans Safari** : à faire sur un
 appareil réel (le panneau « Afficher les mesures de performance » de la
 page donne les valeurs en direct). Les gestes tactiles (pincer, tourner)
 n’ont pas pu être testés automatiquement.
 
+## Architecture réutilisable
+
+Une scène se décrit **uniquement par des données** (un fichier dans
+`src/content/scenes/`), sans code de rendu :
+
+| Brique | Rôle | Disponible |
+| --- | --- | --- |
+| Type de voirie (`layout`) | transformé en géométrie pure (chaussées, trottoirs, marquages, immeubles, arbres), dessinée à l’identique en 3D et en 2D | carrefour, carrefour en T (branche nord ou sud), ligne droite (nord-sud ou est-ouest) |
+| Usagers (`actors`) | forme provisoire, taille, couleur, explication, trajectoire | voiture, utilitaire, vélo, piéton |
+| Éléments fixes (`props`) | sélectionnables et expliqués | plaque de rue ; **aucun panneau réglementaire** tant qu’il n’est pas vérifié |
+| Caméras (`cameras`) | vue aérienne, départ de la caméra libre, clés de la caméra explicative ; la vue conducteur suit l’usager de l’apprenant (hauteur des yeux selon le type) | — |
+| Sous-titres (`cues`) | synchronisés avec le temps | — |
+| Règle de passage (`rules`) | ordre attendu dans la zone de conflit, **vérifié par les tests** à partir des trajectoires | — |
+| Liens | univers, leçon, question du catalogue, sources, éléments provisoires | — |
+
+Contrôles automatiques pour toute scène (`src/lib/simulation/architecture.test.ts`) :
+scène bien formée, ordre de passage respecté, liens vers le catalogue
+cohérents (question, leçon contenant un bloc simulation vers la scène,
+compétences du même univers, sources du registre), décor sans élément posé
+sur la chaussée, trottoirs le long de chaque bord de chaussée.
+
+### Ajouter une scène
+
+1. Lire et citer la source officielle de la règle (registre
+   `src/content/sources.ts`).
+2. Créer `src/content/scenes/<slug>.ts` en suivant la première scène :
+   voirie, usagers et trajectoires (clés `t`, `x`, `z`), caméras,
+   sous-titres, ordre de passage, éléments provisoires, statut
+   `a-verifier`.
+3. Ajouter la question associée dans `content/questions/` (statut
+   `a-verifier`), et un bloc `simulation` vers la scène dans la leçon.
+4. L’inscrire dans `SCENES` (`src/content/scenes/index.ts`) et passer
+   `available: true` dans le programme (`plan.ts`).
+5. `npm run content:build`, puis tous les tests : ils refusent une scène
+   dont l’ordre de passage ou les liens ne sont pas cohérents.
+
+Briques encore à créer pour certaines scènes prévues (indiquées dans
+`plan.ts`) : trajectoires courbes, panneaux et marquages vérifiés, voie
+ferrée et train, tunnel, voie d’accélération, places de stationnement,
+éclairage de nuit, pluie et brouillard, gyrophare et sirène.
+
+### Programme des 20 scènes (proposition à valider)
+
+Aucune liste n’existait : la liste de `src/content/scenes/plan.ts` est une
+**proposition de l’agent**, une ou plusieurs scènes par univers, affichée
+sur la page `/simulations` avec la mention « Programme proposé, à
+valider ». Seule la scène 1 est produite.
+
 ## Code
 
 ```
 src/lib/simulation/timeline.ts     trajectoires, horloge, caméra explicative, sous-titres
-src/lib/simulation/scene.ts        modèle d’une scène, contrôles, fenêtre de passage au carrefour
+src/lib/simulation/layout.ts       types de voirie → géométrie pure (3D et 2D)
+src/lib/simulation/scene.ts        modèle d’une scène, usagers, contrôles, ordre de passage
 src/lib/simulation/performance.ts  budget, mesure des images, décisions d’adaptation
 src/lib/simulation/audio.ts        sons synthétisés
-src/content/scenes/                données des scènes (une pour l’instant)
+src/content/scenes/                données des scènes (une pour l’instant) et programme des 20
 src/components/simulation/         vue 3D, vue 2D, lecteur
 ```

@@ -1,13 +1,40 @@
 "use client";
 
 /**
- * Version 2D de secours : vue de dessus en SVG, calculée avec les mêmes
- * trajectoires que la 3D. Fonctionne sans WebGL et sur les appareils lents.
+ * Version 2D de secours : vue de dessus en SVG, dessinée avec la même
+ * géométrie de voirie et les mêmes trajectoires que la 3D. Fonctionne sans
+ * WebGL et sur les appareils lents.
  */
-import type { SceneDefinition } from "@/lib/simulation/scene";
+import { useMemo } from "react";
+import { layoutGeometry, type Rect } from "@/lib/simulation/layout";
+import { actorSize, type Actor, type SceneDefinition } from "@/lib/simulation/scene";
 import { sampleTrajectory } from "@/lib/simulation/timeline";
 
 const VIEW = 30;
+const rect = (r: Rect) => ({ x: r.x - r.w / 2, y: r.z - r.d / 2, width: r.w, height: r.d });
+
+function ActorMark({ actor, selected }: { actor: Actor; selected: boolean }) {
+  const [length, width] = actorSize(actor);
+  const ring = selected && <circle r={Math.max(length * 0.7, 1)} fill="none" stroke="#ffd400" strokeWidth={0.5} />;
+  if (actor.kind === "pieton") {
+    return (
+      <>
+        {ring}
+        <circle r={0.45} fill={actor.color} stroke="#101b30" strokeWidth={0.1} />
+      </>
+    );
+  }
+  return (
+    <>
+      {ring}
+      <rect x={-width / 2} y={-length / 2} width={width} height={length} rx={0.3} fill={actor.color} stroke="#101b30" strokeWidth={0.1} />
+      {actor.kind !== "velo" && (
+        // Pare-brise : indique l'avant du véhicule.
+        <rect x={-width / 2 + 0.2} y={-length / 2 + 0.9} width={width - 0.4} height={0.7} fill="#1d2a40" />
+      )}
+    </>
+  );
+}
 
 export function Scene2D({
   scene,
@@ -20,29 +47,33 @@ export function Scene2D({
   selected: string | null;
   onSelect: (id: string | null) => void;
 }) {
-  const W = scene.roadWidth;
-  const L = scene.roadLength;
+  const geometry = useMemo(() => layoutGeometry(scene.layout), [scene.layout]);
+  const view = Math.min(VIEW, geometry.extent);
   return (
     <svg
-      viewBox={`${-VIEW} ${-VIEW} ${VIEW * 2} ${VIEW * 2}`}
+      viewBox={`${-view} ${-view} ${view * 2} ${view * 2}`}
       preserveAspectRatio="xMidYMid slice"
       role="img"
       aria-label="Vue 2D de dessus de la scène"
       className="block h-full w-full"
       onClick={() => onSelect(null)}
     >
-      <rect x={-VIEW} y={-VIEW} width={VIEW * 2} height={VIEW * 2} fill="#9fbf8a" />
-      {/* Trottoirs puis chaussées */}
-      <rect x={-W / 2 - 2.5} y={-L / 2} width={W + 5} height={L} fill="#c9ced6" />
-      <rect x={-L / 2} y={-W / 2 - 2.5} width={L} height={W + 5} fill="#c9ced6" />
-      <rect x={-W / 2} y={-L / 2} width={W} height={L} fill="#5b6472" />
-      <rect x={-L / 2} y={-W / 2} width={L} height={W} fill="#5b6472" />
-      <g stroke="#f4f7fb" strokeWidth={0.15} strokeDasharray="3 3">
-        <line x1={0} y1={-L / 2} x2={0} y2={-W / 2 - 1} />
-        <line x1={0} y1={W / 2 + 1} x2={0} y2={L / 2} />
-        <line x1={-L / 2} y1={0} x2={-W / 2 - 1} y2={0} />
-        <line x1={W / 2 + 1} y1={0} x2={L / 2} y2={0} />
-      </g>
+      <rect x={-geometry.extent} y={-geometry.extent} width={geometry.extent * 2} height={geometry.extent * 2} fill="#9fbf8a" />
+      {geometry.buildings.map((b, i) => (
+        <rect key={`b${i}`} {...rect(b)} fill="#d8cbb8" />
+      ))}
+      {geometry.sidewalks.map((r, i) => (
+        <rect key={`s${i}`} {...rect(r)} fill="#c9ced6" />
+      ))}
+      {geometry.roads.map((r, i) => (
+        <rect key={`r${i}`} {...rect(r)} fill="#5b6472" />
+      ))}
+      {geometry.markings.map((r, i) => (
+        <rect key={`m${i}`} {...rect(r)} fill="#f4f7fb" />
+      ))}
+      {geometry.trees.map((tree, i) => (
+        <circle key={`t${i}`} cx={tree.x} cy={tree.z} r={1.1} fill="#4e8a4a" />
+      ))}
 
       {scene.props.map((prop) => (
         <g
@@ -61,7 +92,6 @@ export function Scene2D({
 
       {scene.actors.map((actor) => {
         const s = sampleTrajectory(actor.trajectory, t);
-        const [length, width] = actor.size;
         const deg = (s.heading * 180) / Math.PI;
         return (
           <g
@@ -73,10 +103,7 @@ export function Scene2D({
             }}
             className="cursor-pointer"
           >
-            {selected === actor.id && <circle r={length * 0.7} fill="none" stroke="#ffd400" strokeWidth={0.5} />}
-            <rect x={-width / 2} y={-length / 2} width={width} height={length} rx={0.4} fill={actor.color} stroke="#101b30" strokeWidth={0.1} />
-            {/* Pare-brise : indique l'avant du véhicule */}
-            <rect x={-width / 2 + 0.2} y={-length / 2 + 0.9} width={width - 0.4} height={0.7} fill="#1d2a40" />
+            <ActorMark actor={actor} selected={selected === actor.id} />
           </g>
         );
       })}

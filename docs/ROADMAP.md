@@ -171,9 +171,19 @@ Livré, en attente de validation (détails : docs/SCENES.md, D-025) :
 - Optimisations pour Safari sur iPhone et contrôles de performance
   automatiques (mesures faites seulement dans un navigateur sans GPU).
 
+Scène 1 validée par le porteur (24/10/2026, « je valide »).
+
+Livré ensuite, en attente de validation (D-026) :
+- Architecture réutilisable : scène décrite par des données, trois types
+  de voirie (carrefour, carrefour en T, ligne droite), quatre types
+  d’usagers (voiture, utilitaire, vélo, piéton), ordre de passage vérifié
+  automatiquement, liens pédagogiques contrôlés.
+- Programme des 20 scènes proposé (page « Simulations ») ; 19 restent à
+  produire.
+
 Reste à faire :
-- [ ] Validation de la scène par le porteur, idéalement sur iPhone.
-- [ ] Puis : architecture réutilisable pour les 19 autres situations.
+- [ ] Validation de l’architecture et du programme des 20 scènes (Q-14).
+- [ ] Mesures sur iPhone (Q-13).
 
 ## ⬜ Phase 8 — Gamification
 

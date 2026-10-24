@@ -34,7 +34,7 @@ export default async function ScenePage({ params }: PageProps<"/simulations/[sce
       )}
       <PageHeader title={scene.title} description={scene.summary} />
       <div className="-mt-3 mb-5">
-        <StatusBadge status="a-verifier" />
+        <StatusBadge status={scene.status} />
       </div>
       <ScenePlayer scene={scene} />
       <section aria-labelledby="sources-scene" className="mt-8 text-sm">

@@ -12,7 +12,7 @@ import {
   summarize,
   targetDpr,
 } from "@/lib/simulation/performance";
-import { intersectionWindow, learnerOf, sceneErrors } from "@/lib/simulation/scene";
+import { learnerOf, passageOrderErrors, sceneErrors, zoneWindow } from "@/lib/simulation/scene";
 import {
   MAX_STEP,
   activeCue,
@@ -104,11 +104,11 @@ describe("horloge de lecture", () => {
 
 describe("caméra explicative et sous-titres", () => {
   it("passe par chaque clé et interpole entre elles", () => {
-    const first = scene.explainCamera[0]!;
-    expect(cameraAt(scene.explainCamera, 0).position).toEqual([...first.position]);
-    const last = scene.explainCamera[scene.explainCamera.length - 1]!;
-    expect(cameraAt(scene.explainCamera, 999).target).toEqual([...last.target]);
-    const mid = cameraAt(scene.explainCamera, 2.25).position;
+    const first = scene.cameras.explain[0]!;
+    expect(cameraAt(scene.cameras.explain, 0).position).toEqual([...first.position]);
+    const last = scene.cameras.explain[scene.cameras.explain.length - 1]!;
+    expect(cameraAt(scene.cameras.explain, 999).target).toEqual([...last.target]);
+    const mid = cameraAt(scene.cameras.explain, 2.25).position;
     expect(mid[1]).toBeGreaterThan(first.position[1]);
   });
 
@@ -127,7 +127,8 @@ describe("scène 1 : intersection sans signalisation", () => {
   });
 
   it("respecte la priorité à droite : verte, puis vous, puis rouge, sans chevauchement", () => {
-    const window = (id: string) => intersectionWindow(scene, scene.actors.find((a) => a.id === id)!);
+    expect(passageOrderErrors(scene)).toEqual([]);
+    const window = (id: string) => zoneWindow(scene, scene.actors.find((a) => a.id === id)!);
     const verte = window("verte")!;
     const vous = window("vous")!;
     const rouge = window("rouge")!;

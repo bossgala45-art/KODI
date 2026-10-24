@@ -11,16 +11,15 @@
  */
 import type { SceneDefinition } from "@/lib/simulation/scene";
 
-const CAR = [4.2, 1.8, 1.45] as const;
-
 export const INTERSECTION_SANS_SIGNALISATION: SceneDefinition = {
   slug: "intersection-sans-signalisation",
   title: "Intersection sans signalisation",
   summary:
     "Trois voitures arrivent à un carrefour de quartier sans panneau, sans feu et sans agent. Qui passe en premier ?",
+  status: "a-verifier",
+  universeId: "u04",
   duration: 16,
-  roadWidth: 7,
-  roadLength: 100,
+  layout: { kind: "carrefour", roadWidth: 7, armLength: 50 },
   actors: [
     {
       id: "vous",
@@ -30,7 +29,6 @@ export const INTERSECTION_SANS_SIGNALISATION: SceneDefinition = {
       isLearner: true,
       description:
         "Vous allez tout droit vers le nord. La voiture verte arrive de votre droite : vous lui cédez le passage. La voiture rouge arrive de votre gauche : elle doit vous céder le passage.",
-      size: CAR,
       trajectory: [
         { t: 0, x: 1.75, z: 40, easing: "ease-out" },
         { t: 4.5, x: 1.75, z: 7 },
@@ -46,7 +44,6 @@ export const INTERSECTION_SANS_SIGNALISATION: SceneDefinition = {
       color: "#1b7a5c",
       description:
         "Elle arrive par votre droite et va tout droit. Personne n’arrive à sa droite : elle passe en premier.",
-      size: CAR,
       trajectory: [
         { t: 0, x: 50, z: -1.75 },
         { t: 10.5, x: -45, z: -1.75 },
@@ -59,7 +56,6 @@ export const INTERSECTION_SANS_SIGNALISATION: SceneDefinition = {
       color: "#c8323c",
       description:
         "Elle arrive par votre gauche : vous êtes à sa droite, elle doit donc vous céder le passage. Elle passe en dernier.",
-      size: CAR,
       trajectory: [
         { t: 0, x: -45, z: 1.75, easing: "ease-out" },
         { t: 5, x: -7, z: 1.75 },
@@ -82,14 +78,22 @@ export const INTERSECTION_SANS_SIGNALISATION: SceneDefinition = {
       text: "Rue des Tilleuls",
     },
   ],
-  explainCamera: [
-    { t: 0, position: [1.75, 9, 52], target: [1.75, 0, 20] },
-    { t: 4.5, position: [14, 26, 22], target: [0, 0, 0] },
-    { t: 6, position: [8, 12, 15], target: [1, 0, -1.75] },
-    { t: 8.5, position: [-12, 15, 14], target: [1.75, 0, 0] },
-    { t: 11, position: [-20, 10, 10], target: [-2, 0, 1.75] },
-    { t: 16, position: [0, 38, 18], target: [0, 0, 0] },
-  ],
+  cameras: {
+    aerial: { position: [0, 46, 16], target: [0, 0, 0] },
+    free: [0, 30, 34],
+    explain: [
+      { t: 0, position: [1.75, 9, 52], target: [1.75, 0, 20] },
+      { t: 4.5, position: [14, 26, 22], target: [0, 0, 0] },
+      { t: 6, position: [8, 12, 15], target: [1, 0, -1.75] },
+      { t: 8.5, position: [-12, 15, 14], target: [1.75, 0, 0] },
+      { t: 11, position: [-20, 10, 10], target: [-2, 0, 1.75] },
+      { t: 16, position: [0, 38, 18], target: [0, 0, 0] },
+    ],
+  },
+  rules: {
+    // Priorité à droite : la verte (à droite de l'apprenant), l'apprenant, puis la rouge (à sa gauche).
+    expectedOrder: ["verte", "vous", "rouge"],
+  },
   cues: [
     { from: 0, to: 4.5, text: "Vous approchez d’une intersection sans panneau, sans feu et sans agent." },
     {

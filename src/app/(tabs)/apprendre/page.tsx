@@ -23,6 +23,20 @@ export default function LearnPage() {
         une source réglementaire avant d’être publiée.
       </Alert>
 
+      <Link
+        href="/simulations"
+        className="mb-6 flex items-center gap-4 rounded-3xl border border-line bg-surface p-4 shadow-card transition-colors hover:border-line-strong"
+      >
+        <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-night text-on-brand">
+          <Icon name="cube" />
+        </span>
+        <span className="min-w-0 flex-1">
+          <span className="block font-semibold">Simulations 3D</span>
+          <span className="block text-sm text-muted">Situations de conduite interactives</span>
+        </span>
+        <Icon name="chevron-right" className="shrink-0 text-muted" />
+      </Link>
+
       <ul className="grid gap-3 sm:grid-cols-2">
         {UNIVERSES.map((universe) => {
           const count = lessonsOf(universe.id).length;

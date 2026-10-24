@@ -123,7 +123,7 @@ Reste, au fil des phases :
 - Lecteur de leçons et entraînement par leçon : livrés en phase 3.
 - Reste : entraînement libre par univers, premières questions publiées.
 
-## 🟡 Phase 5 — Modes d’examen
+## ✅ Phase 5 — Modes d’examen
 
 Périmètre défini par le porteur (prompt « examens », 24/10/2026), traité
 avant la phase 4 dans l’ordre des prompts.
@@ -144,10 +144,12 @@ Livré, en attente de validation :
   directes, examens d’autrui, double remise, fonctions internes, fuite des
   réponses), avec vérification par injection de défauts.
 
-Reste à faire :
-- [ ] Validation de la phase par le porteur.
-- [ ] Valider des questions (relecture) et mettre le serveur en service
-  (docs/SUPABASE.md) pour que les examens deviennent utilisables.
+Clôture (24/10/2026) : CI verte ; phase validée par le porteur
+(« je valide tout »).
+
+Reste, pour que les examens deviennent utilisables :
+- [ ] Valider des questions (relecture, question par question).
+- [ ] Mettre le serveur en service (docs/SUPABASE.md).
 
 ## ⬜ Phase 6 — Moteur adaptatif
 

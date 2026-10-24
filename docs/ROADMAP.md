@@ -188,7 +188,7 @@ Reste, hors de portée de l’agent :
 - [ ] Mesures sur iPhone (Q-13), après mise en ligne (Q-01).
 - [ ] Production des 19 autres scènes, au fil des prompts.
 
-## 🟡 Phase 8 — Coach pédagogique et gamification
+## ✅ Phase 8 — Coach pédagogique et gamification
 
 Périmètre défini par le porteur (prompt « coach », 24/10/2026).
 
@@ -201,8 +201,8 @@ Livré, en attente de validation (D-027, D-028) :
   contre les réponses au hasard.
 - Tests des recommandations, des révisions et du calcul des récompenses.
 
-Reste à faire :
-- [ ] Validation de la phase par le porteur.
+Clôture (24/10/2026) : CI verte ; phase validée par le porteur
+(« je valide »).
 
 ## ⬜ Phase 9 — Coach IA
 

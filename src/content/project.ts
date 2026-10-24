@@ -20,7 +20,7 @@ export const phases: readonly Phase[] = [
   { id: 5, title: "Modes d’examen", status: "done" },
   { id: 6, title: "Moteur adaptatif", status: "todo" },
   { id: 7, title: "Scènes 3D", status: "done" },
-  { id: 8, title: "Coach pédagogique et gamification", status: "in-progress" },
+  { id: 8, title: "Coach pédagogique et gamification", status: "done" },
   { id: 9, title: "Coach IA", status: "todo" },
   { id: 10, title: "Premium", status: "todo" },
   { id: 11, title: "Validation et lancement", status: "todo" },

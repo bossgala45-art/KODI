@@ -23,9 +23,11 @@ export type IconName =
   | "refresh"
   | "play"
   | "cube"
-  | "calendar";
+  | "calendar"
+  | "chat";
 
 const PATHS: Record<IconName, ReactNode> = {
+  chat: <path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v9a1.5 1.5 0 0 1-1.5 1.5H9l-5 4z" />,
   play: (
     <>
       <circle cx="12" cy="12" r="9" />

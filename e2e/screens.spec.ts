@@ -9,6 +9,8 @@ const SCREENS = [
   { path: "/apprendre/tunnels-passages-niveau/passage-a-niveau", title: "Franchir un passage à niveau" },
   { path: "/revisions", title: "Révisions" },
   { path: "/coach", title: "Coach" },
+  { path: "/professeur", title: "Professeur" },
+  { path: "/professeur?question=ex-001", title: "Professeur" },
   { path: "/simulations", title: "Simulations" },
   { path: "/simulations/intersection-sans-signalisation", title: "Intersection sans signalisation" },
   { path: "/simuler", title: "Simuler" },

@@ -57,6 +57,7 @@ describe("séance d’entraînement du moteur", () => {
     expect(screen.getByText("Ce n’est pas la bonne réponse.")).toBeTruthy();
     expect(screen.getByText("Bonne(s) réponse(s) oubliée(s) : C")).toBeTruthy();
     expect(screen.getByText("Cochée(s) à tort : B")).toBeTruthy();
+    expect(screen.getByRole("link", { name: "Demander au professeur" }).getAttribute("href")).toMatch(/^\/professeur\?question=/);
     expect(screen.getByRole("link", { name: /Source de test/ }).getAttribute("href")).toBe("https://exemple.test/source");
 
     await user.click(screen.getByRole("button", { name: /Question suivante/ }));

@@ -423,6 +423,71 @@ par une nouvelle entrée qui la remplace explicitement.
   dans l’indicateur de préparation. Données locales à l’appareil : aucun
   classement.
 
+## D-029 — Professeur IA : architecture prête, mode sans IA par défaut
+
+- **Contexte** : prompt du porteur « professeur IA » (24/10/2026), à
+  implémenter « si une API et un budget sont disponibles ». **Ni l’un ni
+  l’autre ne l’est** : l’abonnement Claude Pro ne donne pas accès à l’API,
+  facturée à l’usage, et aucune dépense n’est autorisée. KODI fonctionne
+  donc en **mode sans IA générative**, affiché sur la page, et aucun appel
+  à une IA n’a jamais été fait (ni en développement, ni dans les tests).
+- **Mode sans IA** : le professeur affiche les explications prédéfinies du
+  catalogue (correction de la question, leçon liée, contenus trouvés par
+  mots-clés), mot pour mot, avec leur statut de relecture et leurs sources.
+  Rien n’est généré ; aucune réponse n’est inventée quand rien ne
+  correspond.
+- **Interface interchangeable** (`src/lib/tutor/provider.ts`) : un
+  fournisseur n’a qu’une méthode `generate` et renvoie un texte ou une
+  catégorie d’erreur ; tous les garde-fous sont hors de l’adaptateur.
+  Adaptateur fourni : Anthropic, avec le SDK officiel `@anthropic-ai/sdk`
+  (licence Apache-2.0, gratuit), testé avec un client simulé.
+- **Activation** (côté serveur uniquement, `src/lib/tutor/config.ts`) : il
+  faut à la fois `KODI_TUTOR_PROVIDER=anthropic`, `ANTHROPIC_API_KEY`, un
+  budget quotidien `KODI_TUTOR_DAILY_BUDGET_USD` strictement positif et des
+  tarifs connus. Une clé seule ne déclenche aucune dépense. Variables jamais
+  préfixées `NEXT_PUBLIC_`, lues par un module `server-only` (un test le
+  vérifie).
+- **Modèle par défaut** : `claude-opus-5-5` (4 $ / 20 $ par million de
+  jetons d’entrée / de sortie, tarifs relevés le 24/10/2026), effort
+  `low`, 1 500 jetons de sortie au plus. Modèles moins chers configurables
+  (`KODI_TUTOR_MODEL=claude-haiku-5-5` : 0,10 $ / 0,50 $) ; le choix revient
+  au porteur (Q-15). Repli côté fournisseur (`fallbacks: "default"`) activé
+  par défaut sauf sur Haiku : si le modèle refuse, le fournisseur relance la
+  demande sur un autre modèle, facturé à ses tarifs ; le budget compte alors
+  le pire cas (double). Désactivable avec `KODI_TUTOR_SERVER_FALLBACK=non`.
+- **Sources** : seuls les contenus au statut « valide », hors démonstration,
+  citant une source du registre, sont transmis à l’IA (3 au plus). Sans
+  passage fiable, **aucun appel** : repli « aucune source fiable ». Avec 0
+  contenu validé aujourd’hui, l’IA ne serait jamais appelée même connectée.
+- **Consignes et vérification** : répondre uniquement à partir des sources,
+  citer [S1]…, répondre `HORS_SOURCES` sinon. La réponse n’est affichée que
+  si elle cite au moins une source fournie, n’en cite pas d’autre, et ne
+  contient aucun nombre ni numéro d’article absent des sources. Sinon,
+  refus, réponse tronquée, erreur ou panne du fournisseur : repli vers les
+  explications prédéfinies, avec la raison affichée.
+- **Quotas et coûts** : 5 demandes par minute et par client, 20 réponses IA
+  par jour et par client, budget quotidien réservé **avant** l’appel sur le
+  pire cas (jetons estimés à 1 pour 2 caractères + limite de sortie), puis
+  ajusté au coût réel. Compteurs en mémoire du serveur : sur un hébergement
+  à plusieurs instances, chaque instance a ses compteurs ; un stockage
+  partagé (par exemple une table Supabase) sera nécessaire avant toute mise
+  en ligne avec IA. Les limites par client reposent sur l’adresse transmise
+  par l’hébergeur : contournables par qui la falsifie si l’hébergeur ne la
+  réécrit pas ; le budget quotidien global reste la vraie limite de coût.
+- **Données personnelles** : e-mails, téléphones, IBAN, plaques, longues
+  suites de chiffres et liens sont retirés du message avant tout traitement.
+  Le texte n’est jamais enregistré. Le client est identifié par une
+  empreinte SHA-256 salée (sel tiré au démarrage, jamais stocké) de
+  l’adresse IP et du navigateur. Avec une IA connectée, le texte masqué est
+  transmis au fournisseur : à signaler dans la politique de confidentialité
+  avant activation.
+- **Journal minimal** : une ligne par demande (résultat, fournisseur,
+  catégorie d’erreur, jetons, coût, nombre de masquages et de passages) ;
+  jamais de texte, d’adresse IP ni d’empreinte.
+- **Route** : `POST /api/professeur` (JSON de 4 Kio au plus, champs
+  vérifiés, 500 caractères de texte au plus) ; page `/professeur`, ouverte
+  aussi depuis chaque correction (« Demander au professeur »).
+
 ## Questions ouvertes
 
 - **Q-01 — Hébergement de prévisualisation** : options gratuites à comparer
@@ -433,7 +498,8 @@ par une nouvelle entrée qui la remplace explicitement.
 - **Q-02 — Hébergement de production** : un projet avec offre Premium est un
   usage commercial ; l’offre retenue devra l’autoriser.
 - **Q-03 — Coach IA** (tranché pour le coach actuel : règles sans IA,
-  D-027 ; reste ouvert pour un éventuel coach génératif) : toute API de modèle de langage est facturée à
+  D-027 ; architecture du professeur IA prête, en mode sans IA, D-029 ;
+  reste ouvert pour l’activation, voir Q-15) : toute API de modèle de langage est facturée à
   l’usage ; l’abonnement Claude Pro ne couvre pas l’API. À arbitrer avant la
   Phase 9 (budget, ou coach non génératif fondé sur les explications
   vérifiées).
@@ -463,5 +529,16 @@ par une nouvelle entrée qui la remplace explicitement.
 - ~~**Q-14 — Programme des 20 scènes**~~ : validation déléguée par le
   porteur le 24/10/2026 (« si pour toi c’est bon ») ; la liste proposée est
   retenue. Chaque scène reste à sourcer et à relire avant production.
+- **Q-15 — Activer le professeur IA ?** Dépense future : à décider par le
+  porteur. Il faudrait un compte sur la console Anthropic (facturation à
+  l’usage, carte bancaire), une clé, un budget quotidien, un modèle (prix
+  ci-dessus, D-029), un hébergement (Q-01), des contenus validés, un
+  stockage partagé des quotas et une mise à jour de la politique de
+  confidentialité. Ordre de grandeur calculé à partir des tarifs relevés
+  (pas d’une mesure), à vérifier le jour venu : une réponse coûte au plus
+  environ 0,04 $ avec le modèle par défaut (0,08 $ si le repli du
+  fournisseur sert), environ 0,001 $ avec Haiku. Un budget de 0,50 $ par
+  jour couvrirait donc au moins une douzaine de réponses avec le modèle par
+  défaut.
 - **Q-06 — Dépôt public ou privé** : un dépôt privé protège le code, mais
   GitHub Actions y est limité à un quota gratuit de minutes.

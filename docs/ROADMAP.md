@@ -204,10 +204,30 @@ Livré, en attente de validation (D-027, D-028) :
 Clôture (24/10/2026) : CI verte ; phase validée par le porteur
 (« je valide »).
 
-## ⬜ Phase 9 — Coach IA
+## 🟡 Phase 9 — Professeur IA
 
-- Facultatif : le coach à règles de la phase 8 fonctionne sans IA. Un coach
-  génératif dépendrait d’une décision budgétaire (Q-03).
+Périmètre défini par le porteur (prompt « professeur IA », 24/10/2026), à
+implémenter si une API et un budget sont disponibles : ce n’est pas le cas
+(D-029).
+
+Livré, en attente de validation :
+- Page « Professeur » et lien « Demander au professeur » sous chaque
+  correction : expliquer une règle, reformuler une correction, poser une
+  question.
+- **Mode sans IA générative**, actif et indiqué à l’écran : explications
+  prédéfinies du programme, avec leur statut et leurs sources.
+- Architecture prête pour une IA : appels côté serveur uniquement, clé
+  jamais exposée, interface interchangeable entre fournisseurs (adaptateur
+  Anthropic), sources limitées aux contenus validés, vérification des
+  réponses, repli vers les explications prédéfinies, quotas, limite de
+  fréquence, budget quotidien, masquage des données personnelles, journal
+  minimal.
+- Tests des erreurs du fournisseur, des quotas, des refus et des réponses
+  sans source fiable (client simulé : aucun appel réel).
+
+Reste, hors de portée de l’agent :
+- [ ] Décision d’activation et budget (Q-15), hébergement (Q-01), contenus
+  validés par le porteur.
 
 ## ⬜ Phase 10 — Premium
 

@@ -95,6 +95,13 @@ npm run test:db     # sécurité de la base (PostgreSQL réel + migrations)
 - Supabase : seules `NEXT_PUBLIC_SUPABASE_URL` et
   `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` sont lues par l’application. Jamais
   de clé secrète côté client (un test le vérifie).
+- Professeur IA (`src/lib/tutor/`, D-029) : seule exception, les variables
+  serveur `KODI_TUTOR_*` et `ANTHROPIC_API_KEY`, lues uniquement par
+  `src/lib/tutor/server.ts` (`import "server-only"`), jamais préfixées
+  `NEXT_PUBLIC_`. Aucun appel réel à une IA dans les tests (client simulé).
+  Ne jamais annoncer qu’une IA répond si aucun service n’est connecté ; ne
+  transmettre à l’IA que des contenus validés ; toute réponse passe par
+  `checkAnswer`, sinon repli vers les explications prédéfinies.
 - Aucun secret dans le dépôt (il est public). Variables dans `.env.local`
   (ignoré par Git) et dans les réglages des services.
 - Commits en français ou en anglais, messages explicites ; branches par phase.

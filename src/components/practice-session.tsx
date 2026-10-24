@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { StatusBadge } from "@/components/content-status";
 import { Icon } from "@/components/icons";
@@ -189,6 +190,13 @@ export function PracticeSession({ questions, context, label, onComplete, actions
             {question.explanation}
             <GradeDetail question={question} grade={grade} />
             {question.sources.length > 0 && <SourceList sources={question.sources} />}
+            <Link
+              href={`/professeur?question=${encodeURIComponent(question.id)}`}
+              className="mt-3 inline-flex items-center gap-1 font-semibold text-brand-text underline underline-offset-2"
+            >
+              <Icon name="chat" size={16} />
+              Demander au professeur
+            </Link>
           </Alert>
         )}
       </div>

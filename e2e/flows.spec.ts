@@ -207,3 +207,38 @@ test("coach : les réponses d’une leçon alimentent conseils, XP et défis", a
   await page.getByText("Comment gagner des XP ?").click();
   await expect(page.getByText(/répondre au hasard ne paie pas/)).toBeVisible();
 });
+
+test("professeur : depuis une correction, mode sans IA clairement indiqué et explications prédéfinies", async ({ page }) => {
+  await page.goto("/apprendre/regles-priorites/priorite-a-droite");
+  await page.getByRole("button", { name: "Commencer les questions" }).click();
+  await page.locator("main fieldset label").first().click();
+  await page.getByRole("button", { name: "Valider" }).click();
+  await page.getByRole("link", { name: "Demander au professeur" }).click();
+
+  await expect(page).toHaveURL(/\/professeur\?question=/);
+  await expect(page.getByRole("heading", { level: 1, name: "Professeur" })).toBeVisible();
+  await expect(page.getByRole("note")).toContainText("Mode sans IA générative");
+  await expect(page.getByText("Question corrigée", { exact: true })).toBeVisible();
+  await expect(page.getByLabel("Reformuler une correction")).toBeChecked();
+
+  await page.getByRole("button", { name: "Demander au professeur" }).click();
+  await expect(page.getByText("Réponse sans IA générative")).toBeVisible();
+  await expect(page.getByText(/aucun service d’IA n’est connecté à KODI/).first()).toBeVisible();
+  await expect(page.getByText(/^Correction : /).first()).toBeVisible();
+  await expect(page.getByText(/générée par IA/)).toHaveCount(0);
+
+  // Question libre sans rapport : rien n'est inventé.
+  await page.getByText("Poser une question", { exact: true }).click();
+  await expect(page.getByLabel("Poser une question")).toBeChecked();
+  await page.getByLabel("Votre question").fill("Quelle est la recette de la tarte aux pommes ?");
+  await page.getByRole("button", { name: "Demander au professeur" }).click();
+  await expect(page.getByRole("heading", { name: "Aucune explication ne correspond" })).toBeVisible();
+});
+
+test("professeur : l’API répond sans IA et refuse les demandes invalides", async ({ request }) => {
+  const ok = await request.post("/api/professeur", { data: { kind: "question", message: "Qui a la priorité à droite ?" } });
+  expect(ok.status()).toBe(200);
+  expect(await ok.json()).toMatchObject({ mode: "sans-ia", reason: "aucun-fournisseur" });
+  const invalid = await request.post("/api/professeur", { data: { kind: "question", message: "", secret: "x" } });
+  expect(invalid.status()).toBe(400);
+});

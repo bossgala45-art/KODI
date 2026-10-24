@@ -1,6 +1,13 @@
 "use client";
 
-import { useId, useState, type InputHTMLAttributes, type ReactNode } from "react";
+import {
+  useId,
+  useState,
+  type InputHTMLAttributes,
+  type ReactNode,
+  type SelectHTMLAttributes,
+  type TextareaHTMLAttributes,
+} from "react";
 import { Icon } from "@/components/icons";
 import { cn } from "@/lib/cn";
 
@@ -58,6 +65,55 @@ export function TextField({ label, error, hint, className, ...props }: FieldProp
         {...props}
       />
       <FieldMessages errorId={errorId} hintId={hintId} error={error} hint={hint} />
+    </div>
+  );
+}
+
+export function TextAreaField({
+  label,
+  error,
+  hint,
+  className,
+  ...props
+}: Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, "id"> & { label: string; error?: string; hint?: ReactNode }) {
+  const id = useId();
+  const errorId = `${id}-error`;
+  const hintId = `${id}-hint`;
+  return (
+    <div className={className}>
+      <label htmlFor={id} className="mb-1.5 block text-sm font-semibold">
+        {label}
+      </label>
+      <textarea
+        id={id}
+        aria-invalid={error ? true : undefined}
+        aria-describedby={error ? errorId : hint ? hintId : undefined}
+        className={cn(INPUT, "min-h-28 py-3", error ? "border-danger-text" : "border-line-strong")}
+        {...props}
+      />
+      <FieldMessages errorId={errorId} hintId={hintId} error={error} hint={hint} />
+    </div>
+  );
+}
+
+export function SelectField({
+  label,
+  hint,
+  className,
+  children,
+  ...props
+}: Omit<SelectHTMLAttributes<HTMLSelectElement>, "id"> & { label: string; hint?: ReactNode }) {
+  const id = useId();
+  const hintId = `${id}-hint`;
+  return (
+    <div className={className}>
+      <label htmlFor={id} className="mb-1.5 block text-sm font-semibold">
+        {label}
+      </label>
+      <select id={id} aria-describedby={hint ? hintId : undefined} className={cn(INPUT, "border-line-strong")} {...props}>
+        {children}
+      </select>
+      <FieldMessages errorId="" hintId={hintId} hint={hint} />
     </div>
   );
 }

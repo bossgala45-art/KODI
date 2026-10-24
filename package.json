@@ -21,6 +21,7 @@
     "content:build": "tsx scripts/content.ts build"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^1.3.0",
     "@react-three/fiber": "^9.8.2",
     "@supabase/ssr": "^0.12.7",
     "@supabase/supabase-js": "^2.118.0",

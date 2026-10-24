@@ -114,6 +114,16 @@ récents, propose un objectif quotidien, repère les erreurs répétées et
 affiche un indicateur de préparation prudent. Chaque conseil donne sa
 raison ; aucune règle de conduite n’est produite par le coach.
 
+### 4.6 bis Professeur IA
+
+Prompt « professeur IA » (D-029) : expliquer les règles, reformuler les
+corrections et répondre aux questions. Sans fournisseur d’IA configuré, et
+c’est le cas, le professeur fonctionne en **mode sans IA générative**,
+clairement indiqué, avec les explications prédéfinies du programme. Avec
+une IA connectée : appels côté serveur uniquement, réponses tirées des
+seuls contenus validés et vérifiées, repli vers les explications
+prédéfinies, quotas et budget quotidien. Aucune règle n’est inventée.
+
 ### 4.7 Gamification équilibrée
 
 - XP, niveaux, badges, défis quotidiens, séries de révisions (D-028).

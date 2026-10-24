@@ -4,6 +4,8 @@ import { afterEach, beforeEach } from "vitest";
 // jsdom n'implémente pas matchMedia : stub par défaut (système en clair),
 // que chaque test peut surcharger avec vi.spyOn(window, "matchMedia").
 beforeEach(() => {
+  // Tests côté serveur (environnement node) : pas de navigateur simulé.
+  if (typeof window === "undefined") return;
   Object.defineProperty(window, "matchMedia", {
     configurable: true,
     writable: true,
@@ -22,6 +24,7 @@ beforeEach(() => {
 });
 
 afterEach(() => {
+  if (typeof window === "undefined") return;
   cleanup();
   window.localStorage.clear();
   document.documentElement.removeAttribute("data-theme");

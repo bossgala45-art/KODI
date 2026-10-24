@@ -258,7 +258,14 @@ Reste, hors de portée de l’agent :
 - [ ] Compte Stripe en mode test, hébergement commercial (Q-01, Q-02).
 - [ ] Vendeur, CGV, mentions légales, médiateur (Q-16, Q-17), e-mails (Q-19).
 
-## ⬜ Phase 11 — Validation et lancement
+## 🟡 Phase 11 — Validation et lancement
+
+Audit de lancement réalisé le 24/10/2026 (prompt « audit complet ») :
+`docs/LAUNCH_AUDIT.md`. **Verdict : pas prêt à être publié** (0 question
+validée, PWA absente, scènes 2 à 20 absentes, aucun service en ligne,
+documents légaux et droits RGPD absents). Corrections B1 à B10 et I1 à I6
+listées dans le rapport ; rien n’est publié sans accord explicite du porteur.
+
 
 - Atteinte de l’objectif de contenu vérifié, audits (sécurité, accessibilité,
   performance, RGPD), tests sur appareils réels, levée du `noindex`,

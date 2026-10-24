@@ -23,5 +23,5 @@ export const phases: readonly Phase[] = [
   { id: 8, title: "Coach pédagogique et gamification", status: "done" },
   { id: 9, title: "Professeur IA (mode sans IA tant qu’aucun service n’est connecté)", status: "done" },
   { id: 10, title: "Premium (paiements prêts, non activés)", status: "done" },
-  { id: 11, title: "Validation et lancement", status: "todo" },
+  { id: 11, title: "Validation et lancement (audit fait : pas prêt)", status: "in-progress" },
 ];

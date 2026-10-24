@@ -3,13 +3,11 @@
 Application web progressive (PWA) française de préparation au code de la route,
 mobile-first, destinée à être installable sur iPhone, Android et ordinateur.
 
-> **Statut : Phase 2 — Comptes et base de données (code prêt, Supabase pas
-> encore configuré : voir [docs/SUPABASE.md](docs/SUPABASE.md)).**
-> Phase 1 — Design system et écrans principaux : terminée. Les dix écrans et
-> la navigation fonctionnent, mais aucune leçon ni question réelle n’est encore
-> disponible : les contenus d’exemple sont signalés « Données fictives ». Pas de
-> compte en ligne : les données restent dans le navigateur. Le lancement public
-> n’aura lieu qu’après validation de la version complète.
+> **Statut (24/10/2026) : en développement, pas prêt à être publié.**
+> Voir l’audit de lancement : [docs/LAUNCH_AUDIT.md](docs/LAUNCH_AUDIT.md).
+> 72 questions rédigées, aucune validée ; 2 leçons de démonstration ; 1 scène
+> 3D sur 20 ; pas de PWA ; aucun service en ligne configuré (hébergement,
+> Supabase, Stripe, IA). Sans compte, les données restent dans le navigateur.
 
 ## Documentation
 
@@ -20,6 +18,8 @@ mobile-first, destinée à être installable sur iPhone, Android et ordinateur.
 | [docs/DECISIONS.md](docs/DECISIONS.md) | Journal des décisions techniques et questions ouvertes |
 | [docs/CONTENU.md](docs/CONTENU.md) | Écrire, importer et valider les contenus pédagogiques |
 | [docs/SCENES.md](docs/SCENES.md) | Scènes de simulation 3D : fonctionnement, éléments provisoires, performances |
+| [docs/PAIEMENTS.md](docs/PAIEMENTS.md) | Freemium, Stripe, obligations commerciales, actions manuelles |
+| [docs/LAUNCH_AUDIT.md](docs/LAUNCH_AUDIT.md) | Audit de lancement : état réel, corrections, mise en production |
 | [AGENTS.md](AGENTS.md) | Règles pour les agents IA qui travaillent sur le dépôt |
 
 ## Pile technique
@@ -33,8 +33,11 @@ mobile-first, destinée à être installable sur iPhone, Android et ordinateur.
 
 - Supabase (Auth, PostgreSQL, RLS, Realtime) — migrations dans `supabase/`
 
-Three.js / React Three Fiber et la couche PWA sont **prévus mais pas encore
-installés** (voir la feuille de route).
+- Three.js 0.186 et React Three Fiber 9.8 (scènes 3D)
+- SDK officiels Stripe et Anthropic (prêts, non activés : docs/PAIEMENTS.md, D-029)
+
+La couche PWA (manifeste, service worker, hors ligne) n’est **pas encore
+implémentée** (docs/LAUNCH_AUDIT.md).
 
 ## Commandes
 

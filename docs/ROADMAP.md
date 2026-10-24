@@ -157,7 +157,7 @@ Reste, pour que les examens deviennent utilisables :
 - Reste : synchronisation de l’historique des réponses avec le compte,
   ajustement des paramètres sur des données réelles.
 
-## 🟡 Phase 7 — Scènes 3D
+## ✅ Phase 7 — Scènes 3D
 
 Périmètre défini par le porteur (prompt « moteur de simulation 3D »,
 24/10/2026), traité dans l’ordre des prompts.
@@ -181,9 +181,12 @@ Livré ensuite, en attente de validation (D-026) :
 - Programme des 20 scènes proposé (page « Simulations ») ; 19 restent à
   produire.
 
-Reste à faire :
-- [ ] Validation de l’architecture et du programme des 20 scènes (Q-14).
-- [ ] Mesures sur iPhone (Q-13).
+Clôture (24/10/2026) : architecture et programme retenus par validation
+déléguée du porteur (Q-14).
+
+Reste, hors de portée de l’agent :
+- [ ] Mesures sur iPhone (Q-13), après mise en ligne (Q-01).
+- [ ] Production des 19 autres scènes, au fil des prompts.
 
 ## ⬜ Phase 8 — Gamification
 

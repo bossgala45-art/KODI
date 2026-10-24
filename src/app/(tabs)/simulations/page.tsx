@@ -17,9 +17,9 @@ export default function SimulationsPage() {
         title="Simulations"
         description={`${SCENE_PLAN.length} situations de conduite prévues, ${available} disponible${available > 1 ? "s" : ""}.`}
       />
-      <Alert tone="info" role="note" className="mb-6" title="Programme proposé, à valider">
-        La liste des situations est une proposition en cours de validation. Les scènes prévues ne sont pas encore
-        produites : aucune règle n’y est encore rédigée.
+      <Alert tone="info" role="note" className="mb-6" title="Programme en cours de production">
+        Les scènes prévues ne sont pas encore produites : aucune règle n’y est encore rédigée. Chacune sera
+        vérifiée sur une source officielle et relue avant d’être proposée.
       </Alert>
       <ol className="space-y-3">
         {SCENE_PLAN.map((plan, index) => {

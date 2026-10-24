@@ -411,7 +411,8 @@ par une nouvelle entrée qui la remplace explicitement.
   créer ou à acquérir sous licence compatible (coût éventuel à arbitrer).
 - **Q-13 — Mesures sur iPhone** : à faire sur un appareil réel (Safari),
   depuis le panneau « Afficher les mesures de performance ».
-- **Q-14 — Programme des 20 scènes** : valider ou modifier la liste
-  proposée (`src/content/scenes/plan.ts`, page « Simulations »).
+- ~~**Q-14 — Programme des 20 scènes**~~ : validation déléguée par le
+  porteur le 24/10/2026 (« si pour toi c’est bon ») ; la liste proposée est
+  retenue. Chaque scène reste à sourcer et à relire avant production.
 - **Q-06 — Dépôt public ou privé** : un dépôt privé protège le code, mais
   GitHub Actions y est limité à un quota gratuit de minutes.

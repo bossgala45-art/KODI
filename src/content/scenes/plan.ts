@@ -1,7 +1,8 @@
 /**
  * Programme des 20 scènes de simulation (spécification §4.4).
  *
- * PROPOSITION DE L'AGENT, À VALIDER PAR LE PORTEUR : aucune liste n'existait.
+ * Proposée par l'agent (aucune liste n'existait), retenue par validation
+ * déléguée du porteur le 24/10/2026.
  * Seule la scène 1 est produite. Les autres sont des intentions (titre,
  * univers, briques nécessaires) : aucune règle n'y est encore rédigée, et
  * chacune devra être sourcée puis relue avant d'être produite.

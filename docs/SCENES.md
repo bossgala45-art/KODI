@@ -145,12 +145,12 @@ Briques encore à créer pour certaines scènes prévues (indiquées dans
 ferrée et train, tunnel, voie d’accélération, places de stationnement,
 éclairage de nuit, pluie et brouillard, gyrophare et sirène.
 
-### Programme des 20 scènes (proposition à valider)
+### Programme des 20 scènes
 
-Aucune liste n’existait : la liste de `src/content/scenes/plan.ts` est une
-**proposition de l’agent**, une ou plusieurs scènes par univers, affichée
-sur la page `/simulations` avec la mention « Programme proposé, à
-valider ». Seule la scène 1 est produite.
+Aucune liste n’existait : la liste de `src/content/scenes/plan.ts` a été
+proposée par l’agent (une ou plusieurs scènes par univers) et retenue par
+validation déléguée du porteur le 24/10/2026. Elle est affichée sur la page
+`/simulations`. Seule la scène 1 est produite.
 
 ## Code
 

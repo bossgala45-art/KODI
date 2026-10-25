@@ -62,7 +62,7 @@ base, 211 tests de bout en bout, tous réussis.
 | Accessibilité (axe-core, WCAG 2.2 AA) | inclus dans les E2E | ✅ 0 violation sur les 30 écrans, thèmes clair et sombre ; aucun débordement à 320 px |
 | Vulnérabilités des dépendances | `npm audit` | ✅ 0 (aucune critique, haute, moyenne ni basse) |
 | Validation des contenus | `npm run content:check` | ✅ valide ; 0 contenu validé |
-| CI GitHub | workflow `CI` | ✅ verte sur l’audit (d579d66) ; à revérifier sur le commit des corrections |
+| CI GitHub | workflow `CI` | ✅ verte sur le commit des corrections (1bebf07, 25/10/2026) |
 
 ## Synthèse par domaine
 

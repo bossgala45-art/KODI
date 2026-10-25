@@ -274,6 +274,11 @@ projets de politique de confidentialité et de CGU. **Toujours pas
 publiable** : contenus non validés, services en ligne absents, éditeur
 inconnu, aucune mesure sur iPhone.
 
+Validation (25/10/2026) : audit et corrections validés par le porteur
+(« tout est validé »). Cette validation ne vaut pas relecture des
+questions : chaque question reste « à vérifier » jusqu’à sa validation
+explicite, une par une (docs/RELECTURE.md).
+
 
 - Atteinte de l’objectif de contenu vérifié, audits (sécurité, accessibilité,
   performance, RGPD), tests sur appareils réels, levée du `noindex`,

@@ -193,7 +193,8 @@ par une nouvelle entrée qui la remplace explicitement.
   compte ne sont jamais envoyées. La déconnexion retire le profil du compte
   de l’appareil.
 - Examens : stockés côté serveur, donc communs à toutes les sessions. Les
-  séries d’entraînement (questions fictives) restent locales.
+  séries d’entraînement (questions fictives) restent locales. *(Mis à jour le
+  25/10/2026 : séries, réponses et leçons sont désormais synchronisées, D-031.)*
 - **Limite** : l’horloge de l’appareil intervient dans l’arbitrage d’un
   conflit hors ligne ; un écart d’horloge important peut faire gagner la
   mauvaise version.
@@ -528,6 +529,40 @@ par une nouvelle entrée qui la remplace explicitement.
   rétractation en ligne pendant le délai (« Renoncer au contrat ici »,
   « Confirmer la rétractation ») avec remboursement intégral, choix plus
   favorable que le minimum légal.
+
+## D-031 — Corrections de l’audit de lancement
+
+- **Contexte** : audit du 24/10/2026 (`docs/LAUNCH_AUDIT.md`), puis demande
+  du porteur « fais toutes les corrections » (25/10/2026). Seules les
+  corrections réalisables par l’agent sans compte, dépense ni validation de
+  contenu ont été faites.
+- **CSP sans nonce** (guide Next.js « Without Nonces ») : un nonce imposerait
+  le rendu dynamique de toutes les pages ; `'unsafe-inline'` reste donc
+  nécessaire pour les scripts de Next.js et du thème. Connexions limitées au
+  site et au projet Supabase ; `frame-ancestors 'none'`.
+- **Proxy de session** (`src/proxy.ts`, ex-« middleware ») : modèle
+  @supabase/ssr ; sans Supabase, aucun traitement.
+- **PWA** : service worker écrit à la main (`public/sw.js`), sans
+  bibliothèque : fichiers versionnés en cache, pages en réseau d’abord,
+  page « Hors ligne » ; jamais de cache pour `/api/`, `/auth/` et
+  `no-store`. Icônes dessinées par `scripts/icons.mjs` (aucune ressource
+  tierce).
+- **Progression synchronisée** : les données pédagogiques ne font que
+  s’accumuler ; elles sont rangées telles quelles (`learning_states`) et
+  fusionnées par union sur l’appareil, avec écriture conditionnée à la
+  version. Les tables `attempts` et `revisions` restent réservées aux
+  questions publiées (examens) : la pratique porte encore sur des questions
+  non relues.
+- **Suppression du compte** par une fonction `SECURITY DEFINER`
+  (`delete_my_account`), sans clé secrète ; refusée tant qu’un abonnement
+  payant n’est pas résilié.
+- **Quotas IA partagés** : facultatifs, activés par la clé serveur Supabase
+  (`SUPABASE_SECRET_KEY`, lue aussi par `src/lib/tutor/server.ts`) ; panne
+  de la base → aucune dépense.
+- **Documents** : politique de confidentialité et CGU publiées comme
+  **projets**, fidèles au code, sans identité inventée.
+- **Non fait** : contenus (questions, leçons, scènes), identité de
+  l’éditeur, services en ligne, mesures sur iPhone (voir l’audit).
 
 ## Questions ouvertes
 

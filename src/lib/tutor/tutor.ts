@@ -12,7 +12,7 @@
  * Le journal ne reçoit que des catégories et des compteurs : jamais le texte
  * de la demande ou de la réponse, jamais l'identifiant du client.
  */
-import type { DailyBudget, RateLimiter } from "@/lib/tutor/limits";
+import type { Reservation } from "@/lib/tutor/limits";
 import { SYSTEM_PROMPT, buildUserMessage, estimateTokens } from "@/lib/tutor/prompt";
 import { costUsd, type ProviderErrorKind, type TokenPrices, type TutorProvider } from "@/lib/tutor/provider";
 import { redactPersonalData } from "@/lib/tutor/redact";
@@ -37,6 +37,23 @@ export interface TutorLogEntry {
   passages: number;
 }
 
+/**
+ * Compteurs de fréquence et de quota : en mémoire (RateLimiter) ou partagés
+ * dans la base entre toutes les instances du serveur (shared-limits.ts).
+ */
+export interface TutorLimiter {
+  readonly aiPerDay: number;
+  hit(client: string, now: Date): boolean | Promise<boolean>;
+  aiUsed(client: string, now: Date): number | Promise<number>;
+  takeAi(client: string, now: Date): boolean | Promise<boolean>;
+}
+
+/** Budget quotidien, réservé avant l'appel puis ajusté au coût réel. */
+export interface TutorBudget {
+  reserve(amountUsd: number, now: Date): Reservation | null | Promise<Reservation | null>;
+  settle(reservation: Reservation, actualUsd: number, now: Date): void | Promise<void>;
+}
+
 export interface TutorDeps {
   provider: TutorProvider | null;
   prices: TokenPrices;
@@ -45,8 +62,8 @@ export interface TutorDeps {
   providerMayRetry: boolean;
   catalog: TutorCatalog;
   resolveSource: SourceResolver;
-  limiter: RateLimiter;
-  budget: DailyBudget;
+  limiter: TutorLimiter;
+  budget: TutorBudget;
   log: (entry: TutorLogEntry) => void;
 }
 
@@ -77,7 +94,7 @@ export async function answerTutorRequest(
   const redactions = Object.values(removed).reduce((sum, n) => sum + n, 0);
   const providerId = deps.provider?.id ?? null;
 
-  if (!deps.limiter.hit(client, now)) {
+  if (!(await deps.limiter.hit(client, now))) {
     deps.log({ outcome: "trop-de-demandes", provider: providerId, redactions, passages: 0 });
     return { ok: false, error: "trop-de-demandes" };
   }
@@ -94,7 +111,7 @@ export async function answerTutorRequest(
   const passages = validatedPassages(request, deps.catalog, deps.resolveSource);
   if (passages.length === 0) return fallback("aucune-source-fiable");
 
-  if (deps.limiter.aiUsed(client, now) >= deps.limiter.aiPerDay) {
+  if ((await deps.limiter.aiUsed(client, now)) >= deps.limiter.aiPerDay) {
     return fallback("quota-quotidien", {}, passages.length);
   }
 
@@ -104,9 +121,9 @@ export async function answerTutorRequest(
       { inputTokens: estimateTokens(SYSTEM_PROMPT + user), outputTokens: deps.maxOutputTokens },
       deps.prices,
     ) * (deps.providerMayRetry ? 2 : 1);
-  const reservation = deps.budget.reserve(worstCase, now);
+  const reservation = await deps.budget.reserve(worstCase, now);
   if (!reservation) return fallback("budget-atteint", {}, passages.length);
-  deps.limiter.takeAi(client, now);
+  await deps.limiter.takeAi(client, now);
 
   const result = await deps.provider.generate({ system: SYSTEM_PROMPT, user, maxOutputTokens: deps.maxOutputTokens });
 
@@ -114,7 +131,7 @@ export async function answerTutorRequest(
   // facturé à ses propres tarifs) on garde le pire cas réservé.
   const usage = result.usage;
   const spent = usage && !usage.fallbackModelUsed ? costUsd(usage, deps.prices) : worstCase;
-  deps.budget.settle(reservation, spent, now);
+  await deps.budget.settle(reservation, spent, now);
   const metrics = {
     inputTokens: usage?.inputTokens,
     outputTokens: usage?.outputTokens,

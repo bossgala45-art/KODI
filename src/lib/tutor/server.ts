@@ -1,10 +1,13 @@
 import "server-only";
 import { createHash, randomBytes } from "node:crypto";
+import { createClient } from "@supabase/supabase-js";
 import { CATALOG, UNIVERSES, sourceLink } from "@/content/catalog";
 import { SOURCES } from "@/content/sources";
 import { createAnthropicProvider } from "@/lib/tutor/anthropic";
 import { parseTutorConfig, type TutorConfig } from "@/lib/tutor/config";
+import { supabaseConfig } from "@/lib/supabase/config";
 import { DailyBudget, RateLimiter } from "@/lib/tutor/limits";
+import { sharedBudget, sharedLimiter } from "@/lib/tutor/shared-limits";
 import { validatedContentCount, type SourceResolver, type TutorCatalog } from "@/lib/tutor/sources";
 import { answerTutorRequest, type TutorDeps, type TutorLogEntry, type TutorOutcome } from "@/lib/tutor/tutor";
 import type { TutorRequest, TutorStatus } from "@/lib/tutor/types";
@@ -45,6 +48,19 @@ function log(entry: TutorLogEntry) {
   process.stdout.write(`${JSON.stringify({ event: "professeur", ...entry })}\n`);
 }
 
+/**
+ * Compteurs partagés dans la base si la clé serveur Supabase est fournie
+ * (plusieurs instances) ; sinon en mémoire de l'instance (D-029).
+ */
+function quotas(perMinute: number, aiPerDay: number, budgetUsd: number): Pick<TutorDeps, "limiter" | "budget"> {
+  const secret = process.env.SUPABASE_SECRET_KEY?.trim();
+  if (secret && /^sb_secret_/.test(secret) && supabaseConfig.ok) {
+    const admin = createClient(supabaseConfig.config.url, secret, { auth: { persistSession: false, autoRefreshToken: false } });
+    return { limiter: sharedLimiter(admin, { perMinute, aiPerDay }), budget: sharedBudget(admin, budgetUsd) };
+  }
+  return { limiter: new RateLimiter({ perMinute, aiPerDay }), budget: new DailyBudget(budgetUsd) };
+}
+
 let deps: TutorDeps | null = null;
 let config: TutorConfig | null = null;
 
@@ -67,8 +83,7 @@ function getDeps(): TutorDeps {
     providerMayRetry: active?.serverFallback ?? false,
     catalog,
     resolveSource,
-    limiter: new RateLimiter({ perMinute: config.perMinute, aiPerDay: config.aiPerDay }),
-    budget: new DailyBudget(active?.dailyBudgetUsd ?? 0),
+    ...quotas(config.perMinute, config.aiPerDay, active?.dailyBudgetUsd ?? 0),
     log,
   };
   return deps;

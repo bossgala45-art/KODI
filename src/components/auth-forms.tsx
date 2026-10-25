@@ -292,7 +292,19 @@ export function SignupForm() {
         checked={values.acceptTerms}
         onChange={(checked) => update("acceptTerms", checked)}
         error={errors.acceptTerms}
-        label="J’accepte les conditions d’utilisation et la politique de confidentialité (documents en cours de rédaction)."
+        label={
+          <>
+            J’accepte les{" "}
+            <Link href="/conditions-utilisation" className="font-semibold text-brand-text underline underline-offset-2">
+              conditions d’utilisation
+            </Link>{" "}
+            et la{" "}
+            <Link href="/confidentialite" className="font-semibold text-brand-text underline underline-offset-2">
+              politique de confidentialité
+            </Link>{" "}
+            (projets, pas encore validés juridiquement).
+          </>
+        }
       />
       <Button type="submit" size="lg" block loading={pending}>
         {pending ? "Création…" : "Créer mon compte"}

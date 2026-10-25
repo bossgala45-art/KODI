@@ -152,7 +152,8 @@ prédéfinies, quotas et budget quotidien. Aucune règle n’est inventée.
 ### 4.9 PWA et thèmes
 
 - Installable (manifest, icônes, écran de démarrage), fonctionnement hors
-  ligne du contenu déjà téléchargé.
+  ligne du contenu déjà téléchargé. **Disponible depuis le 25/10/2026**
+  (D-031), à vérifier sur iPhone.
 - Thèmes clair, sombre et automatique (suit le système). **Disponible depuis
   la Phase 0.**
 - Animations discrètes, désactivables (Activées / Réduites / Auto, qui suit

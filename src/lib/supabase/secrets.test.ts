@@ -21,7 +21,8 @@ describe("secrets", () => {
 
   it("hors des modules serveur, l’application ne lit que les variables Supabase publiques", () => {
     const used = new Set(files.filter((file) => !SERVER_ONLY_READERS.includes(file)).flatMap(reads));
-    expect([...used].sort()).toEqual(["NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY", "NEXT_PUBLIC_SUPABASE_URL"]);
+    // NODE_ENV : mode de compilation (développement / production), sans secret.
+    expect([...used].sort()).toEqual(["NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY", "NEXT_PUBLIC_SUPABASE_URL", "NODE_ENV"]);
   });
 
   it("les clés de paiement (Stripe, clé serveur Supabase) ne sont lues que par un module réservé au serveur", () => {
@@ -45,6 +46,7 @@ describe("secrets", () => {
     expect(content.startsWith('import "server-only";')).toBe(true);
     const used = reads(TUTOR_SERVER);
     expect(used).toContain("ANTHROPIC_API_KEY");
+    expect(readFileSync(join(process.cwd(), "src/lib/tutor/shared-limits.ts"), "utf8").startsWith('import "server-only";')).toBe(true);
     // Aucune n'est publique : Next.js n'envoie au navigateur que les variables NEXT_PUBLIC_.
     expect(used.every((name) => !name.startsWith("NEXT_PUBLIC_"))).toBe(true);
     expect(readFileSync(join(process.cwd(), "src/lib/tutor/anthropic.ts"), "utf8").startsWith('import "server-only";')).toBe(true);
@@ -65,7 +67,9 @@ describe("secrets", () => {
       expect(content, file).not.toMatch(/sb_secret_[A-Za-z0-9]/);
       expect(content, file).not.toMatch(/sk-ant-[A-Za-z0-9]/);
       // Seuls les modules serveur des paiements nomment la clé serveur Supabase.
-      if (![BILLING_SERVER, BILLING_CONFIG].includes(file)) expect(content, file).not.toMatch(/SERVICE_ROLE|SUPABASE_SECRET/);
+      if (![BILLING_SERVER, BILLING_CONFIG, TUTOR_SERVER].includes(file)) {
+        expect(content, file).not.toMatch(/SERVICE_ROLE|SUPABASE_SECRET/);
+      }
       expect(content, file).not.toMatch(/sk_live_[A-Za-z0-9]{8}|whsec_[A-Za-z0-9]{16}/);
     }
   });

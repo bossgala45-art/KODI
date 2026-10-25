@@ -2,6 +2,9 @@
 
 import type { RealtimeChannel, SupabaseClient } from "@supabase/supabase-js";
 import { createLocalStore, isRecord, parseJson } from "@/lib/local-store";
+import { historyStore } from "@/lib/history";
+import { answerHistoryStore } from "@/lib/pedagogy/history";
+import { lessonProgressStore } from "@/lib/pedagogy/progress";
 import { profileStore, type LocalProfile } from "@/lib/profile";
 import { getAuthState, subscribeAuth } from "@/lib/auth/session-store";
 import { getBrowserSupabase } from "@/lib/supabase/browser";
@@ -17,6 +20,7 @@ import {
   type ProfileRow,
   type ResourceSyncState,
 } from "@/lib/sync/merge";
+import { syncLearning, type LearningStorage } from "@/lib/sync/learning";
 import {
   motionStore,
   setMotionPreference,
@@ -32,10 +36,12 @@ interface SyncMeta {
   userId: string | null;
   profile: ResourceSyncState;
   preferences: ResourceSyncState;
+  /** Dernière modification locale de la progression pas encore envoyée. */
+  learningChangedAt: string | null;
 }
 
 const EMPTY_STATE: ResourceSyncState = { localChangedAt: null, remoteUpdatedAt: null };
-const EMPTY_META: SyncMeta = { userId: null, profile: EMPTY_STATE, preferences: EMPTY_STATE };
+const EMPTY_META: SyncMeta = { userId: null, profile: EMPTY_STATE, preferences: EMPTY_STATE, learningChangedAt: null };
 
 function parseState(value: unknown): ResourceSyncState {
   if (!isRecord(value)) return EMPTY_STATE;
@@ -53,6 +59,7 @@ export const syncMetaStore = createLocalStore<SyncMeta>({
       userId: typeof data.userId === "string" ? data.userId : null,
       profile: parseState(data.profile),
       preferences: parseState(data.preferences),
+      learningChangedAt: typeof data.learningChangedAt === "string" ? data.learningChangedAt : null,
     };
   },
   serialize: (value) => JSON.stringify(value),
@@ -106,8 +113,18 @@ function updateMeta(resource: Resource, patch: Partial<ResourceSyncState>): void
 
 function hasPending(): boolean {
   const meta = syncMetaStore.get();
-  return Boolean(meta.profile.localChangedAt || meta.preferences.localChangedAt);
+  return Boolean(meta.profile.localChangedAt || meta.preferences.localChangedAt || meta.learningChangedAt);
 }
+
+const learningStorage: LearningStorage = {
+  read: () => ({ answers: answerHistoryStore.get(), lessons: lessonProgressStore.get(), sessions: historyStore.get() }),
+  write: (state) =>
+    withRemote(() => {
+      answerHistoryStore.set(state.answers);
+      lessonProgressStore.set(state.lessons);
+      historyStore.set(state.sessions);
+    }),
+};
 
 function withRemote(apply: () => void): void {
   applyingRemote = true;
@@ -178,6 +195,8 @@ async function runFullSync(client: SupabaseClient, uid: string): Promise<void> {
     );
 
     const meta = syncMetaStore.get();
+    // Appareil déjà rattaché à un autre compte : sa progression locale n'est jamais envoyée.
+    const learningMode = meta.userId !== null && meta.userId !== uid ? "replace" : "merge";
     if (meta.userId !== uid) {
       // Premier rattachement de cet appareil à ce compte. Les données locales
       // ne sont adoptées que si l'appareil n'a jamais servi à un autre compte.
@@ -198,6 +217,12 @@ async function runFullSync(client: SupabaseClient, uid: string): Promise<void> {
       const prefDecision = decideSync(meta.preferences, preferences.updated_at);
       if (prefDecision === "push") await pushPreferences(client, uid);
       if (prefDecision === "pull") applyPreferences(preferences);
+    }
+    const learningStartedAt = syncMetaStore.get().learningChangedAt;
+    await withNetworkRetry(() => syncLearning(client, uid, learningStorage, learningMode));
+    // Une modification arrivée pendant l'envoi reste en attente.
+    if (syncMetaStore.get().learningChangedAt === learningStartedAt) {
+      syncMetaStore.set((current) => ({ ...current, learningChangedAt: null }));
     }
     setStatus({ state: "synced", at: new Date().toISOString() });
   } catch (error) {
@@ -235,6 +260,12 @@ function onLocalProfileChange(): void {
   if (applyingRemote || sameProfile(current, lastProfile)) return;
   lastProfile = current;
   updateMeta("profile", { localChangedAt: new Date().toISOString() });
+  schedulePush();
+}
+
+function onLocalLearningChange(): void {
+  if (applyingRemote) return;
+  syncMetaStore.set((meta) => ({ ...meta, learningChangedAt: new Date().toISOString() }));
   schedulePush();
 }
 
@@ -308,6 +339,9 @@ export function startSync(): () => void {
     profileStore.subscribe(onLocalProfileChange),
     themeStore.subscribe(onLocalPreferencesChange),
     motionStore.subscribe(onLocalPreferencesChange),
+    answerHistoryStore.subscribe(onLocalLearningChange),
+    lessonProgressStore.subscribe(onLocalLearningChange),
+    historyStore.subscribe(onLocalLearningChange),
   ];
   window.addEventListener("online", onOnline);
   document.addEventListener("visibilitychange", onVisible);
@@ -326,10 +360,20 @@ export function startSync(): () => void {
 
 /**
  * À la déconnexion volontaire : retire de cet appareil le profil lié au
- * compte (utile sur un appareil partagé). Les réglages d'affichage restent.
+ * compte (utile sur un appareil partagé), ainsi que la progression si elle
+ * est entièrement enregistrée sur le compte. Les réglages d'affichage
+ * restent. Une progression pas encore envoyée (hors ligne) est conservée.
  */
 export function forgetAccountDataOnDevice(): void {
-  withRemote(() => profileStore.reset());
+  const learningSaved = syncMetaStore.get().learningChangedAt === null;
+  withRemote(() => {
+    profileStore.reset();
+    if (learningSaved) {
+      answerHistoryStore.reset();
+      lessonProgressStore.reset();
+      historyStore.reset();
+    }
+  });
   lastProfile = profileStore.get();
   syncMetaStore.reset();
 }

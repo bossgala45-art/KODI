@@ -109,6 +109,14 @@ npm run test:db     # sécurité de la base (PostgreSQL réel + migrations)
   vérifiée, idempotent ; aucun appel réel à Stripe dans les tests ; ne
   jamais présenter un paiement de test comme réel ; ne jamais inventer
   d’information sur le vendeur (`src/content/legal.ts`).
+- `SUPABASE_SECRET_KEY` est aussi lue, facultativement, par
+  `src/lib/tutor/server.ts` pour les quotas partagés du professeur (D-031).
+- PWA (`public/sw.js`) : ne jamais mettre en cache `/api/`, `/auth/` ni une
+  réponse `no-store` ; changer `VERSION` à chaque modification du service
+  worker.
+- Progression (`src/lib/sync/learning.ts`) : fusion par union uniquement,
+  jamais de suppression silencieuse ; ne jamais envoyer les données locales
+  d’un autre compte.
 - Aucun secret dans le dépôt (il est public). Variables dans `.env.local`
   (ignoré par Git) et dans les réglages des services.
 - Commits en français ou en anglais, messages explicites ; branches par phase.

@@ -6,8 +6,8 @@ mobile-first, destinée à être installable sur iPhone, Android et ordinateur.
 > **Statut (24/10/2026) : en développement, pas prêt à être publié.**
 > Voir l’audit de lancement : [docs/LAUNCH_AUDIT.md](docs/LAUNCH_AUDIT.md).
 > 72 questions rédigées, aucune validée ; 2 leçons de démonstration ; 1 scène
-> 3D sur 20 ; pas de PWA ; aucun service en ligne configuré (hébergement,
-> Supabase, Stripe, IA). Sans compte, les données restent dans le navigateur.
+> 3D sur 20 ; aucun service en ligne configuré (hébergement, Supabase,
+> Stripe, IA). Sans compte, les données restent dans le navigateur.
 
 ## Documentation
 
@@ -36,8 +36,8 @@ mobile-first, destinée à être installable sur iPhone, Android et ordinateur.
 - Three.js 0.186 et React Three Fiber 9.8 (scènes 3D)
 - SDK officiels Stripe et Anthropic (prêts, non activés : docs/PAIEMENTS.md, D-029)
 
-La couche PWA (manifeste, service worker, hors ligne) n’est **pas encore
-implémentée** (docs/LAUNCH_AUDIT.md).
+PWA : manifeste, icônes, service worker et hors ligne des pages déjà
+consultées (D-031), à vérifier sur iPhone.
 
 ## Commandes
 

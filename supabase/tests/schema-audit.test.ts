@@ -38,6 +38,7 @@ describe("audit global du schéma public", () => {
         "authenticated:courses:SELECT",
         "authenticated:exam_items:SELECT",
         "authenticated:exams:SELECT",
+        "authenticated:learning_states:SELECT",
         "authenticated:lesson_competences:SELECT",
         "authenticated:lessons:SELECT",
         "authenticated:preferences:SELECT",

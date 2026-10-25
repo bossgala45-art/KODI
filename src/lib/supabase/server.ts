@@ -6,8 +6,7 @@ import { supabaseConfig } from "@/lib/supabase/config";
 
 /**
  * Client Supabase côté serveur, agissant au nom de l'utilisateur (cookies de
- * session + clé publique). Il ne contourne jamais RLS : aucune clé secrète
- * n'est utilisée par l'application à ce stade.
+ * session + clé publique). Il ne contourne jamais RLS.
  */
 export async function getServerSupabase(): Promise<SupabaseClient | null> {
   if (!supabaseConfig.ok) return null;
@@ -16,8 +15,12 @@ export async function getServerSupabase(): Promise<SupabaseClient | null> {
     cookies: {
       getAll: () => cookieStore.getAll(),
       setAll: (cookiesToSet) => {
-        for (const { name, value, options } of cookiesToSet) {
-          cookieStore.set(name, value, options);
+        try {
+          for (const { name, value, options } of cookiesToSet) {
+            cookieStore.set(name, value, options);
+          }
+        } catch {
+          // Composant serveur : écriture impossible, la session est rafraîchie par src/proxy.ts.
         }
       },
     },

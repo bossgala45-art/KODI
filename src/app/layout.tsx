@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist } from "next/font/google";
 import { AppearanceWatcher } from "@/components/preferences";
+import { ServiceWorkerRegistration } from "@/components/service-worker";
 import { SyncProvider } from "@/components/sync-provider";
 import { themeInitScript } from "@/lib/theme";
 import "./globals.css";
@@ -18,6 +19,8 @@ export const metadata: Metadata = {
   description:
     "KODI, application de préparation au code de la route. En cours de développement.",
   applicationName: "KODI",
+  appleWebApp: { capable: true, title: "KODI", statusBarStyle: "default" },
+  icons: { apple: "/icons/apple-touch-icon.png" },
   robots: { index: false, follow: false },
 };
 
@@ -50,6 +53,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </a>
         <AppearanceWatcher />
         <SyncProvider />
+        <ServiceWorkerRegistration />
         {children}
       </body>
     </html>

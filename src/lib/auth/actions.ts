@@ -85,3 +85,30 @@ export async function signOut(): Promise<ActionResult> {
   // « local » : déconnecte cet appareil ; la session reste active ailleurs.
   return run(() => supabase.auth.signOut({ scope: "local" }));
 }
+
+/** Export de toutes les données du compte (public.export_my_data). */
+export async function exportAccountData(): Promise<ActionResult<unknown>> {
+  const supabase = getBrowserSupabase();
+  if (!supabase) return NOT_CONFIGURED;
+  try {
+    const { data, error } = await supabase.rpc("export_my_data");
+    if (error) return { ok: false, error: toUserFacingError(error) };
+    return { ok: true, value: data };
+  } catch (error) {
+    return { ok: false, error: toUserFacingError(error) };
+  }
+}
+
+/**
+ * Suppression définitive du compte (public.delete_my_account), puis
+ * déconnexion de cet appareil. Refusée tant qu'un abonnement payant n'est pas
+ * résilié.
+ */
+export async function deleteAccount(confirmation: string): Promise<ActionResult> {
+  const supabase = getBrowserSupabase();
+  if (!supabase) return NOT_CONFIGURED;
+  const deleted = await run(async () => await supabase.rpc("delete_my_account", { p_confirmation: confirmation }));
+  if (!deleted.ok) return deleted;
+  await supabase.auth.signOut({ scope: "local" }).catch(() => undefined);
+  return deleted;
+}

@@ -76,7 +76,8 @@ NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_…
 > le dépôt ou une variable `NEXT_PUBLIC_…`. Si cela arrivait, KODI la refuse
 > et reste en mode local. Seule exception : les paiements (docs/PAIEMENTS.md)
 > lisent `SUPABASE_SECRET_KEY` côté serveur uniquement, pour deux fonctions
-> réservées à `service_role` ; tout le reste repose sur RLS.
+> réservées à `service_role`, et, facultativement, le professeur IA pour ses
+> quotas partagés (D-031) ; tout le reste repose sur RLS.
 
 ## 5. Devenir relecteur des questions
 

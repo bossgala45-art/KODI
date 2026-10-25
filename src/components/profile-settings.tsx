@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState, type FormEvent } from "react";
 import { AccountSection } from "@/components/account-section";
+import { DataRights } from "@/components/data-rights";
 import { Icon } from "@/components/icons";
 import { MotionControl, ThemeControl } from "@/components/preferences";
 import { StorageNotice } from "@/components/storage-notice";
@@ -183,6 +184,8 @@ export function ProfileSettings() {
             { href: "/abonnement", label: "Mon abonnement", icon: "calendar" as const },
             { href: "/cgv", label: "Conditions générales de vente", icon: "book" as const },
             { href: "/mentions-legales", label: "Mentions légales", icon: "info" as const },
+            { href: "/confidentialite", label: "Politique de confidentialité", icon: "lock" as const },
+            { href: "/conditions-utilisation", label: "Conditions d’utilisation", icon: "book" as const },
             { href: "/bienvenue", label: "Revoir l’accueil personnalisé", icon: "sparkles" as const },
           ].map((item) => (
             <li key={item.href}>
@@ -201,8 +204,11 @@ export function ProfileSettings() {
 
       <section aria-labelledby="donnees">
         <SectionTitle id="donnees">Données</SectionTitle>
-        <Card>
-          <ResetData onReset={() => setFormKey((k) => k + 1)} />
+        <Card className="space-y-5">
+          <DataRights />
+          <div className="border-t border-line pt-5">
+            <ResetData onReset={() => setFormKey((k) => k + 1)} />
+          </div>
         </Card>
       </section>
 

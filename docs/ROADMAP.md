@@ -266,6 +266,14 @@ validée, PWA absente, scènes 2 à 20 absentes, aucun service en ligne,
 documents légaux et droits RGPD absents). Corrections B1 à B10 et I1 à I6
 listées dans le rapport ; rien n’est publié sans accord explicite du porteur.
 
+Corrections du 25/10/2026 (D-031) : en-têtes de sécurité, proxy de session,
+écrans d’erreur, PWA (manifeste, icônes, service worker, hors ligne),
+progression synchronisée avec le compte, suppression du compte et export
+des données, sauvegarde et restauration locales, quotas IA partagés,
+projets de politique de confidentialité et de CGU. **Toujours pas
+publiable** : contenus non validés, services en ligne absents, éditeur
+inconnu, aucune mesure sur iPhone.
+
 
 - Atteinte de l’objectif de contenu vérifié, audits (sécurité, accessibilité,
   performance, RGPD), tests sur appareils réels, levée du `noindex`,

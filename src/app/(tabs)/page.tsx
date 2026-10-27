@@ -11,12 +11,12 @@ export default function HomePage() {
         <p className="mt-2 text-muted">Prêt pour une petite session ?</p>
       </header>
 
-      <Alert tone="info" role="note" title="Version de développement">
-        Les leçons sont en cours de rédaction : celles qui existent sont des
-        démonstrations, marquées « Démonstration · non validé ». Les
-        questions, pas encore relues par une personne compétente, portent le
-        badge « À vérifier » ; les examens n’utiliseront que des questions
-        validées.
+      <Alert tone="info" role="note" title="Édition personnelle">
+        Les questions sont originales, rédigées à partir des pages officielles
+        citées sous chaque correction, mais pas encore relues par une personne
+        compétente : en cas de doute, la source officielle fait foi. Les leçons
+        existantes sont des démonstrations, marquées « Démonstration · non
+        validé ». Pensez à télécharger une sauvegarde chaque semaine (Profil).
       </Alert>
 
       <OnboardingPrompt />

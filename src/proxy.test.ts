@@ -10,13 +10,13 @@ describe("proxy de session", () => {
     expect(response.headers.get("x-middleware-next")).toBe("1");
   });
 
-  it("n’intercepte ni les fichiers statiques, ni le service worker, ni le webhook Stripe", async () => {
+  it("n’intercepte ni les fichiers statiques, ni le service worker", async () => {
     const { config } = await import("@/proxy");
     const pattern = new RegExp(`^${config.matcher[0]!}$`);
-    for (const path of ["/_next/static/x.js", "/sw.js", "/icons/icon-192.png", "/api/stripe/webhook", "/manifest.webmanifest"]) {
+    for (const path of ["/_next/static/x.js", "/sw.js", "/icons/icon-192.png", "/manifest.webmanifest"]) {
       expect(pattern.test(path), path).toBe(false);
     }
-    for (const path of ["/", "/apprendre", "/api/professeur", "/abonnement"]) {
+    for (const path of ["/", "/apprendre", "/api/professeur", "/profil"]) {
       expect(pattern.test(path), path).toBe(true);
     }
   });

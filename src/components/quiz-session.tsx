@@ -6,7 +6,7 @@ import { QuizRunner } from "@/components/quiz-runner";
 import { Button } from "@/components/ui/button";
 import { Card, ContentBadge, type ContentKind } from "@/components/ui/display";
 import type { SessionMode } from "@/lib/history";
-import { shuffle, type QuizQuestion } from "@/lib/quiz";
+import { shuffle, shuffleChoices, type QuizQuestion } from "@/lib/quiz";
 
 interface QuizSessionProps {
   mode: SessionMode;
@@ -19,6 +19,8 @@ interface QuizSessionProps {
   notice: ReactNode;
   content: ContentKind;
   passMark?: number;
+  /** Réglages affichés avant le bouton de départ (choix du thème…). */
+  setup?: ReactNode;
 }
 
 /** Écran d'introduction d'une série, puis déroulé du quiz. */
@@ -33,13 +35,16 @@ export function QuizSession({
   notice,
   content,
   passMark,
+  setup,
 }: QuizSessionProps) {
   const [run, setRun] = useState<{ id: number; questions: QuizQuestion[] } | null>(null);
 
   const start = () =>
     setRun((previous) => ({
       id: (previous?.id ?? 0) + 1,
-      questions: shuffle(bank, Math.random).slice(0, length),
+      questions: shuffle(bank, Math.random)
+        .slice(0, length)
+        .map((question) => shuffleChoices(question, Math.random)),
     }));
 
   if (run) {
@@ -79,7 +84,8 @@ export function QuizSession({
               </li>
             ))}
           </ul>
-          <Button size="lg" block className="mt-6" onClick={start}>
+          {setup && <div className="mt-5">{setup}</div>}
+          <Button size="lg" block className="mt-6" onClick={start} disabled={length === 0}>
             {startLabel}
             <Icon name="arrow-right" size={18} />
           </Button>

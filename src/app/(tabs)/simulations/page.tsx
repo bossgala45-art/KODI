@@ -5,7 +5,7 @@ import { Icon } from "@/components/icons";
 import { Alert, Badge, PageHeader } from "@/components/ui/display";
 import { UNIVERSES } from "@/content/catalog";
 import { SCENES } from "@/content/scenes";
-import { SCENE_PLAN, sceneAccess } from "@/content/scenes/plan";
+import { SCENE_PLAN } from "@/content/scenes/plan";
 
 export const metadata: Metadata = { title: "Simulations" };
 
@@ -35,11 +35,7 @@ export default function SimulationsPage() {
                 <span className="mt-0.5 block text-sm text-muted">{universe?.title}</span>
                 <span className="mt-1.5 flex flex-wrap gap-2">
                   {scene ? <StatusBadge status={scene.status} /> : <Badge tone="neutral">Prévue · pas encore produite</Badge>}
-                  {sceneAccess(plan.slug) === "decouverte" ? (
-                    <Badge tone="success">Découverte · gratuite</Badge>
-                  ) : (
-                    <Badge tone="brand">Premium</Badge>
-                  )}
+
                 </span>
               </span>
             </>

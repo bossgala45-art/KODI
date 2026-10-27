@@ -18,7 +18,8 @@ mobile-first, destinée à être installable sur iPhone, Android et ordinateur.
 | [docs/DECISIONS.md](docs/DECISIONS.md) | Journal des décisions techniques et questions ouvertes |
 | [docs/CONTENU.md](docs/CONTENU.md) | Écrire, importer et valider les contenus pédagogiques |
 | [docs/SCENES.md](docs/SCENES.md) | Scènes de simulation 3D : fonctionnement, éléments provisoires, performances |
-| [docs/PAIEMENTS.md](docs/PAIEMENTS.md) | Freemium, Stripe, obligations commerciales, actions manuelles |
+| [docs/EDITION_PERSONNELLE.md](docs/EDITION_PERSONNELLE.md) | Mettre KODI en ligne gratuitement et l’installer sur iPhone |
+| [docs/PAIEMENTS.md](docs/PAIEMENTS.md) | Archivé : ancien freemium Stripe, retiré (D-032) |
 | [docs/LAUNCH_AUDIT.md](docs/LAUNCH_AUDIT.md) | Audit de lancement : état réel, corrections, mise en production |
 | [AGENTS.md](AGENTS.md) | Règles pour les agents IA qui travaillent sur le dépôt |
 
@@ -34,7 +35,7 @@ mobile-first, destinée à être installable sur iPhone, Android et ordinateur.
 - Supabase (Auth, PostgreSQL, RLS, Realtime) — migrations dans `supabase/`
 
 - Three.js 0.186 et React Three Fiber 9.8 (scènes 3D)
-- SDK officiels Stripe et Anthropic (prêts, non activés : docs/PAIEMENTS.md, D-029)
+- SDK officiel Anthropic (prêt, non activé : D-029)
 
 PWA : manifeste, icônes, service worker et hors ligne des pages déjà
 consultées (D-031), à vérifier sur iPhone.
@@ -79,7 +80,7 @@ y compris depuis un iPhone.
 src/
   app/
     (tabs)/      écrans avec navigation à onglets : / (Accueil), apprendre,
-                 simuler, entrainement, progression, profil, premium
+                 simuler, entrainement, progression, profil, revisions…
     (focus)/     parcours sans onglets : connexion, inscription, bienvenue
   components/
     ui/          design system (boutons, cartes, champs, alertes…)

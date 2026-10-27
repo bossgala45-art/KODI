@@ -4,11 +4,6 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 vi.mock("server-only", () => ({}));
 
-// Droit Premium tel que la base le renverrait (null : Supabase non configuré).
-let entitlements: { premium: boolean } | null = null;
-vi.mock("@/lib/supabase/server", () => ({
-  getServerSupabase: async () => (entitlements ? { rpc: async () => ({ data: entitlements, error: null }) } : null),
-}));
 
 const generate = vi.fn();
 vi.mock("@/lib/tutor/anthropic", () => ({
@@ -33,7 +28,6 @@ beforeEach(() => {
 });
 
 afterEach(() => {
-  entitlements = null;
   vi.unstubAllEnvs();
   generate.mockReset();
 });
@@ -55,12 +49,7 @@ describe("POST /api/professeur", () => {
     vi.stubEnv("KODI_TUTOR_DAILY_BUDGET_USD", "1");
     const { POST } = await loadRoute();
     const question = { kind: "question", message: "Qui a la priorité à droite ?" };
-    // Sans abonnement Premium (vérifié dans la base) : pas d'IA.
-    expect(await (await POST(post(question))).json()).toMatchObject({ mode: "sans-ia", reason: "reserve-premium" });
-    entitlements = { premium: false };
-    expect(await (await POST(post(question))).json()).toMatchObject({ reason: "reserve-premium" });
-    // Avec Premium : toujours aucun appel, faute de contenu validé.
-    entitlements = { premium: true };
+    // Aucun appel, faute de contenu validé.
     expect(await (await POST(post(question))).json()).toMatchObject({ mode: "sans-ia", reason: "aucune-source-fiable" });
     expect(generate).not.toHaveBeenCalled();
   });

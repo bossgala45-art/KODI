@@ -12,6 +12,7 @@ import { cn } from "@/lib/cn";
 import type { GradeResult } from "@/lib/pedagogy/grading";
 import type { AnswerContext } from "@/lib/pedagogy/history";
 import { recordAnswer } from "@/lib/pedagogy/progress";
+import { shuffleChoices } from "@/lib/quiz";
 
 const letter = (index: number) => String.fromCharCode(65 + index);
 
@@ -44,6 +45,11 @@ interface PracticeSessionProps {
   onComplete?: (result: { correct: number; total: number }) => void;
   /** Actions affichées sous le bilan. */
   actions?: ReactNode;
+  /**
+   * Mélange des propositions à chaque série. Seulement pour une série montée
+   * après un clic : un tirage au rendu serveur ne correspondrait pas au client.
+   */
+  random?: () => number;
 }
 
 /**
@@ -51,7 +57,17 @@ interface PracticeSessionProps {
  * réponse est enregistrée dans l'historique : maîtrise, révisions et carnet
  * d'erreurs se mettent à jour aussitôt.
  */
-export function PracticeSession({ questions, context, label, onComplete, actions }: PracticeSessionProps) {
+export function PracticeSession({
+  questions: original,
+  context,
+  label,
+  onComplete,
+  actions,
+  random,
+}: PracticeSessionProps) {
+  const [questions] = useState(() =>
+    random ? original.map((question) => shuffleChoices(question, random)) : original,
+  );
   const [index, setIndex] = useState(0);
   const [selection, setSelection] = useState<string[]>([]);
   const [grade, setGrade] = useState<GradeResult | null>(null);

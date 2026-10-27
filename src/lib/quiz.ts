@@ -142,3 +142,11 @@ export function shuffle<T>(items: readonly T[], random: () => number): T[] {
   }
   return copy;
 }
+
+/**
+ * Question aux propositions mélangées : la position de la bonne réponse ne
+ * doit pas pouvoir se deviner (identifiants et correction inchangés).
+ */
+export function shuffleChoices<T extends { choices: readonly QuizChoice[] }>(question: T, random: () => number): T {
+  return { ...question, choices: shuffle(question.choices, random) };
+}

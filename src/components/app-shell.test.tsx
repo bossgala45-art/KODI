@@ -10,7 +10,7 @@ describe("AppShell", () => {
     pathname.value = "/simuler";
     render(<AppShell>contenu</AppShell>);
     // Barre d'onglets mobile : la navigation qui contient exactement cinq liens
-    // (la barre latérale grand écran ajoute Premium et Profil).
+    // (la barre latérale grand écran ajoute les entrées secondaires).
     const tabBar = screen
       .getAllByRole("navigation", { name: "Navigation principale" })
       .find((nav) => within(nav).getAllByRole("link").length === 5);
@@ -27,11 +27,12 @@ describe("AppShell", () => {
     expect(current.map((link) => link.textContent)).toEqual(["Simuler"]);
   });
 
-  it("donne accès au profil et à Premium", () => {
+  it("donne accès au profil et aux révisions, sans offre payante", () => {
     pathname.value = "/";
     render(<AppShell>contenu</AppShell>);
     expect(screen.getAllByRole("link", { name: "Profil et paramètres" }).length).toBeGreaterThan(0);
-    expect(screen.getAllByRole("link", { name: /Premium/ }).length).toBeGreaterThan(0);
+    expect(screen.getAllByRole("link", { name: /Révisions/ }).length).toBeGreaterThan(0);
+    expect(screen.queryAllByRole("link", { name: /Premium/ })).toHaveLength(0);
     expect(screen.getByRole("main").textContent).toBe("contenu");
   });
 });

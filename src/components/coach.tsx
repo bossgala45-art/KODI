@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useMemo } from "react";
-import { PremiumGate } from "@/components/billing/premium-gate";
 import { Icon } from "@/components/icons";
 import { Button, ButtonLink } from "@/components/ui/button";
 import { Alert, Badge, Card, EmptyState, LoadingBlock, ProgressBar, SectionTitle, StatTile, type BadgeTone } from "@/components/ui/display";
@@ -243,10 +242,6 @@ export function CoachDashboard() {
 
       <section aria-labelledby="revisions-planifiees">
         <SectionTitle id="revisions-planifiees">Révisions planifiées</SectionTitle>
-        <PremiumGate
-          title="Coach étendu"
-          description="Le planning des révisions sur 7 jours fait partie du coach étendu de l’offre Premium. Vos révisions du jour restent accessibles dans « Révisions »."
-        >
         <Card>
           <p className="text-sm">
             <strong>{report.reviews.dueNow}</strong> révision{report.reviews.dueNow > 1 ? "s" : ""} à faire aujourd’hui.
@@ -263,7 +258,6 @@ export function CoachDashboard() {
             Ouvrir mes révisions
           </ButtonLink>
         </Card>
-        </PremiumGate>
       </section>
 
       <section aria-labelledby="erreurs-repetees">
@@ -286,10 +280,6 @@ export function CoachDashboard() {
 
       <section aria-labelledby="examens-recents">
         <SectionTitle id="examens-recents">Examens récents</SectionTitle>
-        <PremiumGate
-          title="Coach étendu"
-          description="Le suivi des examens récents et leur tendance font partie du coach étendu de l’offre Premium."
-        >
         {report.exams.recent.length === 0 ? (
           <p className="text-sm text-muted">Aucun examen terminé pour le moment.</p>
         ) : (
@@ -311,7 +301,6 @@ export function CoachDashboard() {
             )}
           </Card>
         )}
-        </PremiumGate>
       </section>
 
       <section aria-labelledby="progression-ludique">

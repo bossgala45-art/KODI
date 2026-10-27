@@ -489,7 +489,7 @@ par une nouvelle entrée qui la remplace explicitement.
   vérifiés, 500 caractères de texte au plus) ; page `/professeur`, ouverte
   aussi depuis chaque correction (« Demander au professeur »).
 
-## D-030 — Freemium et paiements Stripe (prêts, non activés)
+## D-030 — Freemium et paiements Stripe (retirés par D-032)
 
 - **Contexte** : prompt du porteur « freemium » (24/10/2026). Stripe n’est
   pas configuré et aucun compte n’existe : l’intégration est prête, **aucun
@@ -563,6 +563,32 @@ par une nouvelle entrée qui la remplace explicitement.
   **projets**, fidèles au code, sans identité inventée.
 - **Non fait** : contenus (questions, leçons, scènes), identité de
   l’éditeur, services en ligne, mesures sur iPhone (voir l’audit).
+
+## D-032 — Édition personnelle gratuite
+
+- **Contexte** : le porteur (27/10/2026) : « je veux juste faire l’appli pour
+  moi […] pas de système payant, tout ce qui était payant je le veux
+  gratuit » ; examen du code dans une semaine.
+- **Retiré** : Stripe (SDK désinstallé), routes de paiement et webhook,
+  pages Premium, abonnement, CGV, mentions légales et CGU, verrous Premium
+  (leçons, scènes, coach étendu, statistiques avancées, professeur).
+- **Base** : migration `20261027120000_personal_edition.sql` — tout compte a
+  les anciens droits Premium (examens illimités), toutes les leçons publiées
+  sont lisibles, fonctions du webhook supprimées. Tables conservées pour ne
+  rien effacer (règle « jamais de modification d’une migration déployée »).
+- **Révision sans serveur** : S’entraîner et Simuler utilisent les questions
+  réelles du catalogue (hors démonstration), **non relues**, toujours
+  signalées comme telles (badge « Non relues », avertissement). Examen
+  officiel simulé (40 questions, 35 pour réussir) et express (10) corrigés
+  sur l’appareil. Les examens enregistrés sur un compte restent réservés aux
+  questions validées.
+- **Ordre des propositions mélangé** à chaque série (entraînement, examens,
+  leçons, révisions) : dans le catalogue, la bonne réponse n’était presque
+  jamais la troisième. Pas de mélange quand la série est rendue par le
+  serveur (scènes) : le tirage ne correspondrait pas au navigateur.
+- **Professeur IA** : inchangé, sans IA tant qu’aucun service n’est connecté
+  et qu’aucun contenu n’est validé. Une IA connectée serait payante à
+  l’usage (API) : non activée, conformément à la règle « aucune dépense ».
 
 ## Questions ouvertes
 

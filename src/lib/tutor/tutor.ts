@@ -86,8 +86,6 @@ export async function answerTutorRequest(
   client: string,
   now: Date,
   deps: TutorDeps,
-  /** Droit Premium vérifié côté serveur : l'IA est réservée aux abonnés (D-030). */
-  premium: boolean,
 ): Promise<TutorOutcome> {
   const { text: message, removed } = redactPersonalData(input.message);
   const request: TutorRequest = { ...input, message };
@@ -106,7 +104,6 @@ export async function answerTutorRequest(
   };
 
   if (!deps.provider) return fallback("aucun-fournisseur");
-  if (!premium) return fallback("reserve-premium");
 
   const passages = validatedPassages(request, deps.catalog, deps.resolveSource);
   if (passages.length === 0) return fallback("aucune-source-fiable");

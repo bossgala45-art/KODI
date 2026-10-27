@@ -146,7 +146,7 @@ export function DataRights() {
           <h3 className="font-semibold">Supprimer mon compte</h3>
           <p className="mt-1 text-sm text-muted">
             Suppression définitive du compte et de ses données : profil, progression, examens, réglages. Le journal de
-            sécurité est anonymisé. Un abonnement Premium en cours doit d’abord être résilié. Pensez à télécharger vos
+            sécurité est anonymisé. Pensez à télécharger vos
             données avant.
           </p>
           <TextField

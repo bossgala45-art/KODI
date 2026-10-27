@@ -81,13 +81,13 @@ describe("DataRights", () => {
     expect(await screen.findByText("Compte supprimé")).toBeTruthy();
   });
 
-  it("affiche le refus du serveur (abonnement à résilier)", async () => {
+  it("affiche le refus du serveur", async () => {
     resetAuthStoreForTests({ status: "signed-in", user: { id: "u1", email: "a@b.fr" } });
-    deleteAccount.mockResolvedValue({ ok: false, error: { kind: "unknown", message: "Résiliez d’abord votre abonnement Premium", retryable: false } });
+    deleteAccount.mockResolvedValue({ ok: false, error: { kind: "unknown", message: "Un abonnement est encore actif sur ce compte", retryable: false } });
     render(<DataRights />);
     await userEvent.type(screen.getByLabelText("Saisissez SUPPRIMER pour confirmer"), "SUPPRIMER");
     await userEvent.click(screen.getByRole("button", { name: "Supprimer définitivement mon compte" }));
-    expect((await screen.findByRole("alert")).textContent).toMatch(/Résiliez d’abord/);
+    expect((await screen.findByRole("alert")).textContent).toMatch(/encore actif/);
     expect(screen.queryByText("Compte supprimé")).toBeNull();
   });
 });

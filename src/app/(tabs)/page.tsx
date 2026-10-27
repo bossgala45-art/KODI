@@ -1,8 +1,6 @@
-import Link from "next/link";
 import { DailyGoalCard, Greeting, OnboardingPrompt, Shortcuts } from "@/components/home-dashboard";
 import { CoachSummaryCard } from "@/components/coach";
 import { DailyProgramCard } from "@/components/learning";
-import { Icon } from "@/components/icons";
 import { Alert, SectionTitle } from "@/components/ui/display";
 
 export default function HomePage() {
@@ -31,19 +29,6 @@ export default function HomePage() {
         <Shortcuts />
       </section>
 
-      <Link
-        href="/premium"
-        className="flex items-center gap-4 rounded-3xl border border-line bg-surface p-4 shadow-card transition-colors hover:border-line-strong"
-      >
-        <span className="grid size-11 shrink-0 place-items-center rounded-2xl bg-night text-on-brand">
-          <Icon name="crown" />
-        </span>
-        <span className="min-w-0 flex-1">
-          <span className="block font-semibold">KODI Premium</span>
-          <span className="block text-sm text-muted">Découvrir ce qui est prévu</span>
-        </span>
-        <Icon name="chevron-right" className="text-muted" />
-      </Link>
     </div>
   );
 }

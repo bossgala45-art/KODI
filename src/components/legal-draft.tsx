@@ -14,11 +14,11 @@ export function LegalSection({ title, children }: { title: string; children: Rea
 /** Bandeau des documents encore à valider (aucune information inventée). */
 export function DraftNotice() {
   return (
-    <Alert tone="info" role="note" title="Projet de document">
+    <Alert tone="info" role="note" title="Usage personnel">
       <Badge tone="neutral">Non validé juridiquement</Badge>
       <p className="mt-2">
-        Ce texte décrit fidèlement le fonctionnement actuel de KODI, qui n’est pas encore publié. Il sera complété
-        (identité et coordonnées du responsable) et relu avant la mise en ligne.
+        Ce texte décrit fidèlement le fonctionnement actuel de KODI. Il faudrait le compléter et le faire relire si
+        l’application était un jour proposée au public.
       </p>
     </Alert>
   );

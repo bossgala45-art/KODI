@@ -57,7 +57,6 @@ export interface PredefinedExplanation {
 /** Pourquoi la réponse ne vient pas d'une IA générative. */
 export const FALLBACK_REASONS = [
   "aucun-fournisseur",
-  "reserve-premium",
   "aucune-source-fiable",
   "quota-quotidien",
   "budget-atteint",
@@ -73,8 +72,6 @@ export type FallbackReason = (typeof FALLBACK_REASONS)[number];
 export const FALLBACK_MESSAGES: Record<FallbackReason, string> = {
   "aucun-fournisseur":
     "Mode sans IA générative : aucun service d’IA n’est connecté à KODI. Voici les explications prédéfinies du programme.",
-  "reserve-premium":
-    "Les réponses rédigées par l’IA sont réservées à l’offre Premium. Voici les explications prédéfinies du programme.",
   "aucune-source-fiable":
     "Aucun contenu validé ne permet de répondre de façon fiable : le professeur ne répond pas sans source. Voici les explications prédéfinies, avec leur statut.",
   "quota-quotidien":

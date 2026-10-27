@@ -5,6 +5,13 @@ Auteur : agent Claude Code, à la demande du porteur (prompt « audit
 complet avant publication », puis « fais toutes les corrections »).
 Branche `phase-11-audit`, issue de `phase-10-premium`.
 
+> **Mise à jour du 27/10/2026 (D-032)** : le porteur a choisi une édition
+> personnelle gratuite, pour son seul usage. Les paiements (domaine 12),
+> les CGV et les mentions de vendeur sont retirés ; l’entraînement et les
+> examens blancs fonctionnent sans serveur, sur des questions non relues
+> (signalées). Le verdict ci-dessous reste valable pour une publication
+> ouverte au public.
+
 ## Verdict
 
 **KODI n’est toujours pas prêt à être publié**, même après les corrections
@@ -265,7 +272,7 @@ et sur un réseau mobile réel, après mise en ligne.
   instances ; en cas de panne de la base, aucune dépense n’est engagée.
   Sans cette clé, ils restent en mémoire (un seul serveur).
 
-### 12. Paiements et abonnements — 🔌
+### 12. Paiements et abonnements — retirés le 27/10/2026 (D-032)
 
 - Prêt et testé sans réseau : Checkout et Billing, webhook à signature
   vérifiée (vraie vérification du SDK Stripe, rejeu refusé), idempotence

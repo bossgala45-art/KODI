@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { PremiumGate } from "@/components/billing/premium-gate";
 import { Icon } from "@/components/icons";
 import { StorageNotice } from "@/components/storage-notice";
 import { Button, ButtonLink } from "@/components/ui/button";
@@ -107,10 +106,6 @@ export function ProgressDashboard() {
 
       <section aria-labelledby="par-mode">
         <SectionTitle id="par-mode">Par mode</SectionTitle>
-        <PremiumGate
-          title="Statistiques avancées"
-          description="La réussite par mode d’entraînement fait partie des statistiques avancées de l’offre Premium."
-        >
         <div className="grid gap-3 sm:grid-cols-2">
           {(Object.keys(MODE_LABEL) as SessionMode[]).map((mode) => {
             const m = stats.byMode[mode];
@@ -128,15 +123,10 @@ export function ProgressDashboard() {
             );
           })}
         </div>
-        </PremiumGate>
       </section>
 
       <section aria-labelledby="recentes">
         <SectionTitle id="recentes">Sessions récentes</SectionTitle>
-        <PremiumGate
-          title="Statistiques avancées"
-          description="Le détail des sessions récentes fait partie des statistiques avancées de l’offre Premium."
-        >
         <ul className="divide-y divide-line overflow-hidden rounded-3xl border border-line bg-surface">
           {stats.recent.map((record) => (
             <li key={record.id} className="flex items-center justify-between gap-3 px-4 py-3">
@@ -150,7 +140,6 @@ export function ProgressDashboard() {
             </li>
           ))}
         </ul>
-        </PremiumGate>
       </section>
 
       <section aria-labelledby="effacer" className="rounded-3xl border border-line p-4">

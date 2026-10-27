@@ -29,9 +29,6 @@ describe("modes d’examen", () => {
       /Aucune compétence ratée/,
     );
     expect(availabilityMessage({ required: 10, available: 45, unseen: 3, reason: null, target_refs: [] })).toBeNull();
-    expect(availabilityMessage({ required: 10, available: 45, unseen: 3, reason: "KODI_DAILY_EXAM_LIMIT", target_refs: [] })).toMatch(
-      /examen du jour inclus dans l’offre gratuite/,
-    );
   });
 
   it("annonce les questions inédites", () => {

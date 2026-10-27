@@ -142,6 +142,7 @@ export function LessonPractice({ lessonId, questionIds }: { lessonId: string; qu
         key={round}
         questions={questions}
         context="lesson"
+        random={Math.random}
         label="Avancement des questions de la leçon"
         onComplete={() => completeLesson(lessonId)}
         actions={
@@ -274,6 +275,7 @@ export function ReviewCenter() {
           key={series.round}
           questions={series.questions}
           context="review"
+          random={Math.random}
           label={`Avancement, ${series.title}`}
           actions={
             <Button onClick={() => setSeries(null)}>

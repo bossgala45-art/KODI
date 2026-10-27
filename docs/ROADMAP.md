@@ -232,7 +232,7 @@ Reste, hors de portée de l’agent :
 - [ ] Décision d’activation et budget (Q-15), hébergement (Q-01), contenus
   validés par le porteur.
 
-## ✅ Phase 10 — Premium (freemium prêt, paiements non activés)
+## ✅ Phase 10 — Premium (retiré le 27/10/2026 : édition personnelle gratuite, D-032)
 
 Périmètre défini par le porteur (prompt « freemium », 24/10/2026).
 
@@ -254,9 +254,8 @@ Livré, en attente de validation (D-030, docs/PAIEMENTS.md) :
 Clôture (24/10/2026) : CI verte ; phase validée par le porteur
 (« je valide »), interprétations de D-030 comprises (Q-21).
 
-Reste, hors de portée de l’agent :
-- [ ] Compte Stripe en mode test, hébergement commercial (Q-01, Q-02).
-- [ ] Vendeur, CGV, mentions légales, médiateur (Q-16, Q-17), e-mails (Q-19).
+Retiré le 27/10/2026 à la demande du porteur (D-032) : plus aucun paiement,
+tout est gratuit ; les étapes Stripe et commerciales ne s’appliquent plus.
 
 ## 🟡 Phase 11 — Validation et lancement
 
@@ -278,6 +277,11 @@ Validation (25/10/2026) : audit et corrections validés par le porteur
 (« tout est validé »). Cette validation ne vaut pas relecture des
 questions : chaque question reste « à vérifier » jusqu’à sa validation
 explicite, une par une (docs/RELECTURE.md).
+
+Édition personnelle (27/10/2026, D-032) : usage par le porteur seul, sans
+paiement. Entraînement par thème et examens blancs sur l’appareil, sur les
+questions réelles non relues (signalées). Une publication ouverte au public
+reste soumise aux conditions de l’audit.
 
 
 - Atteinte de l’objectif de contenu vérifié, audits (sécurité, accessibilité,

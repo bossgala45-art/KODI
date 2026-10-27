@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ExamHistory, ExamResult } from "@/components/exam-report";
 import { Icon } from "@/components/icons";
+import { LocalExams, type LocalExamFormat } from "@/components/local-exams";
 import { Button, ButtonLink } from "@/components/ui/button";
 import { Alert, Card, LoadingBlock, ProgressBar, SectionTitle } from "@/components/ui/display";
 import { Checkbox } from "@/components/ui/form";
@@ -21,35 +22,29 @@ import {
 } from "@/lib/exam/modes";
 import { examApi, firstUnanswered, type ExamApi, type ServerCorrection, type ServerExam } from "@/lib/exam/server-exam";
 import { appendSession, createSessionId, historyStore } from "@/lib/history";
+import type { QuizQuestion } from "@/lib/quiz";
 import { getBrowserSupabase } from "@/lib/supabase/browser";
 import { toUserFacingError, type UserFacingError } from "@/lib/supabase/errors";
 
-function ModeOverview({ validated }: { validated: number }) {
-  return (
-    <ul className="grid gap-3 sm:grid-cols-2">
-      {EXAM_MODE_ORDER.map((id) => {
-        const mode = EXAM_MODES[id];
-        return (
-          <li key={id} className="rounded-3xl border border-line bg-surface p-4 shadow-card">
-            <p className="font-semibold">{mode.title}</p>
-            <p className="mt-1 text-sm text-muted">{mode.summary}</p>
-            {id !== "revanche" && (
-              <p className="mt-2 text-xs text-muted">
-                Questions validées dans le catalogue : {validated} / {mode.questionCount} nécessaires
-              </p>
-            )}
-          </li>
-        );
-      })}
-    </ul>
-  );
-}
+const LOCAL_FORMATS: readonly LocalExamFormat[] = (["officiel", "express"] as const).map((id) => {
+  const mode = EXAM_MODES[id];
+  return {
+    id,
+    title: mode.title,
+    summary: mode.summary,
+    questionCount: mode.questionCount,
+    passMark: mode.passMark ?? undefined,
+  };
+});
 
 /**
- * Point d'entrée de l'écran Simuler : les examens sont tirés, enregistrés et
- * corrigés par le serveur, donc réservés aux comptes connectés.
+ * Point d'entrée de l'écran Simuler.
+ * - Examens blancs sur cet appareil, tirés parmi les questions réelles non
+ *   relues (édition personnelle, D-032), pour tout le monde.
+ * - Avec un compte : examens tirés, enregistrés et corrigés par le serveur,
+ *   parmi les seules questions validées.
  */
-export function ExamCenter({ validated }: { validated: number }) {
+export function ExamCenter({ validated, bank }: { validated: number; bank: readonly QuizQuestion[] }) {
   const auth = useAuth();
   const api = useMemo(() => {
     if (auth.status !== "signed-in") return null;
@@ -57,29 +52,26 @@ export function ExamCenter({ validated }: { validated: number }) {
     return client ? examApi(client) : null;
   }, [auth.status]);
 
-  if (auth.status === "loading") return <LoadingBlock label="Chargement…" />;
-  if (auth.status === "signed-in" && api) return <ExamWorkspace api={api} />;
-
   return (
-    <div className="space-y-6">
-      {auth.status === "local" ? (
-        <Alert tone="info" role="note" title="Examens pas encore disponibles">
-          Les examens sont tirés, enregistrés et corrigés par le serveur de KODI, pour que personne ne puisse
-          modifier un résultat. Le serveur n’est pas encore mis en service (voir les étapes manuelles de
-          configuration).
-        </Alert>
-      ) : (
-        <Alert tone="info" role="note" title="Connectez-vous pour passer un examen">
-          Les examens sont tirés, enregistrés et corrigés par le serveur : un compte permet de conserver vos
-          sessions, votre historique et votre bilan.
-          <div className="mt-3">
-            <ButtonLink href="/connexion?next=/simuler" size="md">
-              Se connecter
-            </ButtonLink>
-          </div>
-        </Alert>
+    <div className="space-y-8">
+      <section aria-labelledby="examens-appareil">
+        <SectionTitle id="examens-appareil">Examens blancs sur cet appareil</SectionTitle>
+        <p className="mb-4 text-sm text-muted">
+          Aucune correction avant la fin, puis le bilan question par question. Questions originales, pas encore
+          relues ; résultat enregistré sur cet appareil.
+        </p>
+        <LocalExams bank={bank} formats={LOCAL_FORMATS} />
+      </section>
+
+      {auth.status === "signed-in" && api && (
+        <section aria-labelledby="examens-compte">
+          <SectionTitle id="examens-compte">Examens enregistrés sur votre compte</SectionTitle>
+          <p className="mb-4 text-sm text-muted">
+            Corrigés par le serveur, uniquement sur des questions validées ({validated} pour l’instant).
+          </p>
+          <ExamWorkspace api={api} />
+        </section>
       )}
-      <ModeOverview validated={validated} />
     </div>
   );
 }

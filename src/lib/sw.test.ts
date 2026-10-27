@@ -99,7 +99,7 @@ describe("service worker", () => {
   it("hors ligne : une page jamais consultée renvoie la page « Hors ligne »", async () => {
     await install();
     online = false;
-    expect(await (await request("/mentions-legales"))!.text()).toBe("précache /hors-ligne");
+    expect(await (await request("/jamais-consultee"))!.text()).toBe("précache /hors-ligne");
   });
 
   it("sert les fichiers de l’application depuis le cache, même hors ligne", async () => {

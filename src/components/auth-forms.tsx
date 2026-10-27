@@ -294,15 +294,11 @@ export function SignupForm() {
         error={errors.acceptTerms}
         label={
           <>
-            J’accepte les{" "}
-            <Link href="/conditions-utilisation" className="font-semibold text-brand-text underline underline-offset-2">
-              conditions d’utilisation
-            </Link>{" "}
-            et la{" "}
+            J’ai lu la{" "}
             <Link href="/confidentialite" className="font-semibold text-brand-text underline underline-offset-2">
               politique de confidentialité
             </Link>{" "}
-            (projets, pas encore validés juridiquement).
+            (usage personnel).
           </>
         }
       />

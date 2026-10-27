@@ -107,7 +107,7 @@ describe("audit global du schéma public", () => {
       order by 1
     `);
     // Seules les vérifications utilisées par les politiques (rôle éditorial,
-    // abonnement de la personne connectée, sans argument) sont exposées.
+    // droits de la personne connectée, sans argument) sont exposées.
     expect(rows.map((r) => r.name)).toEqual(["current_user_has_premium", "is_editor"]);
   });
 

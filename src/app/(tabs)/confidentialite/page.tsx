@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { DraftNotice, LegalSection } from "@/components/legal-draft";
 import { PageHeader } from "@/components/ui/display";
-import { SELLER } from "@/content/legal";
 
 export const metadata: Metadata = { title: "Politique de confidentialité" };
 
@@ -14,8 +13,8 @@ export default function ConfidentialitePage() {
       <PageHeader title="Politique de confidentialité" description="Quelles données KODI utilise, pourquoi, et vos droits." />
       <DraftNotice />
 
-      <LegalSection title="Responsable du traitement">
-        <p>{SELLER.identity ?? "À désigner avant la publication : KODI n’a pas encore d’éditeur déclaré."}</p>
+      <LegalSection title="Application personnelle">
+        <p>KODI est une application à usage personnel : elle n’est ni vendue, ni proposée au public.</p>
       </LegalSection>
 
       <LegalSection title="Sans compte : tout reste sur votre appareil">
@@ -29,17 +28,11 @@ export default function ConfidentialitePage() {
         <p>
           Pour synchroniser vos appareils, KODI enregistre dans sa base de données (service Supabase) : votre adresse
           e-mail, votre mot de passe (sous forme protégée, géré par le service d’authentification), votre profil, vos
-          réglages, votre progression, vos examens et un journal de sécurité (connexions, changements d’offre).
+          réglages, votre progression, vos examens et un journal de sécurité (connexions).
         </p>
         <p>Ces données servent uniquement à faire fonctionner votre compte. Elles ne sont ni vendues, ni utilisées pour de la publicité.</p>
       </LegalSection>
 
-      <LegalSection title="Paiements (offre Premium)">
-        <p>
-          Le paiement est saisi sur la page de Stripe : KODI ne voit jamais votre numéro de carte. KODI conserve
-          seulement l’identifiant de client et d’abonnement Stripe, le statut et les dates de votre abonnement.
-        </p>
-      </LegalSection>
 
       <LegalSection title="Professeur">
         <p>

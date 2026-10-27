@@ -78,10 +78,6 @@ export function availabilityMessage(availability: ExamAvailability): string | nu
     const { available, required } = availability;
     return `Examen impossible pour le moment : ${available} question${available > 1 ? "s" : ""} validée${available > 1 ? "s" : ""} disponible${available > 1 ? "s" : ""} pour ${required} nécessaires. Une question n’entre dans un examen qu’après avoir été relue et validée.`;
   }
-  // Offre gratuite : limite vérifiée par le serveur (D-030).
-  if (availability.reason === "KODI_DAILY_EXAM_LIMIT") {
-    return "Vous avez déjà fait l’examen du jour inclus dans l’offre gratuite. Revenez demain, ou passez à Premium pour des examens illimités.";
-  }
   return null;
 }
 

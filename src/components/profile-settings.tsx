@@ -180,12 +180,7 @@ export function ProfileSettings() {
         <SectionTitle id="autres">Autres</SectionTitle>
         <ul className="divide-y divide-line overflow-hidden rounded-3xl border border-line bg-surface">
           {[
-            { href: "/premium", label: "KODI Premium", icon: "crown" as const },
-            { href: "/abonnement", label: "Mon abonnement", icon: "calendar" as const },
-            { href: "/cgv", label: "Conditions générales de vente", icon: "book" as const },
-            { href: "/mentions-legales", label: "Mentions légales", icon: "info" as const },
             { href: "/confidentialite", label: "Politique de confidentialité", icon: "lock" as const },
-            { href: "/conditions-utilisation", label: "Conditions d’utilisation", icon: "book" as const },
             { href: "/bienvenue", label: "Revoir l’accueil personnalisé", icon: "sparkles" as const },
           ].map((item) => (
             <li key={item.href}>

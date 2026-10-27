@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { ExamCenter } from "@/components/exam-center";
 import { Card, PageHeader } from "@/components/ui/display";
 import { QUESTIONS } from "@/content/catalog";
+import { LOCAL_EXAM_BANK } from "@/content/revision";
 import { SOURCES, formatConsultedAt } from "@/content/sources";
-import { FREE_DAILY_EXAMS } from "@/lib/billing/plans";
 import { validatedExamQuestionCount } from "@/lib/exam/modes";
 
 export const metadata: Metadata = { title: "Simuler" };
@@ -27,13 +27,9 @@ export default function SimulationPage() {
     <>
       <PageHeader
         title="Simuler"
-        description="Quatre modes d’examen, tirés parmi les questions validées et corrigés par le serveur."
+        description="Examens blancs au format de l’épreuve : 40 questions, réussite à partir de 35."
       />
-      <p className="-mt-3 mb-5 text-sm text-muted">
-        Offre gratuite : {FREE_DAILY_EXAMS} examen par jour, tous modes confondus (contrôlé par le serveur).
-        Premium : examens illimités.
-      </p>
-      <ExamCenter validated={validatedExamQuestionCount(QUESTIONS)} />
+      <ExamCenter validated={validatedExamQuestionCount(QUESTIONS)} bank={LOCAL_EXAM_BANK} />
 
       <section aria-labelledby="fidelite" className="mt-10">
         <Card>

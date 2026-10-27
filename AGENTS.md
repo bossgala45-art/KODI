@@ -102,15 +102,11 @@ npm run test:db     # sécurité de la base (PostgreSQL réel + migrations)
   Ne jamais annoncer qu’une IA répond si aucun service n’est connecté ; ne
   transmettre à l’IA que des contenus validés ; toute réponse passe par
   `checkAnswer`, sinon repli vers les explications prédéfinies.
-- Paiements (`src/lib/billing/`, D-030, `docs/PAIEMENTS.md`) : clés Stripe et
-  `SUPABASE_SECRET_KEY` lues uniquement par `src/lib/billing/server.ts`
-  (`server-only`) ; droits Premium décidés par la base
-  (`private.has_premium`), jamais par le navigateur ; webhook à signature
-  vérifiée, idempotent ; aucun appel réel à Stripe dans les tests ; ne
-  jamais présenter un paiement de test comme réel ; ne jamais inventer
-  d’information sur le vendeur (`src/content/legal.ts`).
-- `SUPABASE_SECRET_KEY` est aussi lue, facultativement, par
-  `src/lib/tutor/server.ts` pour les quotas partagés du professeur (D-031).
+- Édition personnelle gratuite (D-032) : aucun paiement ni abonnement ;
+  ne pas réintroduire de service payant sans demande explicite du porteur.
+- `SUPABASE_SECRET_KEY` est lue, facultativement, par
+  `src/lib/tutor/server.ts` seul, pour les quotas partagés du professeur
+  (D-031).
 - PWA (`public/sw.js`) : ne jamais mettre en cache `/api/`, `/auth/` ni une
   réponse `no-store` ; changer `VERSION` à chaque modification du service
   worker.

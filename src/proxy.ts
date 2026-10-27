@@ -30,7 +30,7 @@ export async function proxy(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // Ni fichiers statiques, ni service worker, ni webhook Stripe (corps brut, sans session).
-    "/((?!_next/static|_next/image|favicon.ico|icons/|sw.js|manifest.webmanifest|api/stripe/webhook|contenus/).*)",
+    // Ni fichiers statiques, ni service worker.
+    "/((?!_next/static|_next/image|favicon.ico|icons/|sw.js|manifest.webmanifest|contenus/).*)",
   ],
 };

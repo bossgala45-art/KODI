@@ -20,7 +20,6 @@ export const SECONDARY_NAV: readonly NavItem[] = [
   { href: "/coach", label: "Coach", icon: "sparkles" },
   { href: "/professeur", label: "Professeur", icon: "chat" },
   { href: "/revisions", label: "Révisions", icon: "calendar" },
-  { href: "/premium", label: "Premium", icon: "crown" },
   { href: "/profil", label: "Profil et paramètres", icon: "user" },
 ];
 

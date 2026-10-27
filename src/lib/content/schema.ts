@@ -121,7 +121,7 @@ export const lessonSchema = z.object({
   sources: z.array(sourceId).default([]),
   /** Contenu de démonstration : ne peut jamais être validé. */
   demo: z.boolean().default(false),
-  /** Offre : « gratuit » (cours essentiels) ou « premium » (D-030). */
+  /** Ancienne offre (D-030). Édition personnelle (D-032) : tout est accessible, quelle que soit la valeur. */
   access: z.enum(LESSON_ACCESS).default("gratuit"),
   blocks: z.array(blockSchema).min(1),
 });

@@ -1,4 +1,9 @@
-# Freemium et paiements (Stripe)
+# Freemium et paiements (Stripe) — ARCHIVÉ
+
+> **Retiré le 27/10/2026 (D-032)** : KODI est une édition personnelle
+> gratuite. Le code Stripe, les pages Premium et les fonctions de paiement
+> ont été supprimés ; ce document est conservé pour l’historique et ne
+> décrit plus l’application.
 
 État au 24/10/2026 : **aucun paiement n’est possible.** Stripe n’est pas
 configuré, aucun compte Stripe n’existe pour KODI et aucune somme n’a jamais

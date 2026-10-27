@@ -36,12 +36,8 @@ beforeAll(() => {
 });
 afterAll(() => db.close());
 
-/** Plusieurs examens le même jour : réservé à Premium (offre gratuite : un par jour). */
-async function premiumUser(label: string): Promise<string> {
-  const user = await db.createUser(label);
-  await db.admin("update public.subscriptions set plan = 'premium', status = 'active' where user_id = $1", [user]);
-  return user;
-}
+/** Édition personnelle (D-032) : plusieurs examens le même jour, sans abonnement. */
+const premiumUser = (label: string): Promise<string> => db.createUser(label);
 
 const start = (user: string, mode: string, refs: string[] | null = null) =>
   db.asUser(user, async (q) => (await q<{ id: string }>("select public.start_exam_mode($1, $2) as id", [mode, refs]))[0]!.id);

@@ -46,11 +46,11 @@ function TopBar() {
         <Logo />
         <div className="flex items-center gap-2">
           <Link
-            href="/premium"
+            href="/revisions"
             className="flex min-h-11 items-center gap-1.5 rounded-full px-3 text-sm font-semibold text-brand-text hover:bg-brand-soft"
           >
-            <Icon name="crown" size={18} />
-            Premium
+            <Icon name="calendar" size={18} />
+            Révisions
           </Link>
           <ProfileButton />
         </div>

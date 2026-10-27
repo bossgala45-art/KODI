@@ -134,16 +134,13 @@ prédéfinies, quotas et budget quotidien. Aucune règle n’est inventée.
 - Pas de mécanique punitive, pas de pression à l’achat, pas de classement
   public par défaut.
 
-### 4.8 Comptes, synchronisation, Premium
+### 4.8 Comptes et synchronisation
 
 - Usage possible sans compte (progression locale) ; compte pour synchroniser
   entre appareils (Supabase Auth + PostgreSQL avec Row Level Security).
-- **Freemium** (D-030, docs/PAIEMENTS.md) : gratuit = cours essentiels,
-  quiz, corrections, un examen par jour, scènes de découverte, coach
-  basique ; Premium = tous les cours, examens illimités, toutes les scènes,
-  statistiques avancées, coach étendu, IA selon les quotas. Prix envisagé
-  4,99 € TTC par mois, à confirmer. Paiement par Stripe Checkout et Stripe
-  Billing, prêt mais **non activé** (Stripe non configuré).
+- **Édition personnelle gratuite** (D-032) : aucun paiement ; tout est
+  accessible (cours, examens illimités, scènes, coach, statistiques).
+  L’ancien freemium Stripe (D-030) est retiré.
 - **Phase 2** : comptes, base et synchronisation implémentés (DECISIONS.md
   D-016 à D-019) ; mise en service manuelle décrite dans docs/SUPABASE.md.
 - Conformité RGPD : consentement, export et suppression des données, mentions
@@ -167,7 +164,7 @@ prédéfinies, quotas et budget quotidien. Aucune règle n’est inventée.
 - Interface premium, moderne et légèrement ludique ; animations fluides,
   discrètes et désactivables.
 - Navigation mobile à cinq onglets : Accueil, Apprendre, Simuler,
-  S’entraîner, Progression. Profil et Premium accessibles depuis l’en-tête.
+  S’entraîner, Progression. Profil et Révisions accessibles depuis l’en-tête.
 
 ## 5. Exigences de qualité
 

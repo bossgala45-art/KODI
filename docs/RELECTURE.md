@@ -4,7 +4,7 @@ Fichier généré à partir de `content/questions/` (npm run relecture) : ne pas
 
 **Comment relire** : pour chaque question, vérifiez l’énoncé, les bonnes réponses (✅) et l’explication en ouvrant la source. Puis indiquez à l’agent, par exemple : « ex-001 à ex-020 validées, ex-037 : la bonne réponse est B ». Seules les questions validées par vous passeront au statut « validé » (voir docs/CONTENU.md).
 
-Total : **68 questions** (0 relue(s)).
+Total : **135 questions** (0 relue(s)).
 
 ## Priorités
 
@@ -211,6 +211,40 @@ Après un arrêt d’urgence sur la bande d’arrêt d’urgence d’une autorou
 
 - Source : [Équipements obligatoires en voiture](https://www.securite-routiere.gouv.fr/reglementation-liee-aux-modes-de-deplacements/en-voiture/equipements-obligatoires-en-voiture) — Sécurité routière, consulté le 22/10/2026
 
+### rv-065 — à relire
+
+Sur autoroute, je peux circuler ou m’arrêter sur la bande centrale qui sépare les chaussées :
+
+- ▫️ **A.** Oui, en cas de bouchon
+- ✅ **B.** Non, jamais
+
+**Explication** : Il est interdit de circuler, de s’arrêter ou de stationner sur la bande centrale séparative des chaussées (amende de 4e classe).
+
+- Source : [Autoroute](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/autoroute) — Sécurité routière, consulté le 22/10/2026
+
+### rv-066 — à relire
+
+Faire demi-tour sur autoroute entraîne de plein droit un retrait de :
+
+- ✅ **A.** 4 points
+- ▫️ **B.** 1 point
+- ▫️ **C.** Aucun point
+
+**Explication** : Le demi-tour et la marche arrière sur autoroute sont punis d’une amende de 4e classe et du retrait de plein droit de 4 points.
+
+- Source : [Autoroute](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/autoroute) — Sécurité routière, consulté le 22/10/2026
+
+### rv-067 — à relire
+
+Je rejoins l’autoroute par une bretelle de raccordement. Les véhicules qui circulent sur l’autoroute :
+
+- ▫️ **A.** Doivent me laisser la place
+- ✅ **B.** Sont prioritaires : je leur cède le passage
+
+**Explication** : Le conducteur qui rejoint l’autoroute par une bretelle doit céder le passage aux véhicules qui y circulent.
+
+- Source : [Autoroute](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/autoroute) — Sécurité routière, consulté le 22/10/2026
+
 ## Croisement et dépassement
 
 ### ex-013 — à relire
@@ -325,6 +359,95 @@ Un tramway est arrêté et des voyageurs descendent du côté où je voudrais le
 - ✅ **B.** Non
 
 **Explication** : Il est interdit de dépasser un tramway à l’arrêt du côté où s’effectuent la montée ou la descente des voyageurs.
+
+- Source : [Croisement et dépassement](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/croisement-et-depassement) — Sécurité routière, consulté le 22/10/2026
+
+### rv-057 — à relire
+
+Sur une route de montagne, deux véhicules ne peuvent pas se croiser. Celui qui doit s’arrêter le premier est :
+
+- ▫️ **A.** Le véhicule qui monte
+- ✅ **B.** Le véhicule qui descend
+
+**Explication** : Sur les routes de montagne et à forte pente, le véhicule descendant doit s’arrêter à temps le premier.
+
+- Source : [Croisement et dépassement](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/croisement-et-depassement) — Sécurité routière, consulté le 22/10/2026
+
+### rv-058 — à relire
+
+Un obstacle se trouve sur ma voie et une voiture arrive en face. Je :
+
+- ✅ **A.** Ralentis ou m’arrête pour la laisser passer
+- ▫️ **B.** Passe : c’est à elle de s’écarter
+
+**Explication** : Le véhicule qui a l’obstacle sur sa voie doit ralentir ou s’arrêter pour laisser passer ceux qui viennent en sens inverse.
+
+- Source : [Croisement et dépassement](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/croisement-et-depassement) — Sécurité routière, consulté le 22/10/2026
+
+### rv-059 — à relire
+
+Sur une route étroite, le croisement est impossible et l’un des deux doit reculer : ma voiture ou un poids lourd. Recule :
+
+- ✅ **A.** Ma voiture
+- ▫️ **B.** Le poids lourd
+
+**Explication** : Quand il faut reculer, un véhicule léger recule devant un véhicule lourd.
+
+- Source : [Croisement et dépassement](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/croisement-et-depassement) — Sécurité routière, consulté le 22/10/2026
+
+### rv-060 — à relire
+
+Je viens de dépasser une voiture. Je me rabats :
+
+- ✅ **A.** Sans l’obliger à ralentir
+- ▫️ **B.** Juste devant elle, même si elle doit freiner
+
+**Explication** : Après un dépassement par la gauche, on revient sur sa droite sans provoquer le ralentissement du véhicule dépassé.
+
+- Source : [Croisement et dépassement](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/croisement-et-depassement) — Sécurité routière, consulté le 22/10/2026
+
+### rv-061 — à relire
+
+J’arrive à une traversée de voie ferrée sans barrières ni demi-barrières. Je peux y dépasser :
+
+- ✅ **A.** Non, c’est interdit
+- ▫️ **B.** Oui, si aucun train n’est visible
+
+**Explication** : Tout dépassement est interdit aux traversées de voies ferrées qui ne sont pas munies de barrières ou de demi-barrières.
+
+- Source : [Croisement et dépassement](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/croisement-et-depassement) — Sécurité routière, consulté le 22/10/2026
+
+### rv-062 — à relire
+
+Sur une route à double sens comportant trois voies, pour dépasser, je peux utiliser la voie la plus à gauche :
+
+- ▫️ **A.** Oui, si elle est libre
+- ✅ **B.** Non
+
+**Explication** : Si la route comporte plus de deux voies, le conducteur qui dépasse ne doit pas utiliser celle qui est le plus à gauche.
+
+- Source : [Croisement et dépassement](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/croisement-et-depassement) — Sécurité routière, consulté le 22/10/2026
+
+### rv-063 — à relire
+
+En agglomération, je croise un autobus et le croisement est difficile. Je :
+
+- ✅ **A.** M’arrête pour le laisser passer
+- ▫️ **B.** Force le passage, je suis sur ma voie
+
+**Explication** : En agglomération, on s’arrête si le croisement est difficile pour laisser passer les véhicules de transport en commun.
+
+- Source : [Croisement et dépassement](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/croisement-et-depassement) — Sécurité routière, consulté le 22/10/2026
+- Source : [Intersections et priorités](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/intersections-et-priorites) — Sécurité routière, consulté le 22/10/2026
+
+### rv-064 — à relire
+
+Je croise une voiture qui a un chargement très large et la route est trop étroite pour deux. Les conducteurs :
+
+- ✅ **A.** Réduisent leur vitesse et, si besoin, s’arrêtent ou se garent
+- ▫️ **B.** Continuent : le plus large doit reculer
+
+**Explication** : Si la largeur ne permet pas le croisement à cause de la taille ou du chargement de l’un des véhicules, les conducteurs ralentissent et, si besoin, s’arrêtent ou se garent.
 
 - Source : [Croisement et dépassement](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/croisement-et-depassement) — Sécurité routière, consulté le 22/10/2026
 
@@ -827,3 +950,641 @@ Je suis garé le long du trottoir et un cycliste arrive derrière moi. J’ouvre
 **Explication** : Il est interdit d’ouvrir une portière lorsque cela peut être dangereux pour soi ou pour les autres usagers.
 
 - Source : [Arrêt et stationnement](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/arret-et-stationnement) — Sécurité routière, consulté le 22/10/2026
+
+## Signalisation
+
+### rv-001 — à relire
+
+Au milieu de la chaussée, une ligne de dissuasion sépare les deux sens de circulation. Je peux dépasser :
+
+- ▫️ **A.** Aucun véhicule
+- ✅ **B.** Uniquement les véhicules lents
+- ▫️ **C.** Tous les véhicules
+
+**Explication** : La ligne de dissuasion n’autorise que le dépassement des véhicules lents.
+
+- Source : [Croisement et dépassement](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/croisement-et-depassement) — Sécurité routière, consulté le 22/10/2026
+
+### rv-002 — à relire
+
+La ligne au milieu de la chaussée est discontinue. Si toutes les autres conditions de sécurité sont réunies, le dépassement est :
+
+- ▫️ **A.** Interdit
+- ✅ **B.** Autorisé
+
+**Explication** : Une ligne discontinue autorise le dépassement, à condition de pouvoir le faire sans danger.
+
+- Source : [Croisement et dépassement](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/croisement-et-depassement) — Sécurité routière, consulté le 22/10/2026
+
+### rv-003 — à relire
+
+Des flèches de rabattement sont peintes au sol. Elles annoncent (2 réponses) :
+
+- ▫️ **A.** Une place de stationnement
+- ✅ **B.** Une ligne continue
+- ✅ **C.** La fin d’un créneau de dépassement
+
+**Explication** : Les flèches de rabattement annoncent une ligne continue ou la fin d’un créneau de dépassement : il faut renoncer à dépasser dès la première flèche.
+
+- Source : [Croisement et dépassement](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/croisement-et-depassement) — Sécurité routière, consulté le 22/10/2026
+
+### rv-004 — à relire
+
+Avant un passage étroit, un panneau m’oblige à céder le passage aux véhicules venant en sens inverse. Personne n’arrive en face. Je :
+
+- ▫️ **A.** Dois m’arrêter quand même
+- ✅ **B.** Peux m’engager sans m’arrêter
+
+**Explication** : Céder le passage n’oblige pas à s’arrêter : si personne n’arrive en face, on peut s’engager.
+
+- Source : [Croisement et dépassement](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/croisement-et-depassement) — Sécurité routière, consulté le 22/10/2026
+
+### rv-005 — à relire
+
+Avant un passage étroit, un panneau me donne la priorité sur les véhicules venant en sens inverse. Une voiture y est déjà engagée en face. Je :
+
+- ✅ **A.** La laisse passer
+- ▫️ **B.** Passe, puisque je suis prioritaire
+
+**Explication** : Avoir la priorité n’est pas un droit absolu : si un usager est déjà engagé dans le rétrécissement, on le laisse passer.
+
+- Source : [Croisement et dépassement](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/croisement-et-depassement) — Sécurité routière, consulté le 22/10/2026
+
+### rv-006 — à relire
+
+Un passage à niveau sans barrières est annoncé par :
+
+- ▫️ **A.** Un feu vert
+- ▫️ **B.** Aucune signalisation particulière
+- ✅ **C.** Une croix de Saint-André
+
+**Explication** : Les passages à niveau sans barrières sont annoncés par une croix de Saint-André. Tout passage à niveau est annoncé par un panneau.
+
+- Source : [Passage à niveau](https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-sur-routes-specifiques/passage-niveau) — Sécurité routière, consulté le 22/10/2026
+
+### rv-007 — à relire
+
+Dans un tunnel, les issues de secours sont indiquées par des panneaux :
+
+- ✅ **A.** Rectangulaires, munis de néon vert
+- ▫️ **B.** Ronds, à bord rouge
+- ▫️ **C.** Triangulaires, sur fond jaune
+
+**Explication** : Les issues de secours, tous les 200 à 300 mètres, sont indiquées par des panneaux rectangulaires munis de néon vert.
+
+- Source : [Conduire dans un tunnel](https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-sur-routes-specifiques/conduire-dans-un-tunnel) — Sécurité routière, consulté le 22/10/2026
+
+### rv-008 — à relire
+
+Dans un tunnel, un feu rouge clignote devant moi. Je :
+
+- ▫️ **A.** Continue prudemment : seul le feu rouge fixe impose l’arrêt
+- ✅ **B.** M’arrête : l’arrêt est absolu au feu rouge, fixe ou clignotant
+
+**Explication** : Dans un tunnel, l’arrêt au feu rouge est absolu, qu’il soit fixe ou clignotant.
+
+- Source : [Conduire dans un tunnel](https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-sur-routes-specifiques/conduire-dans-un-tunnel) — Sécurité routière, consulté le 22/10/2026
+
+### rv-009 — à relire
+
+Sur autoroute, une sortie que je veux prendre est annoncée. J’ai rejoint la bonne voie au plus tard :
+
+- ▫️ **A.** Après le début de la bretelle
+- ✅ **B.** Quand j’atteins les signaux placés au début de la bretelle
+
+**Explication** : Le changement de voie doit être achevé au plus tard au moment où l’on atteint les signaux placés au début de la bretelle ou de la bifurcation.
+
+- Source : [Autoroute](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/autoroute) — Sécurité routière, consulté le 22/10/2026
+
+### rv-010 — à relire
+
+Je stationne près d’un feu de circulation et mon véhicule, assez haut, le cache à la vue des autres usagers. Ce stationnement est :
+
+- ▫️ **A.** Autorisé
+- ✅ **B.** Très gênant
+
+**Explication** : Masquer un feu ou un panneau à la vue des usagers rend le stationnement très gênant (amende de 4e classe).
+
+- Source : [Arrêt et stationnement](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/arret-et-stationnement) — Sécurité routière, consulté le 22/10/2026
+
+### rv-011 — à relire
+
+À une intersection, le feu fonctionne et il est vert pour moi. Un panneau donne une autre règle. Je respecte :
+
+- ✅ **A.** Le feu
+- ▫️ **B.** Le panneau
+
+**Explication** : Les feux priment sur les panneaux. Si le feu ne fonctionne pas, on applique la règle indiquée par le panneau. Un agent prime sur les deux.
+
+- Source : [Intersections et priorités](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/intersections-et-priorites) — Sécurité routière, consulté le 22/10/2026
+
+### rv-012 — à relire
+
+Une ligne continue longe le bord droit de la route. Je m’arrête entre le bord et cette ligne, et les autres ne peuvent plus passer sans la chevaucher. Cet arrêt est :
+
+- ✅ **A.** Gênant
+- ▫️ **B.** Autorisé
+
+**Explication** : L’arrêt entre le bord de la route et une ligne continue est gênant quand la place restante oblige les autres à franchir ou chevaucher la ligne.
+
+- Source : [Arrêt et stationnement](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/arret-et-stationnement) — Sécurité routière, consulté le 22/10/2026
+
+### rv-013 — à relire
+
+Dans un tunnel, des signaux indiquent quelles voies sont ouvertes. Je dois :
+
+- ✅ **A.** Les respecter
+- ▫️ **B.** Les ignorer si le tunnel est vide
+
+**Explication** : En entrant dans un tunnel, il faut respecter les signaux d’affectation des voies.
+
+- Source : [Conduire dans un tunnel](https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-sur-routes-specifiques/conduire-dans-un-tunnel) — Sécurité routière, consulté le 22/10/2026
+
+## Arrêt et stationnement
+
+### rv-014 — à relire
+
+Sur une route à sens unique, je peux stationner :
+
+- ▫️ **A.** Uniquement à droite
+- ✅ **B.** À droite ou à gauche
+
+**Explication** : Sur une route à double sens, on stationne à droite ; sur une route à sens unique, à droite ou à gauche.
+
+- Source : [Arrêt et stationnement](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/arret-et-stationnement) — Sécurité routière, consulté le 22/10/2026
+
+### rv-015 — à relire
+
+Hors agglomération, je m’arrête :
+
+- ▫️ **A.** Au milieu de ma voie, avec les feux de détresse
+- ✅ **B.** Autant que possible hors de la chaussée, sur le bord de la route
+
+**Explication** : Hors agglomération, l’arrêt et le stationnement se font autant que possible sur le bord de la route (ou l’accotement si le sol s’y prête), pour ne pas gêner.
+
+- Source : [Arrêt et stationnement](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/arret-et-stationnement) — Sécurité routière, consulté le 22/10/2026
+
+### rv-016 — à relire
+
+Je m’arrête juste après un virage, là où la visibilité est insuffisante. Cet arrêt est :
+
+- ▫️ **A.** Simplement gênant
+- ▫️ **B.** Autorisé s’il est bref
+- ✅ **C.** Dangereux
+
+**Explication** : L’arrêt près d’un virage, d’une intersection, d’un sommet de côte ou d’un passage à niveau, quand la visibilité est insuffisante, est dangereux.
+
+- Source : [Arrêt et stationnement](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/arret-et-stationnement) — Sécurité routière, consulté le 22/10/2026
+
+### rv-017 — à relire
+
+Un arrêt ou un stationnement dangereux entraîne de plein droit un retrait de :
+
+- ▫️ **A.** 1 point
+- ✅ **B.** 3 points
+- ▫️ **C.** 6 points
+
+**Explication** : Le stationnement dangereux est puni d’une amende de 4e classe et entraîne de plein droit le retrait de 3 points.
+
+- Source : [Arrêt et stationnement](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/arret-et-stationnement) — Sécurité routière, consulté le 22/10/2026
+
+### rv-018 — à relire
+
+Sans carte mobilité inclusion, je me gare sur une place réservée aux personnes handicapées. Ce stationnement est :
+
+- ✅ **A.** Très gênant
+- ▫️ **B.** Autorisé pour quelques minutes
+
+**Explication** : Occuper un emplacement réservé aux véhicules portant la carte mobilité inclusion « stationnement pour personnes handicapées » est très gênant.
+
+- Source : [Arrêt et stationnement](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/arret-et-stationnement) — Sécurité routière, consulté le 22/10/2026
+
+### rv-019 — à relire
+
+Je m’arrête sur un passage piéton le temps de déposer un passager. C’est :
+
+- ▫️ **A.** Autorisé si je reste au volant
+- ✅ **B.** Très gênant
+
+**Explication** : Un véhicule à l’arrêt ou en stationnement sur un passage piéton est en situation très gênante.
+
+- Source : [Arrêt et stationnement](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/arret-et-stationnement) — Sécurité routière, consulté le 22/10/2026
+
+### rv-020 — à relire
+
+En voiture, je stationne 3 mètres avant un passage piéton, dans le sens de la circulation, hors emplacement matérialisé. C’est :
+
+- ✅ **A.** Très gênant
+- ▫️ **B.** Autorisé
+
+**Explication** : Pour un véhicule motorisé (sauf motos, tricycles et cyclomoteurs), stationner dans les 5 mètres en amont d’un passage piéton, hors emplacement matérialisé, est très gênant.
+
+- Source : [Arrêt et stationnement](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/arret-et-stationnement) — Sécurité routière, consulté le 22/10/2026
+
+### rv-021 — à relire
+
+Je m’arrête en double file avec ma voiture, feux de détresse allumés. Cet arrêt est :
+
+- ▫️ **A.** Autorisé grâce aux feux de détresse
+- ✅ **B.** Gênant
+
+**Explication** : L’arrêt ou le stationnement en double file est gênant, sauf pour les vélos, cyclomoteurs à deux roues et motos. Les feux de détresse n’y changent rien.
+
+- Source : [Arrêt et stationnement](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/arret-et-stationnement) — Sécurité routière, consulté le 22/10/2026
+
+### rv-022 — à relire
+
+Sauf arrêté fixant une durée plus courte, un stationnement ininterrompu au même endroit de la voie publique devient abusif au-delà de :
+
+- ▫️ **A.** 24 heures
+- ✅ **B.** 7 jours
+- ▫️ **C.** 30 jours
+
+**Explication** : Le stationnement est abusif au-delà de sept jours sans interruption au même point, ou d’une durée plus courte fixée par arrêté.
+
+- Source : [Arrêt et stationnement](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/arret-et-stationnement) — Sécurité routière, consulté le 22/10/2026
+
+### rv-023 — à relire
+
+Avant de m’éloigner de ma voiture stationnée, je dois :
+
+- ✅ **A.** Prendre les précautions nécessaires pour éviter tout risque d’accident dû à mon absence
+- ▫️ **B.** Seulement verrouiller les portières
+
+**Explication** : Le conducteur ne peut s’éloigner qu’après avoir pris toutes les précautions nécessaires pour prévenir un accident du fait de son absence.
+
+- Source : [Arrêt et stationnement](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/arret-et-stationnement) — Sécurité routière, consulté le 22/10/2026
+
+### rv-024 — à relire
+
+Ma voiture est garée de façon gênante et je suis absent. Elle peut être (2 réponses) :
+
+- ✅ **A.** Immobilisée
+- ✅ **B.** Mise en fourrière
+- ▫️ **C.** Laissée sur place : rien n’est possible sans moi
+
+**Explication** : Si le conducteur est absent ou refuse de déplacer son véhicule, l’immobilisation et la mise en fourrière peuvent être prescrites.
+
+- Source : [Arrêt et stationnement](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/arret-et-stationnement) — Sécurité routière, consulté le 22/10/2026
+
+### rv-025 — à relire
+
+Dans une zone de rencontre, je peux stationner :
+
+- ▫️ **A.** Partout, puisque la vitesse y est faible
+- ✅ **B.** Seulement sur les emplacements aménagés
+
+**Explication** : En zone de rencontre, l’arrêt ou le stationnement en dehors des emplacements aménagés est gênant.
+
+- Source : [Arrêt et stationnement](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/arret-et-stationnement) — Sécurité routière, consulté le 22/10/2026
+
+### rv-026 — à relire
+
+Sauf disposition contraire de l’autorité, s’arrêter sur un pont ou dans un tunnel est :
+
+- ✅ **A.** Gênant
+- ▫️ **B.** Autorisé
+
+**Explication** : L’arrêt ou le stationnement sur les ponts, dans les passages souterrains, les tunnels et sous les passages supérieurs est gênant, sauf dispositions différentes.
+
+- Source : [Arrêt et stationnement](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/arret-et-stationnement) — Sécurité routière, consulté le 22/10/2026
+
+### rv-027 — à relire
+
+Je me gare devant l’entrée d’un immeuble riverain. Ce stationnement est :
+
+- ▫️ **A.** Autorisé la nuit
+- ✅ **B.** Gênant
+
+**Explication** : Le stationnement devant les entrées des immeubles riverains est considéré comme gênant.
+
+- Source : [Arrêt et stationnement](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/arret-et-stationnement) — Sécurité routière, consulté le 22/10/2026
+
+## Écoconduite
+
+### rv-028 — à relire
+
+Des pneus sous-gonflés entraînent (2 réponses) :
+
+- ✅ **A.** Une surconsommation de carburant
+- ▫️ **B.** Une meilleure adhérence
+- ✅ **C.** Une moins bonne tenue de route
+
+**Explication** : Des pneus sous-gonflés, c’est du carburant en plus et une moins bonne tenue de route : on vérifie leur pression avant de partir.
+
+- Source : [Éco-conduite en voiture](https://www.securite-routiere.gouv.fr/chacun-son-mode-de-deplacement/dangers-de-la-route-en-voiture/mieux-conduire-en-voiture/eco) — Sécurité routière, consulté le 22/10/2026
+
+### rv-029 — à relire
+
+Un véhicule mal entretenu peut consommer davantage de carburant, jusqu’à :
+
+- ▫️ **A.** 2 %
+- ✅ **B.** 25 %
+
+**Explication** : Un véhicule mal entretenu peut entraîner une surconsommation allant jusqu’à 25 %.
+
+- Source : [Éco-conduite en voiture](https://www.securite-routiere.gouv.fr/chacun-son-mode-de-deplacement/dangers-de-la-route-en-voiture/mieux-conduire-en-voiture/eco) — Sécurité routière, consulté le 22/10/2026
+
+### rv-030 — à relire
+
+Je laisse mon coffre de toit en place alors qu’il est vide. Cela peut augmenter ma consommation de :
+
+- ✅ **A.** 10 à 15 %
+- ▫️ **B.** Moins de 1 %
+
+**Explication** : Un coffre de toit laissé en place après usage entraîne une surconsommation de 10 à 15 % : on le démonte.
+
+- Source : [Éco-conduite en voiture](https://www.securite-routiere.gouv.fr/chacun-son-mode-de-deplacement/dangers-de-la-route-en-voiture/mieux-conduire-en-voiture/eco) — Sécurité routière, consulté le 22/10/2026
+
+### rv-031 — à relire
+
+Je dois rester à l’arrêt plus de 20 secondes. Pour consommer moins :
+
+- ▫️ **A.** Je laisse tourner le moteur au ralenti
+- ✅ **B.** Je coupe le moteur
+
+**Explication** : Arrêter puis redémarrer consomme moins que laisser tourner le moteur au ralenti plus de 20 secondes.
+
+- Source : [Éco-conduite en voiture](https://www.securite-routiere.gouv.fr/chacun-son-mode-de-deplacement/dangers-de-la-route-en-voiture/mieux-conduire-en-voiture/eco) — Sécurité routière, consulté le 22/10/2026
+
+### rv-032 — à relire
+
+En ville, la climatisation peut augmenter la consommation de carburant jusqu’à :
+
+- ✅ **A.** 25 %
+- ▫️ **B.** 3 %
+
+**Explication** : La surconsommation due à la climatisation peut atteindre 10 % sur route et 25 % en ville.
+
+- Source : [Éco-conduite en voiture](https://www.securite-routiere.gouv.fr/chacun-son-mode-de-deplacement/dangers-de-la-route-en-voiture/mieux-conduire-en-voiture/eco) — Sécurité routière, consulté le 22/10/2026
+
+### rv-033 — à relire
+
+Rouler 10 km/h moins vite sur un trajet de 500 km permet d’économiser jusqu’à :
+
+- ▫️ **A.** 50 litres de carburant
+- ✅ **B.** 5 litres de carburant
+
+**Explication** : 10 km/h en moins permettent d’économiser jusqu’à 5 litres et de réduire de 12,5 % les émissions de CO2 sur 500 km.
+
+- Source : [Éco-conduite en voiture](https://www.securite-routiere.gouv.fr/chacun-son-mode-de-deplacement/dangers-de-la-route-en-voiture/mieux-conduire-en-voiture/eco) — Sécurité routière, consulté le 22/10/2026
+
+### rv-034 — à relire
+
+Je laisse le moteur monter haut dans les tours avant de changer de rapport. Ces sur-régimes peuvent entraîner une surconsommation de :
+
+- ▫️ **A.** 1 %
+- ✅ **B.** 20 %
+
+**Explication** : Démarrer en douceur et passer sans attendre le rapport supérieur évite les sur-régimes, qui occasionnent environ 20 % de surconsommation.
+
+- Source : [Éco-conduite en voiture](https://www.securite-routiere.gouv.fr/chacun-son-mode-de-deplacement/dangers-de-la-route-en-voiture/mieux-conduire-en-voiture/eco) — Sécurité routière, consulté le 22/10/2026
+
+## Tunnels et passages à niveau
+
+### rv-035 — à relire
+
+Dans un tunnel, la distance à garder avec le véhicule devant moi, même à l’arrêt, est de :
+
+- ▫️ **A.** 2 à 5 mètres
+- ✅ **B.** 70 à 150 mètres
+
+**Explication** : Dans un tunnel, on respecte les distances de sécurité même à l’arrêt (70 à 150 mètres) : elles sont nécessaires à l’intervention des secours.
+
+- Source : [Conduire dans un tunnel](https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-sur-routes-specifiques/conduire-dans-un-tunnel) — Sécurité routière, consulté le 22/10/2026
+
+### rv-036 — à relire
+
+Dans un tunnel, ma voiture prend feu et la sortie est proche. Je :
+
+- ✅ **A.** Essaie de sortir du tunnel avec ma voiture
+- ▫️ **B.** M’arrête aussitôt au milieu de la voie
+
+**Explication** : Si le véhicule prend feu et que la sortie est proche, on essaie de quitter le tunnel avec le véhicule.
+
+- Source : [Conduire dans un tunnel](https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-sur-routes-specifiques/conduire-dans-un-tunnel) — Sécurité routière, consulté le 22/10/2026
+
+### rv-037 — à relire
+
+Dans un tunnel, pour donner l’alerte, j’utilise :
+
+- ▫️ **A.** Mon téléphone portable
+- ✅ **B.** Un téléphone de secours du tunnel
+
+**Explication** : Les téléphones de secours du tunnel permettent de vous localiser, contrairement au téléphone portable.
+
+- Source : [Conduire dans un tunnel](https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-sur-routes-specifiques/conduire-dans-un-tunnel) — Sécurité routière, consulté le 22/10/2026
+
+### rv-038 — à relire
+
+Dans un tunnel, de la fumée apparaît. Avant de quitter ma voiture, je coupe le moteur et :
+
+- ✅ **A.** Je laisse la clé sur le contact
+- ▫️ **B.** J’emporte la clé
+
+**Explication** : En cas de fumée : couper le moteur en laissant la clé sur le contact, puis quitter le véhicule avec tous les passagers par une issue de secours.
+
+- Source : [Conduire dans un tunnel](https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-sur-routes-specifiques/conduire-dans-un-tunnel) — Sécurité routière, consulté le 22/10/2026
+
+### rv-039 — à relire
+
+Dans un tunnel, je me rends compte que je me suis trompé de direction. Je peux faire demi-tour :
+
+- ✅ **A.** Jamais : c’est interdit
+- ▫️ **B.** Oui, si la voie est libre
+
+**Explication** : Dans un tunnel, il est interdit de faire demi-tour et de s’arrêter, hormis en cas d’urgence sur les emplacements prévus.
+
+- Source : [Conduire dans un tunnel](https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-sur-routes-specifiques/conduire-dans-un-tunnel) — Sécurité routière, consulté le 22/10/2026
+
+### rv-040 — à relire
+
+Ma voiture tombe en panne dans un tunnel et je ne peux pas en sortir. Je :
+
+- ✅ **A.** Rejoins l’emplacement d’arrêt d’urgence le plus proche, au plus près du bord droit
+- ▫️ **B.** M’arrête sur place sans signaler ma présence
+
+**Explication** : En cas de panne : feux de détresse, puis sortir du tunnel si possible ; sinon rejoindre l’emplacement d’arrêt d’urgence le plus proche et donner l’alerte.
+
+- Source : [Conduire dans un tunnel](https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-sur-routes-specifiques/conduire-dans-un-tunnel) — Sécurité routière, consulté le 22/10/2026
+
+### rv-041 — à relire
+
+Dans un tunnel, la circulation ralentit fortement. J’allume :
+
+- ▫️ **A.** Mes feux de route
+- ✅ **B.** Mes feux de détresse
+
+**Explication** : En cas de ralentissement dans un tunnel, on allume ses feux de détresse et on garde ses distances.
+
+- Source : [Conduire dans un tunnel](https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-sur-routes-specifiques/conduire-dans-un-tunnel) — Sécurité routière, consulté le 22/10/2026
+
+### rv-042 — à relire
+
+La distance d’arrêt d’un train peut atteindre :
+
+- ✅ **A.** 800 mètres
+- ▫️ **B.** 80 mètres
+
+**Explication** : Un train peut avoir besoin de 800 mètres pour s’arrêter : le code de la route lui accorde la priorité absolue.
+
+- Source : [Passage à niveau](https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-sur-routes-specifiques/passage-niveau) — Sécurité routière, consulté le 22/10/2026
+
+### rv-043 — à relire
+
+Après le passage d’un train, les barrières du passage à niveau restent baissées. C’est probablement :
+
+- ▫️ **A.** Une panne : je contourne les barrières
+- ✅ **B.** Qu’un autre train arrive
+
+**Explication** : Si les barrières restent fermées après un train, un autre arrive probablement ; sinon, on contacte la gare avec le numéro ou le téléphone du passage à niveau.
+
+- Source : [Passage à niveau](https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-sur-routes-specifiques/passage-niveau) — Sécurité routière, consulté le 22/10/2026
+
+### rv-044 — à relire
+
+À un passage à niveau sans barrières, je :
+
+- ✅ **A.** M’arrête et vérifie qu’aucun train n’arrive avant de traverser
+- ▫️ **B.** Passe sans ralentir s’il n’y a pas de feu
+
+**Explication** : Sans barrières, on s’arrête avant le passage à niveau et on vérifie qu’aucun train n’arrive avant de franchir la voie ferrée.
+
+- Source : [Passage à niveau](https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-sur-routes-specifiques/passage-niveau) — Sécurité routière, consulté le 22/10/2026
+
+### rv-045 — à relire
+
+La route est encombrée après un passage à niveau. Je m’engage sur la voie ferrée :
+
+- ✅ **A.** Seulement si je suis certain de pouvoir me dégager rapidement
+- ▫️ **B.** Dès que la voiture devant moi s’engage
+
+**Explication** : On ne traverse que si l’on est absolument certain de pouvoir se dégager rapidement, et on ne s’arrête jamais sur la voie ferrée.
+
+- Source : [Passage à niveau](https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-sur-routes-specifiques/passage-niveau) — Sécurité routière, consulté le 22/10/2026
+
+### rv-046 — à relire
+
+À vélo, je traverse les rails d’un passage à niveau :
+
+- ▫️ **A.** En biais, pour gagner du temps
+- ✅ **B.** Aussi perpendiculairement que possible
+
+**Explication** : La roue d’un vélo peut se coincer dans l’ornière des rails : on traverse aussi perpendiculairement que possible.
+
+- Source : [Passage à niveau](https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-sur-routes-specifiques/passage-niveau) — Sécurité routière, consulté le 22/10/2026
+
+## Visibilité et éclairage
+
+### rv-047 — à relire
+
+Par temps de brouillard, en plus de mes feux de croisement, j’utilise :
+
+- ✅ **A.** Mes feux de brouillard avant
+- ▫️ **B.** Mes feux de route
+
+**Explication** : Par brouillard, on réduit sa vitesse et on utilise les feux de brouillard avant en complément des feux de croisement.
+
+- Source : [Conduire par temps de brouillard](https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-selon-la-meteo/conduire-par-temps-de-brouillard) — Sécurité routière, consulté le 22/10/2026
+
+### rv-048 — à relire
+
+Du brouillard est annoncé et je dois faire un trajet en rase campagne. Le conseil de la Sécurité routière :
+
+- ▫️ **A.** Partir plus vite pour arriver avant
+- ✅ **B.** Différer mon départ si possible
+
+**Explication** : Si du brouillard est annoncé, différez votre départ, surtout pour un trajet en rase campagne.
+
+- Source : [Conduire par temps de brouillard](https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-selon-la-meteo/conduire-par-temps-de-brouillard) — Sécurité routière, consulté le 22/10/2026
+
+### rv-049 — à relire
+
+Quand j’utilise mes feux de route, je peux allumer en même temps mes feux de croisement :
+
+- ✅ **A.** Oui
+- ▫️ **B.** Non
+
+**Explication** : Lorsqu’il est fait usage des feux de route, les feux de croisement peuvent être utilisés simultanément.
+
+- Source : [Croisement et dépassement](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/croisement-et-depassement) — Sécurité routière, consulté le 22/10/2026
+
+### rv-050 — à relire
+
+En agglomération, sur une route suffisamment éclairée, puis-je rouler en feux de route ?
+
+- ▫️ **A.** Oui, si personne n’arrive en face
+- ✅ **B.** Non
+
+**Explication** : En agglomération sur une route suffisamment éclairée, les feux de route sont exclus.
+
+- Source : [Croisement et dépassement](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/croisement-et-depassement) — Sécurité routière, consulté le 22/10/2026
+
+### rv-051 — à relire
+
+La nuit, une voiture arrive en face. Je passe des feux de route aux feux de croisement :
+
+- ✅ **A.** Suffisamment à l’avance pour ne pas la gêner
+- ▫️ **B.** Au dernier moment, à sa hauteur
+
+**Explication** : Le passage des feux de route aux feux de croisement doit se faire suffisamment à l’avance pour ne pas gêner les autres usagers.
+
+- Source : [Croisement et dépassement](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/croisement-et-depassement) — Sécurité routière, consulté le 22/10/2026
+
+## Usagers et partage de la rue
+
+### rv-052 — à relire
+
+Dans une aire piétonne, les piétons sont prioritaires sur tous les véhicules, sauf :
+
+- ▫️ **A.** Les vélos
+- ✅ **B.** Les tramways
+- ▫️ **C.** Les taxis
+
+**Explication** : Dans une aire piétonne, les piétons sont prioritaires sur tous les véhicules, sauf les tramways.
+
+- Source : [Le code de la rue](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/le-code-de-la-rue) — Sécurité routière, consulté le 22/10/2026
+
+### rv-053 — à relire
+
+Dans une zone 30, la vitesse des véhicules motorisés est limitée à :
+
+- ▫️ **A.** 50 km/h
+- ✅ **B.** 30 km/h
+
+**Explication** : En zone 30, la vitesse des véhicules motorisés est limitée à 30 km/h.
+
+- Source : [Le code de la rue](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/le-code-de-la-rue) — Sécurité routière, consulté le 22/10/2026
+
+### rv-054 — à relire
+
+Dans une zone de rencontre, les piétons peuvent se déplacer :
+
+- ✅ **A.** Sur toute la largeur de la voirie
+- ▫️ **B.** Seulement sur les trottoirs
+
+**Explication** : En zone de rencontre, les piétons sont prioritaires (sauf sur les tramways) et peuvent se déplacer sur toute la largeur de la voirie.
+
+- Source : [Le code de la rue](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/le-code-de-la-rue) — Sécurité routière, consulté le 22/10/2026
+
+### rv-055 — à relire
+
+Dans une zone 30 ou une zone de rencontre, je peux croiser des cyclistes qui roulent en sens inverse dans une rue à sens unique. C’est :
+
+- ▫️ **A.** Toujours interdit
+- ✅ **B.** Fréquent : le double sens cyclable y est quasi généralisé
+
+**Explication** : En zone 30 et en zone de rencontre, le double sens de circulation est quasi généralisé pour les cyclistes.
+
+- Source : [Le code de la rue](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/le-code-de-la-rue) — Sécurité routière, consulté le 22/10/2026
+
+### rv-056 — à relire
+
+Dans une zone de rencontre, un piéton traverse la chaussée hors passage piéton, devant moi. Il est prioritaire :
+
+- ▫️ **A.** Non, seulement sur un passage piéton
+- ✅ **B.** Oui
+
+**Explication** : En zone de rencontre, les piétons ont la priorité sur tous les véhicules, sauf les tramways, sur toute la largeur de la voirie.
+
+- Source : [Le code de la rue](https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/le-code-de-la-rue) — Sécurité routière, consulté le 22/10/2026

@@ -54,13 +54,20 @@ export function ExamCenter({ validated, bank }: { validated: number; bank: reado
 
   return (
     <div className="space-y-8">
-      <section aria-labelledby="examens-appareil">
-        <SectionTitle id="examens-appareil">Examens blancs sur cet appareil</SectionTitle>
-        <p className="mb-4 text-sm text-muted">
-          Aucune correction avant la fin, puis le bilan question par question. Questions originales, pas encore
-          relues ; résultat enregistré sur cet appareil.
-        </p>
-        <LocalExams bank={bank} formats={LOCAL_FORMATS} />
+      <section aria-label="Examens blancs sur cet appareil">
+        <LocalExams
+          bank={bank}
+          formats={LOCAL_FORMATS}
+          intro={
+            <>
+              <SectionTitle id="examens-appareil">Examens blancs sur cet appareil</SectionTitle>
+              <p className="mb-4 text-sm text-muted">
+                Aucune correction avant la fin, puis le bilan question par question. Questions originales, pas
+                encore relues ; résultat enregistré sur cet appareil.
+              </p>
+            </>
+          }
+        />
       </section>
 
       {auth.status === "signed-in" && api && (

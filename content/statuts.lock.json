@@ -87,6 +87,10 @@
     "status": "a-verifier",
     "hash": "f7e7f4c3652ef247"
   },
+  "competence:c-panneaux-feux": {
+    "status": "a-verifier",
+    "hash": "20ef0a5df9c107d0"
+  },
   "competence:c-passages-niveau": {
     "status": "a-verifier",
     "hash": "c118130f17a1273b"
@@ -414,5 +418,273 @@
   "question:q-sim-001": {
     "status": "a-verifier",
     "hash": "d2a13e7df9502572"
+  },
+  "question:rv-001": {
+    "status": "a-verifier",
+    "hash": "9a3d2da248c0819b"
+  },
+  "question:rv-002": {
+    "status": "a-verifier",
+    "hash": "5036391f1fba4d5a"
+  },
+  "question:rv-003": {
+    "status": "a-verifier",
+    "hash": "826bab8214b860eb"
+  },
+  "question:rv-004": {
+    "status": "a-verifier",
+    "hash": "abd8631d1d086189"
+  },
+  "question:rv-005": {
+    "status": "a-verifier",
+    "hash": "0cb2f7b1343a95b9"
+  },
+  "question:rv-006": {
+    "status": "a-verifier",
+    "hash": "e6dd5d497a636165"
+  },
+  "question:rv-007": {
+    "status": "a-verifier",
+    "hash": "5ec90c8fd42c9b58"
+  },
+  "question:rv-008": {
+    "status": "a-verifier",
+    "hash": "baaf388047c857b1"
+  },
+  "question:rv-009": {
+    "status": "a-verifier",
+    "hash": "1fc0ae0c3620f77d"
+  },
+  "question:rv-010": {
+    "status": "a-verifier",
+    "hash": "a3214d7d73e7bdaa"
+  },
+  "question:rv-011": {
+    "status": "a-verifier",
+    "hash": "fb7637181035caa2"
+  },
+  "question:rv-012": {
+    "status": "a-verifier",
+    "hash": "1bd92a6030fa2c2d"
+  },
+  "question:rv-013": {
+    "status": "a-verifier",
+    "hash": "f319ee2a5801722b"
+  },
+  "question:rv-014": {
+    "status": "a-verifier",
+    "hash": "6665e2a89478519b"
+  },
+  "question:rv-015": {
+    "status": "a-verifier",
+    "hash": "ca369ba690717ff8"
+  },
+  "question:rv-016": {
+    "status": "a-verifier",
+    "hash": "49aa4b76a7dd50ef"
+  },
+  "question:rv-017": {
+    "status": "a-verifier",
+    "hash": "9849745bb458f1aa"
+  },
+  "question:rv-018": {
+    "status": "a-verifier",
+    "hash": "5b66753ca64aab57"
+  },
+  "question:rv-019": {
+    "status": "a-verifier",
+    "hash": "80dae40e13ed27ae"
+  },
+  "question:rv-020": {
+    "status": "a-verifier",
+    "hash": "ab0735d3ee271b43"
+  },
+  "question:rv-021": {
+    "status": "a-verifier",
+    "hash": "1a06518a9b38f66a"
+  },
+  "question:rv-022": {
+    "status": "a-verifier",
+    "hash": "672258696160f26f"
+  },
+  "question:rv-023": {
+    "status": "a-verifier",
+    "hash": "99468890b97c2210"
+  },
+  "question:rv-024": {
+    "status": "a-verifier",
+    "hash": "75a4e7368a4b85ba"
+  },
+  "question:rv-025": {
+    "status": "a-verifier",
+    "hash": "13f8e49c578aa6b9"
+  },
+  "question:rv-026": {
+    "status": "a-verifier",
+    "hash": "d1d29e5f0ad41fa7"
+  },
+  "question:rv-027": {
+    "status": "a-verifier",
+    "hash": "7c9773b4d4d71f37"
+  },
+  "question:rv-028": {
+    "status": "a-verifier",
+    "hash": "899088151c6a9377"
+  },
+  "question:rv-029": {
+    "status": "a-verifier",
+    "hash": "09287ff7e8df1cc4"
+  },
+  "question:rv-030": {
+    "status": "a-verifier",
+    "hash": "7de5cf470aadf617"
+  },
+  "question:rv-031": {
+    "status": "a-verifier",
+    "hash": "852df23ef6adf990"
+  },
+  "question:rv-032": {
+    "status": "a-verifier",
+    "hash": "94b565ba8edb5d9c"
+  },
+  "question:rv-033": {
+    "status": "a-verifier",
+    "hash": "b6bd518fd6ecac83"
+  },
+  "question:rv-034": {
+    "status": "a-verifier",
+    "hash": "087a971f98dbf4f7"
+  },
+  "question:rv-035": {
+    "status": "a-verifier",
+    "hash": "1af0aa6b0a911475"
+  },
+  "question:rv-036": {
+    "status": "a-verifier",
+    "hash": "f3a0db7e11d5efee"
+  },
+  "question:rv-037": {
+    "status": "a-verifier",
+    "hash": "43c195f6180a83e4"
+  },
+  "question:rv-038": {
+    "status": "a-verifier",
+    "hash": "329ed20ae40b8dce"
+  },
+  "question:rv-039": {
+    "status": "a-verifier",
+    "hash": "cff321d9337b9fac"
+  },
+  "question:rv-040": {
+    "status": "a-verifier",
+    "hash": "190cfb76f439ad07"
+  },
+  "question:rv-041": {
+    "status": "a-verifier",
+    "hash": "f711524a558beeb0"
+  },
+  "question:rv-042": {
+    "status": "a-verifier",
+    "hash": "a2d3276b7a1d2c6a"
+  },
+  "question:rv-043": {
+    "status": "a-verifier",
+    "hash": "ceee9e8e2292732a"
+  },
+  "question:rv-044": {
+    "status": "a-verifier",
+    "hash": "d00694b88463f76a"
+  },
+  "question:rv-045": {
+    "status": "a-verifier",
+    "hash": "3a2e2e59a20dfee8"
+  },
+  "question:rv-046": {
+    "status": "a-verifier",
+    "hash": "837990947a5b0e2e"
+  },
+  "question:rv-047": {
+    "status": "a-verifier",
+    "hash": "ec5d6e2a2fc619f5"
+  },
+  "question:rv-048": {
+    "status": "a-verifier",
+    "hash": "6c740bcb438e0ce1"
+  },
+  "question:rv-049": {
+    "status": "a-verifier",
+    "hash": "e598a57caafcc9d3"
+  },
+  "question:rv-050": {
+    "status": "a-verifier",
+    "hash": "e7979ae5d18e3759"
+  },
+  "question:rv-051": {
+    "status": "a-verifier",
+    "hash": "ec550c598406ff59"
+  },
+  "question:rv-052": {
+    "status": "a-verifier",
+    "hash": "1ef09a3b800bfae2"
+  },
+  "question:rv-053": {
+    "status": "a-verifier",
+    "hash": "5a99beebe62693d4"
+  },
+  "question:rv-054": {
+    "status": "a-verifier",
+    "hash": "b5328a56db49316f"
+  },
+  "question:rv-055": {
+    "status": "a-verifier",
+    "hash": "425a0ebb88f7993f"
+  },
+  "question:rv-056": {
+    "status": "a-verifier",
+    "hash": "e3defd233e0f05f2"
+  },
+  "question:rv-057": {
+    "status": "a-verifier",
+    "hash": "4958acb1abd35817"
+  },
+  "question:rv-058": {
+    "status": "a-verifier",
+    "hash": "a91850c133e5c780"
+  },
+  "question:rv-059": {
+    "status": "a-verifier",
+    "hash": "525493d3dcfe3ed0"
+  },
+  "question:rv-060": {
+    "status": "a-verifier",
+    "hash": "f28b8377dc74b2ba"
+  },
+  "question:rv-061": {
+    "status": "a-verifier",
+    "hash": "3550feb02062c7e8"
+  },
+  "question:rv-062": {
+    "status": "a-verifier",
+    "hash": "b4e9a900456b26e8"
+  },
+  "question:rv-063": {
+    "status": "a-verifier",
+    "hash": "311f747d7d0d3f17"
+  },
+  "question:rv-064": {
+    "status": "a-verifier",
+    "hash": "9c053f2a89876796"
+  },
+  "question:rv-065": {
+    "status": "a-verifier",
+    "hash": "eeeb4f98150f9682"
+  },
+  "question:rv-066": {
+    "status": "a-verifier",
+    "hash": "b20319bbca69d8b0"
+  },
+  "question:rv-067": {
+    "status": "a-verifier",
+    "hash": "91c9dff7ec27ea45"
   }
 }

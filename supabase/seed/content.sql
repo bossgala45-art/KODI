@@ -92,35 +92,39 @@ values ('ad7e4ff8-02e2-51f2-955e-6689b0731b71', 'c-panne', '9e728136-4b6b-520c-a
 on conflict (id) do update set external_ref = excluded.external_ref, course_id = excluded.course_id, slug = excluded.slug,
   title = excluded.title, description = excluded.description, position = excluded.position, status = excluded.status;
 insert into public.competences (id, external_ref, course_id, slug, title, description, position, status)
-values ('a8754ce0-1402-5b0e-b697-869bd4098e21', 'c-passages-niveau', 'a3bf0425-c118-51aa-a517-005e92d684ab', 'c-passages-niveau', 'Franchir un passage à niveau', '', 13, 'in_review'::public.content_status)
+values ('5b02c6df-9f1f-52ff-93e1-f191b1ff6234', 'c-panneaux-feux', '08a74e39-3861-5818-8c79-9aee611d8d69', 'c-panneaux-feux', 'Respecter panneaux, feux et signaux', '', 13, 'in_review'::public.content_status)
 on conflict (id) do update set external_ref = excluded.external_ref, course_id = excluded.course_id, slug = excluded.slug,
   title = excluded.title, description = excluded.description, position = excluded.position, status = excluded.status;
 insert into public.competences (id, external_ref, course_id, slug, title, description, position, status)
-values ('7fe7f3e9-aecc-5413-942d-e5c19bff2e3c', 'c-priorite-intersection', 'b40b1e6b-339f-5488-87ce-0f0a50a67276', 'c-priorite-intersection', 'Appliquer les règles de priorité aux intersections', '', 14, 'in_review'::public.content_status)
+values ('a8754ce0-1402-5b0e-b697-869bd4098e21', 'c-passages-niveau', 'a3bf0425-c118-51aa-a517-005e92d684ab', 'c-passages-niveau', 'Franchir un passage à niveau', '', 14, 'in_review'::public.content_status)
 on conflict (id) do update set external_ref = excluded.external_ref, course_id = excluded.course_id, slug = excluded.slug,
   title = excluded.title, description = excluded.description, position = excluded.position, status = excluded.status;
 insert into public.competences (id, external_ref, course_id, slug, title, description, position, status)
-values ('9633e039-8208-5c8f-b4e6-22f0326ab7f3', 'c-stationner', '747dd721-14d5-5cf1-9e9c-aab450befcd6', 'c-stationner', 'Arrêter et stationner sans danger', '', 15, 'in_review'::public.content_status)
+values ('7fe7f3e9-aecc-5413-942d-e5c19bff2e3c', 'c-priorite-intersection', 'b40b1e6b-339f-5488-87ce-0f0a50a67276', 'c-priorite-intersection', 'Appliquer les règles de priorité aux intersections', '', 15, 'in_review'::public.content_status)
 on conflict (id) do update set external_ref = excluded.external_ref, course_id = excluded.course_id, slug = excluded.slug,
   title = excluded.title, description = excluded.description, position = excluded.position, status = excluded.status;
 insert into public.competences (id, external_ref, course_id, slug, title, description, position, status)
-values ('8d9197d8-6c24-50f3-b193-ada8b816fe81', 'c-tunnels', 'a3bf0425-c118-51aa-a517-005e92d684ab', 'c-tunnels', 'Circuler dans un tunnel', '', 16, 'in_review'::public.content_status)
+values ('9633e039-8208-5c8f-b4e6-22f0326ab7f3', 'c-stationner', '747dd721-14d5-5cf1-9e9c-aab450befcd6', 'c-stationner', 'Arrêter et stationner sans danger', '', 16, 'in_review'::public.content_status)
 on conflict (id) do update set external_ref = excluded.external_ref, course_id = excluded.course_id, slug = excluded.slug,
   title = excluded.title, description = excluded.description, position = excluded.position, status = excluded.status;
 insert into public.competences (id, external_ref, course_id, slug, title, description, position, status)
-values ('4d2a0934-e1b1-5172-9c6f-eacb55406515', 'c-usagers-vulnerables', '07a41a51-b64e-51f2-a198-5b59c5b86b09', 'c-usagers-vulnerables', 'Protéger piétons et cyclistes', '', 17, 'in_review'::public.content_status)
+values ('8d9197d8-6c24-50f3-b193-ada8b816fe81', 'c-tunnels', 'a3bf0425-c118-51aa-a517-005e92d684ab', 'c-tunnels', 'Circuler dans un tunnel', '', 17, 'in_review'::public.content_status)
 on conflict (id) do update set external_ref = excluded.external_ref, course_id = excluded.course_id, slug = excluded.slug,
   title = excluded.title, description = excluded.description, position = excluded.position, status = excluded.status;
 insert into public.competences (id, external_ref, course_id, slug, title, description, position, status)
-values ('8b6c3b03-7335-537f-a299-7577bc2e6c3d', 'c-vehicules-prioritaires', 'b40b1e6b-339f-5488-87ce-0f0a50a67276', 'c-vehicules-prioritaires', 'Faciliter le passage des véhicules prioritaires', '', 18, 'in_review'::public.content_status)
+values ('4d2a0934-e1b1-5172-9c6f-eacb55406515', 'c-usagers-vulnerables', '07a41a51-b64e-51f2-a198-5b59c5b86b09', 'c-usagers-vulnerables', 'Protéger piétons et cyclistes', '', 18, 'in_review'::public.content_status)
 on conflict (id) do update set external_ref = excluded.external_ref, course_id = excluded.course_id, slug = excluded.slug,
   title = excluded.title, description = excluded.description, position = excluded.position, status = excluded.status;
 insert into public.competences (id, external_ref, course_id, slug, title, description, position, status)
-values ('a338089b-b643-5a4b-aa5f-17931e569ec7', 'c-vitesses', 'd71a9053-9167-58ee-a908-e78d956a30ca', 'c-vitesses', 'Respecter les vitesses maximales', '', 19, 'in_review'::public.content_status)
+values ('8b6c3b03-7335-537f-a299-7577bc2e6c3d', 'c-vehicules-prioritaires', 'b40b1e6b-339f-5488-87ce-0f0a50a67276', 'c-vehicules-prioritaires', 'Faciliter le passage des véhicules prioritaires', '', 19, 'in_review'::public.content_status)
 on conflict (id) do update set external_ref = excluded.external_ref, course_id = excluded.course_id, slug = excluded.slug,
   title = excluded.title, description = excluded.description, position = excluded.position, status = excluded.status;
 insert into public.competences (id, external_ref, course_id, slug, title, description, position, status)
-values ('22ccf1ae-d20c-5540-84d9-7af8f655864b', 'c-zones-apaisees', '07a41a51-b64e-51f2-a198-5b59c5b86b09', 'c-zones-apaisees', 'Circuler en zone de rencontre et aire piétonne', '', 20, 'in_review'::public.content_status)
+values ('a338089b-b643-5a4b-aa5f-17931e569ec7', 'c-vitesses', 'd71a9053-9167-58ee-a908-e78d956a30ca', 'c-vitesses', 'Respecter les vitesses maximales', '', 20, 'in_review'::public.content_status)
+on conflict (id) do update set external_ref = excluded.external_ref, course_id = excluded.course_id, slug = excluded.slug,
+  title = excluded.title, description = excluded.description, position = excluded.position, status = excluded.status;
+insert into public.competences (id, external_ref, course_id, slug, title, description, position, status)
+values ('22ccf1ae-d20c-5540-84d9-7af8f655864b', 'c-zones-apaisees', '07a41a51-b64e-51f2-a198-5b59c5b86b09', 'c-zones-apaisees', 'Circuler en zone de rencontre et aire piétonne', '', 21, 'in_review'::public.content_status)
 on conflict (id) do update set external_ref = excluded.external_ref, course_id = excluded.course_id, slug = excluded.slug,
   title = excluded.title, description = excluded.description, position = excluded.position, status = excluded.status;
 insert into public.lessons (id, external_ref, course_id, slug, title, summary, position, status, is_demo, blocks, sources, reviewer_name, reviewed_at, access)
@@ -1349,5 +1353,1058 @@ insert into public.question_answers (question_id, choice_id) values ('9b868b47-c
 insert into public.question_answers (question_id, choice_id) values ('9b868b47-c375-53c4-86aa-46b5e66a0ae1', '3c575c41-ff75-5674-b297-0852e70bfb6d');
 delete from public.question_competences where question_id = '9b868b47-c375-53c4-86aa-46b5e66a0ae1';
 insert into public.question_competences (question_id, competence_id) values ('9b868b47-c375-53c4-86aa-46b5e66a0ae1', '7fe7f3e9-aecc-5413-942d-e5c19bff2e3c');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('81bf121f-a68f-5b03-b2bb-ef3e182ad106', 'rv-001', 'Signalisation', 'Au milieu de la chaussée, une ligne de dissuasion sépare les deux sens de circulation. Je peux dépasser :', 'La ligne de dissuasion n’autorise que le dépassement des véhicules lents.', '[{"title":"Croisement et dépassement","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/croisement-et-depassement","consulted_at":"2026-10-22","cited_articles":["R414-1 à R414-3","R414-4 à R414-17","R414-6","R414-9","R414-12","R416-6"]}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '81bf121f-a68f-5b03-b2bb-ef3e182ad106';
+delete from public.question_choices where question_id = '81bf121f-a68f-5b03-b2bb-ef3e182ad106' and id not in ('be162a9d-ce1f-5085-a582-e1c00396cffc', '36ba7350-922a-552b-a711-21ef3ff1ca2e', 'b101e4b8-5f66-51d2-a22f-b49bcdf1b8d5');
+insert into public.question_choices (id, question_id, position, label) values ('be162a9d-ce1f-5085-a582-e1c00396cffc', '81bf121f-a68f-5b03-b2bb-ef3e182ad106', 0, 'Aucun véhicule')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('36ba7350-922a-552b-a711-21ef3ff1ca2e', '81bf121f-a68f-5b03-b2bb-ef3e182ad106', 1, 'Uniquement les véhicules lents')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('b101e4b8-5f66-51d2-a22f-b49bcdf1b8d5', '81bf121f-a68f-5b03-b2bb-ef3e182ad106', 2, 'Tous les véhicules')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('81bf121f-a68f-5b03-b2bb-ef3e182ad106', '36ba7350-922a-552b-a711-21ef3ff1ca2e');
+delete from public.question_competences where question_id = '81bf121f-a68f-5b03-b2bb-ef3e182ad106';
+insert into public.question_competences (question_id, competence_id) values ('81bf121f-a68f-5b03-b2bb-ef3e182ad106', 'c3bbdb5b-a721-594f-bacd-c67f7cd97d76');
+insert into public.question_competences (question_id, competence_id) values ('81bf121f-a68f-5b03-b2bb-ef3e182ad106', '826bd571-a74b-5e7b-ba38-3d612ce34756');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('2c74bf6b-05f9-5702-a638-b31494c47a12', 'rv-002', 'Signalisation', 'La ligne au milieu de la chaussée est discontinue. Si toutes les autres conditions de sécurité sont réunies, le dépassement est :', 'Une ligne discontinue autorise le dépassement, à condition de pouvoir le faire sans danger.', '[{"title":"Croisement et dépassement","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/croisement-et-depassement","consulted_at":"2026-10-22","cited_articles":["R414-1 à R414-3","R414-4 à R414-17","R414-6","R414-9","R414-12","R416-6"]}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '2c74bf6b-05f9-5702-a638-b31494c47a12';
+delete from public.question_choices where question_id = '2c74bf6b-05f9-5702-a638-b31494c47a12' and id not in ('3966dcf8-3303-54ae-93d1-eafb79bdaae2', '215a6177-7766-5bcf-85cb-4d4616b347f4');
+insert into public.question_choices (id, question_id, position, label) values ('3966dcf8-3303-54ae-93d1-eafb79bdaae2', '2c74bf6b-05f9-5702-a638-b31494c47a12', 0, 'Interdit')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('215a6177-7766-5bcf-85cb-4d4616b347f4', '2c74bf6b-05f9-5702-a638-b31494c47a12', 1, 'Autorisé')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('2c74bf6b-05f9-5702-a638-b31494c47a12', '215a6177-7766-5bcf-85cb-4d4616b347f4');
+delete from public.question_competences where question_id = '2c74bf6b-05f9-5702-a638-b31494c47a12';
+insert into public.question_competences (question_id, competence_id) values ('2c74bf6b-05f9-5702-a638-b31494c47a12', 'c3bbdb5b-a721-594f-bacd-c67f7cd97d76');
+insert into public.question_competences (question_id, competence_id) values ('2c74bf6b-05f9-5702-a638-b31494c47a12', '826bd571-a74b-5e7b-ba38-3d612ce34756');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('ae1baef3-17ce-54b5-9612-4e2418b14756', 'rv-003', 'Signalisation', 'Des flèches de rabattement sont peintes au sol. Elles annoncent (2 réponses) :', 'Les flèches de rabattement annoncent une ligne continue ou la fin d’un créneau de dépassement : il faut renoncer à dépasser dès la première flèche.', '[{"title":"Croisement et dépassement","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/croisement-et-depassement","consulted_at":"2026-10-22","cited_articles":["R414-1 à R414-3","R414-4 à R414-17","R414-6","R414-9","R414-12","R416-6"]}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = 'ae1baef3-17ce-54b5-9612-4e2418b14756';
+delete from public.question_choices where question_id = 'ae1baef3-17ce-54b5-9612-4e2418b14756' and id not in ('7ad11f9e-e195-5b4e-ac09-84f758e59685', 'abc726b8-8baa-5d1b-a3f6-37ce4542ee2c', '1e289059-29c3-5a86-be50-7baa6083a3ca');
+insert into public.question_choices (id, question_id, position, label) values ('7ad11f9e-e195-5b4e-ac09-84f758e59685', 'ae1baef3-17ce-54b5-9612-4e2418b14756', 0, 'Une place de stationnement')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('abc726b8-8baa-5d1b-a3f6-37ce4542ee2c', 'ae1baef3-17ce-54b5-9612-4e2418b14756', 1, 'Une ligne continue')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('1e289059-29c3-5a86-be50-7baa6083a3ca', 'ae1baef3-17ce-54b5-9612-4e2418b14756', 2, 'La fin d’un créneau de dépassement')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('ae1baef3-17ce-54b5-9612-4e2418b14756', 'abc726b8-8baa-5d1b-a3f6-37ce4542ee2c');
+insert into public.question_answers (question_id, choice_id) values ('ae1baef3-17ce-54b5-9612-4e2418b14756', '1e289059-29c3-5a86-be50-7baa6083a3ca');
+delete from public.question_competences where question_id = 'ae1baef3-17ce-54b5-9612-4e2418b14756';
+insert into public.question_competences (question_id, competence_id) values ('ae1baef3-17ce-54b5-9612-4e2418b14756', 'c3bbdb5b-a721-594f-bacd-c67f7cd97d76');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('12653e08-290d-596e-909c-92e8f9cd4520', 'rv-004', 'Signalisation', 'Avant un passage étroit, un panneau m’oblige à céder le passage aux véhicules venant en sens inverse. Personne n’arrive en face. Je :', 'Céder le passage n’oblige pas à s’arrêter : si personne n’arrive en face, on peut s’engager.', '[{"title":"Croisement et dépassement","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/croisement-et-depassement","consulted_at":"2026-10-22","cited_articles":["R414-1 à R414-3","R414-4 à R414-17","R414-6","R414-9","R414-12","R416-6"]}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '12653e08-290d-596e-909c-92e8f9cd4520';
+delete from public.question_choices where question_id = '12653e08-290d-596e-909c-92e8f9cd4520' and id not in ('7d47c138-990b-5ae4-8f2b-27f7b36ef504', 'a55886b0-777c-52d9-b493-5e741231902e');
+insert into public.question_choices (id, question_id, position, label) values ('7d47c138-990b-5ae4-8f2b-27f7b36ef504', '12653e08-290d-596e-909c-92e8f9cd4520', 0, 'Dois m’arrêter quand même')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('a55886b0-777c-52d9-b493-5e741231902e', '12653e08-290d-596e-909c-92e8f9cd4520', 1, 'Peux m’engager sans m’arrêter')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('12653e08-290d-596e-909c-92e8f9cd4520', 'a55886b0-777c-52d9-b493-5e741231902e');
+delete from public.question_competences where question_id = '12653e08-290d-596e-909c-92e8f9cd4520';
+insert into public.question_competences (question_id, competence_id) values ('12653e08-290d-596e-909c-92e8f9cd4520', '5b02c6df-9f1f-52ff-93e1-f191b1ff6234');
+insert into public.question_competences (question_id, competence_id) values ('12653e08-290d-596e-909c-92e8f9cd4520', '0fb3c8fd-0a66-5281-9a1b-fae51c48915e');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('d9f18ea5-c6d9-5517-9e38-0e9be7eb7425', 'rv-005', 'Signalisation', 'Avant un passage étroit, un panneau me donne la priorité sur les véhicules venant en sens inverse. Une voiture y est déjà engagée en face. Je :', 'Avoir la priorité n’est pas un droit absolu : si un usager est déjà engagé dans le rétrécissement, on le laisse passer.', '[{"title":"Croisement et dépassement","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/croisement-et-depassement","consulted_at":"2026-10-22","cited_articles":["R414-1 à R414-3","R414-4 à R414-17","R414-6","R414-9","R414-12","R416-6"]}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = 'd9f18ea5-c6d9-5517-9e38-0e9be7eb7425';
+delete from public.question_choices where question_id = 'd9f18ea5-c6d9-5517-9e38-0e9be7eb7425' and id not in ('789f8057-ae06-530c-bd97-3ee4761b9bbb', 'c9b96182-230f-5411-8bf5-29eb4898966c');
+insert into public.question_choices (id, question_id, position, label) values ('789f8057-ae06-530c-bd97-3ee4761b9bbb', 'd9f18ea5-c6d9-5517-9e38-0e9be7eb7425', 0, 'La laisse passer')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('c9b96182-230f-5411-8bf5-29eb4898966c', 'd9f18ea5-c6d9-5517-9e38-0e9be7eb7425', 1, 'Passe, puisque je suis prioritaire')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('d9f18ea5-c6d9-5517-9e38-0e9be7eb7425', '789f8057-ae06-530c-bd97-3ee4761b9bbb');
+delete from public.question_competences where question_id = 'd9f18ea5-c6d9-5517-9e38-0e9be7eb7425';
+insert into public.question_competences (question_id, competence_id) values ('d9f18ea5-c6d9-5517-9e38-0e9be7eb7425', '5b02c6df-9f1f-52ff-93e1-f191b1ff6234');
+insert into public.question_competences (question_id, competence_id) values ('d9f18ea5-c6d9-5517-9e38-0e9be7eb7425', '0fb3c8fd-0a66-5281-9a1b-fae51c48915e');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('c6ace9b1-ed24-545d-a695-25811ae9db65', 'rv-006', 'Signalisation', 'Un passage à niveau sans barrières est annoncé par :', 'Les passages à niveau sans barrières sont annoncés par une croix de Saint-André. Tout passage à niveau est annoncé par un panneau.', '[{"title":"Passage à niveau","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-sur-routes-specifiques/passage-niveau","consulted_at":"2026-10-22","cited_articles":["R422-3","R412-30"]}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = 'c6ace9b1-ed24-545d-a695-25811ae9db65';
+delete from public.question_choices where question_id = 'c6ace9b1-ed24-545d-a695-25811ae9db65' and id not in ('c7c7bd17-62a1-5204-abcf-59d460b00c08', '424d3829-39c0-5362-ae16-aabd704ba237', '7b655a41-3b11-54b4-8cbc-19cbb56d9d09');
+insert into public.question_choices (id, question_id, position, label) values ('c7c7bd17-62a1-5204-abcf-59d460b00c08', 'c6ace9b1-ed24-545d-a695-25811ae9db65', 0, 'Un feu vert')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('424d3829-39c0-5362-ae16-aabd704ba237', 'c6ace9b1-ed24-545d-a695-25811ae9db65', 1, 'Aucune signalisation particulière')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('7b655a41-3b11-54b4-8cbc-19cbb56d9d09', 'c6ace9b1-ed24-545d-a695-25811ae9db65', 2, 'Une croix de Saint-André')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('c6ace9b1-ed24-545d-a695-25811ae9db65', '7b655a41-3b11-54b4-8cbc-19cbb56d9d09');
+delete from public.question_competences where question_id = 'c6ace9b1-ed24-545d-a695-25811ae9db65';
+insert into public.question_competences (question_id, competence_id) values ('c6ace9b1-ed24-545d-a695-25811ae9db65', '5b02c6df-9f1f-52ff-93e1-f191b1ff6234');
+insert into public.question_competences (question_id, competence_id) values ('c6ace9b1-ed24-545d-a695-25811ae9db65', 'a8754ce0-1402-5b0e-b697-869bd4098e21');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('60502be6-0834-5f4d-97b4-57a8a6d35698', 'rv-007', 'Signalisation', 'Dans un tunnel, les issues de secours sont indiquées par des panneaux :', 'Les issues de secours, tous les 200 à 300 mètres, sont indiquées par des panneaux rectangulaires munis de néon vert.', '[{"title":"Conduire dans un tunnel","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-sur-routes-specifiques/conduire-dans-un-tunnel","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '60502be6-0834-5f4d-97b4-57a8a6d35698';
+delete from public.question_choices where question_id = '60502be6-0834-5f4d-97b4-57a8a6d35698' and id not in ('5aa3fd9d-2795-529d-bd7a-76c0c439a065', 'd99f7c67-6915-530d-ab75-15c9a89033fc', '37937cd3-9dce-546d-b0cc-7d541f502adf');
+insert into public.question_choices (id, question_id, position, label) values ('5aa3fd9d-2795-529d-bd7a-76c0c439a065', '60502be6-0834-5f4d-97b4-57a8a6d35698', 0, 'Rectangulaires, munis de néon vert')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('d99f7c67-6915-530d-ab75-15c9a89033fc', '60502be6-0834-5f4d-97b4-57a8a6d35698', 1, 'Ronds, à bord rouge')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('37937cd3-9dce-546d-b0cc-7d541f502adf', '60502be6-0834-5f4d-97b4-57a8a6d35698', 2, 'Triangulaires, sur fond jaune')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('60502be6-0834-5f4d-97b4-57a8a6d35698', '5aa3fd9d-2795-529d-bd7a-76c0c439a065');
+delete from public.question_competences where question_id = '60502be6-0834-5f4d-97b4-57a8a6d35698';
+insert into public.question_competences (question_id, competence_id) values ('60502be6-0834-5f4d-97b4-57a8a6d35698', '5b02c6df-9f1f-52ff-93e1-f191b1ff6234');
+insert into public.question_competences (question_id, competence_id) values ('60502be6-0834-5f4d-97b4-57a8a6d35698', '8d9197d8-6c24-50f3-b193-ada8b816fe81');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('99fc959d-ba94-5318-ba1d-20d8c5863e9b', 'rv-008', 'Signalisation', 'Dans un tunnel, un feu rouge clignote devant moi. Je :', 'Dans un tunnel, l’arrêt au feu rouge est absolu, qu’il soit fixe ou clignotant.', '[{"title":"Conduire dans un tunnel","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-sur-routes-specifiques/conduire-dans-un-tunnel","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '99fc959d-ba94-5318-ba1d-20d8c5863e9b';
+delete from public.question_choices where question_id = '99fc959d-ba94-5318-ba1d-20d8c5863e9b' and id not in ('68fec8b3-483d-5a43-a024-35c9831a1f5e', 'd690d4b9-4fc1-5ac0-9f42-6cdc9188f216');
+insert into public.question_choices (id, question_id, position, label) values ('68fec8b3-483d-5a43-a024-35c9831a1f5e', '99fc959d-ba94-5318-ba1d-20d8c5863e9b', 0, 'Continue prudemment : seul le feu rouge fixe impose l’arrêt')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('d690d4b9-4fc1-5ac0-9f42-6cdc9188f216', '99fc959d-ba94-5318-ba1d-20d8c5863e9b', 1, 'M’arrête : l’arrêt est absolu au feu rouge, fixe ou clignotant')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('99fc959d-ba94-5318-ba1d-20d8c5863e9b', 'd690d4b9-4fc1-5ac0-9f42-6cdc9188f216');
+delete from public.question_competences where question_id = '99fc959d-ba94-5318-ba1d-20d8c5863e9b';
+insert into public.question_competences (question_id, competence_id) values ('99fc959d-ba94-5318-ba1d-20d8c5863e9b', '5b02c6df-9f1f-52ff-93e1-f191b1ff6234');
+insert into public.question_competences (question_id, competence_id) values ('99fc959d-ba94-5318-ba1d-20d8c5863e9b', '8d9197d8-6c24-50f3-b193-ada8b816fe81');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('f197979b-fb16-5202-970b-a3c49a2bb57e', 'rv-009', 'Signalisation', 'Sur autoroute, une sortie que je veux prendre est annoncée. J’ai rejoint la bonne voie au plus tard :', 'Le changement de voie doit être achevé au plus tard au moment où l’on atteint les signaux placés au début de la bretelle ou de la bifurcation.', '[{"title":"Autoroute","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/autoroute","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = 'f197979b-fb16-5202-970b-a3c49a2bb57e';
+delete from public.question_choices where question_id = 'f197979b-fb16-5202-970b-a3c49a2bb57e' and id not in ('3988f196-f542-5464-a825-07af6474b803', '6a9c514c-e32f-5d13-a8a8-5ebb9e5a63cc');
+insert into public.question_choices (id, question_id, position, label) values ('3988f196-f542-5464-a825-07af6474b803', 'f197979b-fb16-5202-970b-a3c49a2bb57e', 0, 'Après le début de la bretelle')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('6a9c514c-e32f-5d13-a8a8-5ebb9e5a63cc', 'f197979b-fb16-5202-970b-a3c49a2bb57e', 1, 'Quand j’atteins les signaux placés au début de la bretelle')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('f197979b-fb16-5202-970b-a3c49a2bb57e', '6a9c514c-e32f-5d13-a8a8-5ebb9e5a63cc');
+delete from public.question_competences where question_id = 'f197979b-fb16-5202-970b-a3c49a2bb57e';
+insert into public.question_competences (question_id, competence_id) values ('f197979b-fb16-5202-970b-a3c49a2bb57e', '5b02c6df-9f1f-52ff-93e1-f191b1ff6234');
+insert into public.question_competences (question_id, competence_id) values ('f197979b-fb16-5202-970b-a3c49a2bb57e', '4a75d17c-eda5-5f78-8dfd-d1fca5ba8560');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('51ac6dca-6b9a-566e-9c81-b02df07a3b1b', 'rv-010', 'Signalisation', 'Je stationne près d’un feu de circulation et mon véhicule, assez haut, le cache à la vue des autres usagers. Ce stationnement est :', 'Masquer un feu ou un panneau à la vue des usagers rend le stationnement très gênant (amende de 4e classe).', '[{"title":"Arrêt et stationnement","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/arret-et-stationnement","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '51ac6dca-6b9a-566e-9c81-b02df07a3b1b';
+delete from public.question_choices where question_id = '51ac6dca-6b9a-566e-9c81-b02df07a3b1b' and id not in ('ffbd750a-9601-5b69-b33c-ff28190398df', 'cd81a820-731d-546f-9d16-d02acc372eea');
+insert into public.question_choices (id, question_id, position, label) values ('ffbd750a-9601-5b69-b33c-ff28190398df', '51ac6dca-6b9a-566e-9c81-b02df07a3b1b', 0, 'Autorisé')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('cd81a820-731d-546f-9d16-d02acc372eea', '51ac6dca-6b9a-566e-9c81-b02df07a3b1b', 1, 'Très gênant')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('51ac6dca-6b9a-566e-9c81-b02df07a3b1b', 'cd81a820-731d-546f-9d16-d02acc372eea');
+delete from public.question_competences where question_id = '51ac6dca-6b9a-566e-9c81-b02df07a3b1b';
+insert into public.question_competences (question_id, competence_id) values ('51ac6dca-6b9a-566e-9c81-b02df07a3b1b', '5b02c6df-9f1f-52ff-93e1-f191b1ff6234');
+insert into public.question_competences (question_id, competence_id) values ('51ac6dca-6b9a-566e-9c81-b02df07a3b1b', '9633e039-8208-5c8f-b4e6-22f0326ab7f3');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('9b9a1477-9365-5a27-9a21-fddf26414f38', 'rv-011', 'Signalisation', 'À une intersection, le feu fonctionne et il est vert pour moi. Un panneau donne une autre règle. Je respecte :', 'Les feux priment sur les panneaux. Si le feu ne fonctionne pas, on applique la règle indiquée par le panneau. Un agent prime sur les deux.', '[{"title":"Intersections et priorités","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/intersections-et-priorites","consulted_at":"2026-10-22","cited_articles":["R415-1","R415-2","R415-5","R415-12","R311-1","R433-17"]}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '9b9a1477-9365-5a27-9a21-fddf26414f38';
+delete from public.question_choices where question_id = '9b9a1477-9365-5a27-9a21-fddf26414f38' and id not in ('8bf04297-6256-514e-8e03-3957bb4e0ab5', '91febbc5-d787-513e-a1a3-dff887ceb0ec');
+insert into public.question_choices (id, question_id, position, label) values ('8bf04297-6256-514e-8e03-3957bb4e0ab5', '9b9a1477-9365-5a27-9a21-fddf26414f38', 0, 'Le feu')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('91febbc5-d787-513e-a1a3-dff887ceb0ec', '9b9a1477-9365-5a27-9a21-fddf26414f38', 1, 'Le panneau')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('9b9a1477-9365-5a27-9a21-fddf26414f38', '8bf04297-6256-514e-8e03-3957bb4e0ab5');
+delete from public.question_competences where question_id = '9b9a1477-9365-5a27-9a21-fddf26414f38';
+insert into public.question_competences (question_id, competence_id) values ('9b9a1477-9365-5a27-9a21-fddf26414f38', '5b02c6df-9f1f-52ff-93e1-f191b1ff6234');
+insert into public.question_competences (question_id, competence_id) values ('9b9a1477-9365-5a27-9a21-fddf26414f38', '7fe7f3e9-aecc-5413-942d-e5c19bff2e3c');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('947f29df-0231-5730-a9ae-dded83260262', 'rv-012', 'Signalisation', 'Une ligne continue longe le bord droit de la route. Je m’arrête entre le bord et cette ligne, et les autres ne peuvent plus passer sans la chevaucher. Cet arrêt est :', 'L’arrêt entre le bord de la route et une ligne continue est gênant quand la place restante oblige les autres à franchir ou chevaucher la ligne.', '[{"title":"Arrêt et stationnement","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/arret-et-stationnement","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '947f29df-0231-5730-a9ae-dded83260262';
+delete from public.question_choices where question_id = '947f29df-0231-5730-a9ae-dded83260262' and id not in ('b67fecbb-890a-5622-9c94-1b8b4654d9d4', '08609406-dd3f-5171-9d85-3f2a49f3f05b');
+insert into public.question_choices (id, question_id, position, label) values ('b67fecbb-890a-5622-9c94-1b8b4654d9d4', '947f29df-0231-5730-a9ae-dded83260262', 0, 'Gênant')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('08609406-dd3f-5171-9d85-3f2a49f3f05b', '947f29df-0231-5730-a9ae-dded83260262', 1, 'Autorisé')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('947f29df-0231-5730-a9ae-dded83260262', 'b67fecbb-890a-5622-9c94-1b8b4654d9d4');
+delete from public.question_competences where question_id = '947f29df-0231-5730-a9ae-dded83260262';
+insert into public.question_competences (question_id, competence_id) values ('947f29df-0231-5730-a9ae-dded83260262', 'c3bbdb5b-a721-594f-bacd-c67f7cd97d76');
+insert into public.question_competences (question_id, competence_id) values ('947f29df-0231-5730-a9ae-dded83260262', '9633e039-8208-5c8f-b4e6-22f0326ab7f3');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('225471fc-b0cc-5e67-a917-4ef7b6e0352f', 'rv-013', 'Signalisation', 'Dans un tunnel, des signaux indiquent quelles voies sont ouvertes. Je dois :', 'En entrant dans un tunnel, il faut respecter les signaux d’affectation des voies.', '[{"title":"Conduire dans un tunnel","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-sur-routes-specifiques/conduire-dans-un-tunnel","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '225471fc-b0cc-5e67-a917-4ef7b6e0352f';
+delete from public.question_choices where question_id = '225471fc-b0cc-5e67-a917-4ef7b6e0352f' and id not in ('41de5c85-05b3-51ef-a738-b8a040417587', '1043ca34-7602-5467-b3d8-296b4d9cd9ef');
+insert into public.question_choices (id, question_id, position, label) values ('41de5c85-05b3-51ef-a738-b8a040417587', '225471fc-b0cc-5e67-a917-4ef7b6e0352f', 0, 'Les respecter')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('1043ca34-7602-5467-b3d8-296b4d9cd9ef', '225471fc-b0cc-5e67-a917-4ef7b6e0352f', 1, 'Les ignorer si le tunnel est vide')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('225471fc-b0cc-5e67-a917-4ef7b6e0352f', '41de5c85-05b3-51ef-a738-b8a040417587');
+delete from public.question_competences where question_id = '225471fc-b0cc-5e67-a917-4ef7b6e0352f';
+insert into public.question_competences (question_id, competence_id) values ('225471fc-b0cc-5e67-a917-4ef7b6e0352f', '5b02c6df-9f1f-52ff-93e1-f191b1ff6234');
+insert into public.question_competences (question_id, competence_id) values ('225471fc-b0cc-5e67-a917-4ef7b6e0352f', '8d9197d8-6c24-50f3-b193-ada8b816fe81');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('f56404fc-9266-52c9-b383-34f4baed03f2', 'rv-014', 'Arrêt et stationnement', 'Sur une route à sens unique, je peux stationner :', 'Sur une route à double sens, on stationne à droite ; sur une route à sens unique, à droite ou à gauche.', '[{"title":"Arrêt et stationnement","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/arret-et-stationnement","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = 'f56404fc-9266-52c9-b383-34f4baed03f2';
+delete from public.question_choices where question_id = 'f56404fc-9266-52c9-b383-34f4baed03f2' and id not in ('32c2d5f6-a325-5342-aee0-bece9a3d4834', '74c32f60-1f88-562d-b48a-6b6bffd72f65');
+insert into public.question_choices (id, question_id, position, label) values ('32c2d5f6-a325-5342-aee0-bece9a3d4834', 'f56404fc-9266-52c9-b383-34f4baed03f2', 0, 'Uniquement à droite')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('74c32f60-1f88-562d-b48a-6b6bffd72f65', 'f56404fc-9266-52c9-b383-34f4baed03f2', 1, 'À droite ou à gauche')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('f56404fc-9266-52c9-b383-34f4baed03f2', '74c32f60-1f88-562d-b48a-6b6bffd72f65');
+delete from public.question_competences where question_id = 'f56404fc-9266-52c9-b383-34f4baed03f2';
+insert into public.question_competences (question_id, competence_id) values ('f56404fc-9266-52c9-b383-34f4baed03f2', '9633e039-8208-5c8f-b4e6-22f0326ab7f3');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('8dcbbc7d-fb36-58a1-8222-fb181fb5d89d', 'rv-015', 'Arrêt et stationnement', 'Hors agglomération, je m’arrête :', 'Hors agglomération, l’arrêt et le stationnement se font autant que possible sur le bord de la route (ou l’accotement si le sol s’y prête), pour ne pas gêner.', '[{"title":"Arrêt et stationnement","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/arret-et-stationnement","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '8dcbbc7d-fb36-58a1-8222-fb181fb5d89d';
+delete from public.question_choices where question_id = '8dcbbc7d-fb36-58a1-8222-fb181fb5d89d' and id not in ('8b25db75-75b7-599f-ab12-0a6bb52814fc', '0ec4c875-ccd0-57ec-90de-b5ed7ba5e697');
+insert into public.question_choices (id, question_id, position, label) values ('8b25db75-75b7-599f-ab12-0a6bb52814fc', '8dcbbc7d-fb36-58a1-8222-fb181fb5d89d', 0, 'Au milieu de ma voie, avec les feux de détresse')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('0ec4c875-ccd0-57ec-90de-b5ed7ba5e697', '8dcbbc7d-fb36-58a1-8222-fb181fb5d89d', 1, 'Autant que possible hors de la chaussée, sur le bord de la route')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('8dcbbc7d-fb36-58a1-8222-fb181fb5d89d', '0ec4c875-ccd0-57ec-90de-b5ed7ba5e697');
+delete from public.question_competences where question_id = '8dcbbc7d-fb36-58a1-8222-fb181fb5d89d';
+insert into public.question_competences (question_id, competence_id) values ('8dcbbc7d-fb36-58a1-8222-fb181fb5d89d', '9633e039-8208-5c8f-b4e6-22f0326ab7f3');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('4268ce84-24fd-5a55-9735-a7c6508c7f36', 'rv-016', 'Arrêt et stationnement', 'Je m’arrête juste après un virage, là où la visibilité est insuffisante. Cet arrêt est :', 'L’arrêt près d’un virage, d’une intersection, d’un sommet de côte ou d’un passage à niveau, quand la visibilité est insuffisante, est dangereux.', '[{"title":"Arrêt et stationnement","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/arret-et-stationnement","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '4268ce84-24fd-5a55-9735-a7c6508c7f36';
+delete from public.question_choices where question_id = '4268ce84-24fd-5a55-9735-a7c6508c7f36' and id not in ('a761ec16-4077-5b0d-aa4d-4e7107c9cc82', '647d2c36-aabd-57ec-8571-ea95f9854101', '16c13699-a7ed-530b-be21-1d67772b63bb');
+insert into public.question_choices (id, question_id, position, label) values ('a761ec16-4077-5b0d-aa4d-4e7107c9cc82', '4268ce84-24fd-5a55-9735-a7c6508c7f36', 0, 'Simplement gênant')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('647d2c36-aabd-57ec-8571-ea95f9854101', '4268ce84-24fd-5a55-9735-a7c6508c7f36', 1, 'Autorisé s’il est bref')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('16c13699-a7ed-530b-be21-1d67772b63bb', '4268ce84-24fd-5a55-9735-a7c6508c7f36', 2, 'Dangereux')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('4268ce84-24fd-5a55-9735-a7c6508c7f36', '16c13699-a7ed-530b-be21-1d67772b63bb');
+delete from public.question_competences where question_id = '4268ce84-24fd-5a55-9735-a7c6508c7f36';
+insert into public.question_competences (question_id, competence_id) values ('4268ce84-24fd-5a55-9735-a7c6508c7f36', '9633e039-8208-5c8f-b4e6-22f0326ab7f3');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('24b64069-c420-5e82-9041-255881a91116', 'rv-017', 'Arrêt et stationnement', 'Un arrêt ou un stationnement dangereux entraîne de plein droit un retrait de :', 'Le stationnement dangereux est puni d’une amende de 4e classe et entraîne de plein droit le retrait de 3 points.', '[{"title":"Arrêt et stationnement","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/arret-et-stationnement","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '24b64069-c420-5e82-9041-255881a91116';
+delete from public.question_choices where question_id = '24b64069-c420-5e82-9041-255881a91116' and id not in ('ae2b5464-f4b6-5851-919a-8a34d648f6c7', 'f32ae96b-e869-5775-bfc1-a699b6151602', '1bcc6ed3-51fd-59e8-9f44-d8cf579376b3');
+insert into public.question_choices (id, question_id, position, label) values ('ae2b5464-f4b6-5851-919a-8a34d648f6c7', '24b64069-c420-5e82-9041-255881a91116', 0, '1 point')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('f32ae96b-e869-5775-bfc1-a699b6151602', '24b64069-c420-5e82-9041-255881a91116', 1, '3 points')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('1bcc6ed3-51fd-59e8-9f44-d8cf579376b3', '24b64069-c420-5e82-9041-255881a91116', 2, '6 points')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('24b64069-c420-5e82-9041-255881a91116', 'f32ae96b-e869-5775-bfc1-a699b6151602');
+delete from public.question_competences where question_id = '24b64069-c420-5e82-9041-255881a91116';
+insert into public.question_competences (question_id, competence_id) values ('24b64069-c420-5e82-9041-255881a91116', '9633e039-8208-5c8f-b4e6-22f0326ab7f3');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('c039e5e6-fd24-54e0-b789-e6cd2881af50', 'rv-018', 'Arrêt et stationnement', 'Sans carte mobilité inclusion, je me gare sur une place réservée aux personnes handicapées. Ce stationnement est :', 'Occuper un emplacement réservé aux véhicules portant la carte mobilité inclusion « stationnement pour personnes handicapées » est très gênant.', '[{"title":"Arrêt et stationnement","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/arret-et-stationnement","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = 'c039e5e6-fd24-54e0-b789-e6cd2881af50';
+delete from public.question_choices where question_id = 'c039e5e6-fd24-54e0-b789-e6cd2881af50' and id not in ('37124a04-81e0-56ea-ad38-27db0756f2d4', '287792e7-e322-5138-918e-fab53321edfe');
+insert into public.question_choices (id, question_id, position, label) values ('37124a04-81e0-56ea-ad38-27db0756f2d4', 'c039e5e6-fd24-54e0-b789-e6cd2881af50', 0, 'Très gênant')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('287792e7-e322-5138-918e-fab53321edfe', 'c039e5e6-fd24-54e0-b789-e6cd2881af50', 1, 'Autorisé pour quelques minutes')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('c039e5e6-fd24-54e0-b789-e6cd2881af50', '37124a04-81e0-56ea-ad38-27db0756f2d4');
+delete from public.question_competences where question_id = 'c039e5e6-fd24-54e0-b789-e6cd2881af50';
+insert into public.question_competences (question_id, competence_id) values ('c039e5e6-fd24-54e0-b789-e6cd2881af50', '9633e039-8208-5c8f-b4e6-22f0326ab7f3');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('fb90945f-c18f-5ee2-895f-157c61d34d4f', 'rv-019', 'Arrêt et stationnement', 'Je m’arrête sur un passage piéton le temps de déposer un passager. C’est :', 'Un véhicule à l’arrêt ou en stationnement sur un passage piéton est en situation très gênante.', '[{"title":"Arrêt et stationnement","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/arret-et-stationnement","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = 'fb90945f-c18f-5ee2-895f-157c61d34d4f';
+delete from public.question_choices where question_id = 'fb90945f-c18f-5ee2-895f-157c61d34d4f' and id not in ('0dfffda9-49ff-55ae-9935-dfe3071c187f', '0f688b97-2afb-5c16-bb1e-6a72f2bc9786');
+insert into public.question_choices (id, question_id, position, label) values ('0dfffda9-49ff-55ae-9935-dfe3071c187f', 'fb90945f-c18f-5ee2-895f-157c61d34d4f', 0, 'Autorisé si je reste au volant')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('0f688b97-2afb-5c16-bb1e-6a72f2bc9786', 'fb90945f-c18f-5ee2-895f-157c61d34d4f', 1, 'Très gênant')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('fb90945f-c18f-5ee2-895f-157c61d34d4f', '0f688b97-2afb-5c16-bb1e-6a72f2bc9786');
+delete from public.question_competences where question_id = 'fb90945f-c18f-5ee2-895f-157c61d34d4f';
+insert into public.question_competences (question_id, competence_id) values ('fb90945f-c18f-5ee2-895f-157c61d34d4f', '9633e039-8208-5c8f-b4e6-22f0326ab7f3');
+insert into public.question_competences (question_id, competence_id) values ('fb90945f-c18f-5ee2-895f-157c61d34d4f', '4d2a0934-e1b1-5172-9c6f-eacb55406515');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('d4ed3a78-6a0d-54a7-b87d-a19873a30e15', 'rv-020', 'Arrêt et stationnement', 'En voiture, je stationne 3 mètres avant un passage piéton, dans le sens de la circulation, hors emplacement matérialisé. C’est :', 'Pour un véhicule motorisé (sauf motos, tricycles et cyclomoteurs), stationner dans les 5 mètres en amont d’un passage piéton, hors emplacement matérialisé, est très gênant.', '[{"title":"Arrêt et stationnement","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/arret-et-stationnement","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = 'd4ed3a78-6a0d-54a7-b87d-a19873a30e15';
+delete from public.question_choices where question_id = 'd4ed3a78-6a0d-54a7-b87d-a19873a30e15' and id not in ('7367bf00-d6bd-5aeb-abdc-32a79c140625', 'e3e63013-4442-5183-b66b-587aff82daad');
+insert into public.question_choices (id, question_id, position, label) values ('7367bf00-d6bd-5aeb-abdc-32a79c140625', 'd4ed3a78-6a0d-54a7-b87d-a19873a30e15', 0, 'Très gênant')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('e3e63013-4442-5183-b66b-587aff82daad', 'd4ed3a78-6a0d-54a7-b87d-a19873a30e15', 1, 'Autorisé')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('d4ed3a78-6a0d-54a7-b87d-a19873a30e15', '7367bf00-d6bd-5aeb-abdc-32a79c140625');
+delete from public.question_competences where question_id = 'd4ed3a78-6a0d-54a7-b87d-a19873a30e15';
+insert into public.question_competences (question_id, competence_id) values ('d4ed3a78-6a0d-54a7-b87d-a19873a30e15', '9633e039-8208-5c8f-b4e6-22f0326ab7f3');
+insert into public.question_competences (question_id, competence_id) values ('d4ed3a78-6a0d-54a7-b87d-a19873a30e15', '4d2a0934-e1b1-5172-9c6f-eacb55406515');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('1f26fe25-2182-5441-9f19-a3765a68a9e1', 'rv-021', 'Arrêt et stationnement', 'Je m’arrête en double file avec ma voiture, feux de détresse allumés. Cet arrêt est :', 'L’arrêt ou le stationnement en double file est gênant, sauf pour les vélos, cyclomoteurs à deux roues et motos. Les feux de détresse n’y changent rien.', '[{"title":"Arrêt et stationnement","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/arret-et-stationnement","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '1f26fe25-2182-5441-9f19-a3765a68a9e1';
+delete from public.question_choices where question_id = '1f26fe25-2182-5441-9f19-a3765a68a9e1' and id not in ('97bf66d7-0818-51d8-8a38-48f40df6a8c9', 'ff656473-b32a-5360-b58b-4a70285440fd');
+insert into public.question_choices (id, question_id, position, label) values ('97bf66d7-0818-51d8-8a38-48f40df6a8c9', '1f26fe25-2182-5441-9f19-a3765a68a9e1', 0, 'Autorisé grâce aux feux de détresse')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('ff656473-b32a-5360-b58b-4a70285440fd', '1f26fe25-2182-5441-9f19-a3765a68a9e1', 1, 'Gênant')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('1f26fe25-2182-5441-9f19-a3765a68a9e1', 'ff656473-b32a-5360-b58b-4a70285440fd');
+delete from public.question_competences where question_id = '1f26fe25-2182-5441-9f19-a3765a68a9e1';
+insert into public.question_competences (question_id, competence_id) values ('1f26fe25-2182-5441-9f19-a3765a68a9e1', '9633e039-8208-5c8f-b4e6-22f0326ab7f3');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('8f720736-5dd6-5259-9e8e-2ec82573ae77', 'rv-022', 'Arrêt et stationnement', 'Sauf arrêté fixant une durée plus courte, un stationnement ininterrompu au même endroit de la voie publique devient abusif au-delà de :', 'Le stationnement est abusif au-delà de sept jours sans interruption au même point, ou d’une durée plus courte fixée par arrêté.', '[{"title":"Arrêt et stationnement","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/arret-et-stationnement","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '8f720736-5dd6-5259-9e8e-2ec82573ae77';
+delete from public.question_choices where question_id = '8f720736-5dd6-5259-9e8e-2ec82573ae77' and id not in ('9a4dc5c5-af22-52d9-b3f4-a7c246731511', 'a486fa2d-1010-5269-828c-f811dae44a70', '801e4488-563b-5c5d-be2e-eef8cc3a1e8a');
+insert into public.question_choices (id, question_id, position, label) values ('9a4dc5c5-af22-52d9-b3f4-a7c246731511', '8f720736-5dd6-5259-9e8e-2ec82573ae77', 0, '24 heures')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('a486fa2d-1010-5269-828c-f811dae44a70', '8f720736-5dd6-5259-9e8e-2ec82573ae77', 1, '7 jours')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('801e4488-563b-5c5d-be2e-eef8cc3a1e8a', '8f720736-5dd6-5259-9e8e-2ec82573ae77', 2, '30 jours')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('8f720736-5dd6-5259-9e8e-2ec82573ae77', 'a486fa2d-1010-5269-828c-f811dae44a70');
+delete from public.question_competences where question_id = '8f720736-5dd6-5259-9e8e-2ec82573ae77';
+insert into public.question_competences (question_id, competence_id) values ('8f720736-5dd6-5259-9e8e-2ec82573ae77', '9633e039-8208-5c8f-b4e6-22f0326ab7f3');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('9eb34ba9-c616-59c8-9289-37fa023d0fd2', 'rv-023', 'Arrêt et stationnement', 'Avant de m’éloigner de ma voiture stationnée, je dois :', 'Le conducteur ne peut s’éloigner qu’après avoir pris toutes les précautions nécessaires pour prévenir un accident du fait de son absence.', '[{"title":"Arrêt et stationnement","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/arret-et-stationnement","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '9eb34ba9-c616-59c8-9289-37fa023d0fd2';
+delete from public.question_choices where question_id = '9eb34ba9-c616-59c8-9289-37fa023d0fd2' and id not in ('e48e0f97-9ee4-5861-8e53-138f4665b8e9', 'f7e12851-16c4-5a54-845e-9743b9aada1c');
+insert into public.question_choices (id, question_id, position, label) values ('e48e0f97-9ee4-5861-8e53-138f4665b8e9', '9eb34ba9-c616-59c8-9289-37fa023d0fd2', 0, 'Prendre les précautions nécessaires pour éviter tout risque d’accident dû à mon absence')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('f7e12851-16c4-5a54-845e-9743b9aada1c', '9eb34ba9-c616-59c8-9289-37fa023d0fd2', 1, 'Seulement verrouiller les portières')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('9eb34ba9-c616-59c8-9289-37fa023d0fd2', 'e48e0f97-9ee4-5861-8e53-138f4665b8e9');
+delete from public.question_competences where question_id = '9eb34ba9-c616-59c8-9289-37fa023d0fd2';
+insert into public.question_competences (question_id, competence_id) values ('9eb34ba9-c616-59c8-9289-37fa023d0fd2', '9633e039-8208-5c8f-b4e6-22f0326ab7f3');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('8def8779-0827-5e0a-b246-6ad836f99ac4', 'rv-024', 'Arrêt et stationnement', 'Ma voiture est garée de façon gênante et je suis absent. Elle peut être (2 réponses) :', 'Si le conducteur est absent ou refuse de déplacer son véhicule, l’immobilisation et la mise en fourrière peuvent être prescrites.', '[{"title":"Arrêt et stationnement","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/arret-et-stationnement","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '8def8779-0827-5e0a-b246-6ad836f99ac4';
+delete from public.question_choices where question_id = '8def8779-0827-5e0a-b246-6ad836f99ac4' and id not in ('f8202379-d95c-5a25-8463-eb8cf03c8954', '9a8d3657-59bb-5857-b542-166ac0b6a427', '38f09610-039f-52ed-948b-241a2c16f36d');
+insert into public.question_choices (id, question_id, position, label) values ('f8202379-d95c-5a25-8463-eb8cf03c8954', '8def8779-0827-5e0a-b246-6ad836f99ac4', 0, 'Immobilisée')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('9a8d3657-59bb-5857-b542-166ac0b6a427', '8def8779-0827-5e0a-b246-6ad836f99ac4', 1, 'Mise en fourrière')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('38f09610-039f-52ed-948b-241a2c16f36d', '8def8779-0827-5e0a-b246-6ad836f99ac4', 2, 'Laissée sur place : rien n’est possible sans moi')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('8def8779-0827-5e0a-b246-6ad836f99ac4', 'f8202379-d95c-5a25-8463-eb8cf03c8954');
+insert into public.question_answers (question_id, choice_id) values ('8def8779-0827-5e0a-b246-6ad836f99ac4', '9a8d3657-59bb-5857-b542-166ac0b6a427');
+delete from public.question_competences where question_id = '8def8779-0827-5e0a-b246-6ad836f99ac4';
+insert into public.question_competences (question_id, competence_id) values ('8def8779-0827-5e0a-b246-6ad836f99ac4', '9633e039-8208-5c8f-b4e6-22f0326ab7f3');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('970739f3-1ddf-5586-ac31-e1bcad368154', 'rv-025', 'Arrêt et stationnement', 'Dans une zone de rencontre, je peux stationner :', 'En zone de rencontre, l’arrêt ou le stationnement en dehors des emplacements aménagés est gênant.', '[{"title":"Arrêt et stationnement","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/arret-et-stationnement","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '970739f3-1ddf-5586-ac31-e1bcad368154';
+delete from public.question_choices where question_id = '970739f3-1ddf-5586-ac31-e1bcad368154' and id not in ('2bce2730-79fb-579e-ab8f-84c591b96a56', '20797e95-3d26-5eba-a197-42816d9bfa67');
+insert into public.question_choices (id, question_id, position, label) values ('2bce2730-79fb-579e-ab8f-84c591b96a56', '970739f3-1ddf-5586-ac31-e1bcad368154', 0, 'Partout, puisque la vitesse y est faible')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('20797e95-3d26-5eba-a197-42816d9bfa67', '970739f3-1ddf-5586-ac31-e1bcad368154', 1, 'Seulement sur les emplacements aménagés')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('970739f3-1ddf-5586-ac31-e1bcad368154', '20797e95-3d26-5eba-a197-42816d9bfa67');
+delete from public.question_competences where question_id = '970739f3-1ddf-5586-ac31-e1bcad368154';
+insert into public.question_competences (question_id, competence_id) values ('970739f3-1ddf-5586-ac31-e1bcad368154', '9633e039-8208-5c8f-b4e6-22f0326ab7f3');
+insert into public.question_competences (question_id, competence_id) values ('970739f3-1ddf-5586-ac31-e1bcad368154', '22ccf1ae-d20c-5540-84d9-7af8f655864b');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('80325a13-aef7-5a31-8fd7-9f15b46eb51f', 'rv-026', 'Arrêt et stationnement', 'Sauf disposition contraire de l’autorité, s’arrêter sur un pont ou dans un tunnel est :', 'L’arrêt ou le stationnement sur les ponts, dans les passages souterrains, les tunnels et sous les passages supérieurs est gênant, sauf dispositions différentes.', '[{"title":"Arrêt et stationnement","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/arret-et-stationnement","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '80325a13-aef7-5a31-8fd7-9f15b46eb51f';
+delete from public.question_choices where question_id = '80325a13-aef7-5a31-8fd7-9f15b46eb51f' and id not in ('078f10eb-ad00-57af-a4cf-26dd4acf47d4', '524109f9-4e01-5f60-a8ed-10f486f741ef');
+insert into public.question_choices (id, question_id, position, label) values ('078f10eb-ad00-57af-a4cf-26dd4acf47d4', '80325a13-aef7-5a31-8fd7-9f15b46eb51f', 0, 'Gênant')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('524109f9-4e01-5f60-a8ed-10f486f741ef', '80325a13-aef7-5a31-8fd7-9f15b46eb51f', 1, 'Autorisé')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('80325a13-aef7-5a31-8fd7-9f15b46eb51f', '078f10eb-ad00-57af-a4cf-26dd4acf47d4');
+delete from public.question_competences where question_id = '80325a13-aef7-5a31-8fd7-9f15b46eb51f';
+insert into public.question_competences (question_id, competence_id) values ('80325a13-aef7-5a31-8fd7-9f15b46eb51f', '9633e039-8208-5c8f-b4e6-22f0326ab7f3');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('19db6efd-b27d-564e-be0e-21c121ae359d', 'rv-027', 'Arrêt et stationnement', 'Je me gare devant l’entrée d’un immeuble riverain. Ce stationnement est :', 'Le stationnement devant les entrées des immeubles riverains est considéré comme gênant.', '[{"title":"Arrêt et stationnement","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/arret-et-stationnement","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '19db6efd-b27d-564e-be0e-21c121ae359d';
+delete from public.question_choices where question_id = '19db6efd-b27d-564e-be0e-21c121ae359d' and id not in ('ec24de50-33f7-5479-bfff-41280d64a986', '6a57ce74-9e51-5798-980b-9639f19daa4b');
+insert into public.question_choices (id, question_id, position, label) values ('ec24de50-33f7-5479-bfff-41280d64a986', '19db6efd-b27d-564e-be0e-21c121ae359d', 0, 'Autorisé la nuit')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('6a57ce74-9e51-5798-980b-9639f19daa4b', '19db6efd-b27d-564e-be0e-21c121ae359d', 1, 'Gênant')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('19db6efd-b27d-564e-be0e-21c121ae359d', '6a57ce74-9e51-5798-980b-9639f19daa4b');
+delete from public.question_competences where question_id = '19db6efd-b27d-564e-be0e-21c121ae359d';
+insert into public.question_competences (question_id, competence_id) values ('19db6efd-b27d-564e-be0e-21c121ae359d', '9633e039-8208-5c8f-b4e6-22f0326ab7f3');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('f790cca6-76b2-5224-bc19-935153225010', 'rv-028', 'Écoconduite', 'Des pneus sous-gonflés entraînent (2 réponses) :', 'Des pneus sous-gonflés, c’est du carburant en plus et une moins bonne tenue de route : on vérifie leur pression avant de partir.', '[{"title":"Éco-conduite en voiture","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/chacun-son-mode-de-deplacement/dangers-de-la-route-en-voiture/mieux-conduire-en-voiture/eco","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = 'f790cca6-76b2-5224-bc19-935153225010';
+delete from public.question_choices where question_id = 'f790cca6-76b2-5224-bc19-935153225010' and id not in ('017fe696-c397-5ac5-a6cb-c2fce339c239', 'b0e23f54-c01b-595b-9d05-c8df8a155b9c', 'c775d24e-cc6d-5bc5-a264-0ce117e269f1');
+insert into public.question_choices (id, question_id, position, label) values ('017fe696-c397-5ac5-a6cb-c2fce339c239', 'f790cca6-76b2-5224-bc19-935153225010', 0, 'Une surconsommation de carburant')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('b0e23f54-c01b-595b-9d05-c8df8a155b9c', 'f790cca6-76b2-5224-bc19-935153225010', 1, 'Une meilleure adhérence')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('c775d24e-cc6d-5bc5-a264-0ce117e269f1', 'f790cca6-76b2-5224-bc19-935153225010', 2, 'Une moins bonne tenue de route')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('f790cca6-76b2-5224-bc19-935153225010', '017fe696-c397-5ac5-a6cb-c2fce339c239');
+insert into public.question_answers (question_id, choice_id) values ('f790cca6-76b2-5224-bc19-935153225010', 'c775d24e-cc6d-5bc5-a264-0ce117e269f1');
+delete from public.question_competences where question_id = 'f790cca6-76b2-5224-bc19-935153225010';
+insert into public.question_competences (question_id, competence_id) values ('f790cca6-76b2-5224-bc19-935153225010', '41854bad-69c9-5799-91e7-71d22ffef121');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('d049467f-c5e0-571e-a3a5-3dc3c45f873f', 'rv-029', 'Écoconduite', 'Un véhicule mal entretenu peut consommer davantage de carburant, jusqu’à :', 'Un véhicule mal entretenu peut entraîner une surconsommation allant jusqu’à 25 %.', '[{"title":"Éco-conduite en voiture","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/chacun-son-mode-de-deplacement/dangers-de-la-route-en-voiture/mieux-conduire-en-voiture/eco","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = 'd049467f-c5e0-571e-a3a5-3dc3c45f873f';
+delete from public.question_choices where question_id = 'd049467f-c5e0-571e-a3a5-3dc3c45f873f' and id not in ('efb3cb81-6b1d-5a09-913f-eb6be48d232e', '1dba1801-7b97-50f9-9330-4fe9402c6bd7');
+insert into public.question_choices (id, question_id, position, label) values ('efb3cb81-6b1d-5a09-913f-eb6be48d232e', 'd049467f-c5e0-571e-a3a5-3dc3c45f873f', 0, '2 %')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('1dba1801-7b97-50f9-9330-4fe9402c6bd7', 'd049467f-c5e0-571e-a3a5-3dc3c45f873f', 1, '25 %')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('d049467f-c5e0-571e-a3a5-3dc3c45f873f', '1dba1801-7b97-50f9-9330-4fe9402c6bd7');
+delete from public.question_competences where question_id = 'd049467f-c5e0-571e-a3a5-3dc3c45f873f';
+insert into public.question_competences (question_id, competence_id) values ('d049467f-c5e0-571e-a3a5-3dc3c45f873f', '41854bad-69c9-5799-91e7-71d22ffef121');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('4557c8ee-8d99-52f6-8d2b-0714268e0b66', 'rv-030', 'Écoconduite', 'Je laisse mon coffre de toit en place alors qu’il est vide. Cela peut augmenter ma consommation de :', 'Un coffre de toit laissé en place après usage entraîne une surconsommation de 10 à 15 % : on le démonte.', '[{"title":"Éco-conduite en voiture","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/chacun-son-mode-de-deplacement/dangers-de-la-route-en-voiture/mieux-conduire-en-voiture/eco","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '4557c8ee-8d99-52f6-8d2b-0714268e0b66';
+delete from public.question_choices where question_id = '4557c8ee-8d99-52f6-8d2b-0714268e0b66' and id not in ('953131e9-b536-559e-8233-4734ffd9185a', 'db9af992-4cc7-5c3a-968d-b821cbe44f09');
+insert into public.question_choices (id, question_id, position, label) values ('953131e9-b536-559e-8233-4734ffd9185a', '4557c8ee-8d99-52f6-8d2b-0714268e0b66', 0, '10 à 15 %')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('db9af992-4cc7-5c3a-968d-b821cbe44f09', '4557c8ee-8d99-52f6-8d2b-0714268e0b66', 1, 'Moins de 1 %')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('4557c8ee-8d99-52f6-8d2b-0714268e0b66', '953131e9-b536-559e-8233-4734ffd9185a');
+delete from public.question_competences where question_id = '4557c8ee-8d99-52f6-8d2b-0714268e0b66';
+insert into public.question_competences (question_id, competence_id) values ('4557c8ee-8d99-52f6-8d2b-0714268e0b66', '41854bad-69c9-5799-91e7-71d22ffef121');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('e356cdc8-e70d-506d-8a04-2ccde398860c', 'rv-031', 'Écoconduite', 'Je dois rester à l’arrêt plus de 20 secondes. Pour consommer moins :', 'Arrêter puis redémarrer consomme moins que laisser tourner le moteur au ralenti plus de 20 secondes.', '[{"title":"Éco-conduite en voiture","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/chacun-son-mode-de-deplacement/dangers-de-la-route-en-voiture/mieux-conduire-en-voiture/eco","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = 'e356cdc8-e70d-506d-8a04-2ccde398860c';
+delete from public.question_choices where question_id = 'e356cdc8-e70d-506d-8a04-2ccde398860c' and id not in ('b4d03b9a-ed5e-5fc3-a7dc-264faf2d0a33', '3444a0da-3aa9-5ed2-9ae4-ad1b6efb66c5');
+insert into public.question_choices (id, question_id, position, label) values ('b4d03b9a-ed5e-5fc3-a7dc-264faf2d0a33', 'e356cdc8-e70d-506d-8a04-2ccde398860c', 0, 'Je laisse tourner le moteur au ralenti')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('3444a0da-3aa9-5ed2-9ae4-ad1b6efb66c5', 'e356cdc8-e70d-506d-8a04-2ccde398860c', 1, 'Je coupe le moteur')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('e356cdc8-e70d-506d-8a04-2ccde398860c', '3444a0da-3aa9-5ed2-9ae4-ad1b6efb66c5');
+delete from public.question_competences where question_id = 'e356cdc8-e70d-506d-8a04-2ccde398860c';
+insert into public.question_competences (question_id, competence_id) values ('e356cdc8-e70d-506d-8a04-2ccde398860c', '41854bad-69c9-5799-91e7-71d22ffef121');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('0527504c-8ac1-5557-ba59-510bff6eaac1', 'rv-032', 'Écoconduite', 'En ville, la climatisation peut augmenter la consommation de carburant jusqu’à :', 'La surconsommation due à la climatisation peut atteindre 10 % sur route et 25 % en ville.', '[{"title":"Éco-conduite en voiture","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/chacun-son-mode-de-deplacement/dangers-de-la-route-en-voiture/mieux-conduire-en-voiture/eco","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '0527504c-8ac1-5557-ba59-510bff6eaac1';
+delete from public.question_choices where question_id = '0527504c-8ac1-5557-ba59-510bff6eaac1' and id not in ('5379d7f9-e4d0-5d35-98fd-11af38b97fe4', '58329232-339f-557e-818d-335dd0bea388');
+insert into public.question_choices (id, question_id, position, label) values ('5379d7f9-e4d0-5d35-98fd-11af38b97fe4', '0527504c-8ac1-5557-ba59-510bff6eaac1', 0, '25 %')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('58329232-339f-557e-818d-335dd0bea388', '0527504c-8ac1-5557-ba59-510bff6eaac1', 1, '3 %')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('0527504c-8ac1-5557-ba59-510bff6eaac1', '5379d7f9-e4d0-5d35-98fd-11af38b97fe4');
+delete from public.question_competences where question_id = '0527504c-8ac1-5557-ba59-510bff6eaac1';
+insert into public.question_competences (question_id, competence_id) values ('0527504c-8ac1-5557-ba59-510bff6eaac1', '41854bad-69c9-5799-91e7-71d22ffef121');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('37228c74-8242-537e-b236-1bf5694d764d', 'rv-033', 'Écoconduite', 'Rouler 10 km/h moins vite sur un trajet de 500 km permet d’économiser jusqu’à :', '10 km/h en moins permettent d’économiser jusqu’à 5 litres et de réduire de 12,5 % les émissions de CO2 sur 500 km.', '[{"title":"Éco-conduite en voiture","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/chacun-son-mode-de-deplacement/dangers-de-la-route-en-voiture/mieux-conduire-en-voiture/eco","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '37228c74-8242-537e-b236-1bf5694d764d';
+delete from public.question_choices where question_id = '37228c74-8242-537e-b236-1bf5694d764d' and id not in ('a39df304-47ed-512a-a821-e6eaeb102af6', '2222e916-56b3-5b66-a999-b25745da25a6');
+insert into public.question_choices (id, question_id, position, label) values ('a39df304-47ed-512a-a821-e6eaeb102af6', '37228c74-8242-537e-b236-1bf5694d764d', 0, '50 litres de carburant')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('2222e916-56b3-5b66-a999-b25745da25a6', '37228c74-8242-537e-b236-1bf5694d764d', 1, '5 litres de carburant')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('37228c74-8242-537e-b236-1bf5694d764d', '2222e916-56b3-5b66-a999-b25745da25a6');
+delete from public.question_competences where question_id = '37228c74-8242-537e-b236-1bf5694d764d';
+insert into public.question_competences (question_id, competence_id) values ('37228c74-8242-537e-b236-1bf5694d764d', '41854bad-69c9-5799-91e7-71d22ffef121');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('915a31e5-4c1b-56be-a429-167dabfecc55', 'rv-034', 'Écoconduite', 'Je laisse le moteur monter haut dans les tours avant de changer de rapport. Ces sur-régimes peuvent entraîner une surconsommation de :', 'Démarrer en douceur et passer sans attendre le rapport supérieur évite les sur-régimes, qui occasionnent environ 20 % de surconsommation.', '[{"title":"Éco-conduite en voiture","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/chacun-son-mode-de-deplacement/dangers-de-la-route-en-voiture/mieux-conduire-en-voiture/eco","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '915a31e5-4c1b-56be-a429-167dabfecc55';
+delete from public.question_choices where question_id = '915a31e5-4c1b-56be-a429-167dabfecc55' and id not in ('2da7b147-01c3-5473-9d8b-9ad5d8752a47', '5c4b1883-bb4c-5a5d-b508-45f105bd3f47');
+insert into public.question_choices (id, question_id, position, label) values ('2da7b147-01c3-5473-9d8b-9ad5d8752a47', '915a31e5-4c1b-56be-a429-167dabfecc55', 0, '1 %')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('5c4b1883-bb4c-5a5d-b508-45f105bd3f47', '915a31e5-4c1b-56be-a429-167dabfecc55', 1, '20 %')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('915a31e5-4c1b-56be-a429-167dabfecc55', '5c4b1883-bb4c-5a5d-b508-45f105bd3f47');
+delete from public.question_competences where question_id = '915a31e5-4c1b-56be-a429-167dabfecc55';
+insert into public.question_competences (question_id, competence_id) values ('915a31e5-4c1b-56be-a429-167dabfecc55', '41854bad-69c9-5799-91e7-71d22ffef121');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('2582b0cf-24d5-5a80-a01e-2117e1e987af', 'rv-035', 'Tunnels et passages à niveau', 'Dans un tunnel, la distance à garder avec le véhicule devant moi, même à l’arrêt, est de :', 'Dans un tunnel, on respecte les distances de sécurité même à l’arrêt (70 à 150 mètres) : elles sont nécessaires à l’intervention des secours.', '[{"title":"Conduire dans un tunnel","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-sur-routes-specifiques/conduire-dans-un-tunnel","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '2582b0cf-24d5-5a80-a01e-2117e1e987af';
+delete from public.question_choices where question_id = '2582b0cf-24d5-5a80-a01e-2117e1e987af' and id not in ('2493f563-6584-5a48-aaa0-b9c698a31ab3', '3d18e9cb-70f5-5694-bd59-bd7c59dbdee1');
+insert into public.question_choices (id, question_id, position, label) values ('2493f563-6584-5a48-aaa0-b9c698a31ab3', '2582b0cf-24d5-5a80-a01e-2117e1e987af', 0, '2 à 5 mètres')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('3d18e9cb-70f5-5694-bd59-bd7c59dbdee1', '2582b0cf-24d5-5a80-a01e-2117e1e987af', 1, '70 à 150 mètres')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('2582b0cf-24d5-5a80-a01e-2117e1e987af', '3d18e9cb-70f5-5694-bd59-bd7c59dbdee1');
+delete from public.question_competences where question_id = '2582b0cf-24d5-5a80-a01e-2117e1e987af';
+insert into public.question_competences (question_id, competence_id) values ('2582b0cf-24d5-5a80-a01e-2117e1e987af', '8d9197d8-6c24-50f3-b193-ada8b816fe81');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('6b30687a-01cb-513f-b07d-341b9019e155', 'rv-036', 'Tunnels et passages à niveau', 'Dans un tunnel, ma voiture prend feu et la sortie est proche. Je :', 'Si le véhicule prend feu et que la sortie est proche, on essaie de quitter le tunnel avec le véhicule.', '[{"title":"Conduire dans un tunnel","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-sur-routes-specifiques/conduire-dans-un-tunnel","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '6b30687a-01cb-513f-b07d-341b9019e155';
+delete from public.question_choices where question_id = '6b30687a-01cb-513f-b07d-341b9019e155' and id not in ('79645980-a59a-529e-bf05-e89c3f239c71', '6361d7a7-5fba-5b1b-882d-32baffecec90');
+insert into public.question_choices (id, question_id, position, label) values ('79645980-a59a-529e-bf05-e89c3f239c71', '6b30687a-01cb-513f-b07d-341b9019e155', 0, 'Essaie de sortir du tunnel avec ma voiture')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('6361d7a7-5fba-5b1b-882d-32baffecec90', '6b30687a-01cb-513f-b07d-341b9019e155', 1, 'M’arrête aussitôt au milieu de la voie')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('6b30687a-01cb-513f-b07d-341b9019e155', '79645980-a59a-529e-bf05-e89c3f239c71');
+delete from public.question_competences where question_id = '6b30687a-01cb-513f-b07d-341b9019e155';
+insert into public.question_competences (question_id, competence_id) values ('6b30687a-01cb-513f-b07d-341b9019e155', '8d9197d8-6c24-50f3-b193-ada8b816fe81');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('cfe32834-1dd2-5540-88f2-330e62513c77', 'rv-037', 'Tunnels et passages à niveau', 'Dans un tunnel, pour donner l’alerte, j’utilise :', 'Les téléphones de secours du tunnel permettent de vous localiser, contrairement au téléphone portable.', '[{"title":"Conduire dans un tunnel","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-sur-routes-specifiques/conduire-dans-un-tunnel","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = 'cfe32834-1dd2-5540-88f2-330e62513c77';
+delete from public.question_choices where question_id = 'cfe32834-1dd2-5540-88f2-330e62513c77' and id not in ('dd512b35-a645-5549-b708-1667c5519bdf', 'd5cf8b42-18e9-5e1a-82ad-9e8df0b34eeb');
+insert into public.question_choices (id, question_id, position, label) values ('dd512b35-a645-5549-b708-1667c5519bdf', 'cfe32834-1dd2-5540-88f2-330e62513c77', 0, 'Mon téléphone portable')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('d5cf8b42-18e9-5e1a-82ad-9e8df0b34eeb', 'cfe32834-1dd2-5540-88f2-330e62513c77', 1, 'Un téléphone de secours du tunnel')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('cfe32834-1dd2-5540-88f2-330e62513c77', 'd5cf8b42-18e9-5e1a-82ad-9e8df0b34eeb');
+delete from public.question_competences where question_id = 'cfe32834-1dd2-5540-88f2-330e62513c77';
+insert into public.question_competences (question_id, competence_id) values ('cfe32834-1dd2-5540-88f2-330e62513c77', '8d9197d8-6c24-50f3-b193-ada8b816fe81');
+insert into public.question_competences (question_id, competence_id) values ('cfe32834-1dd2-5540-88f2-330e62513c77', '24f9e463-bc22-5e54-98a3-661f9dcceb33');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('e7bfe05c-5e0e-5ff0-9d5b-11ec500e9266', 'rv-038', 'Tunnels et passages à niveau', 'Dans un tunnel, de la fumée apparaît. Avant de quitter ma voiture, je coupe le moteur et :', 'En cas de fumée : couper le moteur en laissant la clé sur le contact, puis quitter le véhicule avec tous les passagers par une issue de secours.', '[{"title":"Conduire dans un tunnel","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-sur-routes-specifiques/conduire-dans-un-tunnel","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = 'e7bfe05c-5e0e-5ff0-9d5b-11ec500e9266';
+delete from public.question_choices where question_id = 'e7bfe05c-5e0e-5ff0-9d5b-11ec500e9266' and id not in ('3eb2f2a0-4c00-5f66-af80-8fcd4a533e6a', 'd020b423-6c39-51e2-ae89-bc77638767d9');
+insert into public.question_choices (id, question_id, position, label) values ('3eb2f2a0-4c00-5f66-af80-8fcd4a533e6a', 'e7bfe05c-5e0e-5ff0-9d5b-11ec500e9266', 0, 'Je laisse la clé sur le contact')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('d020b423-6c39-51e2-ae89-bc77638767d9', 'e7bfe05c-5e0e-5ff0-9d5b-11ec500e9266', 1, 'J’emporte la clé')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('e7bfe05c-5e0e-5ff0-9d5b-11ec500e9266', '3eb2f2a0-4c00-5f66-af80-8fcd4a533e6a');
+delete from public.question_competences where question_id = 'e7bfe05c-5e0e-5ff0-9d5b-11ec500e9266';
+insert into public.question_competences (question_id, competence_id) values ('e7bfe05c-5e0e-5ff0-9d5b-11ec500e9266', '8d9197d8-6c24-50f3-b193-ada8b816fe81');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('0dace697-4b46-5c9e-b416-db1e3e8a69d3', 'rv-039', 'Tunnels et passages à niveau', 'Dans un tunnel, je me rends compte que je me suis trompé de direction. Je peux faire demi-tour :', 'Dans un tunnel, il est interdit de faire demi-tour et de s’arrêter, hormis en cas d’urgence sur les emplacements prévus.', '[{"title":"Conduire dans un tunnel","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-sur-routes-specifiques/conduire-dans-un-tunnel","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '0dace697-4b46-5c9e-b416-db1e3e8a69d3';
+delete from public.question_choices where question_id = '0dace697-4b46-5c9e-b416-db1e3e8a69d3' and id not in ('1e57e95f-1e17-56d8-be81-49073de9009b', '7431e50b-afd0-5d4a-a582-568934e6c882');
+insert into public.question_choices (id, question_id, position, label) values ('1e57e95f-1e17-56d8-be81-49073de9009b', '0dace697-4b46-5c9e-b416-db1e3e8a69d3', 0, 'Jamais : c’est interdit')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('7431e50b-afd0-5d4a-a582-568934e6c882', '0dace697-4b46-5c9e-b416-db1e3e8a69d3', 1, 'Oui, si la voie est libre')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('0dace697-4b46-5c9e-b416-db1e3e8a69d3', '1e57e95f-1e17-56d8-be81-49073de9009b');
+delete from public.question_competences where question_id = '0dace697-4b46-5c9e-b416-db1e3e8a69d3';
+insert into public.question_competences (question_id, competence_id) values ('0dace697-4b46-5c9e-b416-db1e3e8a69d3', '8d9197d8-6c24-50f3-b193-ada8b816fe81');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('cd3bee86-f2a7-51c1-9047-4846ee1fbced', 'rv-040', 'Tunnels et passages à niveau', 'Ma voiture tombe en panne dans un tunnel et je ne peux pas en sortir. Je :', 'En cas de panne : feux de détresse, puis sortir du tunnel si possible ; sinon rejoindre l’emplacement d’arrêt d’urgence le plus proche et donner l’alerte.', '[{"title":"Conduire dans un tunnel","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-sur-routes-specifiques/conduire-dans-un-tunnel","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = 'cd3bee86-f2a7-51c1-9047-4846ee1fbced';
+delete from public.question_choices where question_id = 'cd3bee86-f2a7-51c1-9047-4846ee1fbced' and id not in ('8625622c-a56d-5ead-b1dd-a01151ff940b', 'fdf4816c-ff0f-5e0e-a256-6da69909fda6');
+insert into public.question_choices (id, question_id, position, label) values ('8625622c-a56d-5ead-b1dd-a01151ff940b', 'cd3bee86-f2a7-51c1-9047-4846ee1fbced', 0, 'Rejoins l’emplacement d’arrêt d’urgence le plus proche, au plus près du bord droit')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('fdf4816c-ff0f-5e0e-a256-6da69909fda6', 'cd3bee86-f2a7-51c1-9047-4846ee1fbced', 1, 'M’arrête sur place sans signaler ma présence')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('cd3bee86-f2a7-51c1-9047-4846ee1fbced', '8625622c-a56d-5ead-b1dd-a01151ff940b');
+delete from public.question_competences where question_id = 'cd3bee86-f2a7-51c1-9047-4846ee1fbced';
+insert into public.question_competences (question_id, competence_id) values ('cd3bee86-f2a7-51c1-9047-4846ee1fbced', '8d9197d8-6c24-50f3-b193-ada8b816fe81');
+insert into public.question_competences (question_id, competence_id) values ('cd3bee86-f2a7-51c1-9047-4846ee1fbced', 'ad7e4ff8-02e2-51f2-955e-6689b0731b71');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('916a0c65-6224-5237-8186-97ed91ff08df', 'rv-041', 'Tunnels et passages à niveau', 'Dans un tunnel, la circulation ralentit fortement. J’allume :', 'En cas de ralentissement dans un tunnel, on allume ses feux de détresse et on garde ses distances.', '[{"title":"Conduire dans un tunnel","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-sur-routes-specifiques/conduire-dans-un-tunnel","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '916a0c65-6224-5237-8186-97ed91ff08df';
+delete from public.question_choices where question_id = '916a0c65-6224-5237-8186-97ed91ff08df' and id not in ('2c4938f5-e76f-5360-9783-ed91881b1d8d', '4706a497-a14b-55fc-8cb5-b37abef74315');
+insert into public.question_choices (id, question_id, position, label) values ('2c4938f5-e76f-5360-9783-ed91881b1d8d', '916a0c65-6224-5237-8186-97ed91ff08df', 0, 'Mes feux de route')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('4706a497-a14b-55fc-8cb5-b37abef74315', '916a0c65-6224-5237-8186-97ed91ff08df', 1, 'Mes feux de détresse')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('916a0c65-6224-5237-8186-97ed91ff08df', '4706a497-a14b-55fc-8cb5-b37abef74315');
+delete from public.question_competences where question_id = '916a0c65-6224-5237-8186-97ed91ff08df';
+insert into public.question_competences (question_id, competence_id) values ('916a0c65-6224-5237-8186-97ed91ff08df', '8d9197d8-6c24-50f3-b193-ada8b816fe81');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('0b09d546-a8a6-554e-9707-d32ce622d8bc', 'rv-042', 'Tunnels et passages à niveau', 'La distance d’arrêt d’un train peut atteindre :', 'Un train peut avoir besoin de 800 mètres pour s’arrêter : le code de la route lui accorde la priorité absolue.', '[{"title":"Passage à niveau","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-sur-routes-specifiques/passage-niveau","consulted_at":"2026-10-22","cited_articles":["R422-3","R412-30"]}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '0b09d546-a8a6-554e-9707-d32ce622d8bc';
+delete from public.question_choices where question_id = '0b09d546-a8a6-554e-9707-d32ce622d8bc' and id not in ('ce3a245f-f2fc-5eae-9e8d-46ba27413ab4', '159adeb8-90f3-5d1f-a9f5-cffbfc994a2d');
+insert into public.question_choices (id, question_id, position, label) values ('ce3a245f-f2fc-5eae-9e8d-46ba27413ab4', '0b09d546-a8a6-554e-9707-d32ce622d8bc', 0, '800 mètres')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('159adeb8-90f3-5d1f-a9f5-cffbfc994a2d', '0b09d546-a8a6-554e-9707-d32ce622d8bc', 1, '80 mètres')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('0b09d546-a8a6-554e-9707-d32ce622d8bc', 'ce3a245f-f2fc-5eae-9e8d-46ba27413ab4');
+delete from public.question_competences where question_id = '0b09d546-a8a6-554e-9707-d32ce622d8bc';
+insert into public.question_competences (question_id, competence_id) values ('0b09d546-a8a6-554e-9707-d32ce622d8bc', 'a8754ce0-1402-5b0e-b697-869bd4098e21');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('cca9c4d4-03ff-5110-b484-db023aec6f88', 'rv-043', 'Tunnels et passages à niveau', 'Après le passage d’un train, les barrières du passage à niveau restent baissées. C’est probablement :', 'Si les barrières restent fermées après un train, un autre arrive probablement ; sinon, on contacte la gare avec le numéro ou le téléphone du passage à niveau.', '[{"title":"Passage à niveau","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-sur-routes-specifiques/passage-niveau","consulted_at":"2026-10-22","cited_articles":["R422-3","R412-30"]}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = 'cca9c4d4-03ff-5110-b484-db023aec6f88';
+delete from public.question_choices where question_id = 'cca9c4d4-03ff-5110-b484-db023aec6f88' and id not in ('31bfb28f-ba73-59f4-b6ee-da881b7eff3c', '61f85674-913d-51ae-9ce6-c09c8cc2d392');
+insert into public.question_choices (id, question_id, position, label) values ('31bfb28f-ba73-59f4-b6ee-da881b7eff3c', 'cca9c4d4-03ff-5110-b484-db023aec6f88', 0, 'Une panne : je contourne les barrières')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('61f85674-913d-51ae-9ce6-c09c8cc2d392', 'cca9c4d4-03ff-5110-b484-db023aec6f88', 1, 'Qu’un autre train arrive')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('cca9c4d4-03ff-5110-b484-db023aec6f88', '61f85674-913d-51ae-9ce6-c09c8cc2d392');
+delete from public.question_competences where question_id = 'cca9c4d4-03ff-5110-b484-db023aec6f88';
+insert into public.question_competences (question_id, competence_id) values ('cca9c4d4-03ff-5110-b484-db023aec6f88', 'a8754ce0-1402-5b0e-b697-869bd4098e21');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('f04dbc67-670e-5ce1-867a-db6ad00bba23', 'rv-044', 'Tunnels et passages à niveau', 'À un passage à niveau sans barrières, je :', 'Sans barrières, on s’arrête avant le passage à niveau et on vérifie qu’aucun train n’arrive avant de franchir la voie ferrée.', '[{"title":"Passage à niveau","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-sur-routes-specifiques/passage-niveau","consulted_at":"2026-10-22","cited_articles":["R422-3","R412-30"]}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = 'f04dbc67-670e-5ce1-867a-db6ad00bba23';
+delete from public.question_choices where question_id = 'f04dbc67-670e-5ce1-867a-db6ad00bba23' and id not in ('a5e173af-828e-55e5-98ac-675eb0ec7166', 'f0d75f7f-c7f4-5efc-8cf1-0d7866d45a29');
+insert into public.question_choices (id, question_id, position, label) values ('a5e173af-828e-55e5-98ac-675eb0ec7166', 'f04dbc67-670e-5ce1-867a-db6ad00bba23', 0, 'M’arrête et vérifie qu’aucun train n’arrive avant de traverser')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('f0d75f7f-c7f4-5efc-8cf1-0d7866d45a29', 'f04dbc67-670e-5ce1-867a-db6ad00bba23', 1, 'Passe sans ralentir s’il n’y a pas de feu')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('f04dbc67-670e-5ce1-867a-db6ad00bba23', 'a5e173af-828e-55e5-98ac-675eb0ec7166');
+delete from public.question_competences where question_id = 'f04dbc67-670e-5ce1-867a-db6ad00bba23';
+insert into public.question_competences (question_id, competence_id) values ('f04dbc67-670e-5ce1-867a-db6ad00bba23', 'a8754ce0-1402-5b0e-b697-869bd4098e21');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('ff6d3582-2ebb-5fa0-848d-26d3613dbf05', 'rv-045', 'Tunnels et passages à niveau', 'La route est encombrée après un passage à niveau. Je m’engage sur la voie ferrée :', 'On ne traverse que si l’on est absolument certain de pouvoir se dégager rapidement, et on ne s’arrête jamais sur la voie ferrée.', '[{"title":"Passage à niveau","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-sur-routes-specifiques/passage-niveau","consulted_at":"2026-10-22","cited_articles":["R422-3","R412-30"]}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = 'ff6d3582-2ebb-5fa0-848d-26d3613dbf05';
+delete from public.question_choices where question_id = 'ff6d3582-2ebb-5fa0-848d-26d3613dbf05' and id not in ('58daf378-125f-5325-ae00-ce29bf3a1540', 'e9498078-9007-57ec-9052-4835d2ce5d00');
+insert into public.question_choices (id, question_id, position, label) values ('58daf378-125f-5325-ae00-ce29bf3a1540', 'ff6d3582-2ebb-5fa0-848d-26d3613dbf05', 0, 'Seulement si je suis certain de pouvoir me dégager rapidement')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('e9498078-9007-57ec-9052-4835d2ce5d00', 'ff6d3582-2ebb-5fa0-848d-26d3613dbf05', 1, 'Dès que la voiture devant moi s’engage')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('ff6d3582-2ebb-5fa0-848d-26d3613dbf05', '58daf378-125f-5325-ae00-ce29bf3a1540');
+delete from public.question_competences where question_id = 'ff6d3582-2ebb-5fa0-848d-26d3613dbf05';
+insert into public.question_competences (question_id, competence_id) values ('ff6d3582-2ebb-5fa0-848d-26d3613dbf05', 'a8754ce0-1402-5b0e-b697-869bd4098e21');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('7b6c1a98-972f-5b6c-8271-55960ba56bf4', 'rv-046', 'Tunnels et passages à niveau', 'À vélo, je traverse les rails d’un passage à niveau :', 'La roue d’un vélo peut se coincer dans l’ornière des rails : on traverse aussi perpendiculairement que possible.', '[{"title":"Passage à niveau","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-sur-routes-specifiques/passage-niveau","consulted_at":"2026-10-22","cited_articles":["R422-3","R412-30"]}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '7b6c1a98-972f-5b6c-8271-55960ba56bf4';
+delete from public.question_choices where question_id = '7b6c1a98-972f-5b6c-8271-55960ba56bf4' and id not in ('2c495af1-bec6-506b-a99f-bf59de5c89e1', 'd8550d2f-54ca-59ea-b62d-8737a09a709e');
+insert into public.question_choices (id, question_id, position, label) values ('2c495af1-bec6-506b-a99f-bf59de5c89e1', '7b6c1a98-972f-5b6c-8271-55960ba56bf4', 0, 'En biais, pour gagner du temps')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('d8550d2f-54ca-59ea-b62d-8737a09a709e', '7b6c1a98-972f-5b6c-8271-55960ba56bf4', 1, 'Aussi perpendiculairement que possible')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('7b6c1a98-972f-5b6c-8271-55960ba56bf4', 'd8550d2f-54ca-59ea-b62d-8737a09a709e');
+delete from public.question_competences where question_id = '7b6c1a98-972f-5b6c-8271-55960ba56bf4';
+insert into public.question_competences (question_id, competence_id) values ('7b6c1a98-972f-5b6c-8271-55960ba56bf4', 'a8754ce0-1402-5b0e-b697-869bd4098e21');
+insert into public.question_competences (question_id, competence_id) values ('7b6c1a98-972f-5b6c-8271-55960ba56bf4', '4d2a0934-e1b1-5172-9c6f-eacb55406515');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('9abd896f-b677-5116-9d31-3f8c8ee63359', 'rv-047', 'Visibilité et éclairage', 'Par temps de brouillard, en plus de mes feux de croisement, j’utilise :', 'Par brouillard, on réduit sa vitesse et on utilise les feux de brouillard avant en complément des feux de croisement.', '[{"title":"Conduire par temps de brouillard","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-selon-la-meteo/conduire-par-temps-de-brouillard","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '9abd896f-b677-5116-9d31-3f8c8ee63359';
+delete from public.question_choices where question_id = '9abd896f-b677-5116-9d31-3f8c8ee63359' and id not in ('41eacd07-69fa-5ff8-8a4c-9f0a16429564', '15f85386-8811-5541-83bc-811c942a5cec');
+insert into public.question_choices (id, question_id, position, label) values ('41eacd07-69fa-5ff8-8a4c-9f0a16429564', '9abd896f-b677-5116-9d31-3f8c8ee63359', 0, 'Mes feux de brouillard avant')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('15f85386-8811-5541-83bc-811c942a5cec', '9abd896f-b677-5116-9d31-3f8c8ee63359', 1, 'Mes feux de route')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('9abd896f-b677-5116-9d31-3f8c8ee63359', '41eacd07-69fa-5ff8-8a4c-9f0a16429564');
+delete from public.question_competences where question_id = '9abd896f-b677-5116-9d31-3f8c8ee63359';
+insert into public.question_competences (question_id, competence_id) values ('9abd896f-b677-5116-9d31-3f8c8ee63359', '3647f5af-2b62-567f-a0e2-281cc052752d');
+insert into public.question_competences (question_id, competence_id) values ('9abd896f-b677-5116-9d31-3f8c8ee63359', '6dbd753d-1595-5e3e-817c-9cdb33b47aec');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('6634105e-6286-5196-862e-bb931da31e59', 'rv-048', 'Visibilité et éclairage', 'Du brouillard est annoncé et je dois faire un trajet en rase campagne. Le conseil de la Sécurité routière :', 'Si du brouillard est annoncé, différez votre départ, surtout pour un trajet en rase campagne.', '[{"title":"Conduire par temps de brouillard","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/chaque-situation-sa-conduite/conduire-selon-la-meteo/conduire-par-temps-de-brouillard","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '6634105e-6286-5196-862e-bb931da31e59';
+delete from public.question_choices where question_id = '6634105e-6286-5196-862e-bb931da31e59' and id not in ('050de178-dfe8-51c9-9693-e211b88b9d1e', '18e21b1c-3082-56cf-b16c-bc4b30125356');
+insert into public.question_choices (id, question_id, position, label) values ('050de178-dfe8-51c9-9693-e211b88b9d1e', '6634105e-6286-5196-862e-bb931da31e59', 0, 'Partir plus vite pour arriver avant')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('18e21b1c-3082-56cf-b16c-bc4b30125356', '6634105e-6286-5196-862e-bb931da31e59', 1, 'Différer mon départ si possible')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('6634105e-6286-5196-862e-bb931da31e59', '18e21b1c-3082-56cf-b16c-bc4b30125356');
+delete from public.question_competences where question_id = '6634105e-6286-5196-862e-bb931da31e59';
+insert into public.question_competences (question_id, competence_id) values ('6634105e-6286-5196-862e-bb931da31e59', '3647f5af-2b62-567f-a0e2-281cc052752d');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('24b9c9bd-290b-5a48-a2a1-346d7115a63c', 'rv-049', 'Visibilité et éclairage', 'Quand j’utilise mes feux de route, je peux allumer en même temps mes feux de croisement :', 'Lorsqu’il est fait usage des feux de route, les feux de croisement peuvent être utilisés simultanément.', '[{"title":"Croisement et dépassement","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/croisement-et-depassement","consulted_at":"2026-10-22","cited_articles":["R414-1 à R414-3","R414-4 à R414-17","R414-6","R414-9","R414-12","R416-6"]}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '24b9c9bd-290b-5a48-a2a1-346d7115a63c';
+delete from public.question_choices where question_id = '24b9c9bd-290b-5a48-a2a1-346d7115a63c' and id not in ('ef9caaf1-8767-5886-ad68-224f0c76c61d', '8b3d6a6d-d73e-5452-8150-50044e89ca7d');
+insert into public.question_choices (id, question_id, position, label) values ('ef9caaf1-8767-5886-ad68-224f0c76c61d', '24b9c9bd-290b-5a48-a2a1-346d7115a63c', 0, 'Oui')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('8b3d6a6d-d73e-5452-8150-50044e89ca7d', '24b9c9bd-290b-5a48-a2a1-346d7115a63c', 1, 'Non')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('24b9c9bd-290b-5a48-a2a1-346d7115a63c', 'ef9caaf1-8767-5886-ad68-224f0c76c61d');
+delete from public.question_competences where question_id = '24b9c9bd-290b-5a48-a2a1-346d7115a63c';
+insert into public.question_competences (question_id, competence_id) values ('24b9c9bd-290b-5a48-a2a1-346d7115a63c', '6dbd753d-1595-5e3e-817c-9cdb33b47aec');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('07c41bd6-d531-5969-b5d4-9ed3f4a2d127', 'rv-050', 'Visibilité et éclairage', 'En agglomération, sur une route suffisamment éclairée, puis-je rouler en feux de route ?', 'En agglomération sur une route suffisamment éclairée, les feux de route sont exclus.', '[{"title":"Croisement et dépassement","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/croisement-et-depassement","consulted_at":"2026-10-22","cited_articles":["R414-1 à R414-3","R414-4 à R414-17","R414-6","R414-9","R414-12","R416-6"]}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '07c41bd6-d531-5969-b5d4-9ed3f4a2d127';
+delete from public.question_choices where question_id = '07c41bd6-d531-5969-b5d4-9ed3f4a2d127' and id not in ('dea5bcb1-6f2f-5b7a-ad52-701f25329b52', 'bdd3b569-085c-5145-b692-034ae514adc4');
+insert into public.question_choices (id, question_id, position, label) values ('dea5bcb1-6f2f-5b7a-ad52-701f25329b52', '07c41bd6-d531-5969-b5d4-9ed3f4a2d127', 0, 'Oui, si personne n’arrive en face')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('bdd3b569-085c-5145-b692-034ae514adc4', '07c41bd6-d531-5969-b5d4-9ed3f4a2d127', 1, 'Non')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('07c41bd6-d531-5969-b5d4-9ed3f4a2d127', 'bdd3b569-085c-5145-b692-034ae514adc4');
+delete from public.question_competences where question_id = '07c41bd6-d531-5969-b5d4-9ed3f4a2d127';
+insert into public.question_competences (question_id, competence_id) values ('07c41bd6-d531-5969-b5d4-9ed3f4a2d127', '6dbd753d-1595-5e3e-817c-9cdb33b47aec');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('6ad4c25a-8bd9-50b2-ac5d-602687026ac8', 'rv-051', 'Visibilité et éclairage', 'La nuit, une voiture arrive en face. Je passe des feux de route aux feux de croisement :', 'Le passage des feux de route aux feux de croisement doit se faire suffisamment à l’avance pour ne pas gêner les autres usagers.', '[{"title":"Croisement et dépassement","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/croisement-et-depassement","consulted_at":"2026-10-22","cited_articles":["R414-1 à R414-3","R414-4 à R414-17","R414-6","R414-9","R414-12","R416-6"]}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '6ad4c25a-8bd9-50b2-ac5d-602687026ac8';
+delete from public.question_choices where question_id = '6ad4c25a-8bd9-50b2-ac5d-602687026ac8' and id not in ('d21b7faa-9502-5995-8bf5-036774670fcd', '8197893e-217a-526c-9982-58f2b3d7b0ea');
+insert into public.question_choices (id, question_id, position, label) values ('d21b7faa-9502-5995-8bf5-036774670fcd', '6ad4c25a-8bd9-50b2-ac5d-602687026ac8', 0, 'Suffisamment à l’avance pour ne pas la gêner')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('8197893e-217a-526c-9982-58f2b3d7b0ea', '6ad4c25a-8bd9-50b2-ac5d-602687026ac8', 1, 'Au dernier moment, à sa hauteur')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('6ad4c25a-8bd9-50b2-ac5d-602687026ac8', 'd21b7faa-9502-5995-8bf5-036774670fcd');
+delete from public.question_competences where question_id = '6ad4c25a-8bd9-50b2-ac5d-602687026ac8';
+insert into public.question_competences (question_id, competence_id) values ('6ad4c25a-8bd9-50b2-ac5d-602687026ac8', '6dbd753d-1595-5e3e-817c-9cdb33b47aec');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('4fd7a69f-4a0e-5aa3-99bd-cc1891391ea0', 'rv-052', 'Usagers et partage de la rue', 'Dans une aire piétonne, les piétons sont prioritaires sur tous les véhicules, sauf :', 'Dans une aire piétonne, les piétons sont prioritaires sur tous les véhicules, sauf les tramways.', '[{"title":"Le code de la rue","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/le-code-de-la-rue","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '4fd7a69f-4a0e-5aa3-99bd-cc1891391ea0';
+delete from public.question_choices where question_id = '4fd7a69f-4a0e-5aa3-99bd-cc1891391ea0' and id not in ('9d4cd740-6c4b-57ad-89e6-30ad96575ecf', '6b8be2aa-57eb-5376-8393-ee373897b62f', '526710d5-d7ac-5f15-b436-4e2ed225052d');
+insert into public.question_choices (id, question_id, position, label) values ('9d4cd740-6c4b-57ad-89e6-30ad96575ecf', '4fd7a69f-4a0e-5aa3-99bd-cc1891391ea0', 0, 'Les vélos')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('6b8be2aa-57eb-5376-8393-ee373897b62f', '4fd7a69f-4a0e-5aa3-99bd-cc1891391ea0', 1, 'Les tramways')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('526710d5-d7ac-5f15-b436-4e2ed225052d', '4fd7a69f-4a0e-5aa3-99bd-cc1891391ea0', 2, 'Les taxis')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('4fd7a69f-4a0e-5aa3-99bd-cc1891391ea0', '6b8be2aa-57eb-5376-8393-ee373897b62f');
+delete from public.question_competences where question_id = '4fd7a69f-4a0e-5aa3-99bd-cc1891391ea0';
+insert into public.question_competences (question_id, competence_id) values ('4fd7a69f-4a0e-5aa3-99bd-cc1891391ea0', '22ccf1ae-d20c-5540-84d9-7af8f655864b');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('1fb6c484-70a8-572d-8daa-72020b6d23ec', 'rv-053', 'Usagers et partage de la rue', 'Dans une zone 30, la vitesse des véhicules motorisés est limitée à :', 'En zone 30, la vitesse des véhicules motorisés est limitée à 30 km/h.', '[{"title":"Le code de la rue","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/le-code-de-la-rue","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '1fb6c484-70a8-572d-8daa-72020b6d23ec';
+delete from public.question_choices where question_id = '1fb6c484-70a8-572d-8daa-72020b6d23ec' and id not in ('a6cd76f1-9513-514d-8987-f04c601e1afc', '0bf000d8-a2b0-5bc0-9758-dbbf2ee1f692');
+insert into public.question_choices (id, question_id, position, label) values ('a6cd76f1-9513-514d-8987-f04c601e1afc', '1fb6c484-70a8-572d-8daa-72020b6d23ec', 0, '50 km/h')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('0bf000d8-a2b0-5bc0-9758-dbbf2ee1f692', '1fb6c484-70a8-572d-8daa-72020b6d23ec', 1, '30 km/h')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('1fb6c484-70a8-572d-8daa-72020b6d23ec', '0bf000d8-a2b0-5bc0-9758-dbbf2ee1f692');
+delete from public.question_competences where question_id = '1fb6c484-70a8-572d-8daa-72020b6d23ec';
+insert into public.question_competences (question_id, competence_id) values ('1fb6c484-70a8-572d-8daa-72020b6d23ec', '22ccf1ae-d20c-5540-84d9-7af8f655864b');
+insert into public.question_competences (question_id, competence_id) values ('1fb6c484-70a8-572d-8daa-72020b6d23ec', 'a338089b-b643-5a4b-aa5f-17931e569ec7');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('462f53f6-9c55-55d2-9c88-74fd68fca184', 'rv-054', 'Usagers et partage de la rue', 'Dans une zone de rencontre, les piétons peuvent se déplacer :', 'En zone de rencontre, les piétons sont prioritaires (sauf sur les tramways) et peuvent se déplacer sur toute la largeur de la voirie.', '[{"title":"Le code de la rue","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/le-code-de-la-rue","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '462f53f6-9c55-55d2-9c88-74fd68fca184';
+delete from public.question_choices where question_id = '462f53f6-9c55-55d2-9c88-74fd68fca184' and id not in ('0b85d044-f731-59c4-9ddd-1d3fae20848d', '18d342bf-8302-5fa0-98e7-a83e033c367c');
+insert into public.question_choices (id, question_id, position, label) values ('0b85d044-f731-59c4-9ddd-1d3fae20848d', '462f53f6-9c55-55d2-9c88-74fd68fca184', 0, 'Sur toute la largeur de la voirie')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('18d342bf-8302-5fa0-98e7-a83e033c367c', '462f53f6-9c55-55d2-9c88-74fd68fca184', 1, 'Seulement sur les trottoirs')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('462f53f6-9c55-55d2-9c88-74fd68fca184', '0b85d044-f731-59c4-9ddd-1d3fae20848d');
+delete from public.question_competences where question_id = '462f53f6-9c55-55d2-9c88-74fd68fca184';
+insert into public.question_competences (question_id, competence_id) values ('462f53f6-9c55-55d2-9c88-74fd68fca184', '22ccf1ae-d20c-5540-84d9-7af8f655864b');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('0b3801bf-8e7b-55f5-b361-4cbdffb4e449', 'rv-055', 'Usagers et partage de la rue', 'Dans une zone 30 ou une zone de rencontre, je peux croiser des cyclistes qui roulent en sens inverse dans une rue à sens unique. C’est :', 'En zone 30 et en zone de rencontre, le double sens de circulation est quasi généralisé pour les cyclistes.', '[{"title":"Le code de la rue","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/le-code-de-la-rue","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '0b3801bf-8e7b-55f5-b361-4cbdffb4e449';
+delete from public.question_choices where question_id = '0b3801bf-8e7b-55f5-b361-4cbdffb4e449' and id not in ('e4af8b9d-3b84-53ce-8e38-767252bd711c', 'abccd2e3-9fe6-5d56-8e12-1b667eb30472');
+insert into public.question_choices (id, question_id, position, label) values ('e4af8b9d-3b84-53ce-8e38-767252bd711c', '0b3801bf-8e7b-55f5-b361-4cbdffb4e449', 0, 'Toujours interdit')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('abccd2e3-9fe6-5d56-8e12-1b667eb30472', '0b3801bf-8e7b-55f5-b361-4cbdffb4e449', 1, 'Fréquent : le double sens cyclable y est quasi généralisé')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('0b3801bf-8e7b-55f5-b361-4cbdffb4e449', 'abccd2e3-9fe6-5d56-8e12-1b667eb30472');
+delete from public.question_competences where question_id = '0b3801bf-8e7b-55f5-b361-4cbdffb4e449';
+insert into public.question_competences (question_id, competence_id) values ('0b3801bf-8e7b-55f5-b361-4cbdffb4e449', '22ccf1ae-d20c-5540-84d9-7af8f655864b');
+insert into public.question_competences (question_id, competence_id) values ('0b3801bf-8e7b-55f5-b361-4cbdffb4e449', '4d2a0934-e1b1-5172-9c6f-eacb55406515');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('95ada26f-a616-5e8a-b589-a708c03343a9', 'rv-056', 'Usagers et partage de la rue', 'Dans une zone de rencontre, un piéton traverse la chaussée hors passage piéton, devant moi. Il est prioritaire :', 'En zone de rencontre, les piétons ont la priorité sur tous les véhicules, sauf les tramways, sur toute la largeur de la voirie.', '[{"title":"Le code de la rue","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/le-code-de-la-rue","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '95ada26f-a616-5e8a-b589-a708c03343a9';
+delete from public.question_choices where question_id = '95ada26f-a616-5e8a-b589-a708c03343a9' and id not in ('7804e254-6552-55c8-82da-bce1fe5701bb', 'b3a46711-1870-50dc-8607-41cdcd037867');
+insert into public.question_choices (id, question_id, position, label) values ('7804e254-6552-55c8-82da-bce1fe5701bb', '95ada26f-a616-5e8a-b589-a708c03343a9', 0, 'Non, seulement sur un passage piéton')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('b3a46711-1870-50dc-8607-41cdcd037867', '95ada26f-a616-5e8a-b589-a708c03343a9', 1, 'Oui')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('95ada26f-a616-5e8a-b589-a708c03343a9', 'b3a46711-1870-50dc-8607-41cdcd037867');
+delete from public.question_competences where question_id = '95ada26f-a616-5e8a-b589-a708c03343a9';
+insert into public.question_competences (question_id, competence_id) values ('95ada26f-a616-5e8a-b589-a708c03343a9', '22ccf1ae-d20c-5540-84d9-7af8f655864b');
+insert into public.question_competences (question_id, competence_id) values ('95ada26f-a616-5e8a-b589-a708c03343a9', '4d2a0934-e1b1-5172-9c6f-eacb55406515');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('d5879ea6-6617-5e18-b0dc-d18582effd3c', 'rv-057', 'Croisement et dépassement', 'Sur une route de montagne, deux véhicules ne peuvent pas se croiser. Celui qui doit s’arrêter le premier est :', 'Sur les routes de montagne et à forte pente, le véhicule descendant doit s’arrêter à temps le premier.', '[{"title":"Croisement et dépassement","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/croisement-et-depassement","consulted_at":"2026-10-22","cited_articles":["R414-1 à R414-3","R414-4 à R414-17","R414-6","R414-9","R414-12","R416-6"]}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = 'd5879ea6-6617-5e18-b0dc-d18582effd3c';
+delete from public.question_choices where question_id = 'd5879ea6-6617-5e18-b0dc-d18582effd3c' and id not in ('7e9a0781-b39a-56db-84c3-2aae115d6a8e', '67ef1e06-7926-56cd-8c3b-49b3cda7f770');
+insert into public.question_choices (id, question_id, position, label) values ('7e9a0781-b39a-56db-84c3-2aae115d6a8e', 'd5879ea6-6617-5e18-b0dc-d18582effd3c', 0, 'Le véhicule qui monte')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('67ef1e06-7926-56cd-8c3b-49b3cda7f770', 'd5879ea6-6617-5e18-b0dc-d18582effd3c', 1, 'Le véhicule qui descend')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('d5879ea6-6617-5e18-b0dc-d18582effd3c', '67ef1e06-7926-56cd-8c3b-49b3cda7f770');
+delete from public.question_competences where question_id = 'd5879ea6-6617-5e18-b0dc-d18582effd3c';
+insert into public.question_competences (question_id, competence_id) values ('d5879ea6-6617-5e18-b0dc-d18582effd3c', '0fb3c8fd-0a66-5281-9a1b-fae51c48915e');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('20c7ea02-920b-561a-8391-7128d6e19841', 'rv-058', 'Croisement et dépassement', 'Un obstacle se trouve sur ma voie et une voiture arrive en face. Je :', 'Le véhicule qui a l’obstacle sur sa voie doit ralentir ou s’arrêter pour laisser passer ceux qui viennent en sens inverse.', '[{"title":"Croisement et dépassement","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/croisement-et-depassement","consulted_at":"2026-10-22","cited_articles":["R414-1 à R414-3","R414-4 à R414-17","R414-6","R414-9","R414-12","R416-6"]}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '20c7ea02-920b-561a-8391-7128d6e19841';
+delete from public.question_choices where question_id = '20c7ea02-920b-561a-8391-7128d6e19841' and id not in ('b6ee19d8-d2a7-5412-bf29-c8ef8c7f2484', 'b3b082f1-0602-528d-a890-068a0d08dd89');
+insert into public.question_choices (id, question_id, position, label) values ('b6ee19d8-d2a7-5412-bf29-c8ef8c7f2484', '20c7ea02-920b-561a-8391-7128d6e19841', 0, 'Ralentis ou m’arrête pour la laisser passer')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('b3b082f1-0602-528d-a890-068a0d08dd89', '20c7ea02-920b-561a-8391-7128d6e19841', 1, 'Passe : c’est à elle de s’écarter')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('20c7ea02-920b-561a-8391-7128d6e19841', 'b6ee19d8-d2a7-5412-bf29-c8ef8c7f2484');
+delete from public.question_competences where question_id = '20c7ea02-920b-561a-8391-7128d6e19841';
+insert into public.question_competences (question_id, competence_id) values ('20c7ea02-920b-561a-8391-7128d6e19841', '0fb3c8fd-0a66-5281-9a1b-fae51c48915e');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('f0cff911-9e41-5519-ac59-d3a818dfc2bc', 'rv-059', 'Croisement et dépassement', 'Sur une route étroite, le croisement est impossible et l’un des deux doit reculer : ma voiture ou un poids lourd. Recule :', 'Quand il faut reculer, un véhicule léger recule devant un véhicule lourd.', '[{"title":"Croisement et dépassement","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/croisement-et-depassement","consulted_at":"2026-10-22","cited_articles":["R414-1 à R414-3","R414-4 à R414-17","R414-6","R414-9","R414-12","R416-6"]}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = 'f0cff911-9e41-5519-ac59-d3a818dfc2bc';
+delete from public.question_choices where question_id = 'f0cff911-9e41-5519-ac59-d3a818dfc2bc' and id not in ('51bf9956-3708-5673-954d-5f5c5bca55e8', '1a077fd3-6cb9-53cd-9029-e00b8174c4aa');
+insert into public.question_choices (id, question_id, position, label) values ('51bf9956-3708-5673-954d-5f5c5bca55e8', 'f0cff911-9e41-5519-ac59-d3a818dfc2bc', 0, 'Ma voiture')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('1a077fd3-6cb9-53cd-9029-e00b8174c4aa', 'f0cff911-9e41-5519-ac59-d3a818dfc2bc', 1, 'Le poids lourd')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('f0cff911-9e41-5519-ac59-d3a818dfc2bc', '51bf9956-3708-5673-954d-5f5c5bca55e8');
+delete from public.question_competences where question_id = 'f0cff911-9e41-5519-ac59-d3a818dfc2bc';
+insert into public.question_competences (question_id, competence_id) values ('f0cff911-9e41-5519-ac59-d3a818dfc2bc', '0fb3c8fd-0a66-5281-9a1b-fae51c48915e');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('7d607d6f-8707-535a-9b49-ac83295b542a', 'rv-060', 'Croisement et dépassement', 'Je viens de dépasser une voiture. Je me rabats :', 'Après un dépassement par la gauche, on revient sur sa droite sans provoquer le ralentissement du véhicule dépassé.', '[{"title":"Croisement et dépassement","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/croisement-et-depassement","consulted_at":"2026-10-22","cited_articles":["R414-1 à R414-3","R414-4 à R414-17","R414-6","R414-9","R414-12","R416-6"]}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '7d607d6f-8707-535a-9b49-ac83295b542a';
+delete from public.question_choices where question_id = '7d607d6f-8707-535a-9b49-ac83295b542a' and id not in ('c28cfdcd-c634-5297-a6f9-7aa7cf0a66a9', '266e59f2-b3ec-5b2e-ab8b-e9fe4a7dcb1e');
+insert into public.question_choices (id, question_id, position, label) values ('c28cfdcd-c634-5297-a6f9-7aa7cf0a66a9', '7d607d6f-8707-535a-9b49-ac83295b542a', 0, 'Sans l’obliger à ralentir')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('266e59f2-b3ec-5b2e-ab8b-e9fe4a7dcb1e', '7d607d6f-8707-535a-9b49-ac83295b542a', 1, 'Juste devant elle, même si elle doit freiner')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('7d607d6f-8707-535a-9b49-ac83295b542a', 'c28cfdcd-c634-5297-a6f9-7aa7cf0a66a9');
+delete from public.question_competences where question_id = '7d607d6f-8707-535a-9b49-ac83295b542a';
+insert into public.question_competences (question_id, competence_id) values ('7d607d6f-8707-535a-9b49-ac83295b542a', '826bd571-a74b-5e7b-ba38-3d612ce34756');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('30cb633d-b44c-5bf1-9321-6ea7fddf4305', 'rv-061', 'Croisement et dépassement', 'J’arrive à une traversée de voie ferrée sans barrières ni demi-barrières. Je peux y dépasser :', 'Tout dépassement est interdit aux traversées de voies ferrées qui ne sont pas munies de barrières ou de demi-barrières.', '[{"title":"Croisement et dépassement","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/croisement-et-depassement","consulted_at":"2026-10-22","cited_articles":["R414-1 à R414-3","R414-4 à R414-17","R414-6","R414-9","R414-12","R416-6"]}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '30cb633d-b44c-5bf1-9321-6ea7fddf4305';
+delete from public.question_choices where question_id = '30cb633d-b44c-5bf1-9321-6ea7fddf4305' and id not in ('a60b183c-98ea-59c2-be3f-3b29829eec08', '4c793c82-f2ff-5f1e-ab43-f05fe2d91e9a');
+insert into public.question_choices (id, question_id, position, label) values ('a60b183c-98ea-59c2-be3f-3b29829eec08', '30cb633d-b44c-5bf1-9321-6ea7fddf4305', 0, 'Non, c’est interdit')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('4c793c82-f2ff-5f1e-ab43-f05fe2d91e9a', '30cb633d-b44c-5bf1-9321-6ea7fddf4305', 1, 'Oui, si aucun train n’est visible')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('30cb633d-b44c-5bf1-9321-6ea7fddf4305', 'a60b183c-98ea-59c2-be3f-3b29829eec08');
+delete from public.question_competences where question_id = '30cb633d-b44c-5bf1-9321-6ea7fddf4305';
+insert into public.question_competences (question_id, competence_id) values ('30cb633d-b44c-5bf1-9321-6ea7fddf4305', '826bd571-a74b-5e7b-ba38-3d612ce34756');
+insert into public.question_competences (question_id, competence_id) values ('30cb633d-b44c-5bf1-9321-6ea7fddf4305', 'a8754ce0-1402-5b0e-b697-869bd4098e21');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('113f67dd-bb00-5969-803f-1dd856e739cb', 'rv-062', 'Croisement et dépassement', 'Sur une route à double sens comportant trois voies, pour dépasser, je peux utiliser la voie la plus à gauche :', 'Si la route comporte plus de deux voies, le conducteur qui dépasse ne doit pas utiliser celle qui est le plus à gauche.', '[{"title":"Croisement et dépassement","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/croisement-et-depassement","consulted_at":"2026-10-22","cited_articles":["R414-1 à R414-3","R414-4 à R414-17","R414-6","R414-9","R414-12","R416-6"]}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '113f67dd-bb00-5969-803f-1dd856e739cb';
+delete from public.question_choices where question_id = '113f67dd-bb00-5969-803f-1dd856e739cb' and id not in ('0603b889-013c-5e5c-806a-6f59cd9f887b', 'f6be41a7-261f-526b-87b1-31e365b1a80d');
+insert into public.question_choices (id, question_id, position, label) values ('0603b889-013c-5e5c-806a-6f59cd9f887b', '113f67dd-bb00-5969-803f-1dd856e739cb', 0, 'Oui, si elle est libre')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('f6be41a7-261f-526b-87b1-31e365b1a80d', '113f67dd-bb00-5969-803f-1dd856e739cb', 1, 'Non')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('113f67dd-bb00-5969-803f-1dd856e739cb', 'f6be41a7-261f-526b-87b1-31e365b1a80d');
+delete from public.question_competences where question_id = '113f67dd-bb00-5969-803f-1dd856e739cb';
+insert into public.question_competences (question_id, competence_id) values ('113f67dd-bb00-5969-803f-1dd856e739cb', '826bd571-a74b-5e7b-ba38-3d612ce34756');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('d48177cb-a21e-57e0-b07a-2fc33c50d64f', 'rv-063', 'Croisement et dépassement', 'En agglomération, je croise un autobus et le croisement est difficile. Je :', 'En agglomération, on s’arrête si le croisement est difficile pour laisser passer les véhicules de transport en commun.', '[{"title":"Croisement et dépassement","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/croisement-et-depassement","consulted_at":"2026-10-22","cited_articles":["R414-1 à R414-3","R414-4 à R414-17","R414-6","R414-9","R414-12","R416-6"]},{"title":"Intersections et priorités","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/intersections-et-priorites","consulted_at":"2026-10-22","cited_articles":["R415-1","R415-2","R415-5","R415-12","R311-1","R433-17"]}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = 'd48177cb-a21e-57e0-b07a-2fc33c50d64f';
+delete from public.question_choices where question_id = 'd48177cb-a21e-57e0-b07a-2fc33c50d64f' and id not in ('a03a3e75-8751-5679-b9c7-c5cead4b52b9', '8f214bcd-5bed-5d44-afb3-4a28d634af30');
+insert into public.question_choices (id, question_id, position, label) values ('a03a3e75-8751-5679-b9c7-c5cead4b52b9', 'd48177cb-a21e-57e0-b07a-2fc33c50d64f', 0, 'M’arrête pour le laisser passer')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('8f214bcd-5bed-5d44-afb3-4a28d634af30', 'd48177cb-a21e-57e0-b07a-2fc33c50d64f', 1, 'Force le passage, je suis sur ma voie')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('d48177cb-a21e-57e0-b07a-2fc33c50d64f', 'a03a3e75-8751-5679-b9c7-c5cead4b52b9');
+delete from public.question_competences where question_id = 'd48177cb-a21e-57e0-b07a-2fc33c50d64f';
+insert into public.question_competences (question_id, competence_id) values ('d48177cb-a21e-57e0-b07a-2fc33c50d64f', '0fb3c8fd-0a66-5281-9a1b-fae51c48915e');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('b005bac4-16e3-519b-b2d1-2c6b99b50b7b', 'rv-064', 'Croisement et dépassement', 'Je croise une voiture qui a un chargement très large et la route est trop étroite pour deux. Les conducteurs :', 'Si la largeur ne permet pas le croisement à cause de la taille ou du chargement de l’un des véhicules, les conducteurs ralentissent et, si besoin, s’arrêtent ou se garent.', '[{"title":"Croisement et dépassement","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/croisement-et-depassement","consulted_at":"2026-10-22","cited_articles":["R414-1 à R414-3","R414-4 à R414-17","R414-6","R414-9","R414-12","R416-6"]}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = 'b005bac4-16e3-519b-b2d1-2c6b99b50b7b';
+delete from public.question_choices where question_id = 'b005bac4-16e3-519b-b2d1-2c6b99b50b7b' and id not in ('cb2627cc-9e3c-519f-9244-ba57ea03bdf5', '6c55aa87-66e8-573e-82e0-35f7ef493b3d');
+insert into public.question_choices (id, question_id, position, label) values ('cb2627cc-9e3c-519f-9244-ba57ea03bdf5', 'b005bac4-16e3-519b-b2d1-2c6b99b50b7b', 0, 'Réduisent leur vitesse et, si besoin, s’arrêtent ou se garent')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('6c55aa87-66e8-573e-82e0-35f7ef493b3d', 'b005bac4-16e3-519b-b2d1-2c6b99b50b7b', 1, 'Continuent : le plus large doit reculer')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('b005bac4-16e3-519b-b2d1-2c6b99b50b7b', 'cb2627cc-9e3c-519f-9244-ba57ea03bdf5');
+delete from public.question_competences where question_id = 'b005bac4-16e3-519b-b2d1-2c6b99b50b7b';
+insert into public.question_competences (question_id, competence_id) values ('b005bac4-16e3-519b-b2d1-2c6b99b50b7b', '0fb3c8fd-0a66-5281-9a1b-fae51c48915e');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('be176f0a-3fd7-58bd-9812-fa2f489637d4', 'rv-065', 'Autoroute', 'Sur autoroute, je peux circuler ou m’arrêter sur la bande centrale qui sépare les chaussées :', 'Il est interdit de circuler, de s’arrêter ou de stationner sur la bande centrale séparative des chaussées (amende de 4e classe).', '[{"title":"Autoroute","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/autoroute","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = 'be176f0a-3fd7-58bd-9812-fa2f489637d4';
+delete from public.question_choices where question_id = 'be176f0a-3fd7-58bd-9812-fa2f489637d4' and id not in ('6cd17fea-cce9-5f5e-9e78-063c35506fc7', 'c237329c-f100-531b-a46a-e8667c2947e1');
+insert into public.question_choices (id, question_id, position, label) values ('6cd17fea-cce9-5f5e-9e78-063c35506fc7', 'be176f0a-3fd7-58bd-9812-fa2f489637d4', 0, 'Oui, en cas de bouchon')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('c237329c-f100-531b-a46a-e8667c2947e1', 'be176f0a-3fd7-58bd-9812-fa2f489637d4', 1, 'Non, jamais')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('be176f0a-3fd7-58bd-9812-fa2f489637d4', 'c237329c-f100-531b-a46a-e8667c2947e1');
+delete from public.question_competences where question_id = 'be176f0a-3fd7-58bd-9812-fa2f489637d4';
+insert into public.question_competences (question_id, competence_id) values ('be176f0a-3fd7-58bd-9812-fa2f489637d4', '4a75d17c-eda5-5f78-8dfd-d1fca5ba8560');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('fb100aa3-5e1b-565a-9635-73c88766dd91', 'rv-066', 'Autoroute', 'Faire demi-tour sur autoroute entraîne de plein droit un retrait de :', 'Le demi-tour et la marche arrière sur autoroute sont punis d’une amende de 4e classe et du retrait de plein droit de 4 points.', '[{"title":"Autoroute","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/autoroute","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = 'fb100aa3-5e1b-565a-9635-73c88766dd91';
+delete from public.question_choices where question_id = 'fb100aa3-5e1b-565a-9635-73c88766dd91' and id not in ('32e0a21e-4a91-5378-b2b0-774de0c5978d', '083a2153-a480-5811-a383-40ec31940293', '4cac3613-3c73-5be1-95c0-3d3bdd0cce6a');
+insert into public.question_choices (id, question_id, position, label) values ('32e0a21e-4a91-5378-b2b0-774de0c5978d', 'fb100aa3-5e1b-565a-9635-73c88766dd91', 0, '4 points')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('083a2153-a480-5811-a383-40ec31940293', 'fb100aa3-5e1b-565a-9635-73c88766dd91', 1, '1 point')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('4cac3613-3c73-5be1-95c0-3d3bdd0cce6a', 'fb100aa3-5e1b-565a-9635-73c88766dd91', 2, 'Aucun point')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('fb100aa3-5e1b-565a-9635-73c88766dd91', '32e0a21e-4a91-5378-b2b0-774de0c5978d');
+delete from public.question_competences where question_id = 'fb100aa3-5e1b-565a-9635-73c88766dd91';
+insert into public.question_competences (question_id, competence_id) values ('fb100aa3-5e1b-565a-9635-73c88766dd91', '4a75d17c-eda5-5f78-8dfd-d1fca5ba8560');
+insert into public.questions (id, external_ref, topic, prompt, explanation, sources, status, reviewer_name, reviewed_at, lesson_id, is_demo, exam_eligible)
+values ('7b5fde16-f019-570f-9a20-c5e9a3877acf', 'rv-067', 'Autoroute', 'Je rejoins l’autoroute par une bretelle de raccordement. Les véhicules qui circulent sur l’autoroute :', 'Le conducteur qui rejoint l’autoroute par une bretelle doit céder le passage aux véhicules qui y circulent.', '[{"title":"Autoroute","publisher":"Sécurité routière (securite-routiere.gouv.fr)","url":"https://www.securite-routiere.gouv.fr/reglementation-liee-la-route/autoroute","consulted_at":"2026-10-22"}]'::jsonb, 'in_review'::public.content_status, null, null, null, false, true)
+on conflict (id) do update set external_ref = excluded.external_ref, topic = excluded.topic, prompt = excluded.prompt,
+  explanation = excluded.explanation, sources = excluded.sources, status = excluded.status,
+  reviewer_name = excluded.reviewer_name, reviewed_at = excluded.reviewed_at, lesson_id = excluded.lesson_id,
+  is_demo = excluded.is_demo, exam_eligible = excluded.exam_eligible;
+delete from public.question_answers where question_id = '7b5fde16-f019-570f-9a20-c5e9a3877acf';
+delete from public.question_choices where question_id = '7b5fde16-f019-570f-9a20-c5e9a3877acf' and id not in ('e6865c25-4bc0-54c7-a722-e66064326f10', '23600cff-53f2-5e5d-99d5-5e3a16dffbdb');
+insert into public.question_choices (id, question_id, position, label) values ('e6865c25-4bc0-54c7-a722-e66064326f10', '7b5fde16-f019-570f-9a20-c5e9a3877acf', 0, 'Doivent me laisser la place')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_choices (id, question_id, position, label) values ('23600cff-53f2-5e5d-99d5-5e3a16dffbdb', '7b5fde16-f019-570f-9a20-c5e9a3877acf', 1, 'Sont prioritaires : je leur cède le passage')
+on conflict (id) do update set position = excluded.position, label = excluded.label;
+insert into public.question_answers (question_id, choice_id) values ('7b5fde16-f019-570f-9a20-c5e9a3877acf', '23600cff-53f2-5e5d-99d5-5e3a16dffbdb');
+delete from public.question_competences where question_id = '7b5fde16-f019-570f-9a20-c5e9a3877acf';
+insert into public.question_competences (question_id, competence_id) values ('7b5fde16-f019-570f-9a20-c5e9a3877acf', '4a75d17c-eda5-5f78-8dfd-d1fca5ba8560');
 
 commit;

@@ -61,6 +61,26 @@ thème annoncé par la page des thèmes.
 Les articles n’ont pas été relus sur Légifrance, qui refuse l’accès
 automatisé depuis l’environnement de développement.
 
+### Relecture du 27/10/2026 (questions `rv-001` à `rv-067`)
+
+Les 67 questions de `content/questions/revision.json` s’appuient sur les
+pages Arrêt et stationnement (sections dépliées : stationnement dangereux,
+très gênant, gênant, abusif), Croisement et dépassement, Autoroute, Le code
+de la rue, Passage à niveau, Conduire dans un tunnel, Brouillard,
+Éco-conduite et Intersections et priorités, **relues intégralement le
+27/10/2026**. Ce jour-là, `www.securite-routiere.gouv.fr` ne répondait pas
+(réponse vide) ; les pages ont été lues sur
+`validation.securite-routiere.gouv.fr`, qui sert les mêmes pages, aux mêmes
+adresses, pour le même éditeur. **[À VÉRIFIER]** : comparer avec
+`www.securite-routiere.gouv.fr` quand le site répond de nouveau. Les liens
+affichés restent ceux de `www`.
+
+Écartés volontairement : chiffres datés de la page Éco-conduite (bonus
+écologique 2018, malus), et tout élément sans source lue (forme et couleur
+des panneaux de danger ou d’interdiction, sens des feux tricolores) : la
+page « Signalisation routière » ne renvoie qu’à l’arrêté du 24 novembre
+1967 et à l’instruction interministérielle, non consultables ici.
+
 ## Points tranchés ou écartés
 
 - **Distance du triangle** : la page Sécurité routière « Équipements

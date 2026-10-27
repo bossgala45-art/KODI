@@ -1,0 +1,1951 @@
+{
+  "questions": [
+    {
+      "id": "rv-001",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Signalisation",
+      "prompt": "Au milieu de la chaussée, une ligne de dissuasion sépare les deux sens de circulation. Je peux dépasser :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Aucun véhicule"
+        },
+        {
+          "id": "b",
+          "label": "Uniquement les véhicules lents"
+        },
+        {
+          "id": "c",
+          "label": "Tous les véhicules"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "La ligne de dissuasion n’autorise que le dépassement des véhicules lents.",
+      "sources": [
+        "depassement"
+      ],
+      "competenceIds": [
+        "c-marquages",
+        "c-depasser"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-002",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Signalisation",
+      "prompt": "La ligne au milieu de la chaussée est discontinue. Si toutes les autres conditions de sécurité sont réunies, le dépassement est :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Interdit"
+        },
+        {
+          "id": "b",
+          "label": "Autorisé"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Une ligne discontinue autorise le dépassement, à condition de pouvoir le faire sans danger.",
+      "sources": [
+        "depassement"
+      ],
+      "competenceIds": [
+        "c-marquages",
+        "c-depasser"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-003",
+      "status": "a-verifier",
+      "kind": "multiple",
+      "topic": "Signalisation",
+      "prompt": "Des flèches de rabattement sont peintes au sol. Elles annoncent (2 réponses) :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Une place de stationnement"
+        },
+        {
+          "id": "b",
+          "label": "Une ligne continue"
+        },
+        {
+          "id": "c",
+          "label": "La fin d’un créneau de dépassement"
+        }
+      ],
+      "correct": [
+        "b",
+        "c"
+      ],
+      "explanation": "Les flèches de rabattement annoncent une ligne continue ou la fin d’un créneau de dépassement : il faut renoncer à dépasser dès la première flèche.",
+      "sources": [
+        "depassement"
+      ],
+      "competenceIds": [
+        "c-marquages"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-004",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Signalisation",
+      "prompt": "Avant un passage étroit, un panneau m’oblige à céder le passage aux véhicules venant en sens inverse. Personne n’arrive en face. Je :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Dois m’arrêter quand même"
+        },
+        {
+          "id": "b",
+          "label": "Peux m’engager sans m’arrêter"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Céder le passage n’oblige pas à s’arrêter : si personne n’arrive en face, on peut s’engager.",
+      "sources": [
+        "depassement"
+      ],
+      "competenceIds": [
+        "c-panneaux-feux",
+        "c-croiser"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-005",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Signalisation",
+      "prompt": "Avant un passage étroit, un panneau me donne la priorité sur les véhicules venant en sens inverse. Une voiture y est déjà engagée en face. Je :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "La laisse passer"
+        },
+        {
+          "id": "b",
+          "label": "Passe, puisque je suis prioritaire"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Avoir la priorité n’est pas un droit absolu : si un usager est déjà engagé dans le rétrécissement, on le laisse passer.",
+      "sources": [
+        "depassement"
+      ],
+      "competenceIds": [
+        "c-panneaux-feux",
+        "c-croiser"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-006",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Signalisation",
+      "prompt": "Un passage à niveau sans barrières est annoncé par :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Un feu vert"
+        },
+        {
+          "id": "b",
+          "label": "Aucune signalisation particulière"
+        },
+        {
+          "id": "c",
+          "label": "Une croix de Saint-André"
+        }
+      ],
+      "correct": [
+        "c"
+      ],
+      "explanation": "Les passages à niveau sans barrières sont annoncés par une croix de Saint-André. Tout passage à niveau est annoncé par un panneau.",
+      "sources": [
+        "passageNiveau"
+      ],
+      "competenceIds": [
+        "c-panneaux-feux",
+        "c-passages-niveau"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-007",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Signalisation",
+      "prompt": "Dans un tunnel, les issues de secours sont indiquées par des panneaux :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Rectangulaires, munis de néon vert"
+        },
+        {
+          "id": "b",
+          "label": "Ronds, à bord rouge"
+        },
+        {
+          "id": "c",
+          "label": "Triangulaires, sur fond jaune"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Les issues de secours, tous les 200 à 300 mètres, sont indiquées par des panneaux rectangulaires munis de néon vert.",
+      "sources": [
+        "tunnel"
+      ],
+      "competenceIds": [
+        "c-panneaux-feux",
+        "c-tunnels"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-008",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Signalisation",
+      "prompt": "Dans un tunnel, un feu rouge clignote devant moi. Je :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Continue prudemment : seul le feu rouge fixe impose l’arrêt"
+        },
+        {
+          "id": "b",
+          "label": "M’arrête : l’arrêt est absolu au feu rouge, fixe ou clignotant"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Dans un tunnel, l’arrêt au feu rouge est absolu, qu’il soit fixe ou clignotant.",
+      "sources": [
+        "tunnel"
+      ],
+      "competenceIds": [
+        "c-panneaux-feux",
+        "c-tunnels"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-009",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Signalisation",
+      "prompt": "Sur autoroute, une sortie que je veux prendre est annoncée. J’ai rejoint la bonne voie au plus tard :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Après le début de la bretelle"
+        },
+        {
+          "id": "b",
+          "label": "Quand j’atteins les signaux placés au début de la bretelle"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Le changement de voie doit être achevé au plus tard au moment où l’on atteint les signaux placés au début de la bretelle ou de la bifurcation.",
+      "sources": [
+        "autoroute"
+      ],
+      "competenceIds": [
+        "c-panneaux-feux",
+        "c-autoroute"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-010",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Signalisation",
+      "prompt": "Je stationne près d’un feu de circulation et mon véhicule, assez haut, le cache à la vue des autres usagers. Ce stationnement est :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Autorisé"
+        },
+        {
+          "id": "b",
+          "label": "Très gênant"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Masquer un feu ou un panneau à la vue des usagers rend le stationnement très gênant (amende de 4e classe).",
+      "sources": [
+        "stationnement"
+      ],
+      "competenceIds": [
+        "c-panneaux-feux",
+        "c-stationner"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-011",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Signalisation",
+      "prompt": "À une intersection, le feu fonctionne et il est vert pour moi. Un panneau donne une autre règle. Je respecte :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Le feu"
+        },
+        {
+          "id": "b",
+          "label": "Le panneau"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Les feux priment sur les panneaux. Si le feu ne fonctionne pas, on applique la règle indiquée par le panneau. Un agent prime sur les deux.",
+      "sources": [
+        "priorites"
+      ],
+      "competenceIds": [
+        "c-panneaux-feux",
+        "c-priorite-intersection"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-012",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Signalisation",
+      "prompt": "Une ligne continue longe le bord droit de la route. Je m’arrête entre le bord et cette ligne, et les autres ne peuvent plus passer sans la chevaucher. Cet arrêt est :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Gênant"
+        },
+        {
+          "id": "b",
+          "label": "Autorisé"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "L’arrêt entre le bord de la route et une ligne continue est gênant quand la place restante oblige les autres à franchir ou chevaucher la ligne.",
+      "sources": [
+        "stationnement"
+      ],
+      "competenceIds": [
+        "c-marquages",
+        "c-stationner"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-013",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Signalisation",
+      "prompt": "Dans un tunnel, des signaux indiquent quelles voies sont ouvertes. Je dois :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Les respecter"
+        },
+        {
+          "id": "b",
+          "label": "Les ignorer si le tunnel est vide"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "En entrant dans un tunnel, il faut respecter les signaux d’affectation des voies.",
+      "sources": [
+        "tunnel"
+      ],
+      "competenceIds": [
+        "c-panneaux-feux",
+        "c-tunnels"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-014",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Arrêt et stationnement",
+      "prompt": "Sur une route à sens unique, je peux stationner :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Uniquement à droite"
+        },
+        {
+          "id": "b",
+          "label": "À droite ou à gauche"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Sur une route à double sens, on stationne à droite ; sur une route à sens unique, à droite ou à gauche.",
+      "sources": [
+        "stationnement"
+      ],
+      "competenceIds": [
+        "c-stationner"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-015",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Arrêt et stationnement",
+      "prompt": "Hors agglomération, je m’arrête :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Au milieu de ma voie, avec les feux de détresse"
+        },
+        {
+          "id": "b",
+          "label": "Autant que possible hors de la chaussée, sur le bord de la route"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Hors agglomération, l’arrêt et le stationnement se font autant que possible sur le bord de la route (ou l’accotement si le sol s’y prête), pour ne pas gêner.",
+      "sources": [
+        "stationnement"
+      ],
+      "competenceIds": [
+        "c-stationner"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-016",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Arrêt et stationnement",
+      "prompt": "Je m’arrête juste après un virage, là où la visibilité est insuffisante. Cet arrêt est :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Simplement gênant"
+        },
+        {
+          "id": "b",
+          "label": "Autorisé s’il est bref"
+        },
+        {
+          "id": "c",
+          "label": "Dangereux"
+        }
+      ],
+      "correct": [
+        "c"
+      ],
+      "explanation": "L’arrêt près d’un virage, d’une intersection, d’un sommet de côte ou d’un passage à niveau, quand la visibilité est insuffisante, est dangereux.",
+      "sources": [
+        "stationnement"
+      ],
+      "competenceIds": [
+        "c-stationner"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-017",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Arrêt et stationnement",
+      "prompt": "Un arrêt ou un stationnement dangereux entraîne de plein droit un retrait de :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "1 point"
+        },
+        {
+          "id": "b",
+          "label": "3 points"
+        },
+        {
+          "id": "c",
+          "label": "6 points"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Le stationnement dangereux est puni d’une amende de 4e classe et entraîne de plein droit le retrait de 3 points.",
+      "sources": [
+        "stationnement"
+      ],
+      "competenceIds": [
+        "c-stationner"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-018",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Arrêt et stationnement",
+      "prompt": "Sans carte mobilité inclusion, je me gare sur une place réservée aux personnes handicapées. Ce stationnement est :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Très gênant"
+        },
+        {
+          "id": "b",
+          "label": "Autorisé pour quelques minutes"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Occuper un emplacement réservé aux véhicules portant la carte mobilité inclusion « stationnement pour personnes handicapées » est très gênant.",
+      "sources": [
+        "stationnement"
+      ],
+      "competenceIds": [
+        "c-stationner"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-019",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Arrêt et stationnement",
+      "prompt": "Je m’arrête sur un passage piéton le temps de déposer un passager. C’est :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Autorisé si je reste au volant"
+        },
+        {
+          "id": "b",
+          "label": "Très gênant"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Un véhicule à l’arrêt ou en stationnement sur un passage piéton est en situation très gênante.",
+      "sources": [
+        "stationnement"
+      ],
+      "competenceIds": [
+        "c-stationner",
+        "c-usagers-vulnerables"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-020",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Arrêt et stationnement",
+      "prompt": "En voiture, je stationne 3 mètres avant un passage piéton, dans le sens de la circulation, hors emplacement matérialisé. C’est :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Très gênant"
+        },
+        {
+          "id": "b",
+          "label": "Autorisé"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Pour un véhicule motorisé (sauf motos, tricycles et cyclomoteurs), stationner dans les 5 mètres en amont d’un passage piéton, hors emplacement matérialisé, est très gênant.",
+      "sources": [
+        "stationnement"
+      ],
+      "competenceIds": [
+        "c-stationner",
+        "c-usagers-vulnerables"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-021",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Arrêt et stationnement",
+      "prompt": "Je m’arrête en double file avec ma voiture, feux de détresse allumés. Cet arrêt est :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Autorisé grâce aux feux de détresse"
+        },
+        {
+          "id": "b",
+          "label": "Gênant"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "L’arrêt ou le stationnement en double file est gênant, sauf pour les vélos, cyclomoteurs à deux roues et motos. Les feux de détresse n’y changent rien.",
+      "sources": [
+        "stationnement"
+      ],
+      "competenceIds": [
+        "c-stationner"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-022",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Arrêt et stationnement",
+      "prompt": "Sauf arrêté fixant une durée plus courte, un stationnement ininterrompu au même endroit de la voie publique devient abusif au-delà de :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "24 heures"
+        },
+        {
+          "id": "b",
+          "label": "7 jours"
+        },
+        {
+          "id": "c",
+          "label": "30 jours"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Le stationnement est abusif au-delà de sept jours sans interruption au même point, ou d’une durée plus courte fixée par arrêté.",
+      "sources": [
+        "stationnement"
+      ],
+      "competenceIds": [
+        "c-stationner"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-023",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Arrêt et stationnement",
+      "prompt": "Avant de m’éloigner de ma voiture stationnée, je dois :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Prendre les précautions nécessaires pour éviter tout risque d’accident dû à mon absence"
+        },
+        {
+          "id": "b",
+          "label": "Seulement verrouiller les portières"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Le conducteur ne peut s’éloigner qu’après avoir pris toutes les précautions nécessaires pour prévenir un accident du fait de son absence.",
+      "sources": [
+        "stationnement"
+      ],
+      "competenceIds": [
+        "c-stationner"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-024",
+      "status": "a-verifier",
+      "kind": "multiple",
+      "topic": "Arrêt et stationnement",
+      "prompt": "Ma voiture est garée de façon gênante et je suis absent. Elle peut être (2 réponses) :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Immobilisée"
+        },
+        {
+          "id": "b",
+          "label": "Mise en fourrière"
+        },
+        {
+          "id": "c",
+          "label": "Laissée sur place : rien n’est possible sans moi"
+        }
+      ],
+      "correct": [
+        "a",
+        "b"
+      ],
+      "explanation": "Si le conducteur est absent ou refuse de déplacer son véhicule, l’immobilisation et la mise en fourrière peuvent être prescrites.",
+      "sources": [
+        "stationnement"
+      ],
+      "competenceIds": [
+        "c-stationner"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-025",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Arrêt et stationnement",
+      "prompt": "Dans une zone de rencontre, je peux stationner :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Partout, puisque la vitesse y est faible"
+        },
+        {
+          "id": "b",
+          "label": "Seulement sur les emplacements aménagés"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "En zone de rencontre, l’arrêt ou le stationnement en dehors des emplacements aménagés est gênant.",
+      "sources": [
+        "stationnement"
+      ],
+      "competenceIds": [
+        "c-stationner",
+        "c-zones-apaisees"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-026",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Arrêt et stationnement",
+      "prompt": "Sauf disposition contraire de l’autorité, s’arrêter sur un pont ou dans un tunnel est :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Gênant"
+        },
+        {
+          "id": "b",
+          "label": "Autorisé"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "L’arrêt ou le stationnement sur les ponts, dans les passages souterrains, les tunnels et sous les passages supérieurs est gênant, sauf dispositions différentes.",
+      "sources": [
+        "stationnement"
+      ],
+      "competenceIds": [
+        "c-stationner"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-027",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Arrêt et stationnement",
+      "prompt": "Je me gare devant l’entrée d’un immeuble riverain. Ce stationnement est :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Autorisé la nuit"
+        },
+        {
+          "id": "b",
+          "label": "Gênant"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Le stationnement devant les entrées des immeubles riverains est considéré comme gênant.",
+      "sources": [
+        "stationnement"
+      ],
+      "competenceIds": [
+        "c-stationner"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-028",
+      "status": "a-verifier",
+      "kind": "multiple",
+      "topic": "Écoconduite",
+      "prompt": "Des pneus sous-gonflés entraînent (2 réponses) :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Une surconsommation de carburant"
+        },
+        {
+          "id": "b",
+          "label": "Une meilleure adhérence"
+        },
+        {
+          "id": "c",
+          "label": "Une moins bonne tenue de route"
+        }
+      ],
+      "correct": [
+        "a",
+        "c"
+      ],
+      "explanation": "Des pneus sous-gonflés, c’est du carburant en plus et une moins bonne tenue de route : on vérifie leur pression avant de partir.",
+      "sources": [
+        "eco"
+      ],
+      "competenceIds": [
+        "c-ecoconduite"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-029",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Écoconduite",
+      "prompt": "Un véhicule mal entretenu peut consommer davantage de carburant, jusqu’à :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "2 %"
+        },
+        {
+          "id": "b",
+          "label": "25 %"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Un véhicule mal entretenu peut entraîner une surconsommation allant jusqu’à 25 %.",
+      "sources": [
+        "eco"
+      ],
+      "competenceIds": [
+        "c-ecoconduite"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-030",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Écoconduite",
+      "prompt": "Je laisse mon coffre de toit en place alors qu’il est vide. Cela peut augmenter ma consommation de :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "10 à 15 %"
+        },
+        {
+          "id": "b",
+          "label": "Moins de 1 %"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Un coffre de toit laissé en place après usage entraîne une surconsommation de 10 à 15 % : on le démonte.",
+      "sources": [
+        "eco"
+      ],
+      "competenceIds": [
+        "c-ecoconduite"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-031",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Écoconduite",
+      "prompt": "Je dois rester à l’arrêt plus de 20 secondes. Pour consommer moins :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Je laisse tourner le moteur au ralenti"
+        },
+        {
+          "id": "b",
+          "label": "Je coupe le moteur"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Arrêter puis redémarrer consomme moins que laisser tourner le moteur au ralenti plus de 20 secondes.",
+      "sources": [
+        "eco"
+      ],
+      "competenceIds": [
+        "c-ecoconduite"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-032",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Écoconduite",
+      "prompt": "En ville, la climatisation peut augmenter la consommation de carburant jusqu’à :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "25 %"
+        },
+        {
+          "id": "b",
+          "label": "3 %"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "La surconsommation due à la climatisation peut atteindre 10 % sur route et 25 % en ville.",
+      "sources": [
+        "eco"
+      ],
+      "competenceIds": [
+        "c-ecoconduite"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-033",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Écoconduite",
+      "prompt": "Rouler 10 km/h moins vite sur un trajet de 500 km permet d’économiser jusqu’à :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "50 litres de carburant"
+        },
+        {
+          "id": "b",
+          "label": "5 litres de carburant"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "10 km/h en moins permettent d’économiser jusqu’à 5 litres et de réduire de 12,5 % les émissions de CO2 sur 500 km.",
+      "sources": [
+        "eco"
+      ],
+      "competenceIds": [
+        "c-ecoconduite"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-034",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Écoconduite",
+      "prompt": "Je laisse le moteur monter haut dans les tours avant de changer de rapport. Ces sur-régimes peuvent entraîner une surconsommation de :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "1 %"
+        },
+        {
+          "id": "b",
+          "label": "20 %"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Démarrer en douceur et passer sans attendre le rapport supérieur évite les sur-régimes, qui occasionnent environ 20 % de surconsommation.",
+      "sources": [
+        "eco"
+      ],
+      "competenceIds": [
+        "c-ecoconduite"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-035",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Tunnels et passages à niveau",
+      "prompt": "Dans un tunnel, la distance à garder avec le véhicule devant moi, même à l’arrêt, est de :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "2 à 5 mètres"
+        },
+        {
+          "id": "b",
+          "label": "70 à 150 mètres"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Dans un tunnel, on respecte les distances de sécurité même à l’arrêt (70 à 150 mètres) : elles sont nécessaires à l’intervention des secours.",
+      "sources": [
+        "tunnel"
+      ],
+      "competenceIds": [
+        "c-tunnels"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-036",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Tunnels et passages à niveau",
+      "prompt": "Dans un tunnel, ma voiture prend feu et la sortie est proche. Je :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Essaie de sortir du tunnel avec ma voiture"
+        },
+        {
+          "id": "b",
+          "label": "M’arrête aussitôt au milieu de la voie"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Si le véhicule prend feu et que la sortie est proche, on essaie de quitter le tunnel avec le véhicule.",
+      "sources": [
+        "tunnel"
+      ],
+      "competenceIds": [
+        "c-tunnels"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-037",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Tunnels et passages à niveau",
+      "prompt": "Dans un tunnel, pour donner l’alerte, j’utilise :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Mon téléphone portable"
+        },
+        {
+          "id": "b",
+          "label": "Un téléphone de secours du tunnel"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Les téléphones de secours du tunnel permettent de vous localiser, contrairement au téléphone portable.",
+      "sources": [
+        "tunnel"
+      ],
+      "competenceIds": [
+        "c-tunnels",
+        "c-accident-secours"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-038",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Tunnels et passages à niveau",
+      "prompt": "Dans un tunnel, de la fumée apparaît. Avant de quitter ma voiture, je coupe le moteur et :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Je laisse la clé sur le contact"
+        },
+        {
+          "id": "b",
+          "label": "J’emporte la clé"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "En cas de fumée : couper le moteur en laissant la clé sur le contact, puis quitter le véhicule avec tous les passagers par une issue de secours.",
+      "sources": [
+        "tunnel"
+      ],
+      "competenceIds": [
+        "c-tunnels"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-039",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Tunnels et passages à niveau",
+      "prompt": "Dans un tunnel, je me rends compte que je me suis trompé de direction. Je peux faire demi-tour :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Jamais : c’est interdit"
+        },
+        {
+          "id": "b",
+          "label": "Oui, si la voie est libre"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Dans un tunnel, il est interdit de faire demi-tour et de s’arrêter, hormis en cas d’urgence sur les emplacements prévus.",
+      "sources": [
+        "tunnel"
+      ],
+      "competenceIds": [
+        "c-tunnels"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-040",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Tunnels et passages à niveau",
+      "prompt": "Ma voiture tombe en panne dans un tunnel et je ne peux pas en sortir. Je :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Rejoins l’emplacement d’arrêt d’urgence le plus proche, au plus près du bord droit"
+        },
+        {
+          "id": "b",
+          "label": "M’arrête sur place sans signaler ma présence"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "En cas de panne : feux de détresse, puis sortir du tunnel si possible ; sinon rejoindre l’emplacement d’arrêt d’urgence le plus proche et donner l’alerte.",
+      "sources": [
+        "tunnel"
+      ],
+      "competenceIds": [
+        "c-tunnels",
+        "c-panne"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-041",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Tunnels et passages à niveau",
+      "prompt": "Dans un tunnel, la circulation ralentit fortement. J’allume :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Mes feux de route"
+        },
+        {
+          "id": "b",
+          "label": "Mes feux de détresse"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "En cas de ralentissement dans un tunnel, on allume ses feux de détresse et on garde ses distances.",
+      "sources": [
+        "tunnel"
+      ],
+      "competenceIds": [
+        "c-tunnels"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-042",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Tunnels et passages à niveau",
+      "prompt": "La distance d’arrêt d’un train peut atteindre :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "800 mètres"
+        },
+        {
+          "id": "b",
+          "label": "80 mètres"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Un train peut avoir besoin de 800 mètres pour s’arrêter : le code de la route lui accorde la priorité absolue.",
+      "sources": [
+        "passageNiveau"
+      ],
+      "competenceIds": [
+        "c-passages-niveau"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-043",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Tunnels et passages à niveau",
+      "prompt": "Après le passage d’un train, les barrières du passage à niveau restent baissées. C’est probablement :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Une panne : je contourne les barrières"
+        },
+        {
+          "id": "b",
+          "label": "Qu’un autre train arrive"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Si les barrières restent fermées après un train, un autre arrive probablement ; sinon, on contacte la gare avec le numéro ou le téléphone du passage à niveau.",
+      "sources": [
+        "passageNiveau"
+      ],
+      "competenceIds": [
+        "c-passages-niveau"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-044",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Tunnels et passages à niveau",
+      "prompt": "À un passage à niveau sans barrières, je :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "M’arrête et vérifie qu’aucun train n’arrive avant de traverser"
+        },
+        {
+          "id": "b",
+          "label": "Passe sans ralentir s’il n’y a pas de feu"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Sans barrières, on s’arrête avant le passage à niveau et on vérifie qu’aucun train n’arrive avant de franchir la voie ferrée.",
+      "sources": [
+        "passageNiveau"
+      ],
+      "competenceIds": [
+        "c-passages-niveau"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-045",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Tunnels et passages à niveau",
+      "prompt": "La route est encombrée après un passage à niveau. Je m’engage sur la voie ferrée :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Seulement si je suis certain de pouvoir me dégager rapidement"
+        },
+        {
+          "id": "b",
+          "label": "Dès que la voiture devant moi s’engage"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "On ne traverse que si l’on est absolument certain de pouvoir se dégager rapidement, et on ne s’arrête jamais sur la voie ferrée.",
+      "sources": [
+        "passageNiveau"
+      ],
+      "competenceIds": [
+        "c-passages-niveau"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-046",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Tunnels et passages à niveau",
+      "prompt": "À vélo, je traverse les rails d’un passage à niveau :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "En biais, pour gagner du temps"
+        },
+        {
+          "id": "b",
+          "label": "Aussi perpendiculairement que possible"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "La roue d’un vélo peut se coincer dans l’ornière des rails : on traverse aussi perpendiculairement que possible.",
+      "sources": [
+        "passageNiveau"
+      ],
+      "competenceIds": [
+        "c-passages-niveau",
+        "c-usagers-vulnerables"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-047",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Visibilité et éclairage",
+      "prompt": "Par temps de brouillard, en plus de mes feux de croisement, j’utilise :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Mes feux de brouillard avant"
+        },
+        {
+          "id": "b",
+          "label": "Mes feux de route"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Par brouillard, on réduit sa vitesse et on utilise les feux de brouillard avant en complément des feux de croisement.",
+      "sources": [
+        "brouillard"
+      ],
+      "competenceIds": [
+        "c-meteo",
+        "c-feux"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-048",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Visibilité et éclairage",
+      "prompt": "Du brouillard est annoncé et je dois faire un trajet en rase campagne. Le conseil de la Sécurité routière :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Partir plus vite pour arriver avant"
+        },
+        {
+          "id": "b",
+          "label": "Différer mon départ si possible"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Si du brouillard est annoncé, différez votre départ, surtout pour un trajet en rase campagne.",
+      "sources": [
+        "brouillard"
+      ],
+      "competenceIds": [
+        "c-meteo"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-049",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Visibilité et éclairage",
+      "prompt": "Quand j’utilise mes feux de route, je peux allumer en même temps mes feux de croisement :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Oui"
+        },
+        {
+          "id": "b",
+          "label": "Non"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Lorsqu’il est fait usage des feux de route, les feux de croisement peuvent être utilisés simultanément.",
+      "sources": [
+        "depassement"
+      ],
+      "competenceIds": [
+        "c-feux"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-050",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Visibilité et éclairage",
+      "prompt": "En agglomération, sur une route suffisamment éclairée, puis-je rouler en feux de route ?",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Oui, si personne n’arrive en face"
+        },
+        {
+          "id": "b",
+          "label": "Non"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "En agglomération sur une route suffisamment éclairée, les feux de route sont exclus.",
+      "sources": [
+        "depassement"
+      ],
+      "competenceIds": [
+        "c-feux"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-051",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Visibilité et éclairage",
+      "prompt": "La nuit, une voiture arrive en face. Je passe des feux de route aux feux de croisement :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Suffisamment à l’avance pour ne pas la gêner"
+        },
+        {
+          "id": "b",
+          "label": "Au dernier moment, à sa hauteur"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Le passage des feux de route aux feux de croisement doit se faire suffisamment à l’avance pour ne pas gêner les autres usagers.",
+      "sources": [
+        "depassement"
+      ],
+      "competenceIds": [
+        "c-feux"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-052",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Usagers et partage de la rue",
+      "prompt": "Dans une aire piétonne, les piétons sont prioritaires sur tous les véhicules, sauf :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Les vélos"
+        },
+        {
+          "id": "b",
+          "label": "Les tramways"
+        },
+        {
+          "id": "c",
+          "label": "Les taxis"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Dans une aire piétonne, les piétons sont prioritaires sur tous les véhicules, sauf les tramways.",
+      "sources": [
+        "codeRue"
+      ],
+      "competenceIds": [
+        "c-zones-apaisees"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-053",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Usagers et partage de la rue",
+      "prompt": "Dans une zone 30, la vitesse des véhicules motorisés est limitée à :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "50 km/h"
+        },
+        {
+          "id": "b",
+          "label": "30 km/h"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "En zone 30, la vitesse des véhicules motorisés est limitée à 30 km/h.",
+      "sources": [
+        "codeRue"
+      ],
+      "competenceIds": [
+        "c-zones-apaisees",
+        "c-vitesses"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-054",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Usagers et partage de la rue",
+      "prompt": "Dans une zone de rencontre, les piétons peuvent se déplacer :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Sur toute la largeur de la voirie"
+        },
+        {
+          "id": "b",
+          "label": "Seulement sur les trottoirs"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "En zone de rencontre, les piétons sont prioritaires (sauf sur les tramways) et peuvent se déplacer sur toute la largeur de la voirie.",
+      "sources": [
+        "codeRue"
+      ],
+      "competenceIds": [
+        "c-zones-apaisees"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-055",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Usagers et partage de la rue",
+      "prompt": "Dans une zone 30 ou une zone de rencontre, je peux croiser des cyclistes qui roulent en sens inverse dans une rue à sens unique. C’est :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Toujours interdit"
+        },
+        {
+          "id": "b",
+          "label": "Fréquent : le double sens cyclable y est quasi généralisé"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "En zone 30 et en zone de rencontre, le double sens de circulation est quasi généralisé pour les cyclistes.",
+      "sources": [
+        "codeRue"
+      ],
+      "competenceIds": [
+        "c-zones-apaisees",
+        "c-usagers-vulnerables"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-056",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Usagers et partage de la rue",
+      "prompt": "Dans une zone de rencontre, un piéton traverse la chaussée hors passage piéton, devant moi. Il est prioritaire :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Non, seulement sur un passage piéton"
+        },
+        {
+          "id": "b",
+          "label": "Oui"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "En zone de rencontre, les piétons ont la priorité sur tous les véhicules, sauf les tramways, sur toute la largeur de la voirie.",
+      "sources": [
+        "codeRue"
+      ],
+      "competenceIds": [
+        "c-zones-apaisees",
+        "c-usagers-vulnerables"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-057",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Croisement et dépassement",
+      "prompt": "Sur une route de montagne, deux véhicules ne peuvent pas se croiser. Celui qui doit s’arrêter le premier est :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Le véhicule qui monte"
+        },
+        {
+          "id": "b",
+          "label": "Le véhicule qui descend"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Sur les routes de montagne et à forte pente, le véhicule descendant doit s’arrêter à temps le premier.",
+      "sources": [
+        "depassement"
+      ],
+      "competenceIds": [
+        "c-croiser"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-058",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Croisement et dépassement",
+      "prompt": "Un obstacle se trouve sur ma voie et une voiture arrive en face. Je :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Ralentis ou m’arrête pour la laisser passer"
+        },
+        {
+          "id": "b",
+          "label": "Passe : c’est à elle de s’écarter"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Le véhicule qui a l’obstacle sur sa voie doit ralentir ou s’arrêter pour laisser passer ceux qui viennent en sens inverse.",
+      "sources": [
+        "depassement"
+      ],
+      "competenceIds": [
+        "c-croiser"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-059",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Croisement et dépassement",
+      "prompt": "Sur une route étroite, le croisement est impossible et l’un des deux doit reculer : ma voiture ou un poids lourd. Recule :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Ma voiture"
+        },
+        {
+          "id": "b",
+          "label": "Le poids lourd"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Quand il faut reculer, un véhicule léger recule devant un véhicule lourd.",
+      "sources": [
+        "depassement"
+      ],
+      "competenceIds": [
+        "c-croiser"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-060",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Croisement et dépassement",
+      "prompt": "Je viens de dépasser une voiture. Je me rabats :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Sans l’obliger à ralentir"
+        },
+        {
+          "id": "b",
+          "label": "Juste devant elle, même si elle doit freiner"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Après un dépassement par la gauche, on revient sur sa droite sans provoquer le ralentissement du véhicule dépassé.",
+      "sources": [
+        "depassement"
+      ],
+      "competenceIds": [
+        "c-depasser"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-061",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Croisement et dépassement",
+      "prompt": "J’arrive à une traversée de voie ferrée sans barrières ni demi-barrières. Je peux y dépasser :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Non, c’est interdit"
+        },
+        {
+          "id": "b",
+          "label": "Oui, si aucun train n’est visible"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Tout dépassement est interdit aux traversées de voies ferrées qui ne sont pas munies de barrières ou de demi-barrières.",
+      "sources": [
+        "depassement"
+      ],
+      "competenceIds": [
+        "c-depasser",
+        "c-passages-niveau"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-062",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Croisement et dépassement",
+      "prompt": "Sur une route à double sens comportant trois voies, pour dépasser, je peux utiliser la voie la plus à gauche :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Oui, si elle est libre"
+        },
+        {
+          "id": "b",
+          "label": "Non"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Si la route comporte plus de deux voies, le conducteur qui dépasse ne doit pas utiliser celle qui est le plus à gauche.",
+      "sources": [
+        "depassement"
+      ],
+      "competenceIds": [
+        "c-depasser"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-063",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Croisement et dépassement",
+      "prompt": "En agglomération, je croise un autobus et le croisement est difficile. Je :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "M’arrête pour le laisser passer"
+        },
+        {
+          "id": "b",
+          "label": "Force le passage, je suis sur ma voie"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "En agglomération, on s’arrête si le croisement est difficile pour laisser passer les véhicules de transport en commun.",
+      "sources": [
+        "depassement",
+        "priorites"
+      ],
+      "competenceIds": [
+        "c-croiser"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-064",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Croisement et dépassement",
+      "prompt": "Je croise une voiture qui a un chargement très large et la route est trop étroite pour deux. Les conducteurs :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Réduisent leur vitesse et, si besoin, s’arrêtent ou se garent"
+        },
+        {
+          "id": "b",
+          "label": "Continuent : le plus large doit reculer"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Si la largeur ne permet pas le croisement à cause de la taille ou du chargement de l’un des véhicules, les conducteurs ralentissent et, si besoin, s’arrêtent ou se garent.",
+      "sources": [
+        "depassement"
+      ],
+      "competenceIds": [
+        "c-croiser"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-065",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Autoroute",
+      "prompt": "Sur autoroute, je peux circuler ou m’arrêter sur la bande centrale qui sépare les chaussées :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Oui, en cas de bouchon"
+        },
+        {
+          "id": "b",
+          "label": "Non, jamais"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Il est interdit de circuler, de s’arrêter ou de stationner sur la bande centrale séparative des chaussées (amende de 4e classe).",
+      "sources": [
+        "autoroute"
+      ],
+      "competenceIds": [
+        "c-autoroute"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-066",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Autoroute",
+      "prompt": "Faire demi-tour sur autoroute entraîne de plein droit un retrait de :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "4 points"
+        },
+        {
+          "id": "b",
+          "label": "1 point"
+        },
+        {
+          "id": "c",
+          "label": "Aucun point"
+        }
+      ],
+      "correct": [
+        "a"
+      ],
+      "explanation": "Le demi-tour et la marche arrière sur autoroute sont punis d’une amende de 4e classe et du retrait de plein droit de 4 points.",
+      "sources": [
+        "autoroute"
+      ],
+      "competenceIds": [
+        "c-autoroute"
+      ],
+      "examEligible": true
+    },
+    {
+      "id": "rv-067",
+      "status": "a-verifier",
+      "kind": "single",
+      "topic": "Autoroute",
+      "prompt": "Je rejoins l’autoroute par une bretelle de raccordement. Les véhicules qui circulent sur l’autoroute :",
+      "choices": [
+        {
+          "id": "a",
+          "label": "Doivent me laisser la place"
+        },
+        {
+          "id": "b",
+          "label": "Sont prioritaires : je leur cède le passage"
+        }
+      ],
+      "correct": [
+        "b"
+      ],
+      "explanation": "Le conducteur qui rejoint l’autoroute par une bretelle doit céder le passage aux véhicules qui y circulent.",
+      "sources": [
+        "autoroute"
+      ],
+      "competenceIds": [
+        "c-autoroute"
+      ],
+      "examEligible": true
+    }
+  ]
+}

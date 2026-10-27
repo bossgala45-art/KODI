@@ -9,6 +9,7 @@
     { "id": "c-vitesses", "universeId": "u05", "title": "Respecter les vitesses maximales", "status": "a-verifier" },
     { "id": "c-autoroute", "universeId": "u05", "title": "Circuler sur autoroute", "status": "a-verifier" },
     { "id": "c-marquages", "universeId": "u06", "title": "Lire le marquage au sol", "status": "a-verifier" },
+    { "id": "c-panneaux-feux", "universeId": "u06", "title": "Respecter panneaux, feux et signaux", "status": "a-verifier" },
     { "id": "c-passages-niveau", "universeId": "u07", "title": "Franchir un passage à niveau", "status": "a-verifier" },
     { "id": "c-tunnels", "universeId": "u07", "title": "Circuler dans un tunnel", "status": "a-verifier" },
     { "id": "c-feux", "universeId": "u08", "title": "Utiliser les feux du véhicule", "status": "a-verifier" },

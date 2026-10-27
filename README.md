@@ -3,11 +3,12 @@
 Application web progressive (PWA) française de préparation au code de la route,
 mobile-first, destinée à être installable sur iPhone, Android et ordinateur.
 
-> **Statut (24/10/2026) : en développement, pas prêt à être publié.**
-> Voir l’audit de lancement : [docs/LAUNCH_AUDIT.md](docs/LAUNCH_AUDIT.md).
-> 72 questions rédigées, aucune validée ; 2 leçons de démonstration ; 1 scène
-> 3D sur 20 ; aucun service en ligne configuré (hébergement, Supabase,
-> Stripe, IA). Sans compte, les données restent dans le navigateur.
+> **Statut (27/10/2026) : édition personnelle gratuite (D-032).**
+> Pour un seul utilisateur, sans paiement : voir
+> [docs/EDITION_PERSONNELLE.md](docs/EDITION_PERSONNELLE.md). 136 questions
+> réelles rédigées à partir de pages officielles, **aucune relue** ;
+> entraînement par thème et examens blancs sur l’appareil. Pas prêt pour une
+> publication ouverte au public : [docs/LAUNCH_AUDIT.md](docs/LAUNCH_AUDIT.md).
 
 ## Documentation
 
